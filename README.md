@@ -1,4 +1,4 @@
-### Team SLN -- AI Overview
+# Team SLN -- AI Overview
 >Repository : [github.com/NicolausLionel/SLN](url)
 >
 >| Stage / date | Main focus | Planned internal target | Evidence / output |
@@ -9,7 +9,7 @@
 
 
 ## Team Members and Responsibilities
-# Team Member
+### Team Member
 | Member Name | Student ID | Github Username | Role | Jobdesk  |
 | ------------- | ------------- | ------------- |  ------------- |  ------------- |  
 | Member 1  | Content Cell  | morenomanulang  | Design Visual | Content Cell  |
@@ -19,6 +19,6 @@
 | Member 5  | Content Cell  | rachellpetronella  | CIO  | Content Cell  |       
 | Member 6  | Content Cell  | kaylasi23  | Content Lead  | Content Cell  |   
 
-# Individual Skills Profile
+### Individual Skills Profile
 
 
