@@ -24,4 +24,5 @@
 
 ### Individual Skills Profile
 
-
+> [!NOTE]
+> You can find our Project Plan and Task List in [SLN's-Team-Project-Plan-and-Task_List.pdf](https://github.com)
