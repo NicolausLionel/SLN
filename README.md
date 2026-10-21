@@ -1,11 +1,11 @@
 ### Team SLN -- Module
 >Repository : [github.com/NicolausLionel/SLN](url)
 >
->Stage 1 Deadline: October 24, 2026, 23:59 Beijing Time
->
->Stage 2 Deadline: November 7, 2026
->
->Stage 3 Deadline: November 28, 2026
+>| Stage / date | Main focus | Planned internal target | Evidence / output |
+>| :--- | :--- | :--- | :--- |
+>| **Stage 1** — 24 Oct 2026 | Project plan, task list, repository setup, module outline, substantial Markdown V1.0 content, review and submission evidence. | Team plan and owners confirmed as early as possible<br><br>Draft reviewed before 22 Oct. | Project plan PDF/DOCX and the separate Stage 1 GitHub/Markdown submission package. |
+>| **Stage 2** — 7 Nov 2026 | Develop and refine the learning resources based on the shared Markdown; continue review. | Internal draft target: 3 Nov 2026<br><br>Review target: 5 Nov 2026. | Updated source content and progress evidence; exact deliverables: *(tsw)*. |
+>| **Stage 3** — 28 Nov 2026 | Finalize resources, check consistency, rehearse the mini lecture, and complete documentation. | Content freeze target: 20 Nov 2026<br><br>Final target: 23 Nov 2026. | Final project materials and required documentation; exact deliverables: *(tsw)*. |
 
 
 ## Team Members and Responsibilities
@@ -23,4 +23,5 @@
 
 <details>
   <summary>Project Scope and Learning Goals</summary>
+  
 </details>
