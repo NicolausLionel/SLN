@@ -1,4 +1,4 @@
-### Team SLN -- Module
+### Team SLN -- AI Overview
 >Repository : [github.com/NicolausLionel/SLN](url)
 >
 >| Stage / date | Main focus | Planned internal target | Evidence / output |
@@ -21,7 +21,4 @@
 
 # Individual Skills Profile
 
-<details>
-  <summary>Project Scope and Learning Goals</summary>
-  
-</details>
+
