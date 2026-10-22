@@ -23,6 +23,6 @@
 | Member 6  | Content Cell  | kaylasi23  | Content Lead  | Content Cell  |   
 
 ### Individual Skills Profile
-
 > [!NOTE]
-> You can find our Project Plan and Task List in [SLN's Team Project Plan and Task List.pdf](https://github.com/NicolausLionel/SLN/blob/main/Example%20Folder/SLN's%20Team%20Project%20Plan%20and%20Task%20List.pdf)
+> You can find our Project Plan and Task List in [SLN's Team Project Plan and Task List.pdf](https://github.com/NicolausLionel/SLN/blob/main/Example%20Folder/SLN's%20Team%20Project%20Plan%20and%20Task%20List.pdf)  
+> To find other files you can check the folders
