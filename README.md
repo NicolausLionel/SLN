@@ -9,17 +9,19 @@
 >
 >The team will maintain a shared Markdown source as the main reference for concepts, examples, and citations. The Study Guide, PPT, and Video Tutorials should be based on this source so that the explanations remain consistent. All learning resources will use this document as their main reference to ensure consistency.
 
+> [!WARNING]
+> The target learners are university students and beginners who have little or no prior knowledge of Artificial Intelligence.
 
 
 ## Team Members and Responsibilities
 ### Team Member
 | Member Name | Student ID | Github Username | Role | Jobdesk  |
 | ------------- | ------------- | ------------- |  ------------- |  ------------- |  
-| Member 1  | Content Cell  | morenomanulang  | Design Visual | Content Cell  |
-| 周利福  | 1820262046 | NicolausLionel  | CEO  | Content Cell  |
-| Member 3  | Content Cell  | Roberybot  | Content Cell  | Content Cell  |       
-| Member 4  | Content Cell  | Marcoharyanto  | Content   | Content Cell  | 
-| Member 5  | Content Cell  | rachellpetronella  | CIO  | Content Cell  |       
+| Member 1  | Content Cell  | morenomanulang  | Visual Design Lead | Content Cell  |
+| 周利福  | 1820262046 | NicolausLionel  | CIO  | Content Cell  |
+| Member 3  | Content Cell  | Roberybot  | Quality Lead  | Content Cell  |       
+| Member 4  | Content Cell  | Marcoharyanto  | Video Lead   | Content Cell  | 
+| Member 5  | Content Cell  | rachellpetronella  | CEO  | Content Cell  |       
 | Member 6  | Content Cell  | kaylasi23  | Content Lead  | Content Cell  |   
 
 ### Individual Skills Profile
