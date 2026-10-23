@@ -17,14 +17,17 @@
 ### Team Member
 | Member Name | Student ID | Github Username | Role | Jobdesk  |
 | ------------- | ------------- | ------------- |  ------------- |  ------------- |  
-| Member 1  | Content Cell  | morenomanulang  | Visual Design Lead | Content Cell  |
-| 周利福  | 1820262046 | NicolausLionel  | CEO  | Content Cell  |
-| Member 3  | Content Cell  | Roberybot  | Quality Lead  | Content Cell  |       
-| Member 4  | Content Cell  | Marcoharyanto  | Video Lead   | Content Cell  | 
-| Member 5  | Content Cell  | rachellpetronella  | CIO  | Content Cell  |       
-| Member 6  | Content Cell  | kaylasi23  | Content Lead  | Content Cell  |   
+| 墨仁  | 1820262039  | morenomanulang  | Visual Design Lead | coordinates slides and illustration|
+| 周利福  | 1820262046 | NicolausLionel  | CEO  | manages tasks, deadlines, and meetings|
+| 姚光耀  | 1820262067  | Roberybot  | Quality Lead  | coordinates recording and editing|       
+| 何恩强  | 1820262113  | Marcoharyanto  | Video Lead   | checks accuracy, usability, and consistency| 
+| 曾瑞琳  | 1820262342  | rachellpetronella  | CIO  | organizes files and submissions|       
+| 薛春兰  | 1820262355  | kaylasi23  | Content Lead  | checks scope, structure, and explanations|   
 
 ### Individual Skills Profile
+
 > [!NOTE]
 > You can find our Project Plan and Task List in [SLN's Team Project Plan and Task List.pdf](https://github.com/NicolausLionel/SLN/blob/main/Example%20Folder/SLN's%20Team%20Project%20Plan%20and%20Task%20List.pdf)  
-> To find other files you can check the folders
+> Assets is a folder for pictures and diagrams
+> Content is a folder for module outline
+> Project is a folder for Project plan
