@@ -32,4 +32,8 @@
 > - **`Project/`** — Project plan and task list
 
 > [!IMPORTANT]
-> 
+> :heavy_check_mark: Done
+> Repository :heavy_check_mark:
+> Project Plan and Task List :heavy_check_mark:
+> Module Topic 1 :heavy_check_mark:
+> Project Log and Meeting Summaries :heavy_check_mark:
