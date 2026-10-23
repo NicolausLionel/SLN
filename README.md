@@ -18,10 +18,10 @@
 | Member Name | Student ID | Github Username | Role | Jobdesk  |
 | ------------- | ------------- | ------------- |  ------------- |  ------------- |  
 | Member 1  | Content Cell  | morenomanulang  | Visual Design Lead | Content Cell  |
-| 周利福  | 1820262046 | NicolausLionel  | CIO  | Content Cell  |
+| 周利福  | 1820262046 | NicolausLionel  | CEO  | Content Cell  |
 | Member 3  | Content Cell  | Roberybot  | Quality Lead  | Content Cell  |       
 | Member 4  | Content Cell  | Marcoharyanto  | Video Lead   | Content Cell  | 
-| Member 5  | Content Cell  | rachellpetronella  | CEO  | Content Cell  |       
+| Member 5  | Content Cell  | rachellpetronella  | CIO  | Content Cell  |       
 | Member 6  | Content Cell  | kaylasi23  | Content Lead  | Content Cell  |   
 
 ### Individual Skills Profile
