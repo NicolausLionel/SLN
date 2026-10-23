@@ -27,7 +27,9 @@
 ### Individual Skills Profile
 
 > [!NOTE]
-> You can find our Project Plan and Task List in [SLN's Team Project Plan and Task List.pdf](https://github.com/NicolausLionel/SLN/blob/main/Example%20Folder/SLN's%20Team%20Project%20Plan%20and%20Task%20List.pdf)  
-> Assets is a folder for pictures and diagrams
-> Content is a folder for module outline
-> Project is a folder for Project plan
+> - **`Assets/`** — Images and diagrams
+> - **`Content/`** — Module outline and learning materials
+> - **`Project/`** — Project plan and task list
+
+> [!IMPORTANT]
+> 
