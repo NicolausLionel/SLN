@@ -67,9 +67,8 @@ This document records the peer review process for the module content, ensuring a
 The content is accurate, well-organized, and appropriate for the target audience. The corrections made improve clarity without changing the core concepts. The chapter successfully demonstrates the team's intended teaching approach: clear explanations, concrete examples, and hands-on activities.
 
 **Next Steps:**
-1. Implement the language simplifications noted above
-2. Add visual diagrams (assigned to 墨仁)
-3. Proceed with peer review of Topic 2 once drafted
+1. Add visual diagrams (assigned to 墨仁)
+2. Proceed with peer review of Topic 2 once drafted
 
 ---
 
