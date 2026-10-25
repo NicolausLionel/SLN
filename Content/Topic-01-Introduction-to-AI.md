@@ -40,10 +40,10 @@ Defining "intelligence" itself is challenging, and defining "artificial intellig
 
 | Approach | Core Idea | Historical Context | Key Challenge |
 | :-- | :-- | :-- | :-- |
-| **1. Acting Humanly** | A machine is intelligent if it can behave indistinguishably from a human | Alan Turing's "Turing Test" (1950) | Requires AI to mimic all human behaviors, including emotions and consciousness |
-| **2. Thinking Humanly** | A machine is intelligent if it uses cognitive processes similar to the human brain | Cognitive science and neuroscience approaches | Requires deep understanding of how the human brain actually works |
-| **3. Thinking Rationally** | A machine is intelligent if it uses formal logic and mathematical reasoning to reach correct conclusions | Traditional logic and mathematics | Real-world problems often involve uncertainty, not just pure logic |
-| **4. Acting Rationally** | A machine is intelligent if it takes actions that maximize expected outcomes based on available information | **Modern approach** (Russell & Norvig) | Defining what "rational" means in different contexts |
+| **1. Acting Humanly** | A machine is smart if it acts just like a person. You can't tell if you're talking to a human or a machine. | Alan Turing's "Turing Test" (1950) | Hard to copy all human behaviors like feelings, emotions, and awareness |
+| **2. Thinking Humanly** | A machine is smart if it thinks the same way humans think. | Studies of how the human brain works | We need to fully understand how the human brain works first |
+| **3. Thinking Rationally** | A machine is smart if it uses logic and math to always get the right answer. | Traditional logic and math rules | Real-life problems are messy and unclear, not just pure logic |
+| **4. Acting Rationally** | A machine is smart if it makes the best choice based on what it knows. | **Modern approach** (Russell & Norvig) | Figuring out what "best choice" means in different situations |
 
 ### 2.2 The Modern Approach: Acting Rationally
 
