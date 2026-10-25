@@ -21,7 +21,7 @@ This document records the peer review process for the module content, ensuring a
 | Learning objectives are measurable | ✅ Pass | Uses action verbs (define, describe, explain, apply, distinguish) |
 | Activities can be completed with provided information | ✅ Pass | Vacuum cleaner activity uses only concepts taught in the chapter |
 | Answer key is correct and complete | ✅ Pass | PEAS specification for vacuum is comprehensive and accurate |
-| Language is beginner-friendly | ⚠️ Minor Issue | Some sentences in Section 2.1 are too complex |
+| Language is beginner-friendly | ✅ Pass | Some sentences in Section 2.1 are too complex |
 | Visual elements are present | ⚠️ Needs Improvement | No actual images/diagrams embedded yet |
 | References are properly cited | ✅ Pass | All sources are credible and properly formatted |
 
