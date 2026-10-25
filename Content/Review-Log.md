@@ -101,7 +101,7 @@ All content must meet these minimum standards before being marked as "REVIEWED":
 | Topic 3 | 周利福 (NicolausLionel) | TBD | ⏳ Pending |
 | Topic 4 | 何恩强 (Marcoharyanto) | TBD | ⏳ Pending |
 | Topic 5 | 曾瑞琳 (rachellpetronella) | TBD | ⏳ Pending |
-| **Overall Module & Final Package** | 薛春兰 (kaylasi23) | Content Lead | TBD | ⏳ Pending |
+| **Overall Module & Final Package** | 薛春兰 (kaylasi23) | TBD | ⏳ Pending |
 
 ---
 
