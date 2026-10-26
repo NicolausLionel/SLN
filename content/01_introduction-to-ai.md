@@ -287,21 +287,6 @@ The appropriate approach depends on the problem, available resources, performanc
 
 ---
 
-## REFERENCES
-
-1. Russell, S. J., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.  
-   - [Official Textbook Information](https://www.pearson.com/en-us/subject-catalog/p/artificial-intelligence-a-modern-approach/P200000003500/9780134610993)
-   - [Official Book Website](https://aima.cs.berkeley.edu/)
-
-2. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency*, 610–623.  
-   - [https://doi.org/10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922)
-
-3. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0).* National Institute of Standards and Technology.  
-   - [Official NIST Publication](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10)
-   - [https://doi.org/10.6028/NIST.AI.100-1](https://doi.org/10.6028/NIST.AI.100-1)
-
----
-
 <p align="center">
   <strong>SLN · AI OVERVIEW</strong><br>
   <sub>Topic 01 — Introduction to Artificial Intelligence</sub>
