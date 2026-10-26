@@ -14,7 +14,7 @@
 <a href="plan/README.md">Project plan</a> ·
 <a href="plan/master_task_list.md">Task list</a> ·
 <a href="references/sources.md">References</a> ·
-<a href="CONTRIBUTING.md">Contributing</a>
+<a href="CONTRIBUTION.md">Contributiion</a>
 </b></p>
 
 > **Understand AI. Evaluate its outputs. Use it responsibly.**
@@ -102,9 +102,10 @@ Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 outline only
 | Part | Status |
 |---|---|
 | Repository setup and README | ✅ Done |
-| [Project plan](plan/project_plan.md) and [task list](plan/master_task_list.md) | 📝 Drafted from the Stage 1 plan |
-| [Module outline](content/00_module_outline.md) | 📝 Drafted |
-| Topics 1–5 | 🔲 Outline only. Markdown V1.0 is the next milestone |
+| [Project plan](plan/project_plan.md) and [task list](plan/master_task_list.md) | ✅ Done |
+| [Module outline](content/00_module_outline.md) | ✅ Done |
+| Topics 1 |✅ Done |
+| Topics 2–5 | 🔲 Outline only |
 | Study Guide, Test Bank, slides, videos | 🔲 Stage 2 |
 
 ## Roadmap
