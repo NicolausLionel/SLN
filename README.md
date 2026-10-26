@@ -1,41 +1,71 @@
-# Team SLN - - - AI Overview
->Repository : [github.com/NicolausLionel/SLN](url)
->
->| Stage / date | Main focus | Planned internal target | Evidence / output |
->| :--- | :--- | :--- | :--- |
->| **Stage 1** — 24 Oct 2026 | Project plan, task list, repository setup, module outline, substantial Markdown V1.0 content, review and submission evidence. | Team plan and owners confirmed as early as possible<br><br>Draft reviewed before 22 Oct. | Project plan PDF/DOCX and the separate Stage 1 GitHub/Markdown submission package. |
->| **Stage 2** — 7 Nov 2026 | Develop and refine the learning resources based on the shared Markdown; continue review. | Internal draft target: 3 Nov 2026<br><br>Review target: 5 Nov 2026. | Updated source content and progress evidence; exact deliverables: *(tsw)*. |
->| **Stage 3** — 28 Nov 2026 | Finalize resources, check consistency, rehearse the mini lecture, and complete documentation. | Content freeze target: 20 Nov 2026<br><br>Final target: 23 Nov 2026. | Final project materials and required documentation; exact deliverables: *(tsw)*. |
->
->The team will maintain a shared Markdown source as the main reference for concepts, examples, and citations. The Study Guide, PPT, and Video Tutorials should be based on this source so that the explanations remain consistent. All learning resources will use this document as their main reference to ensure consistency.
+# SLN | AI Overview
 
-> [!WARNING]
-> The target learners are university students and beginners who have little or no prior knowledge of Artificial Intelligence.
+> **Understand AI. Evaluate its outputs. Use it responsibly.**
 
+An introductory, evidence-informed learning module designed by Team SLN for university students and first-time AI learners.
 
-## Team Members and Responsibilities
-### Team Member
-| Member Name | Student ID | Github Username | Role | Jobdesk  |
-| ------------- | ------------- | ------------- |  ------------- |  ------------- |  
-| 墨仁  | 1820262039  | morenomanulang  | Visual Design Lead | coordinates slides and illustration|
-| 周利福  | 1820262046 | NicolausLionel  | CEO  | manages tasks, deadlines, and meetings|
-| 姚光耀  | 1820262067  | Roberybot  | Quality Lead  | coordinates recording and editing|       
-| 何恩强  | 1820262113  | Marcoharyanto  | Video Lead   | checks accuracy, usability, and consistency| 
-| 曾瑞琳  | 1820262342  | rachellpetronella  | CIO  | organizes files and submissions|       
-| 薛春兰  | 1820262355  | kaylasi23  | Content Lead  | checks scope, structure, and explanations|   
+[Explore the module](content/module_outline.md) · [Start learning](content/01_introduction_to_ai.md) · [Project roadmap](plan/README.md) · [References](references/sources.md)
 
-**Skills to Develop:**  
-Plans to deepen computer science knowledge to better understand the technical foundations of AI concepts being taught in the module.
-> [!NOTE]
-> - **`Assets/`** — Images and diagrams
-> - **`Content/`** — Module outline and learning materials
-> - **`Project/`** — Project plan and task list
+## Learning journey
 
----
+| Unit | Essential question | Material |
+|---|---|---|
+| 01 · Introduction | What makes a system AI? | [Learn](content/01_introduction_to_ai.md) |
+| 02 · How AI works | How do data, models and inference connect? | [Learn](content/02_types_and_how_ai_works.md) |
+| 03 · Applications | Where is AI useful in practice? | [Learn](content/03_applications_of_ai.md) |
+| 04 · Critical evaluation | What can go wrong, and how can we tell? | [Learn](content/04_benefits_and_limitations.md) |
+| 05 · Responsible AI | How should humans govern AI use? | [Learn](content/05_ethical_and_responsible_ai.md) |
 
-> [!IMPORTANT]
-> :heavy_check_mark: Done  
-> Repository :heavy_check_mark:  
-> Project Plan and Task List :heavy_check_mark:  
-> Module Topic 1 :heavy_check_mark:  
-> Project Log and Meeting Summaries :heavy_check_mark:  
+## By the end, learners can
+
+1. Explain AI in beginner-friendly terms and distinguish it from conventional rule-based software.
+2. Describe the roles of data, algorithms, training and inference.
+3. Identify applications across education, healthcare, business and transportation.
+4. Critically assess accuracy, bias and overreliance.
+5. Apply privacy, attribution, verification and human oversight principles.
+
+**Prerequisites:** No programming or advanced mathematics required. Basic digital literacy is helpful.
+
+## How to use this repository
+
+1. Read the [module outline](content/module_outline.md) and follow units 01–05.
+2. Attempt the **Try it** questions before opening the suggested answers.
+3. Use the [source register](references/sources.md) to trace supporting readings.
+4. See [project planning](plan/README.md) for timeline, ownership and deliverables.
+
+## Repository map
+
+```text
+SLN/
+├── README.md
+├── content/         # Learning units and module outline
+├── plan/            # Workflow, milestones and task tracking
+├── references/      # Academic and institutional source register
+├── assets/          # Optional diagrams and illustrations
+└── evidence/        # Evidence templates; do not publish personal logs
+```
+
+## Project roadmap
+
+| Stage | Deadline (Beijing time) | Focus |
+|---|---|---|
+| 1 | 24 Oct 2026 | Repository, project plan, substantive Markdown V1.0 |
+| 2 | 7 Nov 2026 | Study Guide, Test Bank, slide draft, video storyboard |
+| 3 | 28 Nov 2026 | Final resources, review, mini lecture and documentation |
+
+## Team
+
+| Member | Project role | GitHub username |
+|---|---|---|
+| 墨仁 | Visual Design | To confirm |
+| 周利福 | CEO / coordination | To confirm |
+| 姚光耀 | Quality Lead | To confirm |
+| 何恩强 | Video Lead | To confirm |
+| 曾瑞琳 | CIO / Visual Design | To confirm |
+| 薛春兰 | Content Lead | To confirm |
+
+## Quality and integrity
+
+This repository contains **prepared learning drafts**, not independently verified claims of completed team reviews or contributions. Team members should validate references, test links, document corrections and update status labels after actual review. AI-assisted drafting must be logged and independently checked under course rules. Avoid publishing student IDs, private logs or private conversations.
+
+**Repository:** https://github.com/NicolausLionel/SLN
