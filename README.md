@@ -28,7 +28,7 @@ An introductory, evidence-informed learning module designed by Team SLN for univ
 
 ## How to use this repository
 
-1. Read the [module outline](content/module_outline.md) and follow units 01–05.
+1. Read the [module outline](content/00_Outline.md) and follow units 01–05.
 2. Attempt the **Try it** questions before opening the suggested answers.
 3. Use the [source register](references/sources.md) to trace supporting readings.
 4. See [project planning](plan/README.md) for timeline, ownership and deliverables.
