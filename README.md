@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./banner.svg" alt="SLN AI Overview Banner" width="100%">
+</p>
+
 <p align="center"><img src="assets/banner.svg" alt="SLN — AI Overview" width="100%"></p>
 
 <p align="center">
