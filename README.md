@@ -57,7 +57,7 @@ SLN/
 
 | Member | Project role | GitHub username |
 |---|---|---|
-| 墨仁 | Visual Design | To confirm |
+| 墨仁 | Visual Design | morenomanulang |
 | 周利福 | CEO / coordination | To confirm |
 | 姚光耀 | Quality Lead | To confirm |
 | 何恩强 | Video Lead | To confirm |
