@@ -71,18 +71,17 @@ flowchart LR
 | Member | Role | GitHub |
 |---|---|---|
 | 墨仁 | Visual design | [@morenomanulang](https://github.com/morenomanulang) |
-| 周利福 | CEO and coordinator | _add handle_ |
-| 姚光耀 | Quality lead | _add handle_ |
-| 何恩强 | Video lead | _add handle_ |
-| 曾瑞琳 | CIO, visual design and submission lead | _add handle_ |
-| 薛春兰 | Content lead | _add handle_ |
+| 周利福 | CEO and coordinator | [@NicolausLionel](https://github.com/NicolausLionel) |
+| 姚光耀 | Quality lead | [@Roberybot](https://github.com/Roberybot)  |
+| 何恩强 | Video lead | [@Marcoharyanto](https://github.com/Marcoharyanto)  |
+| 曾瑞琳 | CIO, visual design and submission lead | [@rachellpetronella](https://github.com/rachellpetronella)  |
+| 薛春兰 | Content lead | [@kaylasi21](https://github.com/kaylasi21)  |
 
 ## Repository map
 
 ```
 SLN/
 ├── README.md
-├── CONTRIBUTING.md
 ├── content/               ← the learning material (start at 00_module_outline.md)
 ├── study-guide/           ← study guide and test bank plan
 ├── slides/                ← PPT plan and files
