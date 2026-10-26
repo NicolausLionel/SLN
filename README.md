@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="SLN AI Overview" width="100%">
+  <img src="https://raw.githubusercontent.com/NicolausLionel/SLN/main/assets/banner.svg" alt="SLN AI Overview Banner" width="100%">
 </p>
 
 <p align="center">
