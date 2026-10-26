@@ -4,7 +4,7 @@
 
 An introductory, evidence-informed learning module designed by Team SLN for university students and first-time AI learners.
 
-[Explore the module](content/00_Outline.md) · [Start learning](content/01_Introduction_to_AI/Introduction-to-AI.md) · [Project roadmap](plan/README.md) · [References](references/sources.md)
+[Explore the module](content/00_Outline.md) · [Start learning](content/01_Introduction-to-AI/Introduction-to-AI.md) · [Project roadmap](plan/README.md) · [References](references/sources.md)
 
 ## Learning journey
 
