@@ -1,8 +1,6 @@
-```html
 <p align="center">
-  <img src="https://raw.githubusercontent.com/NicolausLionel/SLN/main/assets/banner.svg" alt="SLN AI Overview Banner" width="100%">
+  <img src="./assets/banner.svg" alt="SLN AI Overview Banner" width="100%">
 </p>
-```
 
 <p align="center">
 <img alt="Stage" src="https://img.shields.io/badge/stage-1%20of%203-1F7A8C?style=for-the-badge">
