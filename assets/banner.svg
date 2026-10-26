@@ -1,59 +1,170 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="SLN — AI Overview">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1F2A"/><stop offset="1" stop-color="#17566B"/></linearGradient>
-<radialGradient id="h" cx=".78" cy=".45" r=".5"><stop offset="0" stop-color="#E8A94B" stop-opacity=".22"/><stop offset="1" stop-color="#E8A94B" stop-opacity="0"/></radialGradient></defs>
-<rect width="1200" height="340" fill="url(#g)"/><rect width="1200" height="340" fill="url(#h)"/>
-<line x1="760" y1="80" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="80" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="80" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="80" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="80" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="145" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="145" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="145" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="145" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="145" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="210" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="210" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="210" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="210" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="210" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="275" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="275" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="275" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="275" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="760" y1="275" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="60" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="60" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="60" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="120" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="120" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="120" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="180" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="180" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="180" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="240" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="240" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="240" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="300" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="300" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="900" y1="300" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="1040" y1="95" x2="1150" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="1040" y1="170" x2="1150" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<line x1="1040" y1="245" x2="1150" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
-<circle cx="760" cy="80" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="760" cy="145" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="760" cy="210" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="760" cy="275" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="900" cy="60" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="900" cy="120" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="900" cy="180" r="9" fill="#E8A94B" fill-opacity="0.95"/>
-<circle cx="900" cy="240" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="900" cy="300" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="1040" cy="95" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="1040" cy="170" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="1040" cy="245" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
-<circle cx="1150" cy="170" r="13" fill="#E8A94B" fill-opacity="0.95"/>
-<text x="64" y="150" font-family="Georgia,'Times New Roman',serif" font-size="104" font-weight="700" fill="#FFFFFF" letter-spacing="2">SLN</text>
-<text x="68" y="198" font-family="Georgia,'Times New Roman',serif" font-size="34" fill="#E8A94B">AI Overview</text>
-<text x="68" y="252" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="21" fill="#CFE3E9">Understand AI. Evaluate its outputs. Use it responsibly.</text>
-<text x="68" y="290" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#8FB4BF">An introductory learning module for university students and first-time AI learners</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#080B18"/>
+      <stop offset="55%" stop-color="#11152B"/>
+      <stop offset="100%" stop-color="#20234A"/>
+    </linearGradient>
+
+    <linearGradient id="neon" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="50%" stop-color="#42A5FF"/>
+      <stop offset="100%" stop-color="#B388FF"/>
+    </linearGradient>
+
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFDE59"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
+    </linearGradient>
+
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#8AA0FF" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+
+    <clipPath id="clip">
+      <rect width="1200" height="400" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <!-- Background -->
+    <rect width="1200" height="400" fill="url(#bg)"/>
+    <rect width="1200" height="400" fill="url(#grid)"/>
+
+    <!-- Large geometric elements -->
+    <path d="M790 -50 L1120 -50 L1260 180 L1050 400 L850 320 L970 160Z"
+          fill="#4148A0" fill-opacity=".13"/>
+
+    <path d="M870 0 L1200 330 L1200 400 L1130 400 L800 70Z"
+          fill="url(#neon)" fill-opacity=".12"/>
+
+    <path d="M1080 0 L1200 0 L1200 120Z"
+          fill="url(#orange)"/>
+
+    <!-- Orbital rings -->
+    <g transform="translate(1000 205) rotate(-25)">
+      <ellipse rx="158" ry="64" fill="none" stroke="#55E6FF" stroke-opacity=".7" stroke-width="1.5"/>
+      <ellipse rx="158" ry="64" fill="none" stroke="#55E6FF" stroke-opacity=".25" stroke-width="12"/>
+      <ellipse rx="112" ry="133" fill="none" stroke="#A18AFF" stroke-opacity=".6" stroke-width="1.5"/>
+      <ellipse rx="70" ry="154" fill="none" stroke="#FFCE5C" stroke-opacity=".7" stroke-width="1.5"/>
+    </g>
+
+    <!-- Central AI core -->
+    <circle cx="1000" cy="205" r="78" fill="#101A37" stroke="#56E5FF" stroke-width="1.5"/>
+    <circle cx="1000" cy="205" r="65" fill="#172647" stroke="#B388FF" stroke-opacity=".7"/>
+
+    <path d="M1000 143 L1054 174 L1054 236 L1000 267 L946 236 L946 174Z"
+          fill="none" stroke="url(#neon)" stroke-width="2"/>
+
+    <path d="M1000 143 L1000 267 M946 174 L1054 236 M1054 174 L946 236"
+          stroke="#58E7FF" stroke-opacity=".7" stroke-width="1.5"/>
+
+    <g fill="#F8FCFF">
+      <circle cx="1000" cy="143" r="5"/>
+      <circle cx="1054" cy="174" r="5"/>
+      <circle cx="1054" cy="236" r="5"/>
+      <circle cx="1000" cy="267" r="5"/>
+      <circle cx="946" cy="236" r="5"/>
+      <circle cx="946" cy="174" r="5"/>
+    </g>
+
+    <circle cx="1000" cy="205" r="23" fill="url(#neon)"/>
+    <circle cx="1000" cy="205" r="9" fill="#FFFFFF"/>
+
+    <!-- Orbit nodes -->
+    <circle cx="845" cy="167" r="7" fill="#00F5D4"/>
+    <circle cx="1149" cy="161" r="7" fill="#FFDE59"/>
+    <circle cx="1045" cy="48" r="6" fill="#B388FF"/>
+    <circle cx="1072" cy="343" r="7" fill="#FF6B35"/>
+    <circle cx="875" cy="294" r="5" fill="#55E6FF"/>
+
+    <!-- Decorative technical marks -->
+    <g stroke="#8CA7FF" stroke-opacity=".65" stroke-width="1">
+      <path d="M815 85H865 M840 60V110"/>
+      <path d="M1110 290H1160 M1135 265V315"/>
+      <path d="M750 330H790 M770 310V350"/>
+    </g>
+
+    <g fill="#FFFFFF" fill-opacity=".65">
+      <circle cx="817" cy="118" r="2"/>
+      <circle cx="839" cy="132" r="2"/>
+      <circle cx="862" cy="112" r="2"/>
+      <circle cx="1120" cy="100" r="2"/>
+      <circle cx="1142" cy="120" r="2"/>
+      <circle cx="1164" cy="100" r="2"/>
+    </g>
+
+    <!-- Left editorial layout -->
+    <rect x="55" y="43" width="5" height="24" fill="url(#orange)"/>
+
+    <text x="72" y="60"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="12" font-weight="700"
+          letter-spacing="3" fill="#A7B8D9">
+      FOUNDATIONS OF COMPUTER SCIENCE &amp; AI
+    </text>
+
+    <text x="55" y="175"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="112" font-weight="900"
+          letter-spacing="-7" fill="#FFFFFF">SLN</text>
+
+    <text x="62" y="221"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="39" font-weight="800"
+          letter-spacing="1" fill="url(#neon)">AI OVERVIEW</text>
+
+    <path d="M60 240H580" stroke="#FFFFFF" stroke-opacity=".25"/>
+
+    <text x="62" y="270"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="16" font-weight="700"
+          letter-spacing="1.2" fill="#FFFFFF">
+      UNDERSTAND THE MACHINE.
+    </text>
+
+    <text x="62" y="294"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="16" font-weight="700"
+          letter-spacing="1.2" fill="#FFFFFF">
+      QUESTION THE OUTPUT.
+    </text>
+
+    <text x="62" y="318"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="16" font-weight="700"
+          letter-spacing="1.2" fill="#FFFFFF">
+      SHAPE THE FUTURE.
+    </text>
+
+    <!-- Bottom label -->
+    <rect x="62" y="343" width="215" height="27" rx="3"
+          fill="#00F5D4" fill-opacity=".12"
+          stroke="#00F5D4" stroke-opacity=".65"/>
+
+    <text x="75" y="361"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10" font-weight="700"
+          letter-spacing="1.5" fill="#75F9E7">
+      LEARN • ANALYZE • CREATE
+    </text>
+
+    <!-- Right-side label -->
+    <g transform="translate(1170 200) rotate(90)">
+      <text x="0" y="0"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10" font-weight="700"
+            letter-spacing="3" text-anchor="middle"
+            fill="#FFFFFF" fill-opacity=".65">
+        HUMAN INTELLIGENCE × ARTIFICIAL INTELLIGENCE
+      </text>
+    </g>
+
+    <!-- Corner details -->
+    <path d="M0 0H40 M0 0V40 M1160 400H1200V360"
+          fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2"/>
+
+    <path d="M0 390H430" stroke="url(#neon)" stroke-width="4"/>
+    <path d="M430 390H650" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="4"/>
+  </g>
+</svg>
