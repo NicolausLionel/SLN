@@ -5,7 +5,7 @@
 
 | # | Topic | Main ideas | Learning goals supported | Status |
 |---|---|---|---|---|
-| 1 | [Introduction to AI](01_introduction-to-ai.md) | Definition, brief history, basic concepts, AI vs traditional systems | 1 | 🔲 |
+| 1 | [Introduction to AI](01_introduction-to-ai.md) | Definition, brief history, basic concepts, AI vs traditional systems | 1 | ✅ |
 | 2 | [Types of AI and how AI works](02_types-and-how-ai-works.md) | Types by capability, machine learning, deep learning, generative AI, data and algorithms | 2 | 🔲 |
 | 3 | [Applications of AI](03_applications-of-ai.md) | Education, business and finance, healthcare, transportation, communication and entertainment | 3 | 🔲 |
 | 4 | [Benefits, limitations and challenges](04_benefits-limitations-challenges.md) | Efficiency, context limits, hallucinations, bias, overdependence, verification | 4, 6 | 🔲 |
