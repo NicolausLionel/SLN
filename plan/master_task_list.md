@@ -1,7 +1,5 @@
 # Master task list
 
-Snapshot taken from the Stage 1 project plan. **Update the status column whenever a task changes**, and keep the matching GitHub Issue in step.
-
 Status key: ✅ Finished · 📝 In progress · 👀 Under review · ⛔ Blocked · 🔲 Not started
 
 | ID | Task | Expected result | Owner(s) | Internal deadline | Status | Depends on |
