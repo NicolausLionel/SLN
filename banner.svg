@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="SLN — AI Overview">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1F2A"/><stop offset="1" stop-color="#17566B"/></linearGradient>
+<radialGradient id="h" cx=".78" cy=".45" r=".5"><stop offset="0" stop-color="#E8A94B" stop-opacity=".22"/><stop offset="1" stop-color="#E8A94B" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="340" fill="url(#g)"/><rect width="1200" height="340" fill="url(#h)"/>
+<line x1="760" y1="80" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="80" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="80" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="80" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="80" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="145" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="145" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="145" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="145" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="145" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="210" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="210" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="210" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="210" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="210" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="275" x2="900" y2="60" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="275" x2="900" y2="120" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="275" x2="900" y2="180" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="275" x2="900" y2="240" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="760" y1="275" x2="900" y2="300" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="60" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="60" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="60" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="120" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="120" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="120" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="180" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="180" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="180" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="240" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="240" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="240" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="300" x2="1040" y2="95" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="300" x2="1040" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="900" y1="300" x2="1040" y2="245" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="1040" y1="95" x2="1150" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="1040" y1="170" x2="1150" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<line x1="1040" y1="245" x2="1150" y2="170" stroke="#7FD0E0" stroke-opacity=".18"/>
+<circle cx="760" cy="80" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="760" cy="145" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="760" cy="210" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="760" cy="275" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="900" cy="60" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="900" cy="120" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="900" cy="180" r="9" fill="#E8A94B" fill-opacity="0.95"/>
+<circle cx="900" cy="240" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="900" cy="300" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="1040" cy="95" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="1040" cy="170" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="1040" cy="245" r="9" fill="#7FD0E0" fill-opacity="0.8"/>
+<circle cx="1150" cy="170" r="13" fill="#E8A94B" fill-opacity="0.95"/>
+<text x="64" y="150" font-family="Georgia,'Times New Roman',serif" font-size="104" font-weight="700" fill="#FFFFFF" letter-spacing="2">SLN</text>
+<text x="68" y="198" font-family="Georgia,'Times New Roman',serif" font-size="34" fill="#E8A94B">AI Overview</text>
+<text x="68" y="252" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="21" fill="#CFE3E9">Understand AI. Evaluate its outputs. Use it responsibly.</text>
+<text x="68" y="290" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#8FB4BF">An introductory learning module for university students and first-time AI learners</text></svg>

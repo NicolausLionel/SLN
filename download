@@ -1,0 +1,10 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Private material (never publish)
+*.private.md
+personal-logs-private/
+~$*
