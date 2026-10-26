@@ -4,4 +4,5 @@
 |---|---|---|---|---|
 | 21 Oct 2026 | Acted as video lead: took notes during group discussions, recorded problems raised by members, and logged team progress so the evidence videos reflect the work actually done. | T05/T06 (confirm ID) | [h] | [Yes/No + ref] |
 
-<!-- Paste your evidence screenshot here: team meeting documentation -->
+
+<img width="960" height="1280" alt="marco" src="https://github.com/user-attachments/assets/e4090e4c-0be1-4fe2-8f55-83082cd847db" />
