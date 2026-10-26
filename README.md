@@ -1,5 +1,6 @@
-
-<p align="center"><img src="assets/banner.svg" alt="SLN — AI Overview" width="100%"></p>
+<p align="center">
+  <img src="assets/banner.svg" alt="SLN — AI Overview" width="100%">
+</p>
 
 <p align="center">
 <img alt="Stage" src="https://img.shields.io/badge/stage-1%20of%203-1F7A8C?style=for-the-badge">
