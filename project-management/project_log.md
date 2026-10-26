@@ -2,5 +2,7 @@
 
 | Date | Decision / discussion | Owner | Blocker |
 |---|---|---|---|
-| 21 Oct 2026 | Team name, module (AI Overview) and channels confirmed; roles agreed | 墨仁, 曾瑞琳, 周利福 | none |
-| | | | |
+| 21 Oct 2026 | **Kickoff & Planning:** Confirmed team name, module topic (*Persuasive Technology: Using Computers to Change What We Think and Do*), and roles (Content lead: 薛春兰, Video lead: 何恩强). Set up GitHub repository and personal log templates. | 墨仁, 曾瑞琳, 周利福, 姚光耀 | Initial time estimates were too optimistic; difficult to organize all assignment information at first. *Resolved by breaking work into smaller tasks and discussing as a team.* |
+| 21 Oct 2026 | **Task Breakdown & Content Strategy:** Broke the project into main phases and assigned deadlines. Agreed on the required structure for learning materials (must include clear explanations, examples, activities, answers, and references). Drafted the Stage 1 Project Plan. | 姚光耀, 周利福, 曾瑞琳, 墨仁 | Deciding which tasks had to be done first and who should own them. *Resolved through long team discussions and considerations.* |
+| 23 Oct 2026 | **Project Log Design:** Designed the Canva presentation for the team’s project log. Decided to use one consistent layout and shorten long meeting notes into key points to keep the slides clean and easy to update. | 曾瑞琳 | Fitting long meeting notes onto slides without making them look messy. *Resolved by summarizing into key points.* |
+| 24 Oct 2026 | **Stage 1 Final Review & Submission:** Final proofreading of the Stage 1 Project Plan (checking for spelling, grammar, and inconsistent details). Verified that all GitHub files, evidence, and contributions were recorded correctly. Submitted Stage 1 deliverables before 23:59 Beijing Time. | 曾瑞琳, 周利福 | Missing mistakes when rereading own writing straight away. *Resolved by proofreading as a separate step after a break.* |
