@@ -1,157 +1,30 @@
-```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#080817"/>
-      <stop offset="55%" stop-color="#17103b"/>
-      <stop offset="100%" stop-color="#071c32"/>
-    </linearGradient>
-
-    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#8b5cf6">
-        <animate attributeName="stop-color" values="#8b5cf6;#22d3ee;#a78bfa;#8b5cf6" dur="6s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" stop-color="#22d3ee">
-        <animate attributeName="stop-color" values="#22d3ee;#a78bfa;#8b5cf6;#22d3ee" dur="6s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#c084fc">
-        <animate attributeName="stop-color" values="#c084fc;#22d3ee;#818cf8;#c084fc" dur="6s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-
-    <radialGradient id="glow">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".35"/>
-      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
-    </radialGradient>
-
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#8b9cff" stroke-opacity=".12" stroke-width="1"/>
-    </pattern>
-
-    <filter id="blur">
-      <feGaussianBlur stdDeviation="5"/>
-    </filter>
-
-    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <clipPath id="frame">
-      <rect width="1200" height="400" rx="22"/>
-    </clipPath>
-  </defs>
-
-  <g clip-path="url(#frame)">
-    <rect width="1200" height="400" fill="url(#bg)"/>
-    <rect width="1200" height="400" fill="url(#grid)"/>
-
-    <circle cx="900" cy="185" r="230" fill="url(#glow)">
-      <animate attributeName="r" values="190;250;190" dur="7s" repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="180" cy="360" r="170" fill="url(#glow)" opacity=".55"/>
-
-    <!-- Moving background particles -->
-    <g fill="#67e8f9">
-      <circle cx="100" cy="70" r="2">
-        <animate attributeName="cy" values="70;45;70" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values=".2;1;.2" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="360" cy="320" r="2">
-        <animate attributeName="cy" values="320;290;320" dur="5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;.2;1" dur="5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="740" cy="65" r="2">
-        <animate attributeName="cy" values="65;90;65" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="1080" cy="300" r="2">
-        <animate attributeName="cy" values="300;270;300" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="650" cy="350" r="1.5">
-        <animate attributeName="opacity" values=".1;1;.1" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="470" cy="55" r="1.5">
-        <animate attributeName="opacity" values="1;.1;1" dur="4s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <!-- Animated scanning line -->
-    <rect x="0" y="0" width="1200" height="2" fill="url(#neon)" opacity=".9">
-      <animate attributeName="y" values="-2;402;-2" dur="8s" repeatCount="indefinite"/>
-    </rect>
-
-    <!-- Decorative corner geometry -->
-    <path d="M0 100V22Q0 0 22 0H170" fill="none" stroke="#8b5cf6" stroke-width="2" opacity=".8"/>
-    <path d="M1030 400H1178Q1200 400 1200 378V300" fill="none" stroke="#22d3ee" stroke-width="2" opacity=".8"/>
-
-    <!-- Rotating AI orbital system -->
-    <g transform="translate(925 185)">
-      <circle r="112" fill="none" stroke="#8b5cf6" stroke-opacity=".2" stroke-width="1"/>
-      <circle r="84" fill="none" stroke="#22d3ee" stroke-opacity=".3" stroke-width="1" stroke-dasharray="4 8"/>
-
-      <g filter="url(#softGlow)">
-        <ellipse rx="108" ry="42" fill="none" stroke="url(#neon)" stroke-width="2.5" transform="rotate(-30)">
-          <animateTransform attributeName="transform" type="rotate" from="-30" to="330" dur="14s" repeatCount="indefinite"/>
-        </ellipse>
-        <ellipse rx="108" ry="42" fill="none" stroke="#a78bfa" stroke-opacity=".8" stroke-width="1.5" transform="rotate(45)">
-          <animateTransform attributeName="transform" type="rotate" from="45" to="-315" dur="20s" repeatCount="indefinite"/>
-        </ellipse>
-      </g>
-
-      <circle r="46" fill="#10132f" stroke="url(#neon)" stroke-width="2" filter="url(#softGlow)">
-        <animate attributeName="r" values="43;47;43" dur="3s" repeatCount="indefinite"/>
-      </circle>
-
-      <g stroke="#67e8f9" stroke-width="2" stroke-linecap="round" opacity=".9">
-        <path d="M-18 -12L0 -22L18 -12L18 10L0 21L-18 10Z" fill="none"/>
-        <path d="M-18 -12L0 0L18 -12M0 0V21M-18 10L0 0L18 10" fill="none"/>
-      </g>
-
-      <circle cx="0" cy="-42" r="4" fill="#22d3ee">
-        <animate attributeName="opacity" values=".3;1;.3" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="96" cy="0" r="4" fill="#c084fc"/>
-      <circle cx="-54" cy="92" r="3" fill="#67e8f9"/>
-    </g>
-
-    <!-- Main title -->
-    <text x="78" y="78" fill="#a5b4fc" font-family="monospace" font-size="13" letter-spacing="4">
-      ARTIFICIAL INTELLIGENCE / TEAM PROJECT
-    </text>
-
-    <text x="72" y="205" fill="#8b5cf6" opacity=".45" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-5" filter="url(#blur)">SLN</text>
-
-    <text x="68" y="199" fill="url(#neon)" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-5" filter="url(#softGlow)">SLN</text>
-
-    <text x="76" y="242" fill="#f1f5f9" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="6">AI OVERVIEW</text>
-
-    <rect x="78" y="263" width="64" height="3" rx="1.5" fill="url(#neon)">
-      <animate attributeName="width" values="40;100;64" dur="4s" repeatCount="indefinite"/>
-    </rect>
-
-    <text x="78" y="298" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1.1">
-      UNDERSTAND THE MACHINE.
-    </text>
-    <text x="78" y="320" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1.1">
-      QUESTION THE OUTPUT. SHAPE THE FUTURE.
-    </text>
-
-    <!-- Animated status indicator -->
-    <circle cx="82" cy="355" r="4" fill="#34d399">
-      <animate attributeName="opacity" values="1;.25;1" dur="1.5s" repeatCount="indefinite"/>
-    </circle>
-    <text x="96" y="359" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="2">LEARN  /  ANALYZE  /  CREATE</text>
-
-    <text x="1120" y="185" fill="#94a3b8" font-family="monospace" font-size="10" letter-spacing="2" text-anchor="middle" transform="rotate(90 1120 185)">HUMAN INTELLIGENCE × AI</text>
-
-    <path d="M690 0L590 400" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
-    <path d="M710 0L610 400" stroke="#8b5cf6" stroke-opacity=".12" stroke-width="1"/>
-
-    <rect x="1" y="1" width="1198" height="398" rx="21" fill="none" stroke="url(#neon)" stroke-opacity=".65"/>
-  </g>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#080817"/><stop offset="1" stop-color="#102744"/></linearGradient>
+<linearGradient id="neon"><stop stop-color="#8b5cf6"><animate attributeName="stop-color" values="#8b5cf6;#22d3ee;#c084fc;#8b5cf6" dur="5s" repeatCount="indefinite"/></stop><stop offset="1" stop-color="#22d3ee"><animate attributeName="stop-color" values="#22d3ee;#c084fc;#8b5cf6;#22d3ee" dur="5s" repeatCount="indefinite"/></stop></linearGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#8b9cff" stroke-opacity=".12"/></pattern>
+</defs>
+<rect width="1200" height="400" rx="20" fill="url(#bg)"/>
+<rect width="1200" height="400" fill="url(#grid)"/>
+<circle cx="920" cy="190" r="170" fill="#7138db" opacity=".13"><animate attributeName="r" values="140;185;140" dur="5s" repeatCount="indefinite"/></circle>
+<path d="M0 100V20Q0 0 20 0H170M1030 400H1180Q1200 400 1200 380V300" fill="none" stroke="url(#neon)" stroke-width="2"/>
+<g transform="translate(920 190)">
+<circle r="110" fill="none" stroke="#8b5cf6" stroke-opacity=".3"/>
+<ellipse rx="105" ry="43" fill="none" stroke="url(#neon)" stroke-width="3"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/></ellipse>
+<ellipse rx="105" ry="43" fill="none" stroke="#22d3ee" stroke-opacity=".8" stroke-width="2"><animateTransform attributeName="transform" type="rotate" from="70" to="-290" dur="16s" repeatCount="indefinite"/></ellipse>
+<circle r="46" fill="#10132f" stroke="url(#neon)" stroke-width="3"><animate attributeName="r" values="42;48;42" dur="3s" repeatCount="indefinite"/></circle>
+<path d="M-20 -12L0 -23L20 -12V12L0 23L-20 12Z M-20 -12L0 0L20 -12 M0 0V23 M-20 12L0 0L20 12" fill="none" stroke="#67e8f9" stroke-width="2"/>
+<circle cx="0" cy="-44" r="4" fill="#fff"><animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/></circle>
+</g>
+<text x="76" y="75" fill="#a5b4fc" font-family="monospace" font-size="13" letter-spacing="4">ARTIFICIAL INTELLIGENCE / TEAM PROJECT</text>
+<text x="70" y="207" fill="#8b5cf6" opacity=".35" font-family="Arial,sans-serif" font-size="120" font-weight="900">SLN</text>
+<text x="65" y="200" fill="url(#neon)" font-family="Arial,sans-serif" font-size="120" font-weight="900" letter-spacing="-5">SLN</text>
+<text x="75" y="244" fill="#fff" font-family="Arial,sans-serif" font-size="23" font-weight="bold" letter-spacing="6">AI OVERVIEW</text>
+<rect x="77" y="263" width="70" height="3" rx="2" fill="url(#neon)"><animate attributeName="width" values="40;120;40" dur="4s" repeatCount="indefinite"/></rect>
+<text x="77" y="299" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="14" letter-spacing="1">UNDERSTAND THE MACHINE.</text>
+<text x="77" y="322" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="14" letter-spacing="1">QUESTION THE OUTPUT. SHAPE THE FUTURE.</text>
+<circle cx="81" cy="355" r="4" fill="#34d399"><animate attributeName="opacity" values="1;.2;1" dur="1.5s" repeatCount="indefinite"/></circle>
+<text x="96" y="359" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="2">LEARN / ANALYZE / CREATE</text>
+<text x="1120" y="190" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="middle" transform="rotate(90 1120 190)">HUMAN INTELLIGENCE × AI</text>
+<rect x="1" y="1" width="1198" height="398" rx="20" fill="none" stroke="url(#neon)" stroke-opacity=".7"/>
 </svg>
-```
