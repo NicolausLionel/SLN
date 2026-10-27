@@ -163,8 +163,3 @@ Identified academic and technical references for Topics 4 and 5. Learned how AI 
 
 ---
 
-## Overall Reflection
-
-Throughout the AI Overview project, team members used ChatGPT, Claude, and Qwen to support research, project planning, teamwork, document organization, and content development.
-
-These interactions demonstrated that AI can improve efficiency and help organize information. However, AI-generated content must be evaluated and verified. Team members remain responsible for checking sources, confirming accuracy, following assignment requirements, and making final decisions about the quality of their work.
