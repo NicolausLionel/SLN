@@ -9,14 +9,14 @@
 
 ## CONTENTS
 
-| No. | Topic 5: Ethical and Responsible Use of AI | |
+| No. | Topic 5: Ethical and Responsible Use of AI | 
 |:---:|---|:---:|
-| 01 | [Privacy and Data Protection](#01--privacy-and-data-protection) | |
-| 02 | [Fairness and Bias](#02--fairness-and-bias) | |
-| 03 | [Transparency and Accountability](#03--transparency-and-accountability) | |
-| 04 | [Academic Integrity](#04--academic-integrity) | |
-| 05 | [Human Judgment and Oversight](#05--human-judgment-and-oversight) | |
-| 06 | [Responsible AI Use and Verification of AI-Generated Content](#06--responsible-ai-use-and-verification-of-ai-generated-content) | |
+| 01 | [Privacy and Data Protection](#01--privacy-and-data-protection) | 
+| 02 | [Fairness and Bias](#02--fairness-and-bias) | 
+| 03 | [Transparency and Accountability](#03--transparency-and-accountability) | 
+| 04 | [Academic Integrity](#04--academic-integrity) | 
+| 05 | [Human Judgment and Oversight](#05--human-judgment-and-oversight) | 
+| 06 | [Responsible AI Use and Verification of AI-Generated Content](#06--responsible-ai-use-and-verification-of-ai-generated-content) | 
 
 ---
 
