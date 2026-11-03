@@ -1,9 +1,3 @@
-
----
-
-## TOPIC 05 — ETHICAL AND RESPONSIBLE USE OF AI
-
-```markdown
 # TOPIC 05 — ETHICAL AND RESPONSIBLE USE OF AI
 
 <p align="center">
