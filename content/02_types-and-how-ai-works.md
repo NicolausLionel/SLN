@@ -14,8 +14,8 @@
 | 01 | [Types of AI Based on Capabilities](#01--types-of-ai-based-on-capabilities) |
 | 02 | [Introduction to Machine Learning and Deep Learning](#02--introduction-to-machine-learning-and-deep-learning) |
 | 03 | [Generative AI](#03--generative-ai) |
-| 04 | [The Roles of Data and Algorithms](#04--the-roles-of-data-and-sets of steps a computer follows) |
-| 05 | [How AI Processes Information and Generates Outputs](#05--how-ai-works with-information-and-creates-results) |
+| 04 | [The Roles of Data and Algorithms](#04--the-roles-of-data-and-algorithms) |
+| 05 | [How AI Processes Information and Generates Outputs](#05--how-ai-processes-information-and-generates-outputs) |
 
 ---
 
