@@ -1,5 +1,5 @@
 
-# TOPIC 05 — ETHICAL AND RESPONSIBLE USE OF AI
+# TOPIC 05 — ETHICAL AND RESPONSIBLE USE OF ARTIFICIAL INTELLIGENCE
 
 <p align="center">
   <strong>SLN · AI OVERVIEW</strong><br>
@@ -21,218 +21,131 @@
 
 # 01 · PRIVACY AND DATA PROTECTION
 
-## 1.1 Understanding AI Ethics
+## 1.1 Understanding Privacy in AI
 
-Artificial Intelligence is increasingly used to process information, support decisions, and generate content. As AI becomes more common, questions arise about how the technology should be designed and used.
+Privacy refers to an individual's ability to maintain appropriate control over personal information and how that information is collected, used, stored, and shared.
 
-AI ethics refers to the principles and values that guide the responsible development and use of AI systems.
+AI systems may process large amounts of information to perform tasks such as answering questions, recognizing patterns, generating recommendations, and analyzing data.
 
-Ethical AI use considers how technology affects individuals, communities, organizations, and society.
+Some information may be personal or confidential. Therefore, using AI requires careful consideration of what information is entered into a system.
 
-It involves more than asking whether an AI system can perform a task. It also requires considering whether the system should perform that task, how information is handled, who may be affected, and who is responsible for the result.
+For example, a student may use an AI assistant to summarize a school document. If the document contains private student records, uploading it to an external service without permission may create a privacy problem.
 
-Important ethical considerations include:
+Responsible AI use requires understanding the sensitivity of information before sharing it.
 
-- Privacy and data protection.
-- Fairness and non-discrimination.
-- Transparency.
-- Accountability.
-- Human judgment.
-- Safety and reliability.
-- Responsible use of generated information.
+## 1.2 What Is Personal Data?
 
-These principles help ensure that AI is used in ways that respect people's rights and support beneficial outcomes.
+Personal data is information that relates to an identifiable individual.
 
-## 1.2 What Is Privacy?
-
-Privacy refers to an individual's ability to maintain appropriate control over personal information and how it is collected, used, stored, and shared.
-
-Personal information may include:
+Examples may include:
 
 - Full names.
-- Email addresses.
-- Phone numbers.
 - Home addresses.
+- Telephone numbers.
+- Email addresses.
 - Identification details.
+- Financial account information.
 - Personal photographs.
-- Financial information.
-- Educational records.
+- Private messages.
 - Location information.
-- Health-related information.
 
-Some information may seem ordinary when considered separately but can become sensitive when combined with other details.
+The sensitivity of information depends on its nature and the circumstances in which it is used.
 
-For example, a name combined with an address and school information may reveal more about a person than intended.
+Some information may seem harmless when considered separately but may become identifying when combined with other details.
 
-AI systems may process personal information when users submit prompts, upload documents, provide images, or interact with connected services.
+## 1.3 How AI Systems May Process Data
 
-Users should therefore understand what information they are sharing and whether it is necessary for the task.
+AI applications may process user inputs, uploaded documents, images, audio, and other information.
 
-## 1.3 Why Privacy Matters in AI
-
-Privacy is important because AI systems may process large amounts of information.
-
-Depending on the service and its settings, information may be stored, reviewed, processed, or used according to the provider's policies.
-
-If personal information is handled carelessly, individuals may face risks such as unwanted disclosure, misuse, unauthorized access, or loss of control over their information.
-
-Privacy protection is especially important when AI is used in:
-
-- Education.
-- Healthcare.
-- Banking and finance.
-- Employment.
-- Government services.
-- Communication platforms.
-- Personal digital assistants.
-
-For example, a student may upload a document containing personal details without realizing that the document includes information that is not needed for the task.
-
-A safer approach is to remove unnecessary personal information before using an AI tool.
-
-## 1.4 Types of Data Used by AI Systems
-
-AI systems may process different types of data.
+The exact handling of data depends on the application, its settings, and its privacy policy.
 
 | Data Type | Example | Privacy Consideration |
 |---|---|---|
-| Personal data | Name or email address | May identify an individual |
-| Location data | Current or previous location | May reveal movement patterns |
-| Educational data | Grades or learning records | May reveal academic performance |
-| Financial data | Transaction information | May contain sensitive financial details |
-| Health data | Medical records | Requires particularly careful handling |
-| Biometric data | Facial or voice information | May be linked to personal identity |
-| Communication data | Messages and conversations | May contain private information |
+| Text | Questions and messages | May contain personal details |
+| Documents | Reports and assignments | May include confidential information |
+| Images | Uploaded photographs | May reveal identities or private surroundings |
+| Audio | Voice recordings | May contain identifiable speech |
+| Location | Location-related information | May reveal movement patterns |
+| Account information | User profile details | Requires appropriate protection |
 
-The level of protection required depends on the type of information and the applicable rules.
+Users should understand how the specific service handles submitted information.
 
-## 1.5 Data Collection and Consent
+## 1.4 Data Collection and Data Usage
 
-Data collection refers to obtaining information for a particular purpose.
+Data collection refers to obtaining information from users or other sources.
 
-Consent means that a person gives permission for information to be collected or used under appropriate conditions.
+Data usage refers to how that information is processed or applied.
 
-Ethical data practices should explain:
+AI applications may use information to provide requested features, improve services, or perform other activities described in their terms and privacy settings.
 
-- What information is being collected.
-- Why the information is needed.
-- How it will be used.
-- Whether it will be shared.
-- How long it may be retained.
-- What choices are available to the individual.
+Users should not assume that every AI service handles information in the same way.
 
-People should not be encouraged to share personal information without understanding the purpose and relevant conditions.
+Before using an application, it is important to examine its privacy information and available controls.
 
-Organizations should also avoid collecting information that is unnecessary for the intended task.
+## 1.5 Risks of Sharing Sensitive Information
 
-## 1.6 Data Minimization
+Sharing unnecessary personal information can create privacy and security risks.
 
-Data minimization is the practice of collecting or sharing only the information needed for a specific purpose.
+Examples include:
 
-This principle can reduce unnecessary exposure of personal information.
+| Information Shared | Potential Concern |
+|---|---|
+| Home address | Exposure of private location |
+| Passwords | Unauthorized account access |
+| Financial details | Financial privacy risks |
+| Private documents | Unintended disclosure |
+| Personal photographs | Misuse or unwanted distribution |
+| Confidential workplace information | Organizational data exposure |
 
-For example, if a user wants an AI tool to improve the grammar of a paragraph, the system usually does not need the user's full name, home address, or identification number.
+Users should avoid entering passwords, private access codes, and other highly sensitive information into general-purpose AI tools.
 
-The user can provide only the paragraph that requires editing.
+## 1.6 Data Protection Principles
 
-Other examples include:
+Responsible data protection involves several important principles.
 
-- Removing names from sample documents.
-- Hiding account numbers in screenshots.
-- Using general descriptions instead of personal details.
-- Avoiding unnecessary uploads.
-- Sharing only the relevant section of a document.
-
-Data minimization is a practical way to reduce privacy risks.
+| Principle | Meaning | Practical Application |
+|---|---|---|
+| Data minimization | Collect only necessary information | Avoid unnecessary personal details |
+| Purpose limitation | Use data for an appropriate purpose | Understand why information is requested |
+| Security | Protect information against unauthorized access | Use suitable security controls |
+| Transparency | Explain relevant data practices | Provide understandable privacy information |
+| Retention control | Avoid keeping data longer than necessary | Apply suitable retention policies |
+| User rights | Respect applicable rights over personal data | Provide appropriate privacy controls |
 
 ## 1.7 Protecting Personal Information When Using AI
 
-Users can follow several practices to protect their information.
+Users can protect privacy by following several practices:
 
-**Avoid unnecessary personal details.** Do not include private information when it is not needed.
+1. Avoid submitting unnecessary personal information.
+2. Do not share passwords or private access credentials.
+3. Remove identifying details from documents when possible.
+4. Check the privacy settings of the application.
+5. Use approved services for confidential work.
+6. Follow school or organizational data policies.
+7. Ask for permission before uploading information belonging to other people.
 
-**Review uploaded files.** Check documents and images before sharing them with an AI service.
+## 1.8 Privacy in Educational and Workplace Settings
 
-**Understand privacy settings.** Read the service's privacy information and available data controls.
+Privacy is particularly important in environments where information about students, employees, customers, or patients is involved.
 
-**Use trusted services.** Choose tools with clear policies and appropriate security practices.
+For example, a teacher should consider whether a digital tool is approved before entering student information.
 
-**Be careful with sensitive information.** Avoid entering confidential details into tools unless their use is authorized and suitable.
+Similarly, employees should not upload confidential company documents to external AI services without authorization.
 
-**Check sharing permissions.** Make sure that documents or generated content are not publicly accessible unintentionally.
+> **Core Insight:** AI can be useful only when information is handled responsibly. Protecting privacy means understanding what data is shared, why it is needed, and how the application may process it.
 
-These practices do not guarantee complete privacy, but they help reduce unnecessary exposure.
+## 1.9 Example: Responsible Data Sharing
 
-## 1.8 Data Security and AI
-
-Data security refers to protecting information against unauthorized access, alteration, loss, or disclosure.
-
-AI systems and the organizations operating them should use suitable security practices.
-
-Examples of security measures may include:
-
-- Access controls.
-- Encryption.
-- Secure storage.
-- Authentication.
-- Monitoring.
-- Regular security updates.
-- Appropriate data retention policies.
-
-Security is important because AI systems may be connected to databases, applications, and other digital services.
-
-If an organization does not protect these systems properly, information may become vulnerable.
-
-## 1.9 Privacy Risks in AI Applications
-
-Different AI applications may create different privacy concerns.
-
-### Education
-
-Learning platforms may process student information, assignment records, and performance data.
-
-Schools should consider whether the information is necessary and how access is controlled.
-
-### Healthcare
-
-Healthcare-related AI may process sensitive medical information.
-
-Such systems require strong privacy protections and appropriate professional oversight.
-
-### Business
-
-Customer-service and business systems may process contact details, purchasing records, and communication histories.
-
-Organizations should ensure that information is handled according to relevant policies.
-
-### Social Media
-
-Recommendation systems may use activity and interaction data to personalize content.
-
-Users should understand available privacy controls and how their information may be used.
-
-## 1.10 Responsible Handling of Uploaded Information
-
-Before uploading a document or image to an AI tool, users should ask:
-
-1. Does the file contain personal information?
-2. Is all of the information necessary?
-3. Am I allowed to share this information?
-4. Do I understand the service's relevant privacy conditions?
-5. Can I remove unnecessary details?
-6. Is the selected AI tool appropriate for this material?
-
-This simple review can prevent many avoidable privacy problems.
-
-## 1.11 Privacy as a Shared Responsibility
-
-Privacy protection is not only the responsibility of AI developers.
-
-Users should make careful choices about what they share. Organizations should establish suitable policies. Developers should design systems with privacy protections.
-
-Responsible AI requires cooperation between these groups.
-
-> **Core Insight:** Protecting privacy means understanding what information is shared, why it is needed, and how it may be handled. Users should share only what is necessary and appropriate.
+```mermaid
+flowchart TD
+    A[User Wants to Use an AI Tool] --> B[Information Is Reviewed]
+    B --> C{Does It Contain Sensitive Data?}
+    C -->|Yes| D[Remove or Protect Unnecessary Details]
+    C -->|No| E[Check Tool Suitability]
+    D --> E
+    E --> F[Review Privacy Settings]
+    F --> G[Submit Only Necessary Information]
+```
 
 ---
 
@@ -240,333 +153,225 @@ Responsible AI requires cooperation between these groups.
 
 ## 2.1 Understanding Fairness in AI
 
-Fairness refers to treating people appropriately and avoiding unjustified discrimination or disadvantage.
+Fairness in AI refers to the principle that AI systems should avoid unjustified discrimination and should be evaluated for unequal effects on different individuals or groups.
 
-In AI, fairness means evaluating whether a system produces acceptable outcomes for different individuals and groups.
+AI systems can influence decisions in areas such as education, employment, financial services, and access to information.
 
-AI systems may influence recommendations, classifications, rankings, predictions, and decisions.
+If a system produces systematically unfair outcomes, it may disadvantage certain people.
 
-If a system consistently disadvantages certain groups, its use may create unfair outcomes.
+Fairness is therefore an important ethical consideration in the development and use of AI.
 
-For example, an AI-supported recruitment system may evaluate applicants using historical employment data. If that data reflects unequal opportunities, the system may reproduce those patterns.
+## 2.2 Understanding AI Bias
 
-Fairness is therefore an important part of responsible AI development.
+AI bias occurs when an AI system produces systematically unbalanced or unfair results.
 
-## 2.2 What Is Bias in AI?
+Bias may originate from training data, data collection methods, model design, evaluation procedures, or the environment in which a system is used.
 
-Bias occurs when an AI system produces systematic patterns that favor or disadvantage particular groups, characteristics, or situations.
+For example, a system trained using information that does not adequately represent a population may perform less accurately for underrepresented individuals.
 
-Bias may result from:
+## 2.3 Sources of Bias
 
-- Historical data.
-- Unrepresentative training datasets.
-- Inaccurate labels.
-- Design assumptions.
-- Measurement methods.
-- Unequal data collection.
-- Inappropriate evaluation methods.
-
-Bias may be intentional or unintentional.
-
-Even when developers do not intend to create unfair outcomes, their choices and the available data may still influence system behavior.
-
-## 2.3 How Bias Enters AI Systems
-
-Bias can enter an AI system at different stages.
-
-### A. Data Collection
-
-If data is collected from only a limited group or environment, the system may not represent the wider population.
-
-### B. Data Labeling
-
-Human decisions during labeling may contain assumptions or inconsistencies.
-
-### C. Model Development
-
-Developers choose objectives, features, and methods that influence how a system behaves.
-
-### D. Testing and Evaluation
-
-A system may appear accurate overall while performing poorly for certain groups.
-
-### E. Deployment
-
-The environment in which an AI system is used may differ from the conditions represented in its training data.
-
-### F. Ongoing Use
-
-Changes in users, behavior, and circumstances may affect performance over time.
-
-## 2.4 Examples of Unfair AI Outcomes
-
-| Application | Possible Problem | Ethical Concern |
+| Source | Explanation | Example |
 |---|---|---|
-| Recruitment | Some applicants receive systematically lower scores | Unequal employment opportunities |
-| Education | Recommendations do not suit certain learners | Unequal learning support |
-| Language systems | Some dialects are interpreted less accurately | Unequal communication quality |
-| Image recognition | Performance varies across demographic groups | Unequal system reliability |
-| Financial services | Predictions reflect historical inequalities | Unfair access to services |
+| Historical bias | Existing inequalities appear in historical data | Past decisions influence future predictions |
+| Representation bias | Some groups are insufficiently represented | Limited diversity in training examples |
+| Measurement bias | Data is collected inconsistently | Different groups are measured differently |
+| Labeling bias | Human judgments affect training labels | Subjective categories |
+| Algorithmic bias | Design choices create unequal outcomes | Inappropriate optimization criteria |
+| Deployment bias | Real-world use differs from intended conditions | A system is used outside its tested environment |
 
-These examples show why AI systems should be tested in the situations where they will actually be used.
+## 2.4 Examples of Fairness Concerns
 
-## 2.5 Fairness Does Not Always Mean Identical Treatment
+### Education
 
-Treating everyone identically does not always produce fair outcomes.
+An AI assessment system may produce different levels of accuracy for students with different language backgrounds.
 
-Different users may have different needs, circumstances, and levels of access.
+If the system is not evaluated properly, some students may receive less accurate feedback.
 
-For example, an educational platform may need accessibility features to support students with different learning requirements.
+### Employment
 
-Fairness may require considering these differences rather than assuming that one approach works equally well for everyone.
+An AI recruitment system may learn patterns from historical hiring decisions.
 
-However, decisions about fairness should be based on appropriate evidence, relevant rules, and the purpose of the system.
+If those decisions contain unfair patterns, the system may reproduce them.
 
-## 2.6 Representation in Training Data
+### Financial Services
 
-Representation refers to whether a dataset adequately includes the groups, environments, and conditions that an AI system is expected to encounter.
+An automated financial system may use variables that produce unequal effects across groups.
 
-A dataset with limited representation may cause uneven performance.
+Organizations should evaluate whether the system's decisions are appropriate and fair.
 
-For example, a speech-recognition system trained primarily on one accent may perform less accurately for speakers with other accents.
+### Recommendation Systems
 
-Similarly, an image-recognition system trained using a narrow range of lighting and environments may struggle under different conditions.
+Recommendation systems may repeatedly display similar content because they are based on previous interactions.
 
-Improving representation can help, but it must be combined with suitable data quality and evaluation.
+This may reduce exposure to different perspectives and content categories.
 
-## 2.7 Evaluating Fairness
+## 2.5 Why Fairness Is Difficult to Measure
 
-Fairness evaluation examines whether an AI system performs appropriately across relevant groups and conditions.
+Fairness is not always represented by a single measurement.
 
-Organizations may examine:
+Different systems may require different fairness criteria depending on their purpose, users, and potential consequences.
 
-- Accuracy across different groups.
-- Error rates.
-- False positive and false negative rates.
-- Differences in access.
-- Differences in recommendations.
-- The consequences of incorrect decisions.
+For example, an educational recommendation system may be evaluated differently from a system used to support financial decisions.
 
-A system should not be evaluated only by its overall accuracy if that number hides important differences.
+Organizations should identify relevant risks and evaluate outcomes across appropriate groups.
 
-Fairness is also context-dependent. The appropriate evaluation method depends on the purpose, users, and possible consequences of the system.
+## 2.6 Promoting Fairness in AI Systems
 
-## 2.8 Reducing Bias and Improving Fairness
+Fairness can be supported through several practices:
 
-Organizations can reduce bias through several actions:
+- Using relevant and representative data.
+- Examining data collection methods.
+- Testing system performance across different groups.
+- Reviewing possible discriminatory outcomes.
+- Documenting known limitations.
+- Providing human review and appeal procedures.
+- Monitoring performance after deployment.
 
-1. Review the origin of training data.
-2. Improve representation where appropriate.
-3. Examine data labels and measurement methods.
-4. Test performance across relevant groups.
-5. Include diverse expertise in development.
-6. Review outcomes after deployment.
-7. Provide ways to report unfair results.
-8. Correct problems when they are identified.
+| Fairness Practice | Purpose |
+|---|---|
+| Data review | Identifies gaps and imbalances |
+| Diverse testing | Examines performance across groups |
+| Bias evaluation | Detects unequal outcomes |
+| Documentation | Records limitations and assumptions |
+| Human review | Allows contextual examination |
+| Continuous monitoring | Identifies problems after deployment |
 
-These practices require ongoing attention.
+## 2.7 Fairness and Human Responsibility
 
-## 2.9 Human Review and Fair Outcomes
+AI developers and organizations should not assume that a system is fair simply because it uses mathematical models.
 
-Human review is important when AI systems influence decisions that affect people.
+Fairness requires deliberate evaluation, suitable safeguards, and ongoing responsibility.
 
-A human reviewer can consider circumstances that may not be represented in the data.
+Users should also question recommendations that appear unreasonable or discriminatory.
 
-For example, an AI-supported system may classify an application as unsuitable based on available information. A human reviewer may identify missing details or circumstances that require additional consideration.
+> **Core Insight:** AI fairness must be evaluated rather than assumed. Data, system design, and real-world use can all influence whether an AI application treats people appropriately.
 
-Human review should be meaningful rather than simply approving every automated result.
+## 2.8 Example: Fairness Evaluation
 
-Reviewers need sufficient information, authority, and time to question an AI recommendation.
-
-## 2.10 Fairness and Social Responsibility
-
-AI systems operate within society and may influence access to opportunities, services, and information.
-
-Organizations should consider whether their systems could reinforce existing inequalities.
-
-Responsible development involves examining not only whether a system functions correctly but also who benefits, who may be disadvantaged, and what can be done to reduce unfair effects.
-
-> **Core Insight:** AI is not automatically fair or objective. Fairness requires representative data, careful evaluation, human review, and continuous improvement.
+```mermaid
+flowchart TD
+    A[AI System Is Developed] --> B[Data Is Reviewed]
+    B --> C[System Is Tested]
+    C --> D[Results Are Compared Across Groups]
+    D --> E{Are Unequal Outcomes Identified?}
+    E -->|Yes| F[Investigate and Improve the System]
+    E -->|No| G[Continue Monitoring]
+    F --> G
+```
 
 ---
 
 # 03 · TRANSPARENCY AND ACCOUNTABILITY
 
-## 3.1 Understanding Transparency in AI
+## 3.1 Understanding Transparency
 
-Transparency refers to providing understandable information about how an AI system is used, what it is intended to do, and what limitations it may have.
+Transparency refers to making relevant information about an AI system understandable to the people who use, manage, or are affected by it.
 
-Transparency helps users understand the role of AI in a process.
+Users should be able to understand important aspects of an AI system, such as:
 
-For example, an organization using an AI system to assist with customer service should make it clear when users are interacting with an automated system rather than a human representative.
+- Its intended purpose.
+- The type of task it performs.
+- Its major limitations.
+- Whether it generates or analyzes information.
+- Whether human review is involved.
+- Relevant risks associated with its use.
 
-Transparency is important because people should not be misled about how decisions or content are produced.
+Transparency does not necessarily mean revealing every technical detail. It means providing information that helps people understand the system and make informed decisions.
 
 ## 3.2 Why Transparency Matters
 
-Without transparency, users may not understand:
+Transparency helps users evaluate whether an AI system is appropriate for a particular task.
 
-- Whether AI is being used.
-- What the system is designed to do.
-- What information it processes.
-- What its limitations are.
-- Whether a human reviews its output.
-- How to report a problem.
-- Who is responsible for the result.
+For example, a student should know whether an answer comes from an AI-generated explanation or from an independently verified educational source.
 
-Clear information can help users make informed decisions about whether to trust or use an AI service.
+A customer should also be informed when interacting with an automated service rather than a human representative, where that distinction is relevant.
 
-## 3.3 Explaining AI Capabilities and Limitations
-
-AI providers and organizations should communicate what their systems can and cannot do.
-
-For example, a generative AI tool may be able to produce summaries and explanations, but it may also generate inaccurate information.
-
-A transparent explanation should not present the system as completely reliable.
-
-Users should understand that:
-
-- Outputs may contain errors.
-- Results depend on available information.
-- Performance may vary by task.
-- Some decisions require human judgment.
-- Important information should be verified.
-
-This helps prevent unrealistic expectations.
-
-## 3.4 Explainability
-
-Explainability refers to the ability to provide understandable reasons or explanations about an AI system's outputs or behavior.
-
-Some AI systems are easier to explain than others.
-
-For example, a simple rule-based system may provide a direct explanation because it follows clearly defined rules.
-
-A complex machine-learning model may be more difficult to interpret because its behavior depends on many learned relationships.
-
-Explainability is important when users need to understand why a system produced a particular result.
-
-In high-impact settings, explanations can help people question decisions, identify errors, and determine whether further review is needed.
-
-## 3.5 Transparency in AI-Generated Content
-
-AI-generated content should be presented honestly.
-
-If a person uses AI to create text, images, or other materials, they should follow relevant disclosure requirements.
-
-For example:
-
-- A school may require students to disclose AI assistance.
-- A workplace may require employees to identify AI-generated material in reports.
-- A publisher may have rules about AI-assisted content.
-- An organization may need to inform customers when they are interacting with an AI system.
-
-Disclosure requirements vary depending on the institution, service, and context.
-
-The important principle is that users should not misrepresent how content or decisions were produced.
-
-## 3.6 Understanding Accountability
-
-Accountability means being responsible for actions, decisions, and their consequences.
-
-In AI, accountability concerns who is responsible when a system produces an incorrect, harmful, or unfair result.
-
-AI systems do not remove human or organizational responsibility.
-
-Developers are responsible for appropriate system design and testing. Organizations are responsible for how systems are implemented. Users are responsible for how they apply generated information within their roles.
-
-The exact responsibilities depend on the situation and applicable rules.
-
-## 3.7 Who Is Responsible for AI Outcomes?
-
-Responsibility may be shared among several groups.
-
-| Group | Main Responsibility |
+| Transparency Area | Important Information |
 |---|---|
-| Developers | Design, test, and improve AI systems |
-| Organizations | Select, manage, and monitor AI applications |
-| Users | Apply AI outputs carefully and follow relevant rules |
-| Human reviewers | Examine important outputs and decisions |
-| Institutions | Establish appropriate policies and procedures |
+| System purpose | What the AI is designed to do |
+| Capabilities | What tasks it can perform |
+| Limitations | What it may not handle accurately |
+| Data use | Relevant information about data processing |
+| Automated decisions | Whether AI contributes to decisions |
+| Human involvement | Whether people review important outputs |
 
-Shared responsibility does not mean that no one is accountable. Each group should understand its role.
+## 3.3 Understanding Explainability
 
-## 3.8 Accountability in Decision-Making
+Explainability refers to the ability to provide understandable information about how an AI system reaches or supports a result.
 
-When AI supports a decision, organizations should identify who has authority to review and approve the result.
+Some AI systems are relatively simple to explain, while others use complex models that are difficult to interpret.
 
-For example, if an AI system assists with evaluating applications, an organization should establish whether the result is advisory or whether it influences an automated process.
+For example, a basic classification system may provide a clear explanation of the features used to categorize information.
 
-It should also provide appropriate ways to examine errors or challenge decisions.
+A complex model may require additional methods to help people understand its behavior.
 
-A process should not rely on the statement that "the computer decided" as a complete explanation of responsibility.
+Explainability is important when AI outputs influence significant decisions.
 
-## 3.9 Documentation and Record-Keeping
+## 3.4 The Importance of Clear Communication
 
-Documentation helps organizations understand how AI systems are developed and used.
+Organizations should communicate AI capabilities and limitations in language that users can understand.
 
-Useful documentation may include:
+Technical descriptions alone may not be sufficient.
 
-- The system's intended purpose.
-- The types of data used.
-- Known limitations.
-- Testing results.
-- Human review procedures.
-- Changes made to the system.
-- Procedures for reporting problems.
+For example, saying that a system uses a machine learning model does not explain whether its predictions are reliable or what users should do when the system makes a mistake.
 
-Record-keeping can support evaluation, investigation, and improvement.
+Clear communication should explain the practical meaning of system limitations.
 
-It can also help organizations identify whether a system is being used outside its intended purpose.
+## 3.5 Understanding Accountability
 
-## 3.10 Transparency and Accountability Together
+Accountability means that people and organizations remain responsible for the development, deployment, supervision, and use of AI systems.
 
-Transparency and accountability are closely related.
+An organization should not avoid responsibility by claiming that an AI system independently produced an outcome.
 
-Transparency helps people understand how AI is being used. Accountability establishes who is responsible for the system and its outcomes.
+People must establish procedures for evaluating outputs, responding to errors, and addressing harmful consequences.
+
+## 3.6 Responsibilities of Different Stakeholders
+
+| Stakeholder | Main Responsibility |
+|---|---|
+| Developers | Design, test, and document systems responsibly |
+| Organizations | Establish policies and supervise deployment |
+| Operators | Use systems appropriately and monitor outputs |
+| Users | Evaluate outputs before relying on them |
+| Educators | Explain appropriate academic AI use |
+| Decision-makers | Remain responsible for important decisions |
+
+## 3.7 Accountability When AI Makes Mistakes
+
+AI systems may produce incorrect or inappropriate outputs.
+
+Responsible organizations should establish procedures to:
+
+1. Identify the problem.
+2. Evaluate its possible consequences.
+3. Correct inaccurate information.
+4. Inform relevant people when appropriate.
+5. Review the cause of the problem.
+6. Improve the system or its procedures.
+7. Monitor whether the problem happens again.
+
+## 3.8 Transparency and Accountability in Practice
+
+For example, an organization using an AI chatbot should explain that customers are interacting with an automated system.
+
+It should also provide a way to contact a human employee when the chatbot cannot address a problem.
+
+This supports transparency because users understand the nature of the service. It supports accountability because the organization remains responsible for customer support.
+
+> **Core Insight:** Transparency helps people understand AI systems, while accountability ensures that humans and organizations remain responsible for their consequences.
+
+## 3.9 Example: Accountable AI Use
 
 ```mermaid
 flowchart TD
-    A["AI System Is Used"] --> B["Transparency"]
-    B --> C["Users Understand the System's Role"]
-    C --> D["Outputs and Decisions Can Be Reviewed"]
-    D --> E["Accountability"]
-    E --> F["Responsible People or Organizations Address Problems"]
-    F --> G["Correction and Improvement"]
+    A[AI System Produces an Output] --> B[Output Is Reviewed]
+    B --> C{Is the Output Appropriate?}
+    C -->|Yes| D[Use Within Approved Purpose]
+    C -->|No| E[Report and Investigate the Problem]
+    E --> F[Correct the Output or Process]
+    F --> G[Monitor Future Performance]
 ```
-
-A transparent system without accountability may explain its behavior but fail to address problems.
-
-An accountable process without transparency may make it difficult for people to understand what happened.
-
-Both principles are necessary for responsible AI use.
-
-## 3.11 Challenges in Achieving Transparency
-
-Transparency can be difficult when systems are technically complex or involve confidential information.
-
-Organizations may need to balance explanation, privacy, security, and intellectual property considerations.
-
-However, complexity should not be used as a reason to provide no meaningful information.
-
-Users should receive explanations that are appropriate for the system's purpose and the consequences of its use.
-
-## 3.12 Building Trust Through Transparency
-
-Trust should be based on reliable performance, clear communication, and responsible behavior.
-
-Organizations can support trust by:
-
-- Explaining when AI is used.
-- Communicating known limitations.
-- Providing meaningful explanations.
-- Establishing human review.
-- Making reporting processes available.
-- Correcting identified problems.
-
-Trust should not depend only on promotional claims or the appearance of advanced technology.
-
-> **Core Insight:** Transparency helps people understand AI, while accountability ensures that responsible people and organizations address its outcomes.
 
 ---
 
@@ -574,351 +379,222 @@ Trust should not depend only on promotional claims or the appearance of advanced
 
 ## 4.1 Understanding Academic Integrity
 
-Academic integrity refers to the principles of honesty, fairness, responsibility, and respect in learning and academic work.
+Academic integrity refers to the principles of honesty, fairness, responsibility, and respect in educational work.
 
-Students are expected to represent their knowledge and work honestly.
+Students are expected to represent their knowledge and contributions honestly.
 
-Academic integrity includes:
+AI tools can support learning, but their use must follow the rules established by teachers and educational institutions.
 
-- Completing work honestly.
-- Acknowledging sources.
-- Avoiding plagiarism.
-- Following assignment instructions.
-- Respecting examination rules.
-- Representing contributions accurately.
-- Taking responsibility for submitted work.
+The important distinction is between using AI to support understanding and presenting AI-generated work in a misleading way.
 
-AI tools create new opportunities for learning, but they also create questions about originality, authorship, and acceptable assistance.
+## 4.2 Appropriate Uses of AI in Education
 
-## 4.2 AI in Education
+AI can be useful when it supports learning activities without replacing the student's own effort.
 
-AI tools can support educational activities in several ways.
+Examples include:
 
-Students may use AI to:
+- Asking for explanations of difficult concepts.
+- Generating practice questions.
+- Receiving feedback on grammar.
+- Creating a study outline.
+- Exploring different ways to understand a topic.
+- Summarizing notes for revision.
+- Practicing a foreign language.
 
-- Explain difficult concepts.
-- Generate practice questions.
-- Organize study notes.
-- Check grammar.
-- Translate unfamiliar terms.
-- Suggest presentation structures.
-- Receive feedback on drafts.
+The student should still understand the material and complete the learning objectives.
 
-Teachers may use AI to support lesson preparation, generate practice materials, and organize educational resources.
+## 4.3 Inappropriate Academic Uses
 
-These applications can be useful when they support the learning process.
+Problems may occur when students use AI in ways that misrepresent their work.
 
-However, students and teachers must follow relevant institutional policies.
+Examples include:
 
-## 4.3 Appropriate and Inappropriate AI Use
+- Submitting generated work as entirely original when disclosure is required.
+- Copying answers without understanding them.
+- Inventing sources or citations.
+- Using AI during prohibited assessments.
+- Presenting fabricated information as research evidence.
+- Hiding AI involvement when institutional rules require disclosure.
 
-Whether AI use is acceptable depends on the purpose of the task and the rules established by the school or institution.
+The exact rules depend on the school, course, teacher, and assessment.
 
-| AI Use | Possible Academic Application |
+## 4.4 AI Assistance Versus Academic Misrepresentation
+
+| Situation | Academic Consideration |
 |---|---|
-| Asking for an explanation | Supports understanding |
+| Asking AI to explain a concept | Usually supports learning |
 | Generating practice questions | Supports revision |
-| Checking grammar | Helps improve writing |
-| Organizing study notes | Supports organization |
-| Creating an initial outline | Helps plan a task when permitted |
-| Submitting generated work as entirely original | May violate academic rules |
-| Inventing references | Misrepresents research |
-| Using AI during a restricted examination | May violate assessment rules |
+| Requesting grammar feedback | May support editing |
+| Copying a generated essay without permission | May violate academic rules |
+| Inventing references | Misrepresents evidence |
+| Using AI during a prohibited examination | Violates assessment requirements |
+| Disclosing AI assistance when required | Supports transparency |
 
-Students should never assume that every AI use is permitted.
+## 4.5 Maintaining Original Thinking
 
-## 4.4 Plagiarism and AI-Generated Content
+Students should use AI to explore ideas rather than automatically accept generated conclusions.
 
-Plagiarism involves presenting another person's work or ideas as one's own without appropriate acknowledgment.
+A useful learning process is to attempt a task independently, use AI to clarify difficult points, compare the explanation with learning materials, and then produce a final response based on personal understanding.
 
-AI-generated content creates additional questions about authorship and originality.
+This approach allows AI to provide assistance while preserving the student's responsibility for learning.
 
-Copying generated text without following relevant rules may misrepresent the student's contribution.
+## 4.6 Proper Acknowledgment of AI Use
 
-Even when AI-generated content is not copied from a specific source, submitting it without required disclosure may still violate institutional expectations.
+Some educational institutions require students to disclose the use of AI tools.
 
-Students should understand their institution's definition of acceptable AI assistance.
+The appropriate method may depend on the institution's academic rules.
 
-## 4.5 AI and Original Work
+Students should check whether disclosure is required and follow the instructions provided by their teachers.
 
-Original work demonstrates a student's own understanding, reasoning, and contribution.
+A disclosure should accurately describe the role of AI rather than exaggerate or hide its contribution.
 
-AI may help with preparation, but students should still engage with the subject.
+## 4.7 Checking AI-Generated Academic Content
 
-For example, a student preparing an essay may ask AI to explain a concept. The student should then examine the course materials, develop an argument, and write a response that reflects personal understanding.
+Students should verify:
 
-The purpose of education is not simply to produce a completed document. It is to develop knowledge and skills.
+- Definitions and explanations.
+- Historical facts and dates.
+- Mathematical calculations.
+- Scientific information.
+- References and citations.
+- Examples and quotations.
+- Alignment with assignment instructions.
 
-## 4.6 Acknowledging AI Assistance
+AI-generated citations should be checked directly because a system may produce references that do not exist.
 
-Some educational institutions require students to disclose AI assistance.
+## 4.8 Responsible Academic Workflow
 
-Disclosure may involve explaining:
+```mermaid
+flowchart TD
+    A[Student Receives an Assignment] --> B[Reads the Requirements]
+    B --> C[Develops Initial Ideas]
+    C --> D[Uses AI for Permitted Assistance]
+    D --> E[Checks and Understands the Information]
+    E --> F[Writes and Revises Personal Work]
+    F --> G[Discloses AI Use When Required]
+    G --> H[Submits Work According to Academic Rules]
+```
 
-- Which AI tool was used.
-- What it was used for.
-- Which parts of the work were assisted.
-- How the generated information was checked.
+## 4.9 The Role of Teachers and Institutions
 
-The exact format should follow institutional instructions.
+Teachers should provide clear expectations about acceptable AI use.
 
-Students should not invent disclosure statements or claim that a tool was used when it was not.
+Educational institutions may establish rules about AI assistance, disclosure, assessments, and academic misconduct.
 
-## 4.7 AI and Research References
+Clear guidance helps students understand the difference between appropriate learning support and unacceptable academic practices.
 
-AI systems may generate inaccurate or fabricated references.
-
-Students should verify every reference before including it in academic work.
-
-A reference should be checked against the original publication or an appropriate academic database.
-
-Students should confirm that:
-
-- The source exists.
-- The author is correct.
-- The publication details are accurate.
-- The source supports the claim.
-- The citation format follows the required style.
-
-A convincing-looking citation is not sufficient evidence that a source is real.
-
-## 4.8 Maintaining Learning Through AI Assistance
-
-AI can support learning when students use it actively.
-
-A useful process is:
-
-1. Read the lesson or assignment.
-2. Attempt to understand the task independently.
-3. Ask AI for clarification when needed.
-4. Compare the explanation with course materials.
-5. Complete the required work using personal understanding.
-6. Verify important information.
-7. Follow the institution's disclosure requirements.
-
-This approach helps students use technology without avoiding the learning process.
-
-## 4.9 Teachers and Institutional Responsibilities
-
-Schools and educational institutions should provide clear guidance about AI use.
-
-Students need to know:
-
-- Which tools are permitted.
-- Which activities allow AI assistance.
-- When disclosure is required.
-- What types of AI use are prohibited.
-- How generated information should be verified.
-- How academic work will be evaluated.
-
-Clear rules reduce confusion and help students make responsible choices.
-
-Teachers should also consider that students may have different levels of access to AI tools.
-
-Educational policies should address fairness, privacy, and the purpose of assessment.
-
-## 4.10 Academic Integrity in the Age of Generative AI
-
-Generative AI makes it easier to produce text, summaries, images, and other content.
-
-This creates opportunities for learning but also increases the importance of honesty and verification.
-
-Students should remember that using AI does not remove responsibility for the final submission.
-
-They should be able to explain their work, identify their sources, and demonstrate understanding.
-
-> **Core Insight:** AI can support education, but it should not replace honest academic effort. Students must follow institutional rules, verify information, and take responsibility for their work.
+> **Core Insight:** AI can support education, but it should not replace a student's own learning or be used to misrepresent academic contributions. Honesty and compliance with educational rules remain essential.
 
 ---
 
 # 05 · HUMAN JUDGMENT AND OVERSIGHT
 
-## 5.1 Why Human Judgment Remains Important
+## 5.1 Understanding Human Judgment
 
-AI systems can process information and produce recommendations, but they do not automatically understand every human situation.
+Human judgment refers to the ability to evaluate situations, consider different perspectives, interpret context, and make decisions using reasoning and experience.
 
-Human judgment involves considering evidence, context, values, consequences, and responsibilities before making a decision.
+AI can process information and provide recommendations, but many decisions require more than identifying patterns.
 
-People may recognize circumstances that are not included in an AI system's input.
+People may need to consider ethical values, social circumstances, personal needs, and possible consequences.
 
-For this reason, human involvement remains important when AI is used in situations that affect individuals or organizations.
+These factors make human judgment important when using AI.
 
-## 5.2 What Is Human Oversight?
+## 5.2 Why Human Oversight Is Necessary
 
-Human oversight refers to the process of monitoring, reviewing, and controlling AI systems through appropriate human involvement.
+Human oversight means that people monitor, evaluate, and supervise AI systems.
 
-It helps ensure that AI systems are used within their intended purpose and that important decisions can be examined.
+Oversight helps identify errors, review unusual situations, and ensure that automated outputs are used appropriately.
 
-Human oversight may include:
+For example, an AI system may recommend a particular action based on available data. A human decision-maker should evaluate whether the recommendation is suitable in the actual situation.
 
-- Reviewing AI-generated recommendations.
-- Checking important information.
-- Monitoring system performance.
-- Identifying errors.
-- Correcting unsuitable outputs.
-- Stopping an AI-supported process when necessary.
-- Taking responsibility for decisions.
+## 5.3 Human Judgment and AI Capabilities
 
-The level of oversight should depend on the system and the possible consequences of errors.
+| AI Capability | Human Contribution |
+|---|---|
+| Processes large datasets | Interprets relevance and meaning |
+| Recognizes patterns | Evaluates whether patterns matter |
+| Generates recommendations | Considers ethical and practical consequences |
+| Summarizes information | Checks completeness and accuracy |
+| Automates routine activities | Handles unusual situations |
+| Predicts possible outcomes | Considers uncertainty and responsibility |
 
-## 5.3 Human Judgment and AI Recommendations
+AI and human judgment can complement one another.
 
-An AI recommendation is information produced by a system to suggest a possible action or decision.
+## 5.4 Situations Requiring Human Oversight
 
-Recommendations can be useful, but they should not automatically be treated as instructions.
+Human oversight is especially important when AI is used in areas involving:
 
-For example, an AI system may recommend a particular learning activity based on student performance data.
+- Healthcare.
+- Education assessment.
+- Employment decisions.
+- Financial services.
+- Public services.
+- Safety-related systems.
+- Legal or administrative processes.
 
-A teacher may review the recommendation and consider classroom circumstances before deciding whether it is suitable.
+These areas may involve significant consequences for individuals.
 
-Similarly, a business may use AI-generated forecasts but still consider market conditions and professional experience.
+Automated recommendations should not be treated as unquestionable decisions.
 
-Human judgment adds context that may not be available to the system.
+## 5.5 Human-in-the-Loop Approaches
 
-## 5.4 Human Oversight in Different Fields
+A human-in-the-loop approach involves human participation in an AI-supported process.
 
-### Education
+The system may analyze information and suggest an output, while a person reviews the result before an important action is taken.
 
-Teachers can review AI-generated learning recommendations and determine whether they match students' needs.
+For example, an automated document system may classify records, but an employee checks whether the classification is correct.
 
-### Healthcare
+| Stage | AI Role | Human Role |
+|---|---|---|
+| Information input | Processes data | Provides relevant information |
+| Analysis | Identifies patterns | Reviews assumptions |
+| Recommendation | Generates suggestions | Evaluates suitability |
+| Decision | Supports the process | Makes or approves the decision |
+| Monitoring | Produces performance information | Responds to problems |
 
-Qualified healthcare professionals must evaluate relevant clinical information and make decisions according to professional standards.
+## 5.6 Human Oversight and Accountability
 
-### Business
+Human oversight should be meaningful rather than purely formal.
 
-Managers can review AI-supported analysis before making organizational decisions.
+A person reviewing an AI recommendation should have sufficient information, authority, and time to question the result.
 
-### Transportation
+If people are expected to approve automated decisions without understanding them, oversight may become ineffective.
 
-Human operators and relevant authorities may need to monitor automated systems and respond to unusual conditions.
+Organizations should therefore establish clear responsibilities and suitable review procedures.
 
-### Public Services
+## 5.7 Risks of Removing Human Oversight
 
-Organizations should establish appropriate review procedures when AI influences access to services or important decisions.
+| Risk | Possible Consequence |
+|---|---|
+| Unchecked inaccuracies | Incorrect decisions |
+| Unrecognized bias | Unfair outcomes |
+| Missing context | Unsuitable recommendations |
+| System failure | Disrupted processes |
+| Unclear responsibility | Difficulty correcting problems |
+| Excessive automation | Reduced human control |
 
-## 5.5 Human-in-the-Loop Systems
+## 5.8 Balancing Automation and Human Control
 
-A human-in-the-loop system includes people as part of the decision or processing process.
+AI should be used where it provides appropriate support.
 
-The AI system may analyze information or produce a recommendation, but a person reviews or approves important actions.
+Routine tasks may be suitable for automation, while complex or high-impact decisions may require stronger human involvement.
 
-For example, an AI system may identify documents that require attention. A human employee then examines the documents and decides what action is appropriate.
+The correct balance depends on the purpose of the system and the possible consequences of mistakes.
+
+> **Core Insight:** AI can provide useful analysis and recommendations, but humans must retain appropriate judgment, control, and responsibility, especially when decisions affect people's rights, safety, or opportunities.
+
+## 5.9 Example: Human Oversight Process
 
 ```mermaid
 flowchart TD
-    A["Information Is Received"] --> B["AI Processes the Information"]
-    B --> C["AI Produces a Recommendation"]
-    C --> D["Human Reviews the Result"]
-    D --> E{"Is the Result Appropriate?"}
-    E -->|Yes| F["Proceed with the Approved Action"]
-    E -->|No| G["Correct or Reject the Recommendation"]
-    G --> H["Further Review"]
+    A[AI Receives Relevant Information] --> B[AI Analyzes the Information]
+    B --> C[AI Produces a Recommendation]
+    C --> D[Human Reviews the Recommendation]
+    D --> E{Is It Appropriate?}
+    E -->|Yes| F[Approve or Apply the Result]
+    E -->|No| G[Reject or Request Correction]
+    G --> H[Review the Situation Again]
 ```
-
-This approach can reduce the risk of relying on an incorrect automated result.
-
-However, human review is only effective when reviewers understand the task and have the authority to challenge the system.
-
-## 5.6 Human-on-the-Loop Systems
-
-In a human-on-the-loop arrangement, an AI system may operate with a degree of automation while people monitor its performance.
-
-Human supervisors may examine system activity, respond to problems, or intervene when necessary.
-
-This approach may be used when a system performs repeated tasks but still requires human monitoring.
-
-The exact level of human control depends on the application and its risks.
-
-## 5.7 Human-in-Command Principles
-
-Human-in-command emphasizes that people and responsible organizations should retain appropriate authority over how AI systems are used.
-
-This includes decisions about:
-
-- Whether AI should be used.
-- What tasks it may perform.
-- What limits should apply.
-- When human review is necessary.
-- When a system should be stopped or changed.
-
-The principle is especially important when AI systems affect important rights, opportunities, or services.
-
-## 5.8 Risks of Removing Human Oversight
-
-Removing appropriate human oversight may create several problems.
-
-### Unnoticed Errors
-
-An AI system may produce incorrect results that remain uncorrected.
-
-### Unfair Decisions
-
-A system may produce biased outcomes without meaningful review.
-
-### Loss of Accountability
-
-People may avoid responsibility by claiming that an automated system made the decision.
-
-### Inappropriate Automation
-
-A system may be used for tasks that require human understanding and judgment.
-
-### Unexpected Situations
-
-AI may perform poorly when circumstances differ from the information it was designed to handle.
-
-These risks demonstrate why oversight should be planned rather than added only after problems occur.
-
-## 5.9 Avoiding Blind Trust in AI
-
-Human reviewers can also make mistakes.
-
-A reviewer may accept an AI recommendation because it appears professional, is produced quickly, or comes from a system that is generally useful.
-
-This behavior can create automation bias.
-
-To reduce this risk, reviewers should:
-
-- Examine evidence.
-- Question unusual results.
-- Compare outputs with other information.
-- Understand system limitations.
-- Consider alternative explanations.
-- Record important decisions when appropriate.
-
-Human oversight should involve active evaluation rather than automatic approval.
-
-## 5.10 Responsibility for Final Decisions
-
-When AI supports a decision, people and organizations should understand who is responsible for approving and implementing the result.
-
-Responsibility should be clear before the system is used.
-
-For example, an organization should not allow an AI-generated recommendation to influence an important decision without defining who reviews it and how errors can be addressed.
-
-AI can support a decision-making process, but it does not remove the need for responsible decision-makers.
-
-## 5.11 Building Effective Oversight
-
-Effective oversight requires suitable processes.
-
-Organizations should:
-
-1. Define the system's purpose.
-2. Identify possible risks.
-3. Establish review responsibilities.
-4. Train relevant users.
-5. Monitor performance.
-6. Provide ways to report problems.
-7. Correct errors.
-8. Reassess the system when conditions change.
-
-Oversight should be appropriate to the importance of the task.
-
-A simple writing assistant may require less formal review than a system used to support high-impact decisions.
-
-> **Core Insight:** Human oversight ensures that AI recommendations are evaluated in context and that people remain responsible for important decisions.
 
 ---
 
@@ -926,268 +602,176 @@ A simple writing assistant may require less formal review than a system used to 
 
 ## 6.1 Understanding Responsible AI Use
 
-Responsible AI use means using artificial intelligence carefully, ethically, and appropriately.
+Responsible AI use means using artificial intelligence in ways that are appropriate, ethical, safe, and consistent with relevant rules and expectations.
 
-It involves understanding what an AI system can do, recognizing its limitations, protecting information, and evaluating the effects of its outputs.
+It involves considering not only what AI can do, but also how its outputs may affect individuals, organizations, and society.
 
-Responsible use applies to students, teachers, employees, organizations, developers, and everyday users.
+Responsible use requires users to understand system limitations, protect information, evaluate outputs, and maintain human responsibility.
 
-The goal is to benefit from AI while reducing unnecessary risks.
+## 6.2 Core Principles of Responsible AI Use
 
-## 6.2 Main Principles of Responsible AI Use
+| Principle | Explanation | Practical Example |
+|---|---|---|
+| Privacy | Protect personal information | Avoid uploading confidential records |
+| Fairness | Consider unequal outcomes | Question potentially discriminatory results |
+| Transparency | Understand AI involvement | Identify AI-generated content when relevant |
+| Accountability | Take responsibility for use | Review outputs before publication |
+| Safety | Consider possible harm | Avoid relying on unsuitable outputs |
+| Reliability | Check accuracy | Verify factual claims |
+| Human oversight | Preserve appropriate control | Review important recommendations |
 
-Responsible AI use includes several connected principles.
+## 6.3 Using AI for the Right Purpose
 
-| Principle | Explanation |
+Users should select AI tools according to the task.
+
+A tool designed for language translation may not be suitable for verifying financial information.
+
+A generative writing tool may help prepare a draft, but it should not automatically be treated as an authoritative source.
+
+Before using an AI application, users should consider:
+
+- What task needs to be completed?
+- Is AI appropriate for this task?
+- What information will be shared?
+- What are the system's limitations?
+- Does the task require expert review?
+- Are there rules governing AI use?
+
+## 6.4 Protecting Privacy
+
+Responsible AI use requires limiting the information shared with AI systems.
+
+Users should avoid entering unnecessary personal, confidential, or sensitive information.
+
+Organizations should also establish clear procedures for approved AI tools and data handling.
+
+## 6.5 Recognizing Bias and Limitations
+
+Users should recognize that AI outputs may reflect limitations in training data, system design, or the information provided.
+
+A response that appears neutral may still contain assumptions or unbalanced perspectives.
+
+Important recommendations should be evaluated for relevance, fairness, and evidence.
+
+## 6.6 Verifying AI-Generated Content
+
+Verification is one of the most important practices in responsible AI use.
+
+AI-generated information may contain factual errors, unsupported claims, inaccurate calculations, or fabricated references.
+
+Users should compare important information with reliable sources before relying on it.
+
+| Content Type | Verification Method |
 |---|---|
-| Privacy | Protect personal and confidential information |
-| Fairness | Avoid unjustified discrimination |
-| Transparency | Be clear about AI involvement |
-| Accountability | Take responsibility for actions and outcomes |
-| Human oversight | Review important AI outputs and decisions |
-| Accuracy | Check information before relying on it |
-| Appropriate use | Use AI for suitable purposes |
-| Security | Protect systems and information from unauthorized access |
+| Historical information | Check credible historical sources |
+| Scientific explanation | Compare with established educational material |
+| Statistics | Locate original data or reports |
+| Mathematical calculations | Recalculate independently |
+| Citations | Open and inspect the cited source |
+| Translations | Review meaning and context |
+| Technical instructions | Check authoritative documentation |
 
-These principles should guide both everyday use and organizational AI practices.
+## 6.7 Evaluating the Reliability of AI Outputs
 
-## 6.3 Using AI for Appropriate Purposes
+A useful verification process considers several dimensions.
 
-Not every task should be performed by AI.
+### Accuracy
 
-Users should consider whether the system is suitable for the intended activity.
+Does the information correctly describe the facts?
 
-AI may be useful for:
+### Relevance
 
-- Organizing information.
-- Explaining general concepts.
-- Generating initial ideas.
-- Summarizing suitable documents.
-- Supporting language tasks.
-- Creating practice questions.
-- Identifying patterns in data.
+Does the answer address the actual question?
 
-However, tasks involving sensitive personal information, high-impact decisions, or specialized professional judgment may require additional safeguards and qualified human involvement.
+### Completeness
 
-Users should follow relevant rules and policies before applying AI to these tasks.
+Does it include the important information needed for the task?
 
-## 6.4 Understanding AI Limitations Before Use
+### Context
 
-Responsible use begins with recognizing that AI systems can make mistakes.
+Does the response consider the relevant circumstances?
 
-Users should understand that:
+### Evidence
 
-- AI may misunderstand context.
-- Generated information may be inaccurate.
-- Outputs may contain hallucinations.
-- Training data may contain bias.
-- Information may be outdated.
-- Recommendations may be unsuitable.
-- Complex situations may require human judgment.
+Can important claims be supported by reliable sources?
 
-Knowing these limitations helps users choose appropriate tasks and verification methods.
+### Appropriateness
 
-## 6.5 Writing Clear and Responsible Prompts
+Is the information suitable for the intended audience and purpose?
 
-A prompt is the instruction or information provided to an AI system.
+## 6.8 Responsible Use in Different Environments
 
-Clear prompts can improve relevance and reduce misunderstandings.
-
-A useful prompt generally explains:
-
-1. The task.
-2. The purpose.
-3. Relevant background information.
-4. Important requirements.
-5. The expected output format.
-6. Any restrictions.
-
-For example, instead of asking:
-
-"Explain AI."
-
-A clearer prompt might be:
-
-"Explain how artificial intelligence is used in education. Include practical examples, benefits, limitations, and a short summary. Use clear academic English."
-
-However, users should avoid including personal or confidential details that are not necessary.
-
-## 6.6 Verifying AI-Generated Information
-
-Verification is an essential part of responsible AI use.
-
-Users should check important claims against reliable sources before using them.
-
-Verification may include:
-
-- Checking facts and dates.
-- Confirming statistics.
-- Locating original references.
-- Comparing explanations with trusted materials.
-- Reviewing calculations.
-- Checking whether summaries accurately represent the original document.
-- Identifying unsupported statements.
-
-The amount of checking should depend on the importance of the information.
-
-## 6.7 Evaluating Source Reliability
-
-Not every source has the same level of reliability.
-
-Users should consider:
-
-- Who published the information?
-- Does the source have relevant expertise?
-- Is the information supported by evidence?
-- Is the publication date appropriate?
-- Does the source have a clear purpose?
-- Can the original material be examined?
-- Do other reliable sources support the claim?
-
-Official documents and academic publications may be appropriate for some tasks, while other subjects may require different forms of evidence.
-
-A source should be selected according to the question being investigated.
-
-## 6.8 Avoiding the Spread of Misinformation
-
-Misinformation refers to false or inaccurate information that is shared, regardless of whether the person sharing it intends to mislead others.
-
-AI-generated content can contribute to misinformation if users share it without checking.
-
-For example, an AI-generated summary may contain an incorrect statistic. If the summary is copied into social media posts or reports, the error may spread to other people.
-
-Before sharing AI-generated information, users should:
-
-1. Identify important factual claims.
-2. Check the original source.
-3. Confirm dates and statistics.
-4. Examine the context.
-5. Correct unsupported claims.
-6. Avoid sharing information that cannot be adequately verified.
-
-This is especially important for information involving public events, health, finance, and other important matters.
-
-## 6.9 Responsible Use in Education
-
-Students should use AI to support learning rather than avoid it.
-
-Appropriate activities may include:
-
-- Asking for explanations.
-- Generating revision questions.
-- Organizing notes.
-- Checking grammar.
-- Receiving feedback.
-- Exploring different examples.
-
-Students should also:
-
-- Follow school policies.
-- Avoid submitting prohibited AI-generated work.
-- Acknowledge AI assistance when required.
-- Verify references and factual claims.
-- Understand and explain their final work.
-
-The purpose of responsible educational AI use is to improve learning while maintaining academic integrity.
-
-## 6.10 Responsible Use in the Workplace
-
-Employees and organizations should use AI according to professional responsibilities and internal policies.
-
-Before using AI for work, users should consider:
-
-- Whether the organization permits the selected tool.
-- Whether the information is confidential.
-- Whether personal data may be involved.
-- Whether the output requires professional review.
-- Whether AI use must be disclosed.
-- Who is responsible for the final result.
-
-Organizations should provide guidance and training so employees understand appropriate practices.
-
-## 6.11 Ethical Considerations Before Using AI
-
-Before using an AI system, users can consider the following questions:
-
-| Question | Purpose |
+| Environment | Responsible AI Practice |
 |---|---|
-| Is this task suitable for AI? | Prevent inappropriate use |
-| Does the input contain personal data? | Protect privacy |
-| Could the result disadvantage someone? | Consider fairness |
-| Will users know AI is involved? | Support transparency |
-| Who reviews the result? | Establish oversight |
-| Can the output be verified? | Improve accuracy |
-| Who is responsible for the final action? | Maintain accountability |
+| Education | Follow academic rules and understand submitted work |
+| Business | Review recommendations and protect company information |
+| Healthcare | Maintain professional oversight |
+| Finance | Verify calculations and risk-related information |
+| Communication | Check generated messages before sending |
+| Research | Confirm evidence and references |
+| Public services | Evaluate fairness and accountability |
 
-These questions help users evaluate AI use before problems occur.
+## 6.9 Developing Good AI Habits
 
-## 6.12 A Responsible AI Workflow
+Responsible AI use should become a regular habit rather than an occasional check.
 
-A practical responsible-use process can be organized into several stages.
+Users can develop good habits by:
+
+1. Defining the task before using AI.
+2. Choosing an appropriate tool.
+3. Sharing only necessary information.
+4. Giving clear instructions.
+5. Reviewing generated outputs.
+6. Verifying important claims.
+7. Considering fairness and possible consequences.
+8. Following relevant rules.
+9. Taking responsibility for final decisions.
+
+## 6.10 A Complete Responsible AI Workflow
 
 ```mermaid
 flowchart TD
-    A["Identify the Task"] --> B["Decide Whether AI Is Appropriate"]
-    B --> C["Check Privacy and Ethical Risks"]
-    C --> D["Provide Clear and Necessary Information"]
-    D --> E["Generate AI Output"]
-    E --> F["Review and Verify the Result"]
-    F --> G{"Is the Output Suitable?"}
-    G -->|Yes| H["Use Responsibly"]
-    G -->|No| I["Correct, Revise, or Reject"]
-    I --> F
-    H --> J["Remain Accountable for the Final Use"]
+    A[Identify the Task] --> B[Select an Appropriate AI Tool]
+    B --> C[Review Privacy and Safety Considerations]
+    C --> D[Provide Relevant Information]
+    D --> E[AI Generates an Output]
+    E --> F[Evaluate Accuracy and Relevance]
+    F --> G[Check Reliable Sources]
+    G --> H{Is the Output Appropriate?}
+    H -->|Yes| I[Use Responsibly]
+    H -->|No| J[Correct or Reject the Output]
+    J --> F
+    I --> K[Maintain Human Responsibility]
 ```
 
-This workflow helps ensure that AI is used as a support tool rather than an unquestioned authority.
+## 6.11 The Importance of Responsible AI for Society
 
-## 6.13 The Importance of Continuous Learning
+AI affects how people learn, work, communicate, and access information.
 
-AI technology changes over time.
+As AI becomes more common, responsible use becomes increasingly important.
 
-New tools, capabilities, and risks may appear as systems develop.
+Individuals need to understand how to evaluate AI-generated information. Organizations need policies that protect users and establish accountability. Developers need to consider fairness, reliability, privacy, and safety during system design.
 
-Users should therefore continue learning about:
+Responsible AI requires cooperation between developers, organizations, educators, users, and decision-makers.
 
-- How AI systems work.
-- New limitations.
-- Privacy practices.
-- Ethical concerns.
-- Verification methods.
-- Institutional policies.
-- Relevant laws and guidance.
+## 6.12 Final Principles for Responsible AI Use
 
-Continuous learning helps individuals and organizations respond to changes responsibly.
+The following principles summarize responsible AI use:
 
-## 6.14 Responsible AI Is a Shared Responsibility
+- Use AI to support human abilities, not automatically replace them.
+- Protect personal and confidential information.
+- Consider fairness and possible bias.
+- Be transparent about AI involvement when required.
+- Follow academic and professional rules.
+- Maintain human judgment and oversight.
+- Verify important AI-generated information.
+- Accept responsibility for how AI outputs are used.
 
-Responsible AI requires cooperation between developers, organizations, institutions, and users.
-
-Developers should design systems with appropriate safeguards.
-
-Organizations should establish clear policies and monitor how AI is used.
-
-Educational institutions should teach students how to use AI responsibly.
-
-Users should protect information, verify outputs, and take responsibility for their actions.
-
-No single group can address every ethical challenge alone.
-
-## 6.15 Final Understanding of Ethical and Responsible AI
-
-Ethical and responsible AI use requires more than understanding how to operate an AI tool.
-
-Users must consider privacy, fairness, transparency, accountability, academic integrity, and human oversight.
-
-AI can support learning, work, creativity, and decision-making. However, it should not be used without considering its limitations and possible effects on other people.
-
-Responsible use means selecting appropriate tasks, protecting personal information, evaluating generated content, and maintaining human responsibility.
-
-> **Core Insight:** Responsible AI use combines technological assistance with privacy protection, fairness, honesty, verification, and human judgment. AI should support people while respecting their rights and responsibilities.
+> **Core Insight:** Responsible AI use combines privacy protection, fairness, transparency, academic integrity, human oversight, and verification. AI is most useful when people understand its limitations and remain accountable for its use.
 
 ---
 
 <p align="center">
   <strong>SLN · AI OVERVIEW</strong><br>
-  <sub>Topic 05 — Ethical and Responsible Use of AI</sub>
+  <sub>Topic 05 — Ethical and Responsible Use of Artificial Intelligence</sub>
 </p>
