@@ -2,168 +2,102 @@
 
 <p align="center">
   <strong>SLN · AI OVERVIEW</strong><br>
-  <em>Understanding Privacy, Fairness, Transparency, and Human Responsibility in Artificial Intelligence</em>
+  <em>Understanding Ethical Principles, Privacy, Fairness, Accountability, and Responsible Artificial Intelligence</em>
 </p>
 
 ---
 
 ## CONTENTS
 
-| No. | Section |
-|---:|---|
-| 01 | [Privacy and Data Protection](#01--privacy-and-data-protection) |
-| 02 | [Fairness and Bias](#02--fairness-and-bias) |
-| 03 | [Transparency and Accountability](#03--transparency-and-accountability) |
-| 04 | [Academic Integrity](#04--academic-integrity) |
-| 05 | [Human Judgment and Oversight](#05--human-judgment-and-oversight) |
-| 06 | [Responsible AI Use and Verification of AI-Generated Content](#06--responsible-ai-use-and-verification-of-ai-generated-content) |
+1. [Privacy and Data Protection](#01--privacy-and-data-protection)
+2. [Fairness and Bias](#02--fairness-and-bias)
+3. [Transparency and Accountability](#03--transparency-and-accountability)
+4. [Academic Integrity](#04--academic-integrity)
+5. [Human Judgment and Oversight](#05--human-judgment-and-oversight)
+6. [Responsible AI Use and Verification of AI-Generated Content](#06--responsible-ai-use-and-verification-of-ai-generated-content)
 
 ---
 
 # 01 · Privacy and Data Protection
 
-Artificial intelligence systems often use information to provide services, generate responses, identify patterns, or support decisions.
+## 1.1 Understanding Privacy in Artificial Intelligence
 
-Some of this information may be personal or confidential. Examples include names, contact details, location information, photographs, school records, financial details, and other information that should not be shared unnecessarily.
+Privacy is one of the most important ethical considerations in Artificial Intelligence (AI). AI systems frequently process information to generate responses, identify patterns, analyse data, make predictions, and support automated activities. Some of this information may relate directly to individuals, organisations, or private activities.
 
-Privacy and data protection are therefore important parts of ethical AI use.
+Privacy refers to an individual's ability to control how information about them is collected, accessed, used, stored, and shared. It concerns the appropriate handling of personal information and the protection of individuals from unnecessary exposure or misuse of their data.
 
-Users should understand what information they provide, why a system needs it, and how it may be processed or stored.
+Data protection refers to the policies, procedures, and technical measures used to safeguard information against unauthorised access, disclosure, alteration, loss, or destruction.
 
-## 1.1 Understanding Privacy in AI
+These concepts are closely connected, but they are not identical. Privacy focuses on the rights and interests of individuals, while data protection focuses on the methods used to handle and secure information.
 
-Privacy refers to the appropriate handling of information about individuals.
+When people interact with AI applications, they may provide information through text prompts, uploaded documents, photographs, audio recordings, videos, or connected services. Users may also provide information indirectly through their activities and interactions with an application.
 
-When using an AI application, users may enter questions, upload documents, submit images, or provide other information.
+For example, a student might upload an assignment containing their full name, student identification number, and personal contact details. An employee might submit an internal company report to an external AI application without checking whether the document contains confidential information.
 
-Depending on the service and its settings, this information may be processed to generate an output or provide a particular feature.
+These situations demonstrate why users must understand what information they are sharing and whether the selected AI service is appropriate for processing it.
 
-Users should not assume that every AI service handles information in exactly the same way.
+> **Core Insight:** Responsible AI use begins with understanding what information is being shared, why it is needed, and whether the AI application is authorised to handle it.
 
-They should review the relevant privacy information and understand the available controls before submitting personal or confidential material.
+## 1.2 Why Privacy Matters in AI
 
-| Information Type | Example | Privacy Consideration |
-|---|---|---|
-| Personal identity | Name or identification details | Avoid unnecessary disclosure |
-| Contact information | Email address or telephone number | Share only when appropriate |
-| Location information | Current or previous location | Consider whether it is required |
-| Educational information | Student records or assignments | Follow school requirements |
-| Financial information | Account or payment details | Avoid entering sensitive details into unapproved tools |
-| Health information | Medical records or health details | Requires careful protection |
-| Images and recordings | Photographs or voice recordings | Consider consent and intended use |
-| Business information | Internal documents and reports | Follow organisational policies |
+Privacy becomes particularly important when AI systems process information about identifiable people.
 
-## 1.2 Understanding Data Protection
+Information that appears harmless in isolation may become sensitive when combined with other information. For example, a person's name, workplace, location, and daily activities may collectively reveal details about their private life.
 
-Data protection refers to measures used to prevent personal or confidential information from being accessed, changed, shared, or used in inappropriate ways.
+The responsible handling of information is important for several reasons.
 
-Organisations that use AI should apply suitable safeguards throughout the information-handling process.
+### A. Protection of Personal Identity
 
-These safeguards may include:
+Personal information can be used to identify individuals. If it is exposed without permission, people may lose control over how their information is used.
 
-- Limiting access to authorised users.
-- Protecting information during storage and transfer.
-- Collecting only information needed for a legitimate purpose.
-- Setting appropriate retention periods.
-- Reviewing access permissions.
-- Providing suitable security procedures.
-- Following applicable privacy requirements.
+### B. Prevention of Misuse
 
-| Data Protection Principle | Meaning | Example |
-|---|---|---|
-| Data minimisation | Collect only necessary information | Avoid requesting unrelated personal details |
-| Purpose limitation | Use information for an appropriate purpose | Do not reuse data for unrelated activities |
-| Access control | Limit who can view information | Restrict access to authorised staff |
-| Data security | Protect information from unauthorised access | Use appropriate security safeguards |
-| Retention control | Avoid keeping information unnecessarily | Apply suitable deletion procedures |
-| Transparency | Explain relevant data practices | Provide understandable privacy information |
+Information may be misused for activities such as impersonation, unwanted profiling, unauthorised communication, or other forms of exploitation.
 
-## 1.3 Risks of Sharing Personal Information
+### C. Protection of Confidential Activities
 
-Sharing unnecessary personal information with AI services can create privacy risks.
+Businesses, educational institutions, healthcare organisations, and other institutions may process information that should only be available to authorised individuals.
 
-For example, a student may upload a document containing names, contact details, or private school information when only a short paragraph is needed for language feedback.
+### D. Maintaining Trust
 
-A business employee may submit an internal document to an unapproved AI service without checking organisational rules.
+People are more likely to trust an AI service when its data practices are understandable and appropriate.
 
-In both situations, the user may expose information that is not required for the task.
+### E. Respecting Individual Rights
 
-Before submitting information, users should ask whether the tool actually needs it.
+Privacy protection helps ensure that people are treated with respect and that their information is handled according to applicable requirements.
 
-## 1.4 Sensitive and Confidential Information
+## 1.3 Types of Information That Require Protection
 
-Some information requires additional protection because inappropriate disclosure may create serious consequences.
+Not all information has the same level of sensitivity. Some information is intentionally available to the public, while other information requires stronger protection.
 
-Examples include:
+| Type of Information | Description | Example | Privacy Consideration |
+|---|---|---|---|
+| Public information | Information intentionally made available to the public | Public announcements and published articles | Generally lower privacy risk, but context still matters |
+| Personal information | Information connected to an identifiable individual | Name, email address, and phone number | Should only be shared when necessary |
+| Sensitive personal information | Information requiring additional protection | Medical records and certain financial or biometric information | Requires particularly careful handling |
+| Confidential information | Information restricted to authorised individuals | Internal company documents | Must follow organisational policies |
+| Authentication information | Information used to access accounts or systems | Passwords and security codes | Should never be entered into ordinary AI prompts |
+| Educational records | Information about a student's academic activities | Grades and student records | Must be handled according to institutional rules |
+| Financial information | Information relating to financial accounts or transactions | Bank account details and transaction records | Requires strong protection |
+| Location information | Information identifying where a person is or has been | Home address and precise location records | Can expose personal activities and routines |
 
-- Passwords and authentication codes.
-- Personal identification information.
-- Financial account information.
-- Private health records.
-- Confidential school records.
-- Internal business documents.
-- Private photographs and recordings.
-- Information about other people that they have not agreed to share.
+The distinction between these categories is important because the consequences of disclosure may differ.
 
-Users should avoid submitting such information to an AI service unless the service is approved for that purpose and the submission is permitted.
+For example, sharing a publicly available product description with an AI assistant presents a different level of risk from uploading an individual's medical records or an organisation's confidential financial information.
 
-## 1.5 Consent and Respect for Other People
+## 1.4 How AI Systems May Process User Data
 
-Responsible AI use also involves respecting the privacy of other people.
+AI systems can receive information through several methods. Depending on the application, information may be processed to generate responses, provide requested services, improve functionality, or support other activities described in the provider's policies.
 
-A person should not assume that information about someone else can be uploaded, analysed, or shared simply because it is available.
+The exact handling of user data depends on the particular AI service, its settings, terms, technical design, and applicable laws.
 
-For example, uploading another person's photograph or private document may raise privacy and consent concerns.
+A simplified process is shown below.
 
-Before using information involving other people, users should consider whether they have permission and whether the use is appropriate.
-
-| Situation | Ethical Consideration | Responsible Practice |
-|---|---|---|
-| Uploading a photograph | The image may identify another person | Consider permission and purpose |
-| Sharing a private message | The content may be confidential | Avoid unnecessary disclosure |
-| Processing student records | Information may be sensitive | Follow school policies |
-| Analysing customer information | Data belongs to identifiable individuals | Apply appropriate safeguards |
-| Using recorded speech | A voice may identify someone | Consider consent and service rules |
-
-## 1.6 Privacy in Educational Environments
-
-Students and teachers may use AI to prepare learning materials, review writing, or organise information.
-
-However, educational environments often involve personal information about students, teachers, and families.
-
-Schools should provide clear guidance about which AI tools may be used and what information can be submitted.
-
-Students should avoid entering private school records, personal identification details, or other confidential information into unapproved applications.
-
-Teachers and administrators should also consider the privacy implications of using AI to process student information.
-
-## 1.7 Privacy in Organisations
-
-Businesses and institutions may use AI to analyse customer information, process documents, and support internal activities.
-
-They should establish clear policies about approved tools and acceptable information sharing.
-
-Employees should understand:
-
-- Which AI services are approved.
-- What information may be submitted.
-- Who can access the information.
-- How generated outputs should be stored.
-- What procedures apply when an error or privacy concern occurs.
-
-Organisations should also provide suitable training so employees can recognise privacy risks.
-
-## 1.8 A Responsible Data-Sharing Process
-
-Before entering information into an AI tool, users can follow a simple process.
-
-```mermaid id="privacy01"
+```mermaid
 flowchart TD
-    A[Identify the information needed] --> B[Check whether it contains personal data]
-    B --> C{Is the information necessary?}
-    C -->|No| D[Remove unnecessary information]
-    C -->|Yes| E[Check whether the AI service is approved]
-    D --> E
-    E --> F{Is the use permitted and appropriate?}
-    F -->|Yes| G[Submit only the necessary information]
-    F -->|No| H[Choose a safer alternative]
+    A["User provides information"] --> B["AI application receives input"]
+    B --> C["System processes the information"]
+    C --> D["AI generates an output"]
+    D --> E["User receives the response"]
+    C --> F["Data handling according to service policies"]
+    F --> G["Applicable storage, retention, or deletion procedures"]
