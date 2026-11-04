@@ -105,7 +105,10 @@ Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 outline only
 | [Project plan](plan/project_plan.md) and [task list](plan/master_task_list.md) | ✅ Done |
 | [Module outline](content/00_module_outline.md) | ✅ Done |
 | Topics 1 |✅ Done |
-| Topics 2–5 | 🔲 Outline only |
+| Topics 2 |✅ Done |
+| Topics 3 |✅ Done |
+| Topics 4 |✅ Done |
+| Topics 5 |✅ Done |
 | Study Guide, Test Bank, slides, videos | 🔲 Stage 2 |
 
 ## Roadmap
