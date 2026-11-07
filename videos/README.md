@@ -1,6 +1,6 @@
 # Video tutorials
 
-**Owners:** Video lead  · **Tasks:** T16 · **Status:** ✅ Done
+**Owners:** Video lead and Content lead · **Tasks:** T16 · **Status:** ✅ Done
 
 Short segments that explain or demonstrate selected key concepts step by step. Write the script or storyboard first, then verify the explanation and on-screen examples before recording.
 
