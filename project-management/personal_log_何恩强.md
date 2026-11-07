@@ -19,9 +19,15 @@
 
 ## Contents
 
-- [Level 1 · 2026-11-04](#level-1--2026-11-04)
-- [Level 2 · 2026-11-05](#level-2--2026-11-05)
-- [Level 3 · 2026-11-06](#level-3--2026-11-06)
+- [Level 1 · 2026-11-04](<img width="1890" height="862" alt="level1-2026-11-04" src="https://github.com/user-attachments/assets/a9172adc-2ffd-40b0-8286-ed8c9bd0c15b" />
+
+)
+- [Level 2 · 2026-11-05](<img width="1895" height="895" alt="level2-2026-11-05" src="https://github.com/user-attachments/assets/1e401ea7-5fa2-4215-b124-999436aa5cad" />
+
+)
+- [Level 3 · 2026-11-06](<img width="1838" height="921" alt="level3-2026-11-06" src="https://github.com/user-attachments/assets/6cad3228-ba45-4c14-8e72-4c7964a3b09e" />
+
+)
 - [Next quest](#next-quest)
 - [Power-up log · AI use](#power-up-log--ai-use)
 
@@ -34,7 +40,8 @@ Check that every Test Bank question is clear, with a correct answer and explanat
 Reviewed and proofread the Test Bank questions with 姚光耀.
 
 ### Outcome and evidence
-![Test bank review](evidence/level1-2026-11-04.png)
+![Test bank review](<img width="1890" height="862" alt="level1-2026-11-04" src="https://github.com/user-attachments/assets/42a534bb-c061-4a7c-bec5-d5e1c7502b5f" />
+)
 *Test bank review*
 
 ### Learning and reflection
@@ -54,7 +61,8 @@ Prepare for the video tutorials by planning the content of each video.
 Read the refined Study Guide chapters and drafted a storyboard outline for the five videos with 薛春兰.
 
 ### Outcome and evidence
-![the storyboard outline for the videos](evidence/level2-2026-11-05.png)
+![the storyboard outline for the videos](<img width="1895" height="895" alt="level2-2026-11-05" src="https://github.com/user-attachments/assets/be80c206-785f-4eb7-8ffa-9adc29aae1a4" />
+)
 *The storyboard outline for the videos*
 
 ### Learning and reflection
@@ -74,7 +82,8 @@ Create the video tutorials for our study guide: 5 videos, one for each of the te
 Created the video tutorials with 薛春兰 (5 videos, one for each chapter of the study guide).
 
 ### Outcome and evidence
-![Video tutorial](evidence/level3-2026-11-06.png)
+![Video tutorial](<img width="1838" height="921" alt="level3-2026-11-06" src="https://github.com/user-attachments/assets/2c0b0c1b-51ce-49b9-a563-9eb8b5b2d80f" />
+)
 *Video tutorial*
 
 ### Learning and reflection
@@ -122,7 +131,8 @@ I watched each finished MP4 to check that every face was matched to the right me
 The videos now feel personal and every member has a speaking part. I learned that AI can save a lot of editing time, but timing, names and facts can only be checked by watching the real output, and that a script with timestamps makes recording the voice-over much easier.
 
 ### Evidence
-![AI use evidence](evidence/ai-use.png)
+![AI use evidence](<img width="1332" height="917" alt="ai-use" src="https://github.com/user-attachments/assets/c5dac47a-c546-4830-b646-da35783582b5" />
+)
 
 ---
 
