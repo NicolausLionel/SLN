@@ -8,11 +8,6 @@
 <img width="960" height="1280" alt="marco" src="https://github.com/user-attachments/assets/e4090e4c-0be1-4fe2-8f55-83082cd847db" />
 
 
-# Player 4 · 何恩强 (He Enqiang)
-
-> **SLN Quest Log · Stage 2 Personal Learning and Work Log**  
-> Course: Foundations of CS & AI (2026), Beijing Institute of Technology · Module: AI Overview
-
 | Name | Student ID | Role | Reporting period |
 |---|---|---|---|
 | 何恩强 (He Enqiang) | 1820262113 | Video Lead | 4 Nov 2026 – 6 Nov 2026 |
