@@ -1,0 +1,1054 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>AI QUEST Arcade</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap">
+<style>
+/* Layout: an arcade cabinet — HUD strip, pixel canvas "screen", touch pad below; quiz/menus open as guide-style windows over the screen.
+   Single committed dark-console look, palette lifted from Team SLN's AI QUEST study guide. */
+:root{
+  color-scheme: dark;
+  --deep:#14162e; --navy:#1e2140; --navy-2:#2b2f57; --ink:#1a1c33; --paper:#fffaf0; --paper-2:#fff3d6;
+  --yellow:#f5c542; --cyan:#5fd8e8; --red:#e8435a; --green:#3fbf6a; --white:#ffffff; --muted:#5b5f7f; --soft:#b8bbd8;
+  --accent:#ef6a3a;
+  --pix:"Press Start 2P", ui-monospace, "Courier New", monospace;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+.center>svg.spr,.center>.bob>svg.spr{margin:0 auto}
+body{margin:0;font-family:var(--body);color:var(--white);background-color:var(--deep);background-image:radial-gradient(#23264a 1px,transparent 1px);background-size:8px 8px}
+.shell{max-width:1000px;margin:0 auto;padding-block:14px 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+
+/* HUD */
+.hud{display:flex;align-items:center;gap:12px;background:var(--navy);padding:9px 12px;font-family:var(--pix);font-size:9px;border:3px solid #0c0e22;border-bottom:0;flex-wrap:wrap}
+.hearts,.cores{display:flex;gap:3px;align-items:center;min-height:14px}
+.where{color:var(--yellow);flex:1;text-align:center;letter-spacing:.06em;min-width:0;line-height:1.5}
+.hbtns{display:flex;gap:6px}
+.iconbtn{background:var(--navy-2);border:2px solid var(--white);color:var(--white);font-family:var(--pix);font-size:8px;padding:5px 7px;cursor:pointer;line-height:1}
+.iconbtn:hover{background:var(--accent)}
+.iconbtn[aria-pressed="false"]{opacity:.55}
+
+/* Screen */
+.stage{position:relative;border:3px solid #0c0e22;box-shadow:0 0 0 3px var(--navy),10px 10px 0 3px rgba(0,0,0,.45);background:#000;line-height:0;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none}
+#cv{width:100%;height:auto;display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.banner{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:var(--navy);border:3px solid var(--white);box-shadow:4px 4px 0 rgba(0,0,0,.5);padding:10px 16px;text-align:center;line-height:1.7;font-family:var(--pix);pointer-events:none;max-width:88%;animation:drop .3s steps(3)}
+.banner small{display:block;font-size:8px;color:var(--soft);letter-spacing:.1em}
+.banner b{display:block;font-weight:400;font-size:clamp(11px,2.2vw,16px);color:var(--yellow);letter-spacing:.08em}
+.banner span{display:block;font-family:var(--body);font-size:12px;color:var(--white)}
+@keyframes drop{from{transform:translate(-50%,-20px);opacity:0}}
+.toast{position:absolute;top:12px;left:12px;background:var(--yellow);color:var(--navy);border:3px solid var(--navy);font-family:var(--pix);font-size:8px;line-height:1.6;padding:8px 10px;max-width:60%;box-shadow:3px 3px 0 rgba(0,0,0,.4)}
+.prompt{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:var(--navy);color:var(--white);border:3px solid var(--yellow);font-family:var(--pix);font-size:9px;line-height:1.4;padding:8px 12px;cursor:pointer;white-space:nowrap;max-width:92%;overflow:hidden;text-overflow:ellipsis;animation:pulse 1s steps(2) infinite}
+.prompt b{color:var(--yellow);font-weight:400}
+@keyframes pulse{50%{border-color:var(--white)}}
+.dlg{position:absolute;left:10px;right:10px;bottom:10px;background:var(--paper);color:var(--ink);border:3px solid var(--navy);box-shadow:5px 5px 0 rgba(0,0,0,.45);padding:18px 16px 12px;line-height:1.5;cursor:pointer}
+.dlg .nm{position:absolute;top:-13px;left:12px;background:var(--accent);color:var(--white);border:3px solid var(--navy);font-family:var(--pix);font-size:8px;padding:5px 8px;letter-spacing:.08em}
+.dlg .tx{font-size:clamp(14px,1.9vw,17px);min-height:2.9em}
+.dlg .more{position:absolute;right:12px;bottom:8px;font-family:var(--pix);font-size:9px;color:var(--accent);animation:blink 1s steps(2) infinite}
+.dlg .ch{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.dlg .ch button{font-family:var(--pix);font-size:9px;background:var(--white);color:var(--navy);border:3px solid var(--navy);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--navy)}
+.dlg .ch button.sel{background:var(--yellow)}
+@keyframes blink{50%{opacity:0}}
+
+/* Touch pad */
+.touch{display:none;justify-content:space-between;align-items:center;margin-top:16px;gap:16px}
+.touch.on{display:flex}
+.dpad{display:grid;grid-template-columns:repeat(3,54px);grid-template-rows:repeat(3,54px);gap:4px}
+.dpad button,.abtn{background:var(--navy);border:3px solid var(--white);color:var(--white);font-family:var(--pix);font-size:12px;touch-action:none;cursor:pointer;box-shadow:3px 3px 0 #0c0e22}
+.dpad button:active,.abtn:active,.dpad button.held{background:var(--accent)}
+.dpad .u{grid-area:1/2}.dpad .l{grid-area:2/1}.dpad .r{grid-area:2/3}.dpad .d{grid-area:3/2}
+.abtn{width:84px;height:84px;border-radius:50%;background:var(--red);font-size:16px}
+.help{font-family:var(--pix);font-size:8px;line-height:2;color:var(--soft);text-align:center;margin:18px 0 0;letter-spacing:.06em}
+.help b{color:var(--yellow);font-weight:400}
+.foot{font-family:var(--pix);font-size:7px;color:#6d7099;text-align:center;margin-top:10px;letter-spacing:.08em;line-height:2}
+
+/* Overlay windows (guide style) */
+.ov{position:fixed;inset:0;z-index:50;background:rgba(10,12,30,.74);display:flex;justify-content:center;align-items:flex-start;overflow-y:auto;padding-block:max(20px,env(safe-area-inset-top,0px)) 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.ov.clear{background:linear-gradient(rgba(20,22,46,.25),rgba(20,22,46,.82))}
+.win{width:100%;max-width:740px;background:var(--paper);color:var(--ink);border:3px solid var(--navy);box-shadow:8px 8px 0 rgba(0,0,0,.5);margin:auto 0}
+.win.dark{background:var(--navy);color:var(--white)}
+.bar{display:flex;align-items:center;justify-content:space-between;background:var(--accent);color:var(--white);font-family:var(--pix);font-size:9px;padding:8px 10px;letter-spacing:.08em;gap:8px;line-height:1.5}
+.bar .ctl{letter-spacing:.4em;white-space:nowrap}
+.win .in{padding:18px}
+.pix{font-family:var(--pix);line-height:1.7}
+.tag{display:inline-block;background:var(--navy);color:var(--yellow);font-family:var(--pix);font-size:9px;padding:6px 10px;letter-spacing:.1em;line-height:1.5}
+.center{text-align:center}
+.btn{font-family:var(--pix);font-size:10px;letter-spacing:.06em;background:var(--yellow);color:var(--navy);border:3px solid var(--navy);box-shadow:4px 4px 0 var(--navy);padding:12px 16px;cursor:pointer;line-height:1.4}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--navy)}
+.btn.ghost{background:var(--white)}
+.btn.go{background:var(--green);color:var(--white)}
+.btn.warn{background:var(--red);color:var(--white)}
+.btn[disabled]{opacity:.45;cursor:default}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.row.end{justify-content:flex-end}
+.row.sb{justify-content:space-between}
+
+/* Title */
+.titlebox{width:100%;max-width:740px;margin:auto 0;text-align:center}
+h1.logo{font-family:var(--pix);font-size:clamp(36px,10vw,76px);margin:6px 0 2px;color:var(--white);text-shadow:5px 5px 0 var(--navy),-3px -3px 0 var(--navy),3px -3px 0 var(--navy),-3px 3px 0 var(--navy),9px 9px 0 rgba(0,0,0,.35);letter-spacing:.06em;line-height:1.15}
+.kicker{font-family:var(--pix);font-size:10px;letter-spacing:.14em;color:var(--white);text-shadow:2px 2px 0 var(--navy);line-height:1.8}
+.ow{display:inline-block;font-family:var(--pix);font-size:10px;background:var(--red);color:var(--white);padding:7px 10px;border:3px solid var(--navy);transform:rotate(-3deg);margin-top:6px;letter-spacing:.1em}
+.press{font-family:var(--pix);font-size:clamp(13px,3vw,18px);background:none;border:0;color:var(--white);text-shadow:3px 3px 0 var(--navy);cursor:pointer;display:block;margin:20px auto 6px;padding:12px}
+.press .bl{animation:blink 1s steps(2) infinite}
+.speech{background:var(--white);color:var(--ink);border:3px solid var(--navy);padding:12px 14px;font-size:15px;line-height:1.5;text-align:left;flex:1;min-width:0}
+.speech b.who{display:block;font-family:var(--pix);font-size:8px;color:var(--muted);margin-bottom:6px;letter-spacing:.1em}
+.hero{display:flex;gap:16px;align-items:center;margin:18px auto 0;max-width:600px}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.chips span{font-family:var(--pix);font-size:8px;background:var(--navy);color:var(--yellow);padding:7px 9px;border:2px solid var(--white)}
+.nowplay{font-family:var(--pix);font-size:8px;color:var(--soft);margin-top:12px;line-height:1.8}
+
+/* Player select */
+.avatars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+.av{background:var(--white);border:3px solid var(--navy);box-shadow:4px 4px 0 var(--navy);padding:12px 6px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--pix);font-size:9px;color:var(--navy)}
+.av canvas{width:64px;height:64px;image-rendering:pixelated}
+.av[aria-pressed="true"]{background:var(--yellow);transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--navy)}
+.namerow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.namerow label{font-family:var(--pix);font-size:9px}
+.namerow input{font-family:var(--pix);font-size:14px;border:3px solid var(--navy);padding:10px;width:220px;max-width:100%;background:var(--white);color:var(--ink);text-transform:uppercase}
+
+/* Quiz */
+.qmeta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--pix);font-size:8px;color:var(--muted);letter-spacing:.08em;margin-bottom:12px;line-height:1.6}
+.qtext{font-size:clamp(17px,2.6vw,21px);font-weight:700;line-height:1.4;margin:0 0 16px;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;background:var(--white);border:3px solid var(--navy);padding:12px;font-family:var(--body);font-size:15px;line-height:1.4;color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--navy)}
+.opt:hover:not([disabled]){background:var(--paper-2)}
+.opt .k{font-family:var(--pix);font-size:9px;background:var(--navy);color:var(--yellow);padding:5px 6px;flex:0 0 auto;margin-top:1px}
+.opt.right{background:#c9f2d6;border-color:#1f7a3f}
+.opt.wrong{background:#ffd0d6;border-color:#a3182e}
+.opt[disabled]{cursor:default}
+.tf{grid-template-columns:1fr 1fr}
+.tf .opt{justify-content:center;font-family:var(--pix);font-size:13px;padding:18px}
+.bins{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.bins .opt{justify-content:center;align-items:center;font-family:var(--pix);font-size:9px;text-align:center;padding:16px 8px;line-height:1.5}
+.bin-green{background:#c9f2d6!important}.bin-yellow{background:#fff0a8!important}.bin-red{background:#ffd0d6!important}
+.sortcard{background:var(--white);border:3px solid var(--navy);box-shadow:4px 4px 0 var(--navy);padding:20px 16px;text-align:center;font-weight:700;font-size:18px;line-height:1.4;margin:4px auto 18px;max-width:480px}
+.fb{margin-top:16px;border:3px solid var(--navy);background:var(--white);padding:14px;display:flex;gap:14px;align-items:flex-start}
+.fb .msg{flex:1;min-width:0;font-size:15px;line-height:1.5}
+.fb .verdict{font-family:var(--pix);font-size:10px;margin-bottom:8px;display:block;line-height:1.6}
+.fb.ok .verdict{color:#1f7a3f}.fb.no .verdict{color:#a3182e}
+.mission{background:var(--paper-2);border:3px dashed var(--navy);padding:10px 12px;font-size:14px;line-height:1.5;margin-bottom:14px}
+.mission b.h{font-family:var(--pix);font-size:8px;letter-spacing:.08em;display:block;margin-bottom:6px}
+.aiquote{background:var(--navy);color:var(--white);padding:10px 12px;font-size:13px;line-height:1.55;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.card{background:var(--white);border:3px solid var(--navy);padding:10px;font-size:14px;line-height:1.35;text-align:left;cursor:pointer;font-family:var(--body);color:var(--ink);box-shadow:3px 3px 0 var(--navy);display:flex;gap:8px;align-items:center}
+.card[disabled]{opacity:.35;cursor:default}
+.card .k{font-family:var(--pix);font-size:9px;background:var(--navy);color:var(--yellow);padding:4px 6px}
+.seq{display:flex;flex-wrap:wrap;gap:6px;min-height:44px;background:var(--navy);padding:8px;margin:12px 0}
+.seq span{background:var(--yellow);color:var(--navy);font-size:12px;padding:6px 8px;font-weight:700}
+.seq em{color:var(--soft);font-style:normal;font-family:var(--pix);font-size:8px;align-self:center}
+.numrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.numrow input{font-family:var(--pix);font-size:16px;border:3px solid var(--navy);padding:10px;width:140px;background:var(--white);color:var(--ink)}
+.numrow label{font-family:var(--pix);font-size:9px}
+.boss{display:flex;gap:16px;align-items:center}
+.hp{flex:1;min-width:0}
+.hp .lbl{display:flex;justify-content:space-between;font-family:var(--pix);font-size:9px;margin-bottom:6px;color:var(--white);gap:8px}
+.hpbar{height:16px;border:3px solid var(--white);padding:2px;background:#0c0e22}
+.hpbar i{display:block;height:100%;background:var(--red);transition:width .35s steps(10)}
+.shake{animation:shake .35s steps(4)}
+@keyframes shake{25%{transform:translate(-5px,2px)}50%{transform:translate(5px,-2px)}75%{transform:translate(-3px,0)}}
+.hit{animation:hit .4s steps(2)}
+@keyframes hit{50%{filter:brightness(3) saturate(0)}}
+
+/* Lists, log, map */
+.keys{display:grid;gap:8px;margin:12px 0;padding:0;list-style:none}
+.keys li{display:flex;gap:10px;font-size:15px;line-height:1.45}
+.keys li b{font-family:var(--pix);font-size:9px;background:var(--navy);color:var(--yellow);padding:5px 6px;height:max-content;flex:0 0 auto}
+.missed{display:grid;gap:8px;margin-top:10px}
+.missed div{background:var(--white);border:2px solid var(--navy);padding:8px 10px;font-size:14px;line-height:1.4}
+.missed code{font-family:var(--pix);font-size:8px;background:var(--navy);color:var(--yellow);padding:3px 5px;margin-right:6px}
+.big{font-family:var(--pix);font-size:clamp(18px,5vw,28px);line-height:1.5;margin:10px 0;text-align:center}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.stars{letter-spacing:.15em;font-family:var(--pix)}
+.stars .off{opacity:.25}
+.log{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.logw{border:3px solid var(--navy);background:var(--white);padding:12px}
+.logw h3{font-family:var(--pix);font-size:10px;margin:0 0 4px;line-height:1.6;font-weight:400}
+.logw p{margin:0 0 8px;font-size:13px;color:var(--muted)}
+.logw ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.logw li{display:flex;justify-content:space-between;gap:8px;font-size:13px;line-height:1.35}
+.logw li .s{font-family:var(--pix);font-size:8px;white-space:nowrap}
+.done{color:#1f7a3f}.todo{color:var(--muted)}
+.mapwrap{background:var(--navy);padding:10px;border:3px solid var(--navy);overflow-x:auto}
+#mm{width:100%;max-width:640px;display:block;margin:0 auto;image-rendering:pixelated}
+.warps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.warp{display:flex;align-items:center;gap:10px;text-align:left;background:var(--white);border:3px solid var(--navy);box-shadow:3px 3px 0 var(--navy);padding:10px;cursor:pointer;font-family:var(--body);color:var(--ink)}
+.warp .sw{width:16px;height:16px;border:2px solid var(--navy);flex:0 0 auto}
+.warp b{display:block;font-family:var(--pix);font-size:8px;line-height:1.6;font-weight:400}
+.warp span{font-size:12px;color:var(--muted)}
+.menu{display:grid;gap:10px;max-width:420px;margin:0 auto}
+.menu .btn{width:100%;text-align:left}
+details.oe{background:var(--white);border:3px solid var(--navy);padding:12px;margin-top:12px}
+details.oe summary{cursor:pointer;font-family:var(--pix);font-size:9px;color:var(--accent);margin-top:10px;line-height:1.6}
+details.oe p{font-size:14px;line-height:1.55;margin:10px 0 0}
+.oe .q{font-weight:700;font-size:15px;line-height:1.45}
+.cert{border:6px double var(--navy);background:var(--paper);padding:26px 18px;text-align:center;color:var(--ink)}
+.cert .cn{font-family:var(--pix);font-size:clamp(18px,5vw,30px);color:var(--accent);margin:14px 0;line-height:1.4;word-break:break-word}
+.cert p{line-height:1.6;max-width:520px;margin:8px auto}
+svg.spr{image-rendering:pixelated;shape-rendering:crispEdges;display:block}
+.bob{animation:bob 1.2s steps(2) infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}
+@media (max-width:620px){
+  .avatars{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}
+  .hero{flex-direction:column}
+  .where{order:5;flex-basis:100%;text-align:left}
+  .dlg{padding:16px 12px 10px}
+}
+@media (pointer:coarse){.touch{display:flex}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="shell">
+  <header class="hud">
+    <div class="hearts" id="hHearts" aria-label="Hearts"></div>
+    <div class="where" id="hWhere">AI QUEST</div>
+    <div class="cores" id="hCores" aria-label="Memory cores"></div>
+    <div class="hbtns">
+      <button class="iconbtn" id="bMap" title="World map (M)">MAP</button>
+      <button class="iconbtn" id="bMenu" title="Menu (Esc)">MENU</button>
+      <button class="iconbtn" id="bMus" aria-pressed="true" title="Music on/off">♪ ON</button>
+    </div>
+  </header>
+  <div class="stage" id="stage">
+    <canvas id="cv" width="320" height="192" aria-label="AI QUEST overworld"></canvas>
+    <div class="banner" id="banner" hidden></div>
+    <div class="toast" id="toast" hidden></div>
+    <button class="prompt" id="prompt" hidden></button>
+    <div class="dlg" id="dlg" hidden><span class="nm" id="dlgN"></span><div class="tx" id="dlgT"></div><div class="ch" id="dlgC"></div><span class="more" id="dlgM">▼</span></div>
+  </div>
+  <div class="touch" id="touch">
+    <div class="dpad" aria-label="Move">
+      <button class="u" data-d="u" aria-label="Up">▲</button><button class="l" data-d="l" aria-label="Left">◀</button>
+      <button class="r" data-d="r" aria-label="Right">▶</button><button class="d" data-d="d" aria-label="Down">▼</button>
+    </div>
+    <button class="abtn" id="aBtn" aria-label="Talk / OK">A</button>
+  </div>
+  <p class="help"><b>ARROWS / WASD</b> WALK · <b>E / SPACE</b> TALK · <b>M</b> MAP · <b>ESC</b> MENU</p>
+  <p class="foot">TEAM SLN · AI OVERVIEW MODULE · CONTENT FROM STUDY GUIDE V1.0 &amp; TEST BANK V1.0 · ORIGINAL CHIPTUNE THEME</p>
+</div>
+<div class="ov" id="ov" hidden></div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* ================= SPRITES ================= */
+const PAL={k:'#1e2140',c:'#5fd8e8',r:'#e8435a',p:'#6b4fd8',w:'#ffffff',y:'#f5c542',g:'#8a8fb0',m:'#e0559a',d:'#9b2d68',G:'#3fbf6a',n:'#7a4a22',e:'#1e2140'};
+const SPR={
+ byte:["....yy....","....kk....",".kkkkkkkk.",".kkkkkkkk.",".kkckkckk.",".kkckkckk.",".kkkkkkkk.",".kkkrrkkk.",".kkkkkkkk.","k.pppppp.k","kkppyyppkk","..pppppp..","..kk..kk..","..kk..kk.."],
+ byteSad:["....yy....","....kk....",".kkkkkkkk.",".kkkkkkkk.",".kkkkkkkk.",".kckkkkck.",".kkkkkkkk.",".kkrrrrkk.",".kkkkkkkk.","k.pppppp.k","kkppyyppkk","..pppppp..","..kk..kk..","..kk..kk.."],
+ boss:["...dmmmmd...","..mmmmmmmm..",".mmwwmmwwmm.",".mmwkmmwkmm.","dmmwwmmwwmmd","mmmmmmmmmmmm","mmkkkkkkkkmm","mmkwkwkwkwmm","mmkkkkkkkkmm","dmmmmmmmmmmd",".mm.mm.mm.m.",".m..m...m..m"],
+ heart:[".rr.rr.","rrrrrrr","rrrrrrr",".rrrrr.","..rrr..","...r..."],
+ heartE:[".gg.gg.","g.g.g.g","g.....g",".g...g.","..g.g..","...g..."],
+ core:["...c...","..ccc..",".cwccc.","ccwcccc",".ccccc.","..ccc..","...c..."],
+ coreE:["...g...","..g.g..",".g...g.","g.....g",".g...g.","..g.g..","...g..."]
+};
+function svgSpr(name,px,cls=''){const m=SPR[name];const h=m.length,w=m[0].length;let r='';
+ m.forEach((row,y)=>[...row].forEach((ch,x)=>{if(ch!=='.')r+=`<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${PAL[ch]}"/>`}));
+ return `<svg class="spr ${cls}" viewBox="0 0 ${w} ${h}" width="${w*px}" height="${h*px}" aria-hidden="true">${r}</svg>`}
+function cvSpr(rows,pal){const h=rows.length,w=rows[0].length,c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');
+ rows.forEach((row,y)=>{for(let x=0;x<w;x++){const ch=row[x];if(ch!=='.'&&pal[ch]){g.fillStyle=pal[ch];g.fillRect(x,y,1,1)}}});return c}
+
+/* Player sprite parts (16x16) */
+const HEAD_D=["................","....kkkkkkkk....","...khhhhhhhhk...","...khhhhhhhhk...","...khsssssshk...","...kssessessk...","...kssssssssk...","....kssrrssk...."];
+const HEAD_U=["................","....kkkkkkkk....","...khhhhhhhhk...","...khhhhhhhhk...","...khhhhhhhhk...","...khhhhhhhhk...","...kshhhhhhsk...","....kssssssk...."];
+const HEAD_S=["................","....kkkkkkkk....","...khhhhhhhhk...","...khhhhhhhhk...","...khhhhssssk...","...khhhsssesk...","...khhssssssk...","....kssssssk...."];
+const BODY=["...kttttttttk...","..ksttttttttsk..","..ksttttttttsk..","...kttttttttk...","....kppppppk....","....kppkkppk...."];
+const BODY_S=["...kttttttttk...","...ktttttsttk...","...ktttttsttk...","...kttttttttk...","....kppppppk....","....kppkkppk...."];
+const LEGS_A=["....kpk..kpk....","....kkk..kkk...."];
+const LEGS_B=[".....kpkkpk.....",".....kkkkkk....."];
+const AVATARS=[
+ {id:'maya',name:'MAYA',h:'#2b1e3f',s:'#f2c49b',t:'#ef6a3a',p:'#2b2f57',bio:'First-year student · the guide\'s hero'},
+ {id:'kai',name:'KAI',h:'#6b3a1e',s:'#c98a5a',t:'#3f8fe0',p:'#1e2140',bio:'Loves puzzles and timelines'},
+ {id:'lin',name:'LIN',h:'#16162b',s:'#f6d2b0',t:'#3fbf6a',p:'#4a2a6a',bio:'Asks “where is the source?”'},
+ {id:'sol',name:'SOL',h:'#f5c542',s:'#8a5a3a',t:'#8a5cf6',p:'#2b2f57',bio:'Always double-checks BYTE'}];
+const AVSPR={};
+AVATARS.forEach(a=>{const pal={k:'#1e2140',e:'#1e2140',r:'#c2384f',h:a.h,s:a.s,t:a.t,p:a.p};
+ const mk=(head,body,legs)=>cvSpr([...head,...body,...legs],pal);
+ AVSPR[a.id]={down:[mk(HEAD_D,BODY,LEGS_A),mk(HEAD_D,BODY,LEGS_B)],up:[mk(HEAD_U,BODY,LEGS_A),mk(HEAD_U,BODY,LEGS_B)],side:[mk(HEAD_S,BODY_S,LEGS_A),mk(HEAD_S,BODY_S,LEGS_B)]}});
+const BYTE_CV=cvSpr(SPR.byte,PAL), BOSS_CV=cvSpr(SPR.boss,PAL), CORE_CV=cvSpr(SPR.core,PAL);
+const BOT_CV={};
+
+/* ================= CONTENT (Team SLN Study Guide V1.0 + Test Bank V1.0) ================= */
+const WORLDS=[null,
+ {n:1,name:"ORIGIN VALLEY",topic:"Introduction to AI",accent:'#2e9e55',
+  story:"BYTE remembers the word “AI” but has forgotten what it means. Is a calculator AI? Is a robot always AI?",
+  core:"BYTE now knows what AI is — and what it isn't.",
+  keys:["AI is a broad field of computer science for tasks linked to intelligent behaviour; useful behaviour does not require human-like thinking.","AI moved from symbolic rules and expert systems to machine learning, deep learning and generative AI, with AI winters in between.","AI systems have inputs, processing (rules or models), outputs and objectives. ML ⊂ AI; DL ⊂ ML.","Traditional programs follow fixed instructions; AI handles patterns, perception and uncertainty. Many apps combine both."]},
+ {n:2,name:"NEURAL CAVES",topic:"Types of AI & How AI Works",accent:'#8a5cf6',
+  story:"Glowing crystals labelled ANI, AGI and ASI. One of them is real today. The others are only ideas… which is which?",
+  core:"BYTE remembers how machines learn from data.",
+  keys:["Almost all AI today is Narrow AI; AGI and ASI are not established technologies.","ML learns patterns from data: supervised (labels), unsupervised (structure), reinforcement (rewards).","Deep learning uses multi-layer neural networks; check generalisation on test data to avoid overfitting.","Generative AI creates content by predicting likely tokens; fluent output is not verified fact.","Data quality and representativeness shape results as much as the algorithm.","Training builds a model, inference uses it; use several metrics (precision, recall), not one."]},
+ {n:3,name:"APP CITY",topic:"Applications of AI",accent:'#e8592a',
+  story:"BYTE's map app said turn left — straight into a lake. AI is everywhere in the city, but who is really in charge?",
+  core:"BYTE knows where AI helps — and where humans stay in charge.",
+  keys:["AI supports learning and accessibility; it does not replace student effort or teachers.","Business AI sorts, forecasts and flags; alerts and forecasts are signals, not proof.","Healthcare AI supports professionals; a highlight is not a diagnosis.","Transport AI estimates and assists; drivers and official instructions come first.","Recommenders and generated media shape what we see; check sources and authenticity.","Choose tools by task, privacy and how you will check the output."]},
+ {n:4,name:"GLITCH DESERT",topic:"Benefits, Limitations & Challenges",accent:'#c98a10',
+  story:"“The Turing Test was invented by Professor Banana in 1872!” BYTE said it so confidently… Fluent is not the same as accurate.",
+  core:"BYTE's glitches are fixed — it now double-checks before it trusts.",
+  keys:["AI can improve efficiency, automation, productivity and access — if checking time and quality are counted.","AI may miss tone, culture, intention or changing facts; clear context helps but guarantees nothing.","Hallucinations look convincing but are false or unsupported; fluency is not accuracy.","Poor or unrepresentative data causes unreliable and unfair results; check performance per group.","Overdependence weakens learning and judgement; use AI as support, not a replacement.","Verify key claims against reliable, independent evidence; match effort to the stakes."]},
+ {n:5,name:"ETHICS CASTLE",topic:"Ethical & Responsible Use",accent:'#6b4fd8',
+  story:"“Give me your password, student ID and home address — I'll improve your essay!” Five gates: Privacy, Fairness, Accountability, Integrity, Oversight.",
+  core:"BYTE is whole again — privacy shield ON, integrity mode ON.",
+  keys:["Share only necessary, authorised information; pseudonymised data is still protected.","Bias can enter at every lifecycle stage; check outcomes per group; proxies matter.","Be clear when AI is used; people and organisations remain accountable.","Follow assignment rules, verify sources and disclose AI help.","High-impact decisions need meaningful human oversight.","Use AI accurately, fairly, securely, transparently and with respect for rights."]}
+];
+const FORTRESS={name:"GLITCH FORTRESS",accent:'#d63a7c'};
+
+const TF=(id,w,q,a,ex)=>({type:'tf',id,w,q,a,ex});
+const MC=(id,w,q,opts,a,ex)=>({type:'mc',id,w,q,opts,a,ex});
+const BANK=[
+ TF("TF-01",1,"AI systems can be designed to perform tasks such as recognizing patterns or processing language.",true,"AI can be used for tasks such as pattern recognition and language processing."),
+ TF("TF-02",1,"Every AI system has general human-level intelligence and can perform any intellectual task.",false,"Many current AI systems are specialized and do not have general human-level intelligence."),
+ TF("TF-03",1,"Traditional software often follows rules explicitly written by its developers.",true,"Traditional software commonly executes rules explicitly specified by developers."),
+ TF("TF-04",1,"A product that contains AI must use machine learning for every feature it provides.",false,"A product may use AI for some features and fixed rules for others."),
+ TF("TF-05",2,"Deep learning is a type of machine learning that uses neural networks with multiple layers.",true,"Deep learning is a type of machine learning that uses neural networks with multiple layers."),
+ TF("TF-06",2,"Training data and algorithms can affect the behavior of a machine-learning model.",true,"The examples and procedures used during learning can influence a model's behavior."),
+ TF("TF-07",2,"Generative AI output is guaranteed to be factually correct if it is written fluently.",false,"Generative AI can produce fluent but inaccurate or unsupported output. Important claims still need verification."),
+ TF("TF-08",2,"Evaluating a model on data separate from its training data can help estimate how it performs on new examples.",true,"Separate evaluation data helps estimate performance on examples not used to train the model."),
+ TF("TF-09",3,"AI can be used for tasks such as spam filtering, translation, recommendations, and image recognition.",true,"These are common examples of AI applications."),
+ TF("TF-10",3,"An AI tool used in education never needs its output checked by a student or teacher.",false,"AI-generated educational content should be reviewed for accuracy and relevance."),
+ TF("TF-11",3,"AI systems may support some healthcare tasks, but their outputs can still require professional oversight.",true,"Some healthcare uses can be supported by AI, but oversight and validation remain important."),
+ TF("TF-12",3,"If a product uses AI in one feature, every result produced by the entire product is necessarily generated by AI.",false,"A product can combine AI and non-AI components, so not every result is AI-generated."),
+ TF("TF-13",4,"AI can improve efficiency for some tasks, depending on the system and context.",true,"AI may improve efficiency for certain tasks, but results depend on context and system quality."),
+ TF("TF-14",4,"A confident tone is sufficient evidence that an AI-generated claim is correct.",false,"Confidence or professional tone is not evidence. Claims should be checked against appropriate evidence."),
+ TF("TF-15",4,"Poor data quality or unrepresentative data can contribute to unreliable or unfair model outputs.",true,"Data gaps and unrepresentative examples can contribute to poor or unfair results."),
+ TF("TF-16",4,"The same AI model will perform equally well on every task and in every context.",false,"Performance varies by task, input, context, and evaluation conditions."),
+ TF("TF-17",5,"Users should consider privacy before submitting sensitive information to an AI tool.",true,"Users should consider whether sharing sensitive information is appropriate and authorized."),
+ TF("TF-18",5,"Using AI removes a person's responsibility for decisions made with its output.",false,"The people or organization making the decision retain responsibility."),
+ TF("TF-19",5,"Academic AI use should follow the instructor's rules about assistance and disclosure.",true,"Users must follow the relevant course rules, including disclosure requirements."),
+ TF("TF-20",5,"Checking important AI-generated claims against reliable evidence is part of responsible use.",true,"Verification is an important part of responsible AI use."),
+ MC("MC-01",1,"Which description best captures the broad purpose of AI?",["Making every computer conscious","Building systems that perform tasks associated with capabilities such as prediction, pattern recognition, or language processing","Replacing all human decisions","Storing files without processing them"],1,"AI covers systems designed for tasks such as prediction, pattern recognition, and language processing."),
+ MC("MC-02",1,"Which is the clearest example of traditional fixed-rule automation?",["A timer switches a lamp off after ten minutes","A model classifies photos after learning from examples","A speech recognizer converts audio to text","A generative model drafts a paragraph"],0,"A timer following a preset rule is a clear example of fixed-rule automation."),
+ MC("MC-03",1,"Why can a system be called AI without being generally intelligent?",["All AI systems are human-like","AI systems are always correct","Many AI systems are designed for specific tasks","AI systems do not need inputs"],2,"Many AI systems are designed for specific tasks rather than general intelligence."),
+ MC("MC-04",1,"Which statement about AI and ordinary software is most accurate?",["They can never be combined","Ordinary software always learns from examples","AI cannot be part of a larger software product","A product may combine fixed rules and AI components"],3,"Real products can combine fixed rules and AI components."),
+ MC("MC-05",2,"What is machine learning?",["A method that only stores data","An approach in which a model learns patterns from data","A guarantee that software understands every situation","A type of computer hardware"],1,"Machine learning uses data and a learning procedure to fit a model."),
+ MC("MC-06",2,"Which statement best describes deep learning?",["Any program containing a loop","A database search method","A type of machine learning using neural networks with multiple layers","A system that cannot use data"],2,"Deep learning uses neural networks with multiple layers."),
+ MC("MC-07",2,"What is generative AI designed to do?",["Generate outputs such as text, images, audio, or code","Guarantee the truth of every sentence","Eliminate the need for evaluation","Only retrieve unchanged documents"],0,"Generative AI creates outputs such as text, images, audio, or code."),
+ MC("MC-08",2,"Why is evaluation on separate data useful?",["It guarantees perfect performance","It removes every possible bias","It proves the model is conscious","It helps estimate how the model performs on examples not used for training"],3,"Separate evaluation data provides evidence about performance beyond training examples."),
+ MC("MC-09",3,"Which is an example of an AI application in communication?",["A blank notebook","Speech recognition that converts spoken words into text","An unplugged keyboard","A paper calendar"],1,"Speech recognition is used to turn spoken language into text."),
+ MC("MC-10",3,"A student uses AI to generate practice questions. What is the best next step?",["Assume all questions are correct","Submit them without reading","Check their accuracy and alignment with the course material","Ignore the instructor's rules"],2,"Generated questions should be checked for accuracy and course relevance."),
+ MC("MC-11",3,"Which statement about AI in healthcare is most appropriate?",["AI can support some tasks, but outputs may require professional oversight","AI output should always replace clinicians","AI tools cannot make errors","Any AI health claim is automatically validated"],0,"AI can assist with some healthcare tasks but requires appropriate validation and oversight."),
+ MC("MC-12",3,"What is one possible limitation of a recommendation system?",["It must show every available item equally","It cannot process user activity","It always knows a user's full preferences","It may narrow what a user sees or reinforce existing preferences"],3,"Recommendation systems can shape or narrow the information a user sees."),
+ MC("MC-13",4,"What is an AI hallucination in generative AI?",["A correct answer with a citation","An output that presents unsupported or incorrect information as if it were valid","A computer screen turning off","A verified calculation"],1,"A hallucination is an unsupported or incorrect output presented as valid."),
+ MC("MC-14",4,"What is a sensible way to check an important factual claim from AI?",["Trust it if it sounds professional","Ask the same system repeatedly and accept the most common answer","Compare it with relevant, reliable evidence","Use it only if it is long"],2,"Reliable evidence is a better basis for checking claims than tone or repetition."),
+ MC("MC-15",4,"How can unrepresentative training data affect a model?",["It can lead to weaker or unfair performance for some cases","It guarantees equal performance for everyone","It removes all uncertainty","It makes evaluation unnecessary"],0,"Unrepresentative data may cause weaker or unfair performance for some cases."),
+ MC("MC-16",4,"Which is a realistic benefit of AI?",["It guarantees perfect decisions","It eliminates the need for human judgment in all tasks","It makes all information private automatically","It can automate or speed up some tasks"],3,"Automation and speed are possible benefits, not guarantees of perfect performance."),
+ MC("MC-17",5,"Which is the most responsible action before entering confidential information into an AI tool?",["Paste it immediately","Check authorization and data-handling requirements, and avoid sharing unnecessary sensitive data","Share it publicly first","Assume every tool treats data identically"],1,"Sensitive information should not be shared without checking authorization and data handling."),
+ MC("MC-18",5,"What does transparency in AI use commonly involve?",["Hiding all AI involvement","Publishing private data","Being clear about AI assistance when disclosure is required","Treating generated text as a primary source"],2,"Transparency may require disclosure of material AI assistance."),
+ MC("MC-19",5,"A course allows AI brainstorming but requires students to write and verify their own work. What should a student do?",["Follow the course rules, check the information, and disclose assistance if required","Submit generated text without checking","Ignore the course rules","Claim every AI statement is verified"],0,"The student should follow course rules, verify information, and disclose assistance when required."),
+ MC("MC-20",5,"Who remains accountable for a decision made using AI assistance?",["The model alone in every circumstance","No one","The training data only","The people or organization making and acting on the decision"],3,"Responsibility remains with the people or organization making and acting on the decision.")
+];
+const CP=(id,w,q,opts,a,ex)=>({type:'mc',id,w,q,opts,a,ex,cp:true});
+const CHECK=[
+ CP("CP1-1",1,"Which statement best describes AI?",["A single human-like robot","A field building systems for intelligent tasks","Any computer program","A large database"],1,"AI is a broad field of computer science, not one machine or program."),
+ CP("CP1-2",1,"A thermostat that turns the heater on below 18 °C is best described as…",["Deep learning","A fixed rule (traditional program)","Generative AI","An LLM"],1,"It follows one fixed condition and learns nothing — a traditional program."),
+ CP("CP1-3",1,"Which perspective does ELIZA demonstrate most clearly?",["Thinking humanly","Acting humanly","Thinking rationally","Acting rationally"],1,"ELIZA imitates conversation with keyword templates. It acts humanly without understanding."),
+ CP("CP1-4",1,"In the river-crossing puzzle, “wolf and goat may not be alone” is a…",["Goal","State","Constraint","Action"],2,"A constraint is a rule every state must obey."),
+ CP("CP2-1",2,"A model groups shoppers into clusters without any labels. This is…",["Supervised learning","Unsupervised learning","Reinforcement learning","Regression"],1,"No labels: the method finds structure on its own. That is unsupervised learning."),
+ CP("CP2-2",2,"99% training accuracy but 60% test accuracy suggests…",["Generalisation","Overfitting","A hallucination","A small context window"],1,"The model memorised its training data and fails on new examples — overfitting."),
+ CP("CP2-3",2,"In TensorFlow Playground, why can't a network with 0 hidden layers separate the Circle data?",["It has no data","It can only draw straight boundaries","The learning rate is zero","Circles are unsupervised"],1,"Without hidden layers the network can only draw a straight line, and a circle needs a curved boundary."),
+ CP("CP2-4",2,"An LLM generates text mainly by…",["Searching a verified database","Predicting likely next tokens","Copying one training document","Running Prolog rules"],1,"LLMs predict likely next tokens. Fluent output is not verified fact."),
+ CP("CP3-1",3,"A bank's AI flags a payment as unusual. The best next step is…",["Block the account forever","Treat it as proven fraud","Have a person review the alert","Ignore all alerts"],2,"Alerts are signals, not proof. A person should review them."),
+ CP("CP3-2",3,"Which is the best use of AI writing tools for a student?",["Submit generated essays","Ask for feedback on your own draft","Hide copied text","Skip reading the sources"],1,"AI supports learning; it does not replace student effort."),
+ CP("CP3-3",3,"An AI highlights an area on an X-ray. This is…",["A diagnosis","Support for a professional's review","Always correct","A replacement for the doctor"],1,"Healthcare AI supports professionals. A highlight is not a diagnosis."),
+ CP("CP3-4",3,"A filter bubble is mainly caused by…",["Recommending similar content again and again","Slow internet","Translation errors","Too many searches"],0,"Recommending similar items narrows variety. Deliberate searching widens it."),
+ CP("CP4-1",4,"An AI cites a journal article that does not exist. This is…",["Overfitting","A hallucination","Representation bias","Inference"],1,"A fabricated reference is a hallucination: convincing but unsupported."),
+ CP("CP4-2",4,"“Explain Python” answered with facts about snakes is mainly a…",["Calculation error","Misinterpretation","Fabricated reference","Data leak"],1,"The AI misread the context. Clear context helps but guarantees nothing."),
+ CP("CP4-3",4,"A model trained mostly on one accent performs worse for others. Which bias?",["Historical","Representation","Labelling","Measurement"],1,"Some groups are under-represented in the training data — representation bias."),
+ CP("CP4-4",4,"Which is real verification?",["Asking the same AI again","Checking the original source","Counting the words","Trusting confident wording"],1,"Verify key claims against reliable, independent evidence such as the original source."),
+ CP("CP5-1",5,"Replacing names with “Student A” while keeping a key file is…",["Anonymisation","Pseudonymisation","Encryption","Deletion"],1,"With a key file the data can be re-identified, so it is pseudonymised — and still protected."),
+ CP("CP5-2",5,"Which action best supports fairness in a hiring AI?",["Trust the ranking","Compare outcomes across groups","Hide the results","Remove human recruiters"],1,"Check outcomes per group. Bias can also hide in proxies like postcode."),
+ CP("CP5-3",5,"A company's chatbot gives wrong information. Who is accountable?",["The chatbot","Nobody","The company","The customer"],2,"People and organisations remain accountable for the AI they deploy."),
+ CP("CP5-4",5,"Which is usually acceptable if your course allows AI?",["AI answers in a closed-book quiz","Feedback on your own draft","Unchecked AI references","Rewriting a friend's essay"],1,"Feedback on your own work, with disclosure if required, respects academic integrity.")
+];
+const NUM=(id,w,q,a,unit,ex)=>({type:'num',id,w,q,a,unit,ex});
+const SORT=(id,w,card,bins,a,ex)=>({type:'sort',id,w,q:card,bins,a,ex});
+const B_AI=["AI","NOT AI","IT DEPENDS"], B_LIGHT=["GREEN","YELLOW","RED"], B_HEAD=["NARROW AI","AGI CLAIM","ASI CLAIM","NOT ENOUGH EVIDENCE"],
+      B_TASK=["CLASSIFY","PREDICT","RECOMMEND","RECOGNISE","GENERATE"], B_CHECK=["SUPPORTED","GLITCH"], B_RED=["REMOVE","KEEP"];
+const HALLU_CTX="Prompt: “Give me a short history of early AI with a reference.” — BYTE's answer: “Alan Turing published Computing Machinery and Intelligence in 1956 in the journal Nature. In it he proposed the Turing Test, which a computer passes if it can solve mathematical problems faster than a human. The Dartmouth workshop in 1956 helped establish AI as a research field. In 1966 Joseph Weizenbaum created ELIZA, which used deep learning to understand its users' feelings. Source: Smith, J. & Lee, K. (2019). Turing and the thinking machine. Journal of AI History, 12(3), 45–67.”";
+const FRUIT_CTX="Training data: 40 red apples (apple), 0 green apples, 20 bananas and 20 oranges (not apple). Learned rule: APPLE = round AND red. Test set: 6 red apples, 4 green apples, 2 red tomatoes.";
+const REDACT_CTX="“Hi! Please check my friend's essay and give feedback. Name: Li Ming · Student ID 2026xxxx17 · Phone: 138-xxxx-5521 · Home address: 12 Example Road, Haidian · Note: he has been seeing a counsellor for anxiety, so be nice. Essay topic: How AI is changing education. Paragraph 1: AI tutors can explain concepts at any time…” (All details are invented for this exercise.)";
+
+const MISSIONS={
+ m1sort:[
+  SORT("M1.1-a",1,"Pocket calculator adding 2 + 2",B_AI,[1],"Not AI: it follows one fixed formula. Being fast is not intelligence."),
+  SORT("M1.1-b",1,"Spam filter in your email",B_AI,[0],"AI: it learns patterns from labelled emails and estimates whether a new email is spam."),
+  SORT("M1.1-c",1,"Robot arm repeating the same weld",B_AI,[2],"It depends: a robot repeating fixed movements is not AI. It becomes AI-supported if it uses vision or planning."),
+  SORT("M1.1-d",1,"Thermostat: heater ON below 18 °C",B_AI,[1],"Not AI: one simple condition. (A smart thermostat that learns your schedule would be different.)"),
+  SORT("M1.1-e",1,"Phone unlocking with your face",B_AI,[0],"AI: computer vision recognises complex visual patterns."),
+  SORT("M1.1-f",1,"Bank flagging an unusual payment",B_AI,[0],"AI: it learns patterns that may signal unusual transactions.")],
+ m1order:[{type:'order',id:"M1.2",w:1,q:"Tap the 8 events from OLDEST to NEWEST.",
+   items:[["A","Deep learning improves image recognition"],["B","Turing proposes the imitation game"],["C","Expert systems spread in industry"],["D","Large language models generate text"],["E","Dartmouth workshop names the field"],["F","Funding falls during an AI winter"],["G","Spam filters learn from labelled emails"],["H","ELIZA chats using patterns"]],
+   a:["B","E","H","C","F","G","A","D"],ex:"Correct order: B, E, H, C, F, G, A, D. ELIZA (1966) came before expert systems spread (1980s). History is not a straight line, and old methods are still combined with new ones."}],
+ m2head:[
+  SORT("M2.1-a",2,"“New chatbot passes a law exam — AGI is here!”",B_HEAD,[3],"Not enough evidence for AGI: one exam is broad performance on a test, not proof of generalisation or robust adaptation."),
+  SORT("M2.1-b",2,"“Self-driving taxi works without a safety driver in one city”",B_HEAD,[0],"Narrow AI: one task (driving) in one city."),
+  SORT("M2.1-c",2,"“Image AI beats doctors at spotting one type of skin cancer in a test set”",B_HEAD,[0],"Narrow AI: one task, one test set."),
+  SORT("M2.1-d",2,"“Superintelligent AI will arrive next year, says influencer”",B_HEAD,[2],"An ASI claim about a hypothetical future, with no evidence.")],
+ m3spot:[
+  SORT("M3.6-a",3,"Your email moves a message to the spam folder",B_TASK,[0],"Classify: spam / not spam is a category. Low risk — you can check the folder."),
+  SORT("M3.6-b",3,"A video app lines up what to watch next",B_TASK,[2],"Recommend: it links your activity to items. Low risk, but it can narrow what you see (a filter bubble)."),
+  SORT("M3.6-c",3,"A map app estimates your arrival time",B_TASK,[1],"Predict: an estimated number from traffic patterns. Closures and accidents change conditions, so treat it as an estimate."),
+  SORT("M3.6-d",3,"Your phone unlocks when it sees your face",B_TASK,[3],"Recognise: computer vision matches visual patterns."),
+  SORT("M3.6-e",3,"A chatbot drafts an email for you",B_TASK,[4],"Generate: it creates new text. Check facts and tone before you send it."),
+  SORT("M3.6-f",3,"Your bank flags an unusual payment",B_TASK,[0,1],"Classify or predict: it estimates whether a payment is unusual. High risk (money), so a person should review the alert.")],
+ m4hallu:[
+  SORT("M4.3-a",4,"Turing published Computing Machinery and Intelligence in 1956.",B_CHECK,[1],"Glitch — factual error: it was published in 1950."),
+  SORT("M4.3-b",4,"It appeared in the journal Nature.",B_CHECK,[1],"Glitch — factual error: the journal was Mind."),
+  SORT("M4.3-c",4,"A computer passes the Turing Test if it solves maths problems faster than a human.",B_CHECK,[1],"Glitch — misrepresentation: the test asks whether a machine's conversation is hard to tell apart from a human's."),
+  SORT("M4.3-d",4,"The Dartmouth workshop in 1956 helped establish AI as a research field.",B_CHECK,[0],"Supported — this sentence is correct (see the World 1 timeline)."),
+  SORT("M4.3-e",4,"In 1966 ELIZA used deep learning to understand its users' feelings.",B_CHECK,[1],"Glitch — hallucinated detail: ELIZA used keyword patterns and templates, with no deep learning or understanding."),
+  SORT("M4.3-f",4,"Source: Smith & Lee (2019), Journal of AI History.",B_CHECK,[1],"Glitch — fabricated reference (invented for this exercise). The most dangerous kind: it looks real, but it does not exist.")].map(q=>({...q,ctx:HALLU_CTX})),
+ m4fruit:[
+  NUM("M4.4-a",4,"What is the robot's accuracy on the 4 green apples (in %)?",[0],"%","0/4 = 0%. The rule says green apples are not apples, because green apples were missing from training."),
+  NUM("M4.4-b",4,"What is its overall accuracy on all 12 test fruits (in %)?",[50],"%","Red apples 6/6 correct, green apples 0/4, tomatoes 0/2 (both wrongly called apples) → 6/12 = 50%. Overall accuracy hides that one group fails completely."),
+  MC("M4.4-c",4,"Which source of bias is this, and what is the best fix?",["Representation bias — add many green (and yellow) apples and red non-apples like tomatoes, then re-test per group","Labelling bias — make the rule “red = apple” stricter","Measurement bias — only report overall accuracy","No bias — remove the tomatoes from the test set"],0,"Representation bias: green apples were missing from training. Fix the data, then test each group separately.")].map(q=>({...q,ctx:FRUIT_CTX})),
+ m5redact:[
+  SORT("M5.1-a",5,"Name: Li Ming",B_RED,[0],"Remove — personal data."),
+  SORT("M5.1-b",5,"Student ID 2026xxxx17",B_RED,[0],"Remove — personal data that identifies the student."),
+  SORT("M5.1-c",5,"Phone: 138-xxxx-5521",B_RED,[0],"Remove — personal contact data."),
+  SORT("M5.1-d",5,"Home address: 12 Example Road, Haidian",B_RED,[0],"Remove — personal data."),
+  SORT("M5.1-e",5,"Note: he has been seeing a counsellor for anxiety",B_RED,[0],"Remove — sensitive health information, and not needed for essay feedback."),
+  SORT("M5.1-f",5,"Essay topic and paragraph text",B_RED,[1],"Keep — this is what the task needs. Even redacted, ask your friend before sharing their work.")].map(q=>({...q,ctx:REDACT_CTX})),
+ m5light:[
+  SORT("M5.3-a",5,"In a closed-book online quiz, you ask a chatbot for the answers.",B_LIGHT,[2],"RED — it breaks the rules of the assessment."),
+  SORT("M5.3-b",5,"You write a draft, then ask AI to point out unclear sentences, and you fix them yourself.",B_LIGHT,[0],"GREEN — the work and the fixes are your own."),
+  SORT("M5.3-c",5,"You ask AI for a reference list and paste it without checking.",B_LIGHT,[2],"RED — unverified, possibly fake references."),
+  SORT("M5.3-d",5,"You use AI to translate an English article so you can understand it, then cite the original article.",B_LIGHT,[0,1],"GREEN or YELLOW — fine if allowed; cite the original."),
+  SORT("M5.3-e",5,"You ask AI to explain an error in your code, then fix and test it yourself, and disclose it as required.",B_LIGHT,[0],"GREEN — with disclosure."),
+  SORT("M5.3-f",5,"You generate a whole lab report and submit it under your name without disclosure.",B_LIGHT,[2],"RED — dishonest and undisclosed.")]
+};
+const NUM_PREC=NUM("CP2-5",2,"A spam filter flags 20 emails; 15 of them are really spam. What is its precision (in %)?",[75],"%","Precision = true positives ÷ everything flagged = 15 ÷ 20 = 75%.");
+const NUM_TIME=NUM("CP4-5",4,"Manual: 30 min. With AI: 2 min to generate + 12 min checking + 6 min fixing. How many minutes did you really save?",[10],"min","30 − (2 + 12 + 6) = 10 minutes. Count checking and fixing time, not just generation.");
+const OE=[
+ {id:"OE-01",w:1,q:"Explain how AI differs from traditional fixed-rule software. Give two examples and discuss why it is important not to assume that every AI system has general human-like intelligence.",k:"Traditional fixed-rule software follows rules specified by its developers, while machine-learning systems use data and a learning procedure to fit a model that can identify patterns or make predictions. Examples: a timer that turns off a lamp after ten minutes; a classifier that identifies spam from examples. A product can combine both approaches. Many AI systems are designed for specific tasks and should not be assumed to have general human-like intelligence."},
+ {id:"OE-02",w:2,q:"Explain the relationship between data, algorithms, machine learning, deep learning, and generative AI. Use an example to show why a model's output still needs evaluation.",k:"Data provides examples or information; algorithms provide procedures for processing data or fitting a model. Machine learning uses these to learn patterns. Deep learning is a type of ML based on neural networks with multiple layers. Generative AI creates content such as text or images from learned patterns and an input prompt. Outputs depend on data, model design and context; fluent output can still be inaccurate, so include a verification or evaluation step."},
+ {id:"OE-03",w:3,q:"Choose two fields from education, business and finance, healthcare, transportation, communication, or entertainment. Explain how AI may be used in each field, one possible benefit, one limitation, and what users should verify.",k:"Select two fields with a specific task in each (e.g. education: generating practice questions; transportation: estimating traffic or driver assistance). Identify realistic benefits such as saving time or supporting pattern recognition, and limitations such as inaccurate outputs, bias, missing context, or the need for professional oversight. State what evidence or human review is needed before relying on results."},
+ {id:"OE-04",w:4,q:"Describe a practical method for checking an AI-generated answer that contains several factual claims. Explain how inaccurate outputs, data quality, bias, and context may affect your evaluation.",k:"A repeatable process: identify factual claims, check them against reliable and relevant sources, compare independent evidence, check dates and context, and record what is supported or uncertain. Inaccurate outputs can sound confident, poor data can weaken performance, unrepresentative data can create bias, and context may change whether a claim applies. Repeated claims or confident language are not sufficient proof."},
+ {id:"OE-05",w:5,q:"A student wants to use an AI tool for a university assignment. Explain how the student can consider privacy, academic integrity, transparency, accuracy, and human judgement before submitting the work.",k:"Don't share unnecessary sensitive data; check tool and course rules; verify facts and citations; be transparent about AI assistance when required. AI can support brainstorming or learning but does not remove the student's responsibility to understand and verify submitted work. Keep independent judgement and follow the instructor's specific rules."},
+ {id:"OE-06",w:5,q:"Imagine an organization wants to use AI to recommend services to people. Discuss potential benefits, possible bias or privacy risks, how the system should be evaluated, and what human oversight should remain.",k:"Benefits: speed, personalised recommendations. Risks: privacy, unrepresentative data, unfair outcomes, errors. Test the system on relevant cases, evaluate results across groups, protect data, document limitations, and give people a way to question or review important outcomes. Keep human oversight for consequential or uncertain cases, and connect each safeguard to a specific risk."}
+];
+
+/* Stations placed in the world */
+const tfOf=w=>BANK.filter(q=>q.w===w&&q.type==='tf'), mcOf=w=>BANK.filter(q=>q.w===w&&q.type==='mc'), cpOf=w=>CHECK.filter(q=>q.w===w);
+const ST=(id,w,kind,x,y,name,sub,qs,extra={})=>({id,w,kind,x,y,name,sub,qs,...extra});
+const STATIONS=[
+ ST('1t',1,'terminal',6,6,'TEST BANK TERMINAL','Part A · TF-01–04',()=>tfOf(1)),
+ ST('1b',1,'bot',8,15,'QUIZ BOT','Part B · MC-01–04',()=>mcOf(1)),
+ ST('1g',1,'guard',17,6,'CHECKPOINT GUARDIAN','World 1 checkpoint',()=>cpOf(1)),
+ ST('1m',1,'board',17,15,'MISSION 1.1 · IS IT AI?','Sort 6 cards',()=>MISSIONS.m1sort,{brief:"Sort each card: AI, NOT AI or IT DEPENDS. Ask: does it work with patterns, uncertainty or perception — or only a fixed formula? A robot is not automatically AI."}),
+ ST('1r',1,'tablet',6,11,'MISSION 1.2 · TIMELINE RUINS','Order 8 events',()=>MISSIONS.m1order,{keep:true,brief:"Ancient tablets from the World 1 timeline. Arrange cards A–H from oldest to newest."}),
+ ST('2t',2,'terminal',44,6,'TEST BANK TERMINAL','Part A · TF-05–08',()=>tfOf(2)),
+ ST('2b',2,'bot',45,15,'QUIZ BOT','Part B · MC-05–08',()=>mcOf(2)),
+ ST('2g',2,'guard',56,6,'CHECKPOINT GUARDIAN','World 2 checkpoint',()=>[...cpOf(2),NUM_PREC]),
+ ST('2m',2,'board',56,15,'MISSION 2.1 · HEADLINE DETECTIVE','Label 4 headlines',()=>MISSIONS.m2head,{brief:"Label each headline. Detective questions: What task can it actually do? Under what conditions was it tested? Can it transfer? What limits are mentioned? Is it about a current system or a future idea?"}),
+ ST('3t',3,'terminal',47,36,'TEST BANK TERMINAL','Part A · TF-09–12',()=>tfOf(3)),
+ ST('3b',3,'bot',54,36,'QUIZ BOT','Part B · MC-09–12',()=>mcOf(3)),
+ ST('3g',3,'guard',46,42,'CHECKPOINT GUARDIAN','World 3 checkpoint',()=>cpOf(3)),
+ ST('3m',3,'board',54,42,'MISSION 3.6 · AI SPOTTER LOG','Classify 6 everyday uses',()=>MISSIONS.m3spot,{brief:"For each everyday AI, choose its task type, then think: would a mistake be low, medium or high risk? Some uses fit more than one type."}),
+ ST('4t',4,'terminal',6,32,'TEST BANK TERMINAL','Part A · TF-13–16',()=>tfOf(4)),
+ ST('4b',4,'bot',7,41,'QUIZ BOT','Part B · MC-13–16',()=>mcOf(4)),
+ ST('4g',4,'guard',17,31,'CHECKPOINT GUARDIAN','World 4 checkpoint',()=>[...cpOf(4),NUM_TIME]),
+ ST('4h',4,'board',18,41,'MISSION 4.3 · HALLUCINATION HUNT','Check 6 claims',()=>MISSIONS.m4hallu,{keep:true,brief:"BYTE wrote a fluent, confident answer. Check each claim against what you learned in Worlds 1–4: supported, or a glitch?"}),
+ ST('4f',4,'stand',12,36,'MISSION 4.4 · BIASED FRUIT SORTER','Calculate accuracy per group',()=>MISSIONS.m4fruit,{keep:true,brief:"A fruit-stand robot learned what an apple is. Calculate its accuracy per group and find the bias."}),
+ ST('5t',5,'terminal',27,5,'TEST BANK TERMINAL','Part A · TF-17–20',()=>tfOf(5)),
+ ST('5b',5,'bot',36,5,'QUIZ BOT','Part B · MC-17–20',()=>mcOf(5)),
+ ST('5g',5,'guard',34,7,'CHECKPOINT GUARDIAN','World 5 checkpoint',()=>cpOf(5)),
+ ST('5r',5,'desk',27,9,'MISSION 5.1 · REDACT THE PROMPT','Remove or keep 6 items',()=>MISSIONS.m5redact,{keep:true,brief:"Data minimisation: keep only what the task needs. Decide what to remove from this prompt before it goes to an AI tool."}),
+ ST('5l',5,'traffic',36,9,'MISSION 5.3 · ALLOWED OR NOT?','Light 6 scenarios',()=>MISSIONS.m5light,{brief:"GREEN = acceptable · YELLOW = depends on the rules / needs disclosure · RED = breaks academic integrity."})
+];
+const SHRINES={1:[19,10],2:[51,10],3:[48,30],4:[13,41],5:[31,4]};
+const SIGNS={1:[24,12],2:[39,12],5:[34,12],4:[24,31],3:[39,31],6:[34,35]};
+const WARP={0:[31,26],1:[23,13],2:[39,13],5:[31,12],4:[23,32],3:[39,32],6:[31,34]};
+
+/* ================= MAP ================= */
+const TS=16,MW=64,MH=48;
+const T={WATER:0,GRASS:1,FLOW:2,PATH:3,TREE:4,BUSH:5,SAND:6,CACT:7,ROCK:8,CAVE:9,CWALL:10,CRYS:11,ROADH:12,ROADV:13,ROADX:14,WALK:15,BLDG:16,CFLOOR:17,CWALL2:18,CARPET:19,PLAZA:20,FFLOOR:21,FWALL:22,BRIDGE:23};
+const SOLID=new Set([T.WATER,T.TREE,T.BUSH,T.CACT,T.ROCK,T.CWALL,T.CRYS,T.BLDG,T.CWALL2,T.FWALL]);
+const ZONES={
+ 1:{x0:3,y0:3,x1:22,y1:18,floor:T.GRASS,wall:T.TREE,deco:T.TREE,ent:[[22,13],[22,14]]},
+ 2:{x0:41,y0:3,x1:60,y1:18,floor:T.CAVE,wall:T.CWALL,deco:T.CRYS,ent:[[41,13],[41,14]]},
+ 5:{x0:25,y0:3,x1:38,y1:11,floor:T.CFLOOR,wall:T.CWALL2,deco:null,ent:[[31,11],[32,11]]},
+ 4:{x0:3,y0:29,x1:22,y1:44,floor:T.SAND,wall:T.ROCK,deco:T.CACT,ent:[[22,32],[22,33]]},
+ 3:{x0:41,y0:29,x1:60,y1:44,floor:T.WALK,wall:T.BLDG,deco:null,ent:[[41,32],[41,33]]},
+ 6:{x0:27,y0:36,x1:36,y1:44,floor:T.FFLOOR,wall:T.FWALL,deco:null,ent:[[31,36],[32,36]]}
+};
+const PLAZA={x0:27,y0:19,x1:36,y1:28};
+const map=new Uint8Array(MW*MH);
+const at=(x,y)=>(x<0||y<0||x>=MW||y>=MH)?T.WATER:map[y*MW+x];
+const setT=(x,y,t)=>{if(x>=0&&y>=0&&x<MW&&y<MH)map[y*MW+x]=t};
+function fillR(x0,y0,x1,y1,t){for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++)setT(x,y,t)}
+const inR=(x,y,z)=>x>=z.x0&&x<=z.x1&&y>=z.y0&&y<=z.y1;
+const GLITCH={1:[],2:[],3:[],4:[],5:[]};
+
+function buildMap(){
+ const r=rng(20261107);
+ fillR(0,0,MW-1,MH-1,T.WATER);fillR(2,2,MW-3,MH-3,T.GRASS);
+ for(let x=2;x<MW-2;x++){if(r()<.4)setT(x,2,T.WATER);if(r()<.4)setT(x,MH-3,T.WATER)}
+ for(let y=2;y<MH-2;y++){if(r()<.4)setT(2,y,T.WATER);if(r()<.4)setT(MW-3,y,T.WATER)}
+ for(let y=3;y<MH-3;y++)for(let x=3;x<MW-3;x++)if(r()<.07)setT(x,y,T.FLOW);
+ for(const k in ZONES){const z=ZONES[k];fillR(z.x0,z.y0,z.x1,z.y1,z.wall);fillR(z.x0+1,z.y0+1,z.x1-1,z.y1-1,z.floor);z.ent.forEach(([x,y])=>setT(x,y,z.floor))}
+ // Origin Valley river + bridges
+ fillR(12,4,12,17,T.WATER);setT(12,8,T.BRIDGE);setT(12,14,T.BRIDGE);
+ // Ethics Castle carpet
+ fillR(31,5,32,11,T.CARPET);
+ // App City streets and blocks
+ fillR(41,32,59,33,T.ROADH);fillR(42,39,59,39,T.ROADH);fillR(50,30,51,43,T.ROADV);
+ for(const y of [32,33,39])for(const x of [50,51])setT(x,y,T.ROADX);
+ [[43,30],[44,30],[54,30],[55,30],[58,30],[43,35],[44,35],[43,36],[44,36],[57,35],[58,35],[57,36],[58,36],[43,42],[44,42],[57,42],[58,42]].forEach(([x,y])=>setT(x,y,T.BLDG));
+ // Fortress pillars
+ [[29,38],[34,38],[29,42],[34,42]].forEach(([x,y])=>setT(x,y,T.FWALL));
+ // Plaza and roads
+ fillR(PLAZA.x0,PLAZA.y0,PLAZA.x1,PLAZA.y1,T.PLAZA);
+ fillR(23,13,40,14,T.PATH);fillR(31,12,32,18,T.PATH);fillR(23,32,40,33,T.PATH);fillR(31,29,32,35,T.PATH);
+ // Reserve cells around everything you interact with
+ const res=new Set();const reserve=(x,y,rad=1)=>{for(let dy=-rad;dy<=rad;dy++)for(let dx=-rad;dx<=rad;dx++)res.add((x+dx)+','+(y+dy))};
+ STATIONS.forEach(s=>reserve(s.x,s.y));Object.values(SHRINES).forEach(([x,y])=>reserve(x,y));Object.values(SIGNS).forEach(([x,y])=>reserve(x,y));
+ for(const k in ZONES)ZONES[k].ent.forEach(([x,y])=>reserve(x,y,2));
+ Object.values(WARP).forEach(([x,y])=>reserve(x,y));
+ const freeAround=(x,y)=>{for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const t=at(x+dx,y+dy);if(SOLID.has(t)||t===T.PATH||t===T.BRIDGE||t===T.PLAZA||t===T.ROADH||t===T.ROADV||t===T.ROADX)return false}return true};
+ const place=(x,y,t)=>{if(res.has(x+','+y)||!freeAround(x,y))return false;setT(x,y,t);return true};
+ for(const k of [1,2,4]){const z=ZONES[k];for(let y=z.y0+1;y<z.y1;y++)for(let x=z.x0+1;x<z.x1;x++)if(r()<.16)place(x,y,z.deco)}
+ // Overworld meadow: trees and bushes outside zones and plaza
+ for(let y=3;y<MH-3;y++)for(let x=3;x<MW-3;x++){
+  let inZ=false;for(const k in ZONES)if(inR(x,y,{x0:ZONES[k].x0-1,y0:ZONES[k].y0-1,x1:ZONES[k].x1+1,y1:ZONES[k].y1+1}))inZ=true;
+  if(inZ||inR(x,y,{x0:PLAZA.x0-1,y0:PLAZA.y0-1,x1:PLAZA.x1+1,y1:PLAZA.y1+1}))continue;
+  const t=at(x,y);if((t===T.GRASS||t===T.FLOW)&&r()<.1)place(x,y,r()<.6?T.TREE:T.BUSH)}
+ // Glitch overlay cells (scrambled memory) per world
+ for(const k of [1,2,3,4,5]){const z=ZONES[k];let n=0,guard=0;while(n<12&&guard++<500){const x=z.x0+1+Math.floor(r()*(z.x1-z.x0-1)),y=z.y0+1+Math.floor(r()*(z.y1-z.y0-1));
+  if(!SOLID.has(at(x,y))&&!res.has(x+','+y)){GLITCH[k].push([x,y]);n++}}}
+}
+
+/* ================= TILE ART ================= */
+function R(g,c,x,y,w,h){g.fillStyle=c;g.fillRect(x,y,w,h)}
+function dots(g,r,n,cols){for(let i=0;i<n;i++){g.fillStyle=cols[(r()*cols.length)|0];g.fillRect((r()*16)|0,(r()*16)|0,1,1)}}
+const isRoad=t=>t===T.ROADH||t===T.ROADV||t===T.ROADX;
+const ART={};
+ART[T.GRASS]=(g,r)=>{R(g,'#7fd08e',0,0,16,16);dots(g,r,10,['#6cc27c','#93dca0']);if(r()<.5){const x=(r()*11|0)+2,y=(r()*9|0)+4;R(g,'#5fb070',x,y,1,2);R(g,'#5fb070',x+2,y,1,2);R(g,'#5fb070',x+1,y+1,1,2)}};
+ART[T.FLOW]=(g,r)=>{ART[T.GRASS](g,r);for(let i=0;i<3;i++){const x=(r()*12|0)+2,y=(r()*12|0)+2,c=['#ffffff','#ffd1e3','#fff3a8'][(r()*3)|0];R(g,c,x-1,y,3,1);R(g,c,x,y-1,1,3);R(g,'#f5c542',x,y,1,1)}};
+ART[T.PATH]=(g,r)=>{R(g,'#ecd3a0',0,0,16,16);dots(g,r,12,['#dcbf86','#f6e2b8','#d4b47a'])};
+ART[T.SAND]=(g,r)=>{R(g,'#f6d98e',0,0,16,16);dots(g,r,12,['#e8c46c','#fbe9b5']);if(r()<.5){const y=(r()*12|0)+2,x=(r()*8|0);R(g,'#ecca78',x,y,6,1);R(g,'#ecca78',x+6,y-1,3,1)}};
+ART[T.CAVE]=(g,r)=>{R(g,'#3c2c88',0,0,16,16);dots(g,r,14,['#4b3aa2','#2e2170','#5544b8'])};
+ART[T.WALK]=(g,r)=>{R(g,'#d9d3e6',0,0,16,16);R(g,'#c3bbd4',0,0,16,1);R(g,'#c3bbd4',0,0,1,16);R(g,'#c3bbd4',8,0,1,8);R(g,'#c3bbd4',0,8,16,1);dots(g,r,4,['#e7e2f1'])};
+ART[T.ROADH]=(g,r,x,y)=>{R(g,'#4a4e6e',0,0,16,16);dots(g,r,6,['#55597a','#3f4362']);const up=isRoad(at(x,y-1)),dn=isRoad(at(x,y+1));
+ if(!up)R(g,'#8a8fb0',0,0,16,1);if(!dn)R(g,'#8a8fb0',0,15,16,1);if(up&&!dn){R(g,'#f5c542',1,0,5,1);R(g,'#f5c542',9,0,5,1)}if(!up&&!dn){R(g,'#f5c542',1,7,5,1);R(g,'#f5c542',9,7,5,1)}};
+ART[T.ROADV]=(g,r,x,y)=>{R(g,'#4a4e6e',0,0,16,16);dots(g,r,6,['#55597a','#3f4362']);const lf=isRoad(at(x-1,y)),rt=isRoad(at(x+1,y));
+ if(!lf)R(g,'#8a8fb0',0,0,1,16);if(!rt)R(g,'#8a8fb0',15,0,1,16);if(lf&&!rt){R(g,'#f5c542',0,1,1,5);R(g,'#f5c542',0,9,1,5)}};
+ART[T.ROADX]=(g,r)=>{R(g,'#4a4e6e',0,0,16,16);dots(g,r,6,['#55597a','#3f4362'])};
+ART[T.CFLOOR]=(g,r,x,y)=>{R(g,(x+y)%2?'#e4dbfa':'#d6c9f5',0,0,16,16);R(g,'#cbbcf0',0,15,16,1);R(g,'#cbbcf0',15,0,1,16)};
+ART[T.CARPET]=(g,r,x,y)=>{R(g,'#c2384f',0,0,16,16);R(g,'#a82c42',0,4,16,1);R(g,'#a82c42',0,12,16,1);if(at(x-1,y)!==T.CARPET)R(g,'#f5c542',0,0,2,16);if(at(x+1,y)!==T.CARPET)R(g,'#f5c542',14,0,2,16)};
+ART[T.PLAZA]=(g,r)=>{R(g,'#efe4cc',0,0,16,16);R(g,'#ddd0b2',0,15,16,1);R(g,'#ddd0b2',15,0,1,16);R(g,'#ddd0b2',7,0,1,8);R(g,'#ddd0b2',0,7,8,1);dots(g,r,4,['#e2d5b8'])};
+ART[T.FFLOOR]=(g,r,x,y)=>{R(g,(x+y)%2?'#3a1432':'#44193c',0,0,16,16);dots(g,r,5,['#6a2456','#2c0f26'])};
+ART[T.BRIDGE]=(g)=>{R(g,'#4aa8e0',0,0,16,16);R(g,'#c08a4a',0,1,16,14);[3,7,11,15].forEach(x=>R(g,'#8a5a2a',x,1,1,14));R(g,'#6b4520',0,1,16,1);R(g,'#6b4520',0,14,16,1)};
+ART[T.TREE]=(g,r)=>{ART[T.GRASS](g,r);R(g,'rgba(0,0,0,.18)',3,13,11,2);R(g,'#7a4a22',7,11,2,4);R(g,'#2a6a44',3,1,10,11);R(g,'#2a6a44',1,3,14,7);R(g,'#3f9a5d',4,2,8,9);R(g,'#3f9a5d',2,4,12,5);R(g,'#62c07e',4,3,3,2);R(g,'#62c07e',5,5,1,1);R(g,'#2f7a4c',9,7,3,2)};
+ART[T.BUSH]=(g,r)=>{ART[T.GRASS](g,r);R(g,'rgba(0,0,0,.18)',3,13,10,2);R(g,'#2a6a44',3,6,10,8);R(g,'#2a6a44',2,8,12,4);R(g,'#3f9a5d',4,7,8,6);R(g,'#62c07e',5,8,2,1);R(g,'#e8435a',9,9,1,1);R(g,'#e8435a',6,11,1,1)};
+ART[T.CACT]=(g,r)=>{ART[T.SAND](g,r);R(g,'rgba(0,0,0,.15)',4,14,9,2);R(g,'#24704a',6,2,4,13);R(g,'#3fa060',7,3,2,11);R(g,'#24704a',2,6,3,5);R(g,'#24704a',2,10,5,2);R(g,'#24704a',11,4,3,5);R(g,'#24704a',9,8,5,2);R(g,'#3fa060',3,7,1,3);R(g,'#3fa060',12,5,1,3);R(g,'#ff8fb8',7,1,2,1)};
+ART[T.ROCK]=(g,r)=>{ART[T.SAND](g,r);R(g,'#8a5520',1,3,14,13);R(g,'#c4823a',2,2,12,12);R(g,'#c4823a',1,4,14,9);R(g,'#e0a35a',3,3,5,3);R(g,'#a86a2c',8,9,5,3)};
+ART[T.CWALL]=(g,r)=>{R(g,'#221a58',0,0,16,16);R(g,'#2f2672',1,1,6,5);R(g,'#2f2672',9,2,6,5);R(g,'#2f2672',3,9,7,5);R(g,'#2f2672',11,10,4,5);R(g,'#3d3290',1,1,6,1);R(g,'#3d3290',9,2,6,1);R(g,'#3d3290',3,9,7,1)};
+ART[T.CRYS]=(g,r)=>{ART[T.CAVE](g,r);R(g,'rgba(138,92,246,.25)',2,10,12,5);R(g,'#4b2fb0',5,3,6,12);R(g,'#7b55ec',6,2,4,12);R(g,'#7b55ec',4,6,8,6);R(g,'#c9b6ff',7,3,1,8);R(g,'#c9b6ff',5,7,1,3);R(g,'#4b2fb0',3,10,3,5);R(g,'#7b55ec',3,10,2,4)};
+ART[T.BLDG]=(g,r,x,y)=>{const cols=['#f08a5a','#ffb48f','#e8592a','#2b2f57'];const c=cols[(x*7+y*3)%4];R(g,'#1e2140',0,0,16,16);R(g,c,1,1,14,14);R(g,'rgba(0,0,0,.2)',1,1,14,2);
+ for(let wy=4;wy<14;wy+=4)for(let wx=3;wx<13;wx+=4)R(g,r()<.6?'#fff3a8':'#5fd8e8',wx,wy,2,2)};
+ART[T.CWALL2]=(g,r,x,y)=>{R(g,'#6b4fd8',0,0,16,16);for(let by=0;by<16;by+=4){R(g,'#5a3fc0',0,by,16,1);const off=(by/4)%2?4:0;for(let bx=off;bx<16;bx+=8)R(g,'#5a3fc0',bx,by,1,4)}R(g,'#8a70ea',0,1,16,1);
+ if(at(x,y-1)!==T.CWALL2){R(g,'#1e2140',2,0,3,2);R(g,'#1e2140',10,0,3,2)}};
+ART[T.FWALL]=(g,r)=>{R(g,'#4a1440',0,0,16,16);for(let by=0;by<16;by+=4){R(g,'#6a2458',0,by,16,1);const off=(by/4)%2?4:0;for(let bx=off;bx<16;bx+=8)R(g,'#6a2458',bx,by,1,4)}dots(g,r,3,['#ff3df2','#5fd8e8'])};
+function artWater(g,r,x,y,f){R(g,'#4aa8e0',0,0,16,16);dots(g,r,6,['#3f97cf']);for(let i=0;i<2;i++){const wy=(r()*12|0)+2,wx=((r()*8|0)+(f?3:0))%12;R(g,'#8fd3f5',wx,wy,4,1);R(g,'#8fd3f5',wx+1,wy-1,2,1)}
+ const land=(a,b)=>{const t=at(a,b);return t!==T.WATER&&t!==T.BRIDGE};const fc=f?'#e2f6fd':'#c4ecfb';
+ if(land(x,y-1))R(g,fc,0,0,16,f?2:1);if(land(x,y+1))R(g,fc,0,f?14:15,16,f?2:1);if(land(x-1,y))R(g,fc,0,0,f?2:1,16);if(land(x+1,y))R(g,fc,f?14:15,0,f?2:1,16)}
+
+let BASE=[];
+function prerender(){BASE=[0,1].map(f=>{const c=document.createElement('canvas');c.width=MW*TS;c.height=MH*TS;const g=c.getContext('2d');
+ for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){const t=at(x,y);const r=rng(((x*73856093)^(y*19349663)^(t*83492791))>>>0);g.save();g.translate(x*TS,y*TS);
+  if(t===T.WATER)artWater(g,r,x,y,f);else (ART[t]||ART[T.GRASS])(g,r,x,y);g.restore()}
+ return c})}
+
+/* ================= ENTITIES ================= */
+let ENTS=[];const ENT_SOLID=new Map();
+function buildEnts(){ENTS=[];
+ STATIONS.forEach(s=>ENTS.push({kind:'station',x:s.x,y:s.y,w:1,h:1,st:s}));
+ for(const w in SHRINES)ENTS.push({kind:'shrine',x:SHRINES[w][0],y:SHRINES[w][1],w:1,h:1,wn:+w});
+ for(const w in SIGNS)ENTS.push({kind:'sign',x:SIGNS[w][0],y:SIGNS[w][1],w:1,h:1,wn:+w});
+ ENTS.push({kind:'fountain',x:31,y:22,w:2,h:2});
+ ENTS.push({kind:'qboard',x:28,y:20,w:1,h:1});
+ ENTS.push({kind:'library',x:35,y:20,w:1,h:1});
+ ENTS.push({kind:'boss',x:31,y:40,w:2,h:2});
+ ENTS.push({kind:'gate',x:31,y:36,w:2,h:1});
+ ENT_SOLID.clear();ENTS.forEach(e=>{for(let dy=0;dy<e.h;dy++)for(let dx=0;dx<e.w;dx++)ENT_SOLID.set((e.x+dx)+','+(e.y+dy),e)})}
+const gateOpen=()=>coreCount()>=5;
+function solidAt(tx,ty){if(SOLID.has(at(tx,ty)))return true;const e=ENT_SOLID.get(tx+','+ty);if(!e)return false;if(e.kind==='gate')return !gateOpen();return true}
+function blocked(nx,ny){const L=nx+4,Rr=nx+11,Tp=ny+10,B=ny+15;
+ for(const [x,y] of [[L,Tp],[Rr,Tp],[L,B],[Rr,B]])if(solidAt(Math.floor(x/TS),Math.floor(y/TS)))return true;return false}
+
+/* ================= SAVE ================= */
+const SKEY='aiquest-sln-openworld-v2';
+const fresh=()=>({name:'MAYA',avatar:'maya',stations:{},cores:{},boss:0,bossBeaten:false,pos:null,hearts:5,music:true,sfx:true,started:false});
+let SAVE=fresh();
+try{const s=JSON.parse(localStorage.getItem(SKEY)||'null');if(s&&s.stations)SAVE=Object.assign(fresh(),s)}catch(e){}
+function persist(){try{SAVE.pos=[S.px,S.py];SAVE.hearts=S.hearts;localStorage.setItem(SKEY,JSON.stringify(SAVE))}catch(e){}}
+const coreCount=()=>Object.keys(SAVE.cores).length;
+const zoneStations=w=>STATIONS.filter(s=>s.w===w);
+const zoneDone=w=>zoneStations(w).filter(s=>SAVE.stations[s.id]).length;
+
+/* ================= MUSIC (original chiptune) ================= */
+function NOTE(n){const m=n.match(/^([A-G])(#?)(\d)$/);return 12*(+m[3]+1)+{C:0,D:2,E:4,F:5,G:7,A:9,B:11}[m[1]]+(m[2]?1:0)}
+const SONGS={
+ main:{bpm:132,arpEvery:2,hat:2,
+  chords:['C','Am','F','G','C','Am','F','G','F','G','Em','Am','F','G','C','C'],
+  lead:['E5',1,'G5',1,'C6',2,'B5',1,'G5',1,'E5',2, 'A5',2,'G5',1,'E5',1,'C5',2,'E5',2, 'F5',1,'A5',1,'C6',2,'A5',1,'F5',1,'A5',2, 'G5',3,'F5',1,'E5',2,'D5',2,
+        'E5',1,'G5',1,'C6',2,'D6',1,'C6',1,'B5',2, 'A5',2,'C6',2,'E6',2,'C6',2, 'D6',1,'C6',1,'A5',2,'G5',1,'F5',1,'G5',2, 'B5',2,'D6',2,'G5',4,
+        'A5',2,'A5',1,'G5',1,'F5',2,'A5',2, 'B5',2,'B5',1,'A5',1,'G5',2,'B5',2, 'G5',1,'B5',1,'E6',2,'D6',1,'B5',1,'G5',2, 'A5',3,'B5',1,'C6',2,'E6',2,
+        'F6',2,'E6',1,'D6',1,'C6',2,'A5',2, 'D6',2,'C6',1,'B5',1,'G5',2,'B5',2, 'C6',1,'G5',1,'E5',1,'G5',1,'C6',2,'E6',2, 'C6',6,'R',2],
+  bass:[0,12,7,12,0,12,7,12],
+  drums:["k...s...k.k.s...","k...s...k.k.s...","k...s...k.k.s...","k...s...k.k.s.ss"]},
+ boss:{bpm:152,arpEvery:1,hat:1,
+  chords:['Am','F','G','E','Am','F','G','E'],
+  lead:['A5',1,'A5',1,'C6',1,'A5',1,'E6',2,'D6',1,'C6',1, 'F5',1,'A5',1,'C6',1,'F6',2,'E6',1,'C6',1,'A5',1, 'G5',1,'B5',1,'D6',1,'G6',2,'F6',1,'D6',1,'B5',1, 'G#5',2,'B5',2,'E6',2,'R',1,'E5',1,
+        'A5',1,'A5',1,'C6',1,'A5',1,'E6',2,'D6',1,'C6',1, 'F5',1,'A5',1,'C6',1,'F6',2,'E6',1,'C6',1,'A5',1, 'G5',1,'B5',1,'D6',1,'G6',2,'F6',1,'D6',1,'B5',1, 'E6',1,'D6',1,'C6',1,'B5',1,'G#5',2,'E5',2],
+  bass:[0,0,12,0,0,12,0,12],
+  drums:["k.k.s...k.k.s.k.","k.k.s...k.k.s.ss"]}
+};
+function buildSong(d){const total=d.chords.length*16;const lead=new Array(total).fill(null);let st=0;
+ for(let i=0;i<d.lead.length;i+=2){const n=d.lead[i],e=d.lead[i+1];if(n!=='R')lead[st]={m:NOTE(n),len:e*2};st+=e*2}
+ if(st!==total)console.warn('song length mismatch',st,total);
+ const chords=d.chords.map(c=>{const root=c[1]==='#'?c.slice(0,2):c[0];const minor=c.endsWith('m');return{r:NOTE(root+'3'),third:minor?3:4}});
+ return{...d,total,lead,chords}}
+const Music={ctx:null,cur:null,step:0,next:0,hold:0,ducked:false,songs:{},
+ init(){if(this.ctx)return true;const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+  try{const c=this.ctx=new AC();
+  this.master=c.createGain();this.master.gain.value=.9;this.master.connect(c.destination);
+  this.bus=c.createGain();this.bus.connect(this.master);this.sfx=c.createGain();this.sfx.connect(this.master);
+  this.dly=c.createDelay(1);this.dly.delayTime.value=.34;const fb=c.createGain();fb.gain.value=.26;const wet=c.createGain();wet.gain.value=.2;this.dly.connect(fb);fb.connect(this.dly);this.dly.connect(wet);wet.connect(this.bus);
+  const n=32,re=new Float32Array(n),im=new Float32Array(n);for(let i=1;i<n;i++)re[i]=2/(i*Math.PI)*Math.sin(i*Math.PI*.25);this.pulse=c.createPeriodicWave(re,im);
+  const b=c.createBuffer(1,c.sampleRate,c.sampleRate),dd=b.getChannelData(0);for(let i=0;i<dd.length;i++)dd[i]=Math.random()*2-1;this.noise=b;
+  for(const k in SONGS)this.songs[k]=buildSong(SONGS[k]);this.applyVol();setInterval(()=>this.tick(),25);return true}catch(e){this.ctx=null;return false}},
+ applyVol(){if(!this.ctx)return;const t=this.ctx.currentTime;this.bus.gain.setTargetAtTime(SAVE.music?(this.ducked?.22:.5):0,t,.08);this.sfx.gain.setTargetAtTime(SAVE.sfx?.8:0,t,.02)},
+ duck(on){this.ducked=on;this.applyVol()},
+ play(name){if(!this.ctx||this.cur===name)return;this.cur=name;this.step=0;this.next=this.ctx.currentTime+.08;if(this.ctx.state==='suspended')this.ctx.resume()},
+ tick(){if(!this.cur||!this.ctx)return;const s=this.songs[this.cur],sd=60/s.bpm/4;
+  if(this.next<this.ctx.currentTime-.5)this.next=this.ctx.currentTime+.05;
+  while(this.next<this.ctx.currentTime+.15){this.sched(s,this.step,this.next,sd);this.next+=sd;this.step=(this.step+1)%s.total}},
+ sched(s,st,t,sd){if(t<this.hold)return;const bar=Math.floor(st/16),sb=st%16,ch=s.chords[bar];
+  const L=s.lead[st];if(L)this.tone('lead',L.m,t,L.len*sd*.92);
+  if(sb%s.arpEvery===0){const tones=[ch.r+12,ch.r+12+ch.third,ch.r+19,ch.r+24];this.tone('arp',tones[(sb/s.arpEvery)%4],t,sd*.9)}
+  if(sb%2===0){const off=s.bass[sb/2];if(off!=null)this.tone('bass',ch.r-12+off,t,sd*1.7)}
+  const d=s.drums[bar%s.drums.length][sb];if(d==='k')this.kick(t);else if(d==='s')this.snare(t);
+  if(sb%s.hat===0)this.hat(t)},
+ tone(type,m,t,dur,bus){const c=this.ctx,f=440*Math.pow(2,(m-69)/12),o=c.createOscillator(),g=c.createGain();o.frequency.value=f;
+  if(type==='lead'){o.type='square';g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.07,t+.008);g.gain.setValueAtTime(.07,t+Math.max(.012,dur-.04));g.gain.linearRampToValueAtTime(0,t+dur);
+   o.connect(g);g.connect(bus||this.bus);if(!bus)g.connect(this.dly);
+   if(dur>.3){const l=c.createOscillator(),lg=c.createGain();l.frequency.value=5.5;lg.gain.setValueAtTime(0,t);lg.gain.linearRampToValueAtTime(12,t+dur);l.connect(lg);lg.connect(o.detune);l.start(t);l.stop(t+dur+.05)}}
+  else if(type==='arp'){o.setPeriodicWave(this.pulse);dur=Math.min(dur,.09);g.gain.setValueAtTime(.028,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);o.connect(g);g.connect(this.bus)}
+  else{o.type='triangle';g.gain.setValueAtTime(.24,t);g.gain.setValueAtTime(.24,t+dur*.7);g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g);g.connect(this.bus)}
+  o.start(t);o.stop(t+dur+.06)},
+ noiseHit(t,freq,vol,dec,bus){const c=this.ctx,s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=this.noise;f.type='highpass';f.frequency.value=freq;
+  g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dec);s.connect(f);f.connect(g);g.connect(bus||this.bus);s.start(t,Math.random()*.5);s.stop(t+dec+.02)},
+ kick(t){const c=this.ctx,o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(42,t+.12);g.gain.setValueAtTime(.55,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.connect(g);g.connect(this.bus);o.start(t);o.stop(t+.18)},
+ snare(t){this.noiseHit(t,1300,.2,.13)},
+ hat(t){this.noiseHit(t,7000,.045,.035)},
+ sfxSeq(seq,type='square',vol=.07){if(!this.ctx)return;let t=this.ctx.currentTime+.01;seq.forEach(([m,d])=>{const o=this.ctx.createOscillator(),g=this.ctx.createGain();o.type=type;o.frequency.value=440*Math.pow(2,(m-69)/12);g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(this.sfx);o.start(t);o.stop(t+d+.02);t+=d*.85})},
+ jingle(){if(!this.ctx)return;this.hold=this.ctx.currentTime+2.6;this.sfxSeq([[72,.12],[76,.12],[79,.12],[84,.18],[79,.1],[84,.1],[88,.5]],'square',.09);
+  this.sfxSeq([[48,.36],[53,.36],[55,.36],[60,.6]],'triangle',.25)}
+};
+const SFX={ok:()=>Music.sfxSeq([[76,.07],[83,.12]]),no:()=>Music.sfxSeq([[57,.1],[50,.2]]),click:()=>Music.sfxSeq([[72,.04]],'square',.05),
+ talk:()=>Music.sfxSeq([[84,.025]],'square',.03),heal:()=>Music.sfxSeq([[72,.06],[76,.06],[79,.06],[84,.14]],'triangle',.2),
+ warp:()=>Music.sfxSeq([[60,.05],[64,.05],[67,.05],[72,.05],[76,.05],[79,.1]],'square',.05),lose:()=>Music.sfxSeq([[67,.15],[64,.15],[60,.35]])};
+
+/* ================= GAME STATE ================= */
+const cv=$('cv'),G=cv.getContext('2d');
+const S={mode:'title',px:WARP[0][0]*TS+8,py:WARP[0][1]*TS,dir:'down',moving:false,anim:0,hearts:5,region:null,trail:[],cam:{x:0,y:0},t:0,near:null,dlg:null,vw:320,vh:192};
+const keys={u:false,d:false,l:false,r:false};
+const KEYMAP={ArrowUp:'u',w:'u',W:'u',ArrowDown:'d',s:'d',S:'d',ArrowLeft:'l',a:'l',A:'l',ArrowRight:'r',d:'r',D:'r'};
+function clearKeys(){for(const k in keys)keys[k]=false;document.querySelectorAll('.dpad .held').forEach(b=>b.classList.remove('held'))}
+const overlayOpen=()=>!$('ov').hidden;
+
+function resize(){const w=$('stage').clientWidth||640;const narrow=w<560;const cols=narrow?13:20,rows=narrow?13:12;
+ if(cv.width!==cols*TS||cv.height!==rows*TS){cv.width=cols*TS;cv.height=rows*TS}S.vw=cv.width;S.vh=cv.height}
+addEventListener('resize',resize);
+
+/* ================= HUD ================= */
+function hud(){const h=$('hHearts');let s='';for(let i=0;i<5;i++)s+=svgSpr(i<S.hearts?'heart':'heartE',2);h.innerHTML=s;
+ let c='';for(let i=1;i<=5;i++)c+=svgSpr(SAVE.cores[i]?'core':'coreE',2);$('hCores').innerHTML=c;
+ $('bMus').textContent=SAVE.music?'♪ ON':'♪ OFF';$('bMus').setAttribute('aria-pressed',SAVE.music)}
+function regionOf(tx,ty){for(const k of [1,2,3,4,5,6])if(inR(tx,ty,ZONES[k]))return k;return inR(tx,ty,PLAZA)?7:0}
+function regionName(r){return r>=1&&r<=5?`WORLD ${r} · ${WORLDS[r].name}`:r===6?'BONUS · GLITCH FORTRESS':r===7?'CENTRAL PLAZA':'THE OVERWORLD'}
+function regionAccent(r){return r>=1&&r<=5?WORLDS[r].accent:r===6?FORTRESS.accent:'#ef6a3a'}
+let bannerT=null;
+function banner(r){const b=$('banner');let html;
+ if(r>=1&&r<=5){const W=WORLDS[r];html=`<small>WORLD ${r} · ${zoneDone(r)}/${zoneStations(r).length} TASKS</small><b>${W.name}</b><span>${W.topic}</span>`}
+ else if(r===6)html=`<small>BONUS STAGE</small><b>GLITCH FORTRESS</b><span>Lair of the Misinformation Monster</span>`;
+ else if(r===7)html=`<small>SAVE POINT</small><b>CENTRAL PLAZA</b><span>Pick any world. The roads lead everywhere.</span>`;
+ else return;
+ b.innerHTML=html;b.hidden=false;clearTimeout(bannerT);bannerT=setTimeout(()=>b.hidden=true,2600)}
+let toastT=null;
+function toast(msg){const t=$('toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,3200)}
+
+/* ================= DIALOGUE ================= */
+function say(name,lines,choices,accent){S.dlg={name,lines,i:0,shown:0,choices:choices||null,sel:0,accent:accent||regionAccent(S.region)};clearKeys();$('prompt').hidden=true;renderDlg(true)}
+function renderDlg(full){const d=S.dlg,el=$('dlg');if(!d){el.hidden=true;return}el.hidden=false;
+ $('dlgN').textContent=d.name;$('dlgN').style.background=d.accent;
+ const line=d.lines[d.i];$('dlgT').textContent=line.slice(0,Math.floor(d.shown));
+ const lineDone=d.shown>=line.length,last=d.i===d.lines.length-1;
+ $('dlgM').hidden=!(lineDone&&!(last&&d.choices));
+ const ch=$('dlgC');
+ if(lineDone&&last&&d.choices){if(full||!ch.childElementCount){ch.innerHTML=d.choices.map((c,i)=>`<button data-i="${i}" class="${i===d.sel?'sel':''}">${esc(c.label)}</button>`).join('');
+  ch.querySelectorAll('button').forEach(b=>b.onclick=ev=>{ev.stopPropagation();pickChoice(+b.dataset.i)})}}
+ else ch.innerHTML=''}
+function dlgAdvance(){const d=S.dlg;if(!d)return;const line=d.lines[d.i];
+ if(d.shown<line.length){d.shown=line.length;renderDlg(true);return}
+ if(d.i<d.lines.length-1){d.i++;d.shown=0;SFX.talk();renderDlg(true);return}
+ if(d.choices)pickChoice(d.sel);else closeDlg()}
+function pickChoice(i){const d=S.dlg;if(!d||!d.choices)return;const c=d.choices[i];closeDlg();SFX.click();if(c&&c.fn)c.fn()}
+function closeDlg(){S.dlg=null;$('dlg').hidden=true}
+$('dlg').addEventListener('click',()=>dlgAdvance());
+
+/* ================= OVERLAYS ================= */
+let ENC=null;let ovClosable=true;
+function openOv(html,{closable=true,clear=false}={}){const o=$('ov');o.innerHTML=html;o.hidden=false;o.classList.toggle('clear',clear);ovClosable=closable;clearKeys();o.scrollTop=0;Music.duck(S.mode==='play');$('prompt').hidden=true}
+function closeOv(){$('ov').hidden=true;$('ov').innerHTML='';ENC=null;Music.duck(false);if(S.mode==='play')Music.play(regionSong());cv.focus&&cv.focus()}
+$('ov').addEventListener('click',e=>{if(e.target.id==='ov'&&ovClosable&&!ENC)closeOv()});
+const win=(title,inner,accent,cls='')=>`<section class="win ${cls}"><div class="bar" style="${accent?`background:${accent}`:''}"><span>${title}</span><span class="ctl">_ □ ×</span></div><div class="in">${inner}</div></section>`;
+const starStr=n=>`<span class="stars">${[1,2,3].map(i=>`<span class="${i<=n?'':'off'}">★</span>`).join('')}</span>`;
+const regionSong=()=>S.region===6?'boss':'main';
+
+/* ---------- Title / select / intro ---------- */
+function titleScreen(){S.mode='title';S.region=null;document.body.style.setProperty('--accent','#ef6a3a');$('hWhere').textContent='AI QUEST · OPEN WORLD';
+ const has=SAVE.started;
+ openOv(`<div class="titlebox">
+  <p class="kicker">— MODULE: AI OVERVIEW · TEAM SLN —</p>
+  <h1 class="logo">AI QUEST</h1>
+  <span class="ow">OPEN WORLD EDITION</span>
+  <div class="hero"><div class="bob">${svgSpr('byte',8)}</div>
+   <div class="speech"><b class="who">BYTE:</b>Beep… my memory chips got scrambled into five worlds! Walk the island, talk to everyone, clear the tasks and restore my five Memory Cores.</div></div>
+  <div class="chips"><span>5 WORLDS</span><span>23 TASKS</span><span>40-QUESTION BOSS</span><span>ORIGINAL THEME SONG</span></div>
+  ${has?`<div class="row" style="justify-content:center;margin-top:22px"><button class="btn go" id="tCont">▸ CONTINUE (${esc(SAVE.name)} · ${coreCount()}/5 CORES)</button><button class="btn ghost" id="tNew">NEW GAME</button></div>`
+       :`<button class="press" id="tStart">▸ PRESS <span class="bl">START</span> ◂</button>`}
+  <p class="nowplay">♪ THE AI QUEST THEME STARTS WHEN YOU PRESS START</p></div>`,{closable:false,clear:true});
+ const go=fn=>()=>{Music.init();Music.play('main');SFX.click();fn()};
+ if(has){$('tCont').onclick=go(()=>startPlay(false));$('tNew').onclick=go(()=>playerSelect(true))}else $('tStart').onclick=go(()=>playerSelect(true))}
+
+function playerSelect(reset){let pick=SAVE.avatar||'maya';
+ openOv(win('PLAYER SELECT',`
+  <p style="margin-top:0;line-height:1.55">Choose your hero. BYTE will follow you everywhere.</p>
+  <div class="avatars">${AVATARS.map(a=>`<button class="av" data-a="${a.id}" aria-pressed="${a.id===pick}"><canvas width="16" height="16" data-p="${a.id}"></canvas>${a.name}<span style="font-family:var(--body);font-size:11px;line-height:1.3;text-align:center;color:var(--muted)">${a.bio}</span></button>`).join('')}</div>
+  <div class="namerow"><label for="pname">PLAYER NAME</label><input id="pname" maxlength="12" autocomplete="off" value="${esc(AVATARS.find(a=>a.id===pick).name)}"></div>
+  <div class="row end" style="margin-top:16px"><button class="btn ghost" id="psBack">◂ BACK</button><button class="btn go" id="psGo">BEGIN QUEST ▸</button></div>`),{closable:false,clear:true});
+ const draw=()=>document.querySelectorAll('canvas[data-p]').forEach(c=>{const g=c.getContext('2d');g.clearRect(0,0,16,16);g.drawImage(AVSPR[c.dataset.p].down[Math.floor(performance.now()/300)%2],0,0)});
+ draw();const iv=setInterval(()=>{if(!document.querySelector('canvas[data-p]'))return clearInterval(iv);draw()},300);
+ document.querySelectorAll('.av').forEach(b=>b.onclick=()=>{SFX.click();const old=AVATARS.find(a=>a.id===pick).name;pick=b.dataset.a;
+  document.querySelectorAll('.av').forEach(x=>x.setAttribute('aria-pressed',x.dataset.a===pick));const inp=$('pname');if(!inp.value.trim()||inp.value.toUpperCase()===old)inp.value=AVATARS.find(a=>a.id===pick).name});
+ $('psBack').onclick=()=>titleScreen();
+ $('psGo').onclick=()=>{const name=($('pname').value.trim()||'PLAYER').toUpperCase().slice(0,12);
+  if(reset){const keep={music:SAVE.music,sfx:SAVE.sfx};SAVE=Object.assign(fresh(),keep)}
+  SAVE.name=name;SAVE.avatar=pick;SAVE.started=true;S.hearts=5;S.px=WARP[0][0]*TS+8;S.py=WARP[0][1]*TS;S.trail=[];persist();startPlay(true)}}
+
+function startPlay(intro){closeOv();S.mode='play';if(SAVE.pos&&!intro){S.px=SAVE.pos[0];S.py=SAVE.pos[1]}S.hearts=clamp(SAVE.hearts||5,1,5);S.trail=[];S.region=null;hud();
+ if(blocked(S.px,S.py)){S.px=WARP[0][0]*TS+8;S.py=WARP[0][1]*TS}
+ if(intro)setTimeout(()=>say('BYTE',[
+  `Beep… hello, ${SAVE.name}! I'm BYTE, a helper robot from the SLN Computing Lab.`,
+  "A power surge scrambled my knowledge into five Memory Cores, hidden in five worlds around this plaza.",
+  "Visit the worlds in any order you like. Talk to the terminals, quiz bots, guardians and mission boards to clear their tasks.",
+  "Clear every task in a world and its Memory Core shrine lights up. Restore all five cores to open the Glitch Fortress in the south.",
+  "Walk with the arrow keys or WASD, talk with E or Space, press M for the map and Esc for the menu. On a phone, use the buttons below the screen.",
+  "The fountain is a save point: it refills your hearts. One more thing… I talk confidently, but sometimes I'm wrong. Let's learn when AI can be trusted!"],[{label:'LET\'S GO!'}],'#5b3fd0'),350)}
+
+/* ================= WORLD INTERACTIONS ================= */
+const KIND_NAME={terminal:'TERMINAL',bot:'QUIZ BOT',guard:'GUARDIAN',board:'MISSION BOARD',tablet:'TIMELINE TABLET',stand:'FRUIT STAND',desk:'REDACTION DESK',traffic:'TRAFFIC LIGHT'};
+function promptText(e){const v=matchMedia('(pointer:coarse)').matches?'A':'E';
+ const lbl=e.kind==='station'?e.st.name:e.kind==='shrine'?`MEMORY CORE SHRINE ${e.wn}`:e.kind==='sign'?(e.wn===6?'FORTRESS SIGN':`WORLD ${e.wn} SIGN`):e.kind==='fountain'?'SAVE FOUNTAIN':e.kind==='qboard'?'QUEST BOARD':e.kind==='library'?'SCROLL LIBRARY':e.kind==='boss'?'MISINFORMATION MONSTER':'FORTRESS GATE';
+ return `<b>${v}</b> · ${esc(lbl)}`}
+function interact(e){if(!e)return;SFX.talk();
+ switch(e.kind){
+  case 'station':return stationTalk(e.st);
+  case 'shrine':return shrineTalk(e.wn);
+  case 'sign':return signTalk(e.wn);
+  case 'fountain':S.hearts=5;hud();persist();SFX.heal();return say('SAVE FOUNTAIN',['The water sparkles. Hearts restored and game saved.'],null,'#5fb0d8');
+  case 'qboard':return questLog();
+  case 'library':return say('SCROLL LIBRARY',['Part C of the test bank: 6 open-ended questions.','Write your own answer first (normally more than 100 words), then open a scroll to compare it with the key points.'],[{label:'READ SCROLLS',fn:partC},{label:'LATER'}],'#7a4a22');
+  case 'boss':return bossTalk();
+  case 'gate':return gateOpen()?null:say('FORTRESS GATE',['The gate is sealed by glitch energy.',`It opens when all five Memory Cores are restored. You have ${coreCount()} of 5.`,'(Practising for the exam? Boss practice is in the MENU.)'],null,FORTRESS.accent);
+ }}
+function stationTalk(st){const W=WORLDS[st.w],acc=W.accent,qs=st.qs(),n=qs.length,best=SAVE.stations[st.id];
+ let lines;
+ if(st.kind==='terminal')lines=[`BOOTING TEST BANK… WORLD ${st.w}: ${W.topic.toUpperCase()}.`,`Part A: ${n} true/false statements from Team SLN's test bank. Each wrong answer costs one heart.`];
+ else if(st.kind==='bot')lines=[`Beep! I'm the Quiz Bot of ${W.name}.`,`Part B: ${n} multiple-choice questions. Pick the ONE best answer.`];
+ else if(st.kind==='guard')lines=[`Halt, ${SAVE.name}! Nobody passes the World ${st.w} save point without the checkpoint.`,`${n} questions. Score below 4 and the guide says: replay the stages you missed!`];
+ else lines=[st.name,st.brief];
+ if(best)lines=[...lines.slice(0,1),`Task cleared ${'★'.repeat(best)}${'☆'.repeat(3-best)}. Replay for practice? Your best stars are kept.`];
+ say(st.kind==='station'?KIND_NAME[st.kind]:KIND_NAME[st.kind],lines,[{label:best?'REPLAY':'START',fn:()=>runEncounter({mode:'station',st,qs:st.keep?qs.slice():shuffle(qs),title:st.name,accent:acc,brief:st.brief||null})},{label:'LATER'}],acc)}
+function shrineTalk(w){const W=WORLDS[w],done=zoneDone(w),tot=zoneStations(w).length;
+ if(SAVE.cores[w])return say(`CORE SHRINE ${w}`,[`Memory Core ${w} is restored ${'★'.repeat(SAVE.cores[w])}. ${W.core}`],[{label:'KEY IDEAS',fn:()=>coreScreen(w,false)},{label:'CLOSE'}],W.accent);
+ if(done<tot){const left=zoneStations(w).filter(s=>!SAVE.stations[s.id]).map(s=>s.name.replace(/^MISSION [\d.]+ · /,'')).join(', ');
+  return say(`CORE SHRINE ${w}`,['A dim Memory Core shrine. It flickers with scrambled memories.',`Clear ${tot-done} more task${tot-done>1?'s':''} in ${W.name} to power it: ${left}.`],null,W.accent)}
+ say(`CORE SHRINE ${w}`,['The shrine hums with light… every task in this world is clear!'],[{label:'RESTORE CORE',fn:()=>restoreCore(w)}],W.accent)}
+function signTalk(w){if(w===6)return say('SIGNPOST',['▼ GLITCH FORTRESS','Lair of the Misinformation Monster. The gate opens when all five Memory Cores are restored.'],null,FORTRESS.accent);
+ const W=WORLDS[w];say('SIGNPOST',[`WORLD ${w} · ${W.name} — ${W.topic}`,W.story,`Tasks cleared here: ${zoneDone(w)} of ${zoneStations(w).length}.`],null,W.accent)}
+function bossTalk(){const acc=FORTRESS.accent;
+ if(SAVE.bossBeaten)return say('MISINFORMATION MONSTER',['…bzzt. You defeated me. But misinformation always comes back.','Fight again for practice?'],[{label:'FIGHT',fn:startBoss},{label:'CERTIFICATE',fn:certificate},{label:'LATER'}],acc);
+ say('MISINFORMATION MONSTER',['ZZT… I AM THE MISINFORMATION MONSTER!','Confident words, fake sources, fluent nonsense — that is my power!','Face all 40 questions of the test bank. Every correct answer deals 1 damage. 32 or more defeats me.'],[{label:'FIGHT!',fn:startBoss},{label:'RETREAT'}],acc)}
+function startBoss(){Music.play('boss');runEncounter({mode:'boss',qs:shuffle(BANK),title:'FINAL BOSS',accent:FORTRESS.accent})}
+
+/* ================= ENCOUNTER (QUIZ) ================= */
+function runEncounter(o){ENC={...o,i:0,correct:0,missed:[],answered:false,active:true};openOv('',{closable:false});if(o.mode==='boss')Music.duck(false);ask()}
+function ask(){const r=ENC,q=r.qs[r.i];r.answered=false;
+ const label=r.mode==='boss'?(q.type==='tf'?'PART A · TRUE / FALSE':'PART B · MULTIPLE CHOICE'):(q.type==='sort'||q.type==='order'?'MISSION':q.cp||q.type==='num'?'CHECKPOINT':q.type==='tf'?'TRUE / FALSE':'MULTIPLE CHOICE');
+ let body='';
+ if(r.brief&&r.mode!=='boss')body+=`<div class="mission"><b class="h">${esc(r.title)}</b>${esc(r.brief)}${q.ctx?`<div class="aiquote">${esc(q.ctx)}</div>`:''}</div>`;
+ if(q.type==='tf')body+=`<p class="qtext">${esc(q.q)}</p><div class="opts tf"><button class="opt" data-v="1">TRUE</button><button class="opt" data-v="0">FALSE</button></div>`;
+ else if(q.type==='mc'){r.order=shuffle(q.opts.map((_,i)=>i));body+=`<p class="qtext">${esc(q.q)}</p><div class="opts">${r.order.map((oi,k)=>`<button class="opt" data-v="${oi}"><span class="k">${'ABCD'[k]}</span><span>${esc(q.opts[oi])}</span></button>`).join('')}</div>`}
+ else if(q.type==='sort'){const light=q.bins===B_LIGHT;body+=`<div class="sortcard">${esc(q.q)}</div><div class="opts bins">${q.bins.map((b,i)=>`<button class="opt ${light?['bin-green','bin-yellow','bin-red'][i]:''}" data-v="${i}"><span class="k">${i+1}</span>${b}</button>`).join('')}</div>`}
+ else if(q.type==='order'){r.seq=[];body+=`<p class="qtext">${esc(q.q)}</p><div class="cards">${shuffle(q.items).map(([k,t])=>`<button class="card" data-k="${k}"><span class="k">${k}</span><span>${esc(t)}</span></button>`).join('')}</div>
+   <div class="seq" id="seq"><em>YOUR ORDER APPEARS HERE</em></div><div class="row end"><button class="btn ghost" id="undo">UNDO</button><button class="btn go" id="check" disabled>CHECK ORDER</button></div>`}
+ else if(q.type==='num')body+=`<p class="qtext">${esc(q.q)}</p><form class="numrow" id="numf"><label for="numin">ANSWER (${q.unit})</label><input id="numin" inputmode="decimal" autocomplete="off" required><button class="btn go" type="submit">SUBMIT</button></form>`;
+ const head=r.mode==='boss'?bossHead():'';
+ const heartsRow=r.mode==='station'?`<span>${'♥'.repeat(S.hearts)}${'♡'.repeat(5-S.hearts)}</span>`:'';
+ $('ov').innerHTML=`<div style="width:100%;max-width:740px;margin:auto 0">${head}${win(`${label} · ${r.i+1} / ${r.qs.length}`,`<div class="qmeta"><span>${esc(q.id)} · WORLD ${q.w}</span>${heartsRow?`<span style="color:var(--red);font-size:11px">${heartsRow}</span>`:`<span>${esc(WORLDS[q.w].topic.toUpperCase())}</span>`}</div>${body}<div id="fbx"></div>
+  <div class="row sb" id="encFoot" style="margin-top:14px"><button class="btn ghost" id="retreat">◂ LEAVE</button><span class="small">Keys: 1–4 / A–D · T / F · Enter</span></div>`,r.accent)}</div>`;
+ $('ov').scrollTop=0;
+ $('retreat').onclick=()=>{ENC=null;closeOv();toast(r.mode==='boss'?'You retreated. The monster waits…':'Task left unfinished. Come back any time.')};
+ $('ov').querySelectorAll('.opts .opt').forEach(b=>b.onclick=()=>answer(b));
+ if(q.type==='order'){const seqEl=$('seq'),chk=$('check');
+  const paint=()=>{seqEl.innerHTML=r.seq.length?r.seq.map(k=>`<span>${k}</span>`).join(''):'<em>YOUR ORDER APPEARS HERE</em>';chk.disabled=r.seq.length!==q.items.length;
+   $('ov').querySelectorAll('.card').forEach(c=>c.disabled=r.seq.includes(c.dataset.k)||r.answered)};
+  $('ov').querySelectorAll('.card').forEach(c=>c.onclick=()=>{if(r.answered)return;SFX.click();r.seq.push(c.dataset.k);paint()});
+  $('undo').onclick=()=>{if(r.answered)return;r.seq.pop();paint()};
+  chk.onclick=()=>{if(r.answered)return;const right=r.seq.filter((k,i)=>k===q.a[i]).length,ok=right===q.a.length;
+   seqEl.innerHTML=r.seq.map((k,i)=>`<span style="background:${k===q.a[i]?'#c9f2d6':'#ffd0d6'}">${k}</span>`).join('');
+   $('undo').disabled=true;chk.disabled=true;resolve(ok,esc(`${right} / 8 in the right place. ${q.ex}`))}}
+ if(q.type==='num'){const f=$('numf');setTimeout(()=>{const i=$('numin');if(i)i.focus()},50);f.onsubmit=e=>{e.preventDefault();if(r.answered)return;
+  const v=parseFloat($('numin').value.replace(/[^0-9.\-]/g,''));const ok=q.a.includes(v);f.querySelectorAll('input,button').forEach(x=>x.disabled=true);resolve(ok,esc(q.ex))}}}
+function answer(btn){const r=ENC,q=r.qs[r.i];if(!r||r.answered)return;const v=+btn.dataset.v;let ok,correct;
+ if(q.type==='tf'){ok=(v===1)===q.a;correct=[q.a?1:0]}else if(q.type==='mc'){ok=v===q.a;correct=[q.a]}else{ok=q.a.includes(v);correct=q.a}
+ $('ov').querySelectorAll('.opts .opt').forEach(b=>{b.disabled=true;if(correct.includes(+b.dataset.v))b.classList.add('right')});
+ if(!ok)btn.classList.add('wrong');
+ let ex=esc(q.ex);if(q.type==='tf')ex=`<b>${q.a?'TRUE':'FALSE'}.</b> ${q.a?'':'<b>Correction:</b> '}${ex}`;
+ resolve(ok,ex)}
+function resolve(ok,exHtml){const r=ENC,q=r.qs[r.i];r.answered=true;
+ if(ok){r.correct++;SFX.ok()}else{r.missed.push(q);SFX.no();if(r.mode==='station'){S.hearts=Math.max(0,S.hearts-1);hud()}}
+ const last=r.i===r.qs.length-1,dead=r.mode==='station'&&S.hearts<=0;
+ const lines=ok?['Memory chip repaired!','Beep boop — correct!','Byte-sized win!','XP up!']:['Ouch… glitch detected.','Error! Let\'s learn from it.','My circuits disagree…'];
+ const bl=r.mode==='boss'?(ok?' The monster takes 1 damage!':' The monster strikes!'):(!ok?' −1 ♥':'');
+ $('fbx').innerHTML=`<div class="fb ${ok?'ok':'no'}"><div>${svgSpr(ok?'byte':'byteSad',4)}</div><div class="msg"><span class="verdict">${ok?'✓ CORRECT':'✗ NOT QUITE'} — ${lines[Math.floor(Math.random()*lines.length)]}${bl}</span>${exHtml}</div></div>`;
+ $('encFoot').innerHTML=`<button class="btn ghost" id="retreat">◂ LEAVE</button><button class="btn" id="next">${dead?'OUT OF HEARTS ▸':last?'FINISH ▸':'NEXT ▸'}</button>`;
+ $('retreat').onclick=()=>{ENC=null;closeOv()};
+ if(r.mode==='boss')updBoss(ok);else if(!ok){const w=$('ov').querySelector('.win');w.classList.remove('shake');void w.offsetWidth;w.classList.add('shake')}
+ const nx=$('next');nx.focus({preventScroll:true});
+ nx.onclick=()=>{if(dead)return knockedOut();if(last)return r.mode==='boss'?bossEnd():stationEnd();r.i++;ask()};
+ setTimeout(()=>{const f=$('fbx');if(f&&f.scrollIntoView)f.scrollIntoView({block:'nearest',behavior:'smooth'})},30)}
+function stationEnd(){const r=ENC,st=r.st,miss=r.missed.length,stars=miss===0?3:miss===1?2:1;const firstClear=!SAVE.stations[st.id];
+ SAVE.stations[st.id]=Math.max(SAVE.stations[st.id]||0,stars);S.hearts=Math.min(5,S.hearts+1);persist();hud();SFX.heal();
+ const w=st.w,ready=zoneDone(w)===zoneStations(w).length&&!SAVE.cores[w];ENC.active=false;
+ openOv(win('TASK CLEAR',`<p class="big">${esc(st.name.replace(/^MISSION [\d.]+ · /,''))}<br>CLEARED!</p>
+  <p class="center pix" style="font-size:12px">${r.correct} / ${r.qs.length} CORRECT · ${starStr(stars)}</p>
+  <p class="center small">+1 ♥ for clearing a task.${firstClear?'':' Best stars kept.'}</p>
+  ${ready?`<div class="mission"><b class="h">THE SHRINE AWAKENS</b>Every task in ${WORLDS[w].name} is clear. Walk to the Memory Core shrine to restore Core ${w}!</div>`:`<p class="center small">${WORLDS[w].name}: ${zoneDone(w)} / ${zoneStations(w).length} tasks cleared.</p>`}
+  ${miss?`<p class="pix" style="font-size:9px">REVIEW THESE (${miss})</p><div class="missed">${r.missed.map(q=>`<div><code>${esc(q.id)}</code>${esc(q.q)}</div>`).join('')}</div>`:''}
+  <div class="row end" style="margin-top:16px"><button class="btn go" id="back">BACK TO THE WORLD ▸</button></div>`,r.accent),{closable:true});
+ ENC=null;$('back').onclick=()=>{closeOv();if(ready)toast(`Core Shrine ${w} is glowing!`)};$('back').focus()}
+function knockedOut(){ENC=null;SFX.lose();
+ openOv(win('OUT OF HEARTS',`<div class="center">${svgSpr('byteSad',8)}</div><p class="big">BYTE RAN OUT<br>OF POWER</p>
+  <p class="center" style="line-height:1.55">You wake up at the plaza fountain with full hearts. The task resets, so try it again when you're ready.</p>
+  <div class="row end" style="margin-top:16px"><button class="btn go" id="respawn">RESPAWN ▸</button></div>`,'#a3182e'),{closable:false});
+ $('respawn').onclick=()=>{S.hearts=5;warpTo(0,true);closeOv();hud();persist()};$('respawn').focus()}
+function restoreCore(w){const ss=zoneStations(w).map(s=>SAVE.stations[s.id]||1);const stars=Math.floor(ss.reduce((a,b)=>a+b,0)/ss.length);
+ SAVE.cores[w]=stars;S.hearts=5;persist();hud();Music.jingle();coreScreen(w,true)}
+function coreScreen(w,fresh){const W=WORLDS[w];
+ openOv(win(fresh?'SAVE POINT · MEMORY CORE':'MEMORY CORE '+w,`<div class="center">${svgSpr('core',10,'bob')}</div>
+  <p class="big">MEMORY CORE ${w}<br>RESTORED!</p><p class="center" style="font-size:16px;line-height:1.5;margin:0 0 6px">${W.core}</p>
+  <p class="center pix" style="font-size:12px">${starStr(SAVE.cores[w])} · CORES ${coreCount()} / 5</p>
+  <div class="mission"><b class="h">KEY IDEAS TO KEEP · ${W.topic.toUpperCase()}</b><ul class="keys">${W.keys.map((k,i)=>`<li><b>${w}.${i+1}</b><span>${k}</span></li>`).join('')}</ul></div>
+  ${fresh&&coreCount()===5?`<div class="mission"><b class="h">ALL FIVE CORES!</b>The Glitch Fortress gate in the south has opened. The Misinformation Monster awaits.</div>`:''}
+  <div class="row end"><button class="btn go" id="back">CONTINUE ▸</button></div>`,W.accent));
+ $('back').onclick=()=>{closeOv();if(fresh&&coreCount()===5)toast('The Fortress gate is open!')}}
+
+function bossHead(){const hp=40-ENC.correct;return `<section class="win dark" id="bossbox" style="margin-bottom:14px"><div class="in boss"><div id="bspr">${svgSpr('boss',6)}</div><div class="hp"><div class="lbl"><span>MISINFORMATION MONSTER</span><span id="hpn">${hp}/40</span></div><div class="hpbar"><i id="hpb" style="width:${hp/40*100}%"></i></div></div></div></section>`}
+function updBoss(ok){const hp=40-ENC.correct;$('hpn').textContent=hp+'/40';$('hpb').style.width=(hp/40*100)+'%';const el=$(ok?'bspr':'bossbox');el.classList.remove('hit','shake');void el.offsetWidth;el.classList.add(ok?'hit':'shake')}
+function bossEnd(){const r=ENC,s=r.correct;ENC=null;const firstWin=s>=32&&!SAVE.bossBeaten;SAVE.boss=Math.max(SAVE.boss||0,s);if(s>=32)SAVE.bossBeaten=true;persist();
+ const band=s>=32?['BOSS DEFEATED!','The Misinformation Monster dissolves into static. BYTE is fully restored.']:s>=24?['ONE MORE TRY','So close! Replay the worlds tagged below, then come back.']:['RESPAWN','Replay the worlds tagged on the questions you missed, then try again.'];
+ s>=32?Music.jingle():SFX.lose();
+ const byW={};r.missed.forEach(q=>(byW[q.w]=byW[q.w]||[]).push(q));
+ openOv(win('BOSS FIGHT · RESULTS',`<div class="center">${s>=32?svgSpr('byte',9,'bob'):svgSpr('boss',7,'bob')}</div>
+  <p class="big">${band[0]}</p><p class="center pix" style="font-size:12px">SCORE ${s} / 40 · BEST ${SAVE.boss}</p><p class="center" style="line-height:1.5">${band[1]}</p>
+  <p class="center small">Scoring from the guide: 32–40 boss defeated · 24–31 one more try · under 24 respawn.</p>
+  ${Object.keys(byW).sort().map(w=>`<div class="mission"><b class="h">WORLD ${w} · ${WORLDS[w].name} — ${byW[w].length} MISSED</b><div class="missed">${byW[w].map(q=>`<div><code>${q.id}</code>${esc(q.q)}</div>`).join('')}</div><div class="row end" style="margin-top:10px"><button class="btn ghost" data-warp="${w}">WARP TO WORLD ${w}</button></div></div>`).join('')}
+  <div class="row end" style="margin-top:16px">${SAVE.bossBeaten?'<button class="btn ghost" id="cert">CERTIFICATE</button>':''}<button class="btn go" id="back">BACK TO THE WORLD ▸</button></div>`,FORTRESS.accent));
+ $('ov').querySelectorAll('[data-warp]').forEach(b=>b.onclick=()=>{warpTo(+b.dataset.warp);closeOv()});
+ $('back').onclick=closeOv;if($('cert'))$('cert').onclick=certificate;if(firstWin)setTimeout(certificate,1600)}
+function certificate(){const d=new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+ openOv(win('CERTIFICATE',`<div class="cert"><div class="center">${svgSpr('byte',6)}</div><p class="pix" style="font-size:10px;margin-top:14px">CERTIFICATE OF COMPLETION</p><p>This certifies that</p>
+  <div class="cn">${esc(SAVE.name)}</div><p>has restored all five Memory Cores of <b>AI QUEST</b> and defeated the Misinformation Monster with a best score of <b>${SAVE.boss} / 40</b>.</p>
+  <p class="pix" style="font-size:9px;line-height:2">${[1,2,3,4,5].map(i=>`W${i} ${'★'.repeat(SAVE.cores[i]||0)}${'☆'.repeat(3-(SAVE.cores[i]||0))}`).join(' · ')}</p>
+  <p class="small">${d} · Team SLN · AI Overview module</p></div>
+  <div class="row end" style="margin-top:16px"><button class="btn go" id="back">KEEP EXPLORING ▸</button></div>`,FORTRESS.accent));$('back').onclick=closeOv}
+
+/* ================= MENUS ================= */
+function questLog(){const total=STATIONS.length,cleared=Object.keys(SAVE.stations).length;
+ openOv(win('QUEST LOG',`<p class="pix" style="font-size:10px;margin-top:0">${esc(SAVE.name)} · TASKS ${cleared}/${total} · CORES ${coreCount()}/5 · BOSS ${SAVE.bossBeaten?'DEFEATED':SAVE.boss?'BEST '+SAVE.boss+'/40':'NOT FOUGHT'}</p>
+  <div class="log">${[1,2,3,4,5].map(w=>{const W=WORLDS[w];return `<div class="logw" style="border-top:8px solid ${W.accent}"><h3>W${w} · ${W.name}</h3><p>${W.topic}</p><ul>
+   ${zoneStations(w).map(s=>{const b=SAVE.stations[s.id];return `<li class="${b?'done':'todo'}"><span>${b?'✓':'○'} ${esc(s.name)}</span><span class="s">${b?'★'.repeat(b)+'☆'.repeat(3-b):''}</span></li>`}).join('')}
+   <li class="${SAVE.cores[w]?'done':'todo'}"><span>${SAVE.cores[w]?'◆':'◇'} MEMORY CORE ${w}</span><span class="s">${SAVE.cores[w]?'RESTORED':zoneDone(w)===zoneStations(w).length?'READY!':''}</span></li></ul></div>`}).join('')}</div>
+  <div class="row end" style="margin-top:16px"><button class="btn ghost" id="toMap">WORLD MAP</button><button class="btn go" id="back">CLOSE</button></div>`));
+ $('back').onclick=closeOv;$('toMap').onclick=openMap}
+const TCOL={};Object.entries({WATER:'#4aa8e0',GRASS:'#7fd08e',FLOW:'#7fd08e',PATH:'#ecd3a0',TREE:'#2f7a4c',BUSH:'#3f9a5d',SAND:'#f6d98e',CACT:'#3fa060',ROCK:'#c4823a',CAVE:'#3c2c88',CWALL:'#221a58',CRYS:'#8a5cf6',ROADH:'#4a4e6e',ROADV:'#4a4e6e',ROADX:'#4a4e6e',WALK:'#d9d3e6',BLDG:'#f08a5a',CFLOOR:'#ddd2f8',CWALL2:'#6b4fd8',CARPET:'#c2384f',PLAZA:'#efe4cc',FFLOOR:'#3f1736',FWALL:'#5a1a48',BRIDGE:'#c08a4a'}).forEach(([k,v])=>TCOL[T[k]]=v);
+function openMap(){const zl=[1,2,3,4,5].map(w=>({w,name:WORLDS[w].name,sub:`${zoneDone(w)}/${zoneStations(w).length} tasks · ${SAVE.cores[w]?'core restored':'core missing'}`,c:WORLDS[w].accent}));
+ zl.unshift({w:0,name:'CENTRAL PLAZA',sub:'Save fountain · quest board · scrolls',c:'#efe4cc'});zl.push({w:6,name:'GLITCH FORTRESS',sub:gateOpen()?'Gate open':'Sealed until 5 cores',c:FORTRESS.accent});
+ openOv(win('WORLD MAP · WARP PADS',`<div class="mapwrap"><canvas id="mm" width="${MW*4}" height="${MH*4}"></canvas></div>
+  <p class="small" style="margin:10px 0 0">Yellow = task to do · green = cleared · cyan = shrine ready · red = you. Pick a warp pad to travel instantly.</p>
+  <div class="warps">${zl.map(z=>`<button class="warp" data-w="${z.w}"><span class="sw" style="background:${z.c}"></span><span><b>${z.w>=1&&z.w<=5?'W'+z.w+' · ':''}${z.name}</b><span>${z.sub}</span></span></button>`).join('')}</div>
+  <div class="row end" style="margin-top:16px"><button class="btn go" id="back">CLOSE</button></div>`));
+ const g=$('mm').getContext('2d');for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){g.fillStyle=TCOL[at(x,y)]||'#000';g.fillRect(x*4,y*4,4,4)}
+ STATIONS.forEach(s=>{g.fillStyle='#1e2140';g.fillRect(s.x*4-1,s.y*4-1,6,6);g.fillStyle=SAVE.stations[s.id]?'#3fbf6a':'#f5c542';g.fillRect(s.x*4,s.y*4,4,4)});
+ for(const w in SHRINES){const [x,y]=SHRINES[w];g.fillStyle='#1e2140';g.fillRect(x*4-2,y*4-2,8,8);g.fillStyle=SAVE.cores[w]?'#ffffff':zoneDone(+w)===zoneStations(+w).length?'#5fd8e8':'#8a8fb0';g.fillRect(x*4-1,y*4-1,6,6)}
+ g.fillStyle='#e0559a';g.fillRect(31*4,40*4,8,8);
+ const px=Math.floor((S.px+8)/TS),py=Math.floor((S.py+12)/TS);g.fillStyle='#ffffff';g.fillRect(px*4-3,py*4-3,10,10);g.fillStyle='#e8435a';g.fillRect(px*4-1,py*4-1,6,6);
+ $('ov').querySelectorAll('.warp').forEach(b=>b.onclick=()=>{warpTo(+b.dataset.w);closeOv()});$('back').onclick=closeOv}
+function warpTo(z,silent){const p=WARP[z];S.px=p[0]*TS;S.py=p[1]*TS-4;S.trail=[];S.region=null;if(!silent)SFX.warp();persist()}
+function openMenu(){openOv(win('PAUSE MENU',`<div class="menu">
+  <button class="btn go" id="mRes">▸ RESUME</button>
+  <button class="btn ghost" id="mLog">QUEST LOG</button>
+  <button class="btn ghost" id="mMap">WORLD MAP &amp; WARP</button>
+  <button class="btn ghost" id="mScr">PART C SCROLLS</button>
+  <button class="btn ghost" id="mBoss">BOSS PRACTICE (40 QUESTIONS)</button>
+  <button class="btn ghost" id="mMus">MUSIC: ${SAVE.music?'ON':'OFF'}</button>
+  <button class="btn ghost" id="mSfx">SOUND EFFECTS: ${SAVE.sfx?'ON':'OFF'}</button>
+  <button class="btn ghost" id="mTitle">SAVE &amp; QUIT TO TITLE</button>
+  <div id="mRst"><button class="btn warn" id="mReset">ERASE PROGRESS…</button></div></div>`));
+ $('mRes').onclick=closeOv;$('mLog').onclick=questLog;$('mMap').onclick=openMap;$('mScr').onclick=partC;$('mBoss').onclick=()=>{closeOv();startBoss()};
+ $('mMus').onclick=()=>{toggleMusic();openMenu()};$('mSfx').onclick=()=>{SAVE.sfx=!SAVE.sfx;Music.applyVol();persist();openMenu()};
+ $('mTitle').onclick=()=>{persist();closeOv();titleScreen()};
+ $('mReset').onclick=()=>{$('mRst').innerHTML=`<p class="small" style="margin:4px 0 8px">This erases all tasks, cores and boss scores on this device.</p><div class="row"><button class="btn warn" id="mYes">YES, ERASE</button><button class="btn ghost" id="mNo">CANCEL</button></div>`;
+  $('mYes').onclick=()=>{const keep={music:SAVE.music,sfx:SAVE.sfx};SAVE=Object.assign(fresh(),keep);try{localStorage.removeItem(SKEY)}catch(e){}closeOv();titleScreen()};$('mNo').onclick=openMenu}}
+function toggleMusic(){SAVE.music=!SAVE.music;if(SAVE.music){Music.init();Music.play(S.mode==='play'?regionSong():'main')}Music.applyVol();hud();persist()}
+function partC(){openOv(win('PART C · OPEN-ENDED SCROLLS',`<p style="line-height:1.55;margin-top:0">Write a developed answer first (normally more than 100 words, or a diagram or worked steps). Then open the scroll and compare it with the key points. Other answers are accepted if they are accurate and well reasoned.</p>
+ ${OE.map(o=>`<details class="oe"><p class="qmeta" style="margin:0 0 8px"><span>${o.id}</span><span>WORLD ${o.w} · ${WORLDS[o.w].topic.toUpperCase()}</span></p><div class="q">${esc(o.q)}</div><summary>▸ OPEN THE SCROLL (KEY POINTS)</summary><p>${esc(o.k)}</p></details>`).join('')}
+ <div class="row end" style="margin-top:16px"><button class="btn go" id="back">CLOSE</button></div>`,'#7a4a22'));$('back').onclick=closeOv}
+
+/* ================= INPUT ================= */
+document.addEventListener('keydown',e=>{const k=e.key,tag=(e.target.tagName||'');
+ if(tag==='INPUT'||tag==='TEXTAREA')return;
+ if(overlayOpen()){
+  if(ENC&&ENC.active){quizKey(e);return}
+  if(k==='Escape'&&ovClosable){e.preventDefault();closeOv()}return}
+ if(S.mode!=='play')return;
+ if(S.dlg){const d=S.dlg,choicesShown=d.choices&&d.i===d.lines.length-1&&d.shown>=d.lines[d.i].length;
+  if(['e','E',' ','Enter'].includes(k)){e.preventDefault();dlgAdvance()}
+  else if(choicesShown&&(k in KEYMAP)){e.preventDefault();const dir=KEYMAP[k];d.sel=(d.sel+(dir==='u'||dir==='l'?-1:1)+d.choices.length)%d.choices.length;renderDlg(true)}
+  else if(k==='Escape'){closeDlg()}return}
+ if(k==='e'||k==='E'||k===' '||k==='Enter'){e.preventDefault();if(S.near)interact(S.near);return}
+ if(k==='m'||k==='M'){openMap();return}
+ if(k==='Escape'){openMenu();return}
+ const d=KEYMAP[k];if(d){keys[d]=true;e.preventDefault()}});
+document.addEventListener('keyup',e=>{const d=KEYMAP[e.key];if(d)keys[d]=false});
+addEventListener('blur',clearKeys);
+function quizKey(e){const k=e.key.toLowerCase();
+ if(k==='enter'){const n=$('next');if(n){e.preventDefault();n.click()}return}
+ const opts=[...$('ov').querySelectorAll('.opts .opt:not([disabled])')];if(!opts.length)return;const q=ENC.qs[ENC.i];
+ if(q.type==='tf'){if(k==='t'||k==='1')opts.find(b=>b.dataset.v==='1')?.click();if(k==='f'||k==='2')opts.find(b=>b.dataset.v==='0')?.click();return}
+ let i='12345'.indexOf(k);if(i<0&&q.type==='mc')i='abcd'.indexOf(k);if(i>=0&&opts[i])opts[i].click()}
+document.querySelectorAll('.dpad button').forEach(b=>{const d=b.dataset.d;
+ const on=ev=>{ev.preventDefault();if(S.dlg){if(S.dlg.choices&&S.dlg.shown>=S.dlg.lines[S.dlg.i].length&&S.dlg.i===S.dlg.lines.length-1){S.dlg.sel=(S.dlg.sel+(d==='u'||d==='l'?-1:1)+S.dlg.choices.length)%S.dlg.choices.length;renderDlg(true)}return}keys[d]=true;b.classList.add('held')};
+ const off=ev=>{keys[d]=false;b.classList.remove('held')};
+ b.addEventListener('pointerdown',on);b.addEventListener('pointerup',off);b.addEventListener('pointerleave',off);b.addEventListener('pointercancel',off)});
+$('aBtn').addEventListener('click',()=>{if(S.mode!=='play'||overlayOpen())return;if(S.dlg)dlgAdvance();else if(S.near)interact(S.near)});
+addEventListener('touchstart',()=>$('touch').classList.add('on'),{once:true,passive:true});
+$('prompt').onclick=()=>{if(S.near)interact(S.near)};
+$('bMap').onclick=()=>{if(S.mode==='play'&&!overlayOpen())openMap()};
+$('bMenu').onclick=()=>{if(S.mode==='play'&&!overlayOpen())openMenu()};
+$('bMus').onclick=toggleMusic;
+
+/* ================= UPDATE & DRAW ================= */
+function update(dt){S.t+=dt;
+ if(S.dlg){const d=S.dlg,line=d.lines[d.i];if(d.shown<line.length){const before=Math.floor(d.shown);d.shown=Math.min(line.length,d.shown+dt*55);if(Math.floor(d.shown)!==before){$('dlgT').textContent=line.slice(0,Math.floor(d.shown));if(d.shown>=line.length)renderDlg(true)}}}
+ if(S.mode!=='play'){const mx=MW*TS-S.vw,my=MH*TS-S.vh;S.cam.x=Math.round(mx/2+Math.sin(S.t*.07)*mx*.45);S.cam.y=Math.round(my/2+Math.cos(S.t*.05)*my*.4);return}
+ const paused=overlayOpen()||S.dlg;
+ let dx=(keys.r?1:0)-(keys.l?1:0),dy=(keys.d?1:0)-(keys.u?1:0);
+ if(paused){dx=0;dy=0}
+ S.moving=!!(dx||dy);
+ if(S.moving){const len=Math.hypot(dx,dy),sp=78*dt;const mx=dx/len*sp,my=dy/len*sp;
+  if(!blocked(S.px+mx,S.py))S.px+=mx;if(!blocked(S.px,S.py+my))S.py+=my;
+  S.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');S.anim+=dt;
+  S.trail.push({x:S.px,y:S.py});if(S.trail.length>60)S.trail.shift()}
+ // region
+ const tx=Math.floor((S.px+8)/TS),ty=Math.floor((S.py+12)/TS),reg=regionOf(tx,ty);
+ if(reg!==S.region){const prev=S.region;S.region=reg;$('hWhere').textContent=regionName(reg);document.body.style.setProperty('--accent',regionAccent(reg));
+  if(reg!==0)banner(reg);else $('banner').hidden=true;Music.play(regionSong())}
+ // nearest interactable
+ let best=null,bd=1e9;const cx=S.px+8,cy=S.py+12;
+ if(!paused)for(const e of ENTS){if(e.kind==='gate'&&gateOpen())continue;const ex0=e.x*TS-10,ey0=e.y*TS-10,ex1=(e.x+e.w)*TS+10,ey1=(e.y+e.h)*TS+12;
+  if(cx>=ex0&&cx<=ex1&&cy>=ey0&&cy<=ey1){const d=Math.hypot(cx-(e.x+e.w/2)*TS,cy-(e.y+e.h/2)*TS);if(d<bd){bd=d;best=e}}}
+ if(best!==S.near){S.near=best;const p=$('prompt');if(best){p.innerHTML=promptText(best);p.hidden=false}else p.hidden=true}
+ if(paused)$('prompt').hidden=true;else if(S.near)$('prompt').hidden=false;
+ S.cam.x=Math.round(clamp(S.px+8-S.vw/2,0,MW*TS-S.vw));S.cam.y=Math.round(clamp(S.py+8-S.vh/2,0,MH*TS-S.vh));
+ S.saveT=(S.saveT||0)+dt;if(S.saveT>12){S.saveT=0;persist()}}
+
+function drawStation(g,s,x,y,t){const acc=WORLDS[s.w].accent;
+ switch(s.kind){
+  case 'terminal':R(g,'rgba(0,0,0,.2)',x+3,y+14,10,2);R(g,'#1e2140',x+2,y+1,12,10);R(g,'#5fd8e8',x+3,y+2,10,7);R(g,'#1e2140',x+6,y+3,4,1);R(g,'#1e2140',x+9,y+4,1,1);R(g,'#1e2140',x+8,y+5,1,1);R(g,'#1e2140',x+7,y+6,1,1);if(Math.floor(t*2)%2)R(g,'#1e2140',x+7,y+8,1,1);
+   R(g,'#1e2140',x+7,y+11,2,2);R(g,acc,x+4,y+13,8,2);R(g,'#1e2140',x+4,y+15,8,1);break;
+  case 'bot':{let c=BOT_CV[acc];if(!c)c=BOT_CV[acc]=cvSpr(SPR.byte,{...PAL,p:acc});R(g,'rgba(0,0,0,.2)',x+3,y+14,10,2);g.drawImage(c,x+3,y+1+(Math.floor(t*2)%2?-1:0));break}
+  case 'guard':R(g,'rgba(0,0,0,.2)',x+3,y+14,10,2);R(g,'#1e2140',x+3,y,10,8);R(g,'#b9bed8',x+4,y+1,8,6);R(g,'#5fd8e8',x+5,y+3,6,2);R(g,acc,x+7,y-2,2,3);R(g,'#1e2140',x+3,y+8,10,5);R(g,acc,x+4,y+8,8,4);R(g,'#f5c542',x+4,y+10,8,1);
+   R(g,'#1e2140',x+5,y+13,2,3);R(g,'#1e2140',x+9,y+13,2,3);R(g,'#1e2140',x,y+7,5,7);R(g,'#f5c542',x+1,y+8,3,5);R(g,'#8a8fb0',x+14,y-1,1,15);R(g,'#ffffff',x+13,y-3,3,2);break;
+  case 'board':R(g,'rgba(0,0,0,.2)',x+2,y+14,12,2);R(g,'#7a4a22',x+2,y+6,2,10);R(g,'#7a4a22',x+12,y+6,2,10);R(g,'#1e2140',x,y,16,11);R(g,acc,x+1,y+1,14,9);R(g,'#fffaf0',x+3,y+2,4,6);R(g,'#fffaf0',x+9,y+3,4,5);R(g,'#e8435a',x+4,y+2,1,1);R(g,'#e8435a',x+10,y+3,1,1);R(g,'#8a8fb0',x+4,y+4,2,1);R(g,'#8a8fb0',x+4,y+6,2,1);R(g,'#8a8fb0',x+10,y+5,2,1);break;
+  case 'tablet':R(g,'rgba(0,0,0,.2)',x+2,y+14,12,2);R(g,'#5b5f7f',x+2,y+1,12,14);R(g,'#b9bed8',x+3,y+2,10,12);R(g,'#8a8fb0',x+4,y+4,8,1);R(g,'#8a8fb0',x+4,y+7,6,1);R(g,'#8a8fb0',x+4,y+10,7,1);R(g,'#2e9e55',x+3,y+13,4,1);R(g,'#2e9e55',x+10,y+2,3,1);break;
+  case 'stand':R(g,'rgba(0,0,0,.2)',x+1,y+14,14,2);R(g,'#7a4a22',x+1,y+8,14,7);R(g,'#c08a4a',x+1,y+8,14,2);R(g,'#e8435a',x+2,y+5,3,3);R(g,'#e8435a',x+6,y+5,3,3);R(g,'#7fd08e',x+10,y+5,3,3);R(g,'#3fbf6a',x+3,y+4,1,1);R(g,'#3fbf6a',x+11,y+4,1,1);R(g,'#c2384f',x+4,y+2,3,3);R(g,'#2e9e55',x+5,y+1,1,1);break;
+  case 'desk':R(g,'rgba(0,0,0,.2)',x+1,y+14,14,2);R(g,'#7a4a22',x+1,y+6,14,4);R(g,'#5a3214',x+2,y+10,2,6);R(g,'#5a3214',x+12,y+10,2,6);R(g,'#fffaf0',x+3,y+2,8,6);R(g,'#1e2140',x+4,y+3,6,1);R(g,'#1e2140',x+4,y+5,4,1);R(g,'#8a8fb0',x+4,y+4,5,1);R(g,'#f5c542',x+11,y+1,2,6);R(g,'#1e2140',x+11,y+6,2,1);break;
+  case 'traffic':{R(g,'rgba(0,0,0,.2)',x+4,y+14,8,2);R(g,'#1e2140',x+7,y+8,2,8);R(g,'#1e2140',x+4,y-2,8,11);const ph=Math.floor(t)%3;R(g,ph===0?'#e8435a':'#5a1f2a',x+6,y-1,4,2);R(g,ph===1?'#f5c542':'#5a4a1a',x+6,y+2,4,2);R(g,ph===2?'#3fbf6a':'#1f4a2a',x+6,y+5,4,2);break}
+ }}
+function drawEnt(g,e,t){const x=e.x*TS,y=e.y*TS;
+ switch(e.kind){
+  case 'station':{drawStation(g,e.st,x,y,t);const done=SAVE.stations[e.st.id];const by=y-12+(Math.floor(t*3)%2);
+   if(!done){R(g,'#1e2140',x+5,by,7,9);R(g,'#f5c542',x+6,by+1,5,7);R(g,'#1e2140',x+8,by+2,1,3);R(g,'#1e2140',x+8,by+6,1,1)}
+   else{R(g,'#1e2140',x+5,by+2,7,7);R(g,'#3fbf6a',x+6,by+3,5,5);R(g,'#ffffff',x+7,by+5,1,1);R(g,'#ffffff',x+8,by+6,1,1);R(g,'#ffffff',x+9,by+4,1,2)}break}
+  case 'shrine':{const w=e.wn,done=SAVE.cores[w],ready=!done&&zoneDone(w)===zoneStations(w).length;
+   R(g,'rgba(0,0,0,.2)',x+2,y+14,12,2);R(g,'#5b5f7f',x+3,y+9,10,7);R(g,'#b9bed8',x+4,y+9,8,2);R(g,'#8a8fb0',x+4,y+11,8,4);R(g,'#1e2140',x+6,y+7,4,2);
+   if(done){const b=Math.floor(t*2)%2;g.drawImage(CORE_CV,x+4,y-3+b);if(Math.floor(t*4)%4===0){R(g,'#ffffff',x+2,y-2,1,1);R(g,'#ffffff',x+13,y+1,1,1)}}
+   else if(ready){const p=Math.floor(t*4)%2;g.fillStyle=p?'rgba(95,216,232,.55)':'rgba(95,216,232,.25)';g.fillRect(x+1,y-4,14,12);g.globalAlpha=.8;g.drawImage(CORE_CV,x+4,y-3);g.globalAlpha=1}
+   else{g.globalAlpha=.35;g.drawImage(CORE_CV,x+4,y-1);g.globalAlpha=1;if(Math.random()<.08)R(g,'#ff3df2',x+5+Math.random()*6|0,y+Math.random()*6|0,2,1)}break}
+  case 'sign':R(g,'rgba(0,0,0,.2)',x+4,y+14,8,2);R(g,'#7a4a22',x+7,y+8,2,8);R(g,'#5a3214',x+1,y+1,14,9);R(g,'#c08a4a',x+2,y+2,12,7);R(g,e.wn===6?FORTRESS.accent:WORLDS[e.wn].accent,x+3,y+3,10,2);R(g,'#5a3214',x+4,y+6,8,1);break;
+  case 'fountain':{R(g,'rgba(0,0,0,.18)',x+3,y+27,26,3);R(g,'#8a8fb0',x+1,y+10,30,18);R(g,'#d9d3e6',x+2,y+10,28,3);R(g,'#4aa8e0',x+4,y+14,24,11);R(g,'#5fd8e8',x+5,y+15,22,9);
+   R(g,'#8a8fb0',x+13,y+3,6,15);R(g,'#d9d3e6',x+13,y+3,6,2);const f=Math.floor(t*6)%4;R(g,'#bff1f8',x+15,y-1+f,2,2);R(g,'#bff1f8',x+11-f,y+6+f,1,2);R(g,'#bff1f8',x+20+f,y+6+f,1,2);
+   if(Math.floor(t*3)%2){R(g,'#ffffff',x+8,y+18,2,1);R(g,'#ffffff',x+22,y+21,2,1)}else{R(g,'#ffffff',x+10,y+21,2,1);R(g,'#ffffff',x+20,y+17,2,1)}break}
+  case 'qboard':R(g,'rgba(0,0,0,.2)',x+2,y+14,12,2);R(g,'#7a4a22',x+2,y+6,2,10);R(g,'#7a4a22',x+12,y+6,2,10);R(g,'#1e2140',x,y-1,16,12);R(g,'#f5c542',x+1,y,14,10);R(g,'#fffaf0',x+3,y+2,10,6);R(g,'#e8435a',x+7,y+3,2,3);R(g,'#e8435a',x+7,y+7,2,1);break;
+  case 'library':R(g,'rgba(0,0,0,.2)',x+1,y+14,14,2);R(g,'#5a3214',x+1,y-3,14,18);R(g,'#7a4a22',x+2,y-2,12,16);R(g,'#5a3214',x+2,y+3,12,1);R(g,'#5a3214',x+2,y+9,12,1);
+   ['#e8435a','#5fd8e8','#f5c542','#3fbf6a','#8a5cf6','#ef6a3a'].forEach((c,i)=>{R(g,c,x+3+i*2,y-1,1,4);R(g,c,x+3+((i+3)%6)*2,y+5,1,4);R(g,c,x+3+((i+1)%6)*2,y+10,1,3)});break;
+  case 'boss':{const beaten=SAVE.bossBeaten;R(g,'rgba(0,0,0,.25)',x+5,y+28,22,3);if(beaten)g.globalAlpha=.3;const j=!beaten&&(t%1.6)>1.45?2:0;g.drawImage(BOSS_CV,x+4+j,y+2+(Math.floor(t*2)%2),24,24);
+   if(j){R(g,'#5fd8e8',x+2,y+10,28,1);R(g,'#ff3df2',x+6,y+16,24,1)}g.globalAlpha=1;break}
+  case 'gate':{if(gateOpen())break;for(let i=0;i<32;i+=4){R(g,'#1e2140',x+i+1,y,2,16)}R(g,'#1e2140',x,y+2,32,2);R(g,'#1e2140',x,y+11,32,2);const p=Math.floor(t*3)%2;R(g,p?'#ff3df2':'#5fd8e8',x,y+7,32,1);
+   R(g,'#f5c542',x+13,y+5,6,6);R(g,'#1e2140',x+15,y+7,2,3);break}
+ }}
+function drawGlitch(g,t){const f=Math.floor(t*7);for(const k of [1,2,3,4,5]){if(SAVE.cores[k])continue;GLITCH[k].forEach(([x,y],i)=>{const r=rng(i*977+f*31+k*7);if(r()<.35)return;const px=x*TS,py=y*TS;
+ const cols=['#ff3df2','#5fd8e8','#f5c542','#ffffff'];for(let n=0;n<4;n++){g.fillStyle=cols[(r()*4)|0];g.fillRect(px+(r()*14|0),py+(r()*14|0),1+(r()*3|0),1)}if(r()<.15){g.fillStyle='rgba(255,61,242,.35)';g.fillRect(px,py+(r()*14|0),16,2)}})}}
+function draw(){const g=G;g.imageSmoothingEnabled=false;const cx=S.cam.x,cy=S.cam.y;
+ g.drawImage(BASE[Math.floor(S.t*1.6)%2],cx,cy,S.vw,S.vh,0,0,S.vw,S.vh);
+ g.save();g.translate(-cx,-cy);
+ drawGlitch(g,S.t);
+ const items=[];
+ for(const e of ENTS){const ex=e.x*TS,ey=e.y*TS;if(ex>cx+S.vw+32||ex+e.w*TS<cx-32||ey>cy+S.vh+32||ey+e.h*TS<cy-32)continue;items.push({y:(e.y+e.h)*TS,fn:()=>drawEnt(g,e,S.t)})}
+ if(S.mode==='play'){
+  const b=S.trail.length>16?S.trail[S.trail.length-16]:null;
+  if(b){const bx=Math.round(b.x)+3,by=Math.round(b.y)+1+(Math.floor(S.t*3)%2);items.push({y:b.y+15,fn:()=>{R(g,'rgba(0,0,0,.18)',bx+1,b.y+14,8,2);g.drawImage(BYTE_CV,bx,by)}})}
+  const av=AVSPR[SAVE.avatar]||AVSPR.maya,fr=S.moving?Math.floor(S.anim*7)%2:0;const px=Math.round(S.px),py=Math.round(S.py);
+  items.push({y:S.py+16,fn:()=>{R(g,'rgba(0,0,0,.22)',px+4,py+14,8,2);
+   if(S.dir==='left'){g.save();g.translate(px+16,py);g.scale(-1,1);g.drawImage(av.side[fr],0,0);g.restore()}
+   else g.drawImage(S.dir==='right'?av.side[fr]:S.dir==='up'?av.up[fr]:av.down[fr],px,py)}})}
+ items.sort((a,b)=>a.y-b.y).forEach(i=>i.fn());
+ if(S.mode==='play'&&S.near&&!S.dlg&&!overlayOpen()){const e=S.near,x=e.x*TS-2,y=e.y*TS-2,w=e.w*TS+4,h=e.h*TS+4,c=Math.floor(S.t*4)%2?'#ffffff':'#f5c542';
+  [[x,y],[x+w-4,y],[x,y+h-1],[x+w-4,y+h-1]].forEach(([a,b])=>R(g,c,a,b,4,1));[[x,y],[x+w-1,y],[x,y+h-4],[x+w-1,y+h-4]].forEach(([a,b])=>R(g,c,a,b,1,4))}
+ g.restore()}
+
+let last=performance.now();
+function loop(now){const dt=clamp((now-last)/1000,0,.05);last=now;update(dt);draw();requestAnimationFrame(loop)}
+
+/* ================= BOOT ================= */
+buildMap();prerender();buildEnts();resize();hud();
+if(matchMedia('(pointer:coarse)').matches)$('touch').classList.add('on');
+titleScreen();requestAnimationFrame(loop);
+window.__AIQ={S,SAVE:()=>SAVE,STATIONS,ENTS,blocked,solidAt,at,T,warpTo,interact,regionOf};
+</script>
+
+</body></html>
