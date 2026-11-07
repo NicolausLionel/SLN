@@ -19,9 +19,12 @@
 
 ## Contents
 
-- [Level 1 · 2026-11-04](#level-1--2026-11-04)
-- [Level 2 · 2026-11-05](#level-2--2026-11-05)
-- [Level 3 · 2026-11-06](#level-3--2026-11-06)
+- [Level 1 · 2026-11-04](<img width="1917" height="1026" alt="level1-2026-11-04" src="https://github.com/user-attachments/assets/b173cea0-5e39-47c1-98c9-489edea540a4" />
+)
+- [Level 2 · 2026-11-05](<img width="1897" height="867" alt="level2-2026-11-05" src="https://github.com/user-attachments/assets/c53553c7-b7ab-4cc3-a8a8-44d67addfd5e" />
+)
+- [Level 3 · 2026-11-06](<img width="1493" height="662" alt="level3-2026-11-06" src="https://github.com/user-attachments/assets/84274fed-51a7-418c-bcee-4d0a13b48081" />
+)
 - [Next quest](#next-quest)
 - [Power-up log · AI use](#power-up-log--ai-use)
 
