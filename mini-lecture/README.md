@@ -1,6 +1,6 @@
 # Live mini lecture
 
-**Owners:** All members · **Tasks:** T18, T20 · **Status:** 🔲 Not started
+**Owners:** All members · **Tasks:** T18, T20 · **Status:** ✅ Done
 
 **Topic:** Introduction to AI and how AI works. **Length:** 4 minutes. **Approach:** a motivating question, the core idea, one worked example, a short learner question, then the key takeaway. Date follows the teacher's schedule (task T18, rehearsal T20).
 
