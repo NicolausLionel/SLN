@@ -109,7 +109,7 @@ Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 outline only
 | Topics 3 |✅ Done |
 | Topics 4 |✅ Done |
 | Topics 5 |✅ Done |
-| Study Guide, Test Bank, slides, videos | 🔲 Stage 2 |
+| Study Guide, Test Bank, slides, videos | ✅ Done |
 
 ## Roadmap
 
