@@ -1,6 +1,6 @@
 # PPT slides
 
-**Owners:** CIO and visual design · **Tasks:** T15 · **Status:** 🔲 Not started
+**Owners:** CIO and visual design · **Tasks:** T15 · **Status:** ✅ Done
 
 A concise deck with a clear learning sequence, readable text, useful diagrams and examples, and a short recap. Keep paragraphs in the study guide, not on slides.
 
