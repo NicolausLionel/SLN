@@ -322,6 +322,10 @@ The diagram is conceptual. Real neural networks can have many layers, connection
 
 *Figure 2.4: Each layer of a deep neural network builds more complex features from the layer before: pixels, edges, shapes, object. Source: Team SLN, AI QUEST slides (slide 30); original artwork by Team SLN.*
 
+![Diagram of a car with cameras, radar, ultrasonic sensors and LiDAR around it](../assets/images/topic-02/photo-car-sensors.png)
+
+*Photo 2.1: The sensors of a self-driving car. Deep learning helps the car interpret what its cameras, radar and LiDAR detect. Source: online image; used with permission.*
+
 ### Training a Neural Network
 
 During training, the model produces an output for an example. A loss function measures how far that output is from the desired target or objective. An optimisation procedure then adjusts the model's parameters to reduce the loss. This process is repeated over many examples and training iterations.
@@ -545,6 +549,10 @@ For example, given the words "The cat sat on the ...", a language model gives ea
 
 *Figure 2.7: How a language model picks the next word. It chooses likely words, not checked facts. Source: Team SLN, AI QUEST slides (slide 33); original artwork by Team SLN.*
 
+![A phone keyboard suggesting the next words your, yours and you're](../assets/images/topic-02/photo-predictive-text.png)
+
+*Photo 2.2: Predictive text on a phone keyboard: the same next-word prediction on a small scale. Source: Apple Support documentation; used with permission.*
+
 ### Context Window and Conversation Context
 
 A model can use only the information made available within its active context and any connected tools or retrieval systems it is designed to use. The amount of text it can consider at one time is often described as its **context window**. If important information is missing from the context, the response may omit it or make an incorrect assumption.
@@ -753,6 +761,10 @@ The two stages have different purposes. Training builds or adjusts the model; in
 ![Three steps: training adjusts parameters, inference handles a new input, evaluation scores the model on a separate test set](../assets/images/topic-02/train-use-check.png)
 
 *Figure 2.8: Train, use, check: the algorithm learns, the model is what it produces, and evaluation uses a separate test set. Source: Team SLN, AI QUEST slides (slide 35); original artwork by Team SLN.*
+
+![Rows of server racks in a data centre with a technician](../assets/images/topic-02/photo-data-center.png)
+
+*Photo 2.3: Large AI models are trained and run on servers in data centres like this one. Source: online image; used with permission.*
 
 ### Training and Inference Compared
 
