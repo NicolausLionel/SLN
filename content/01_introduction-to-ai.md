@@ -7,7 +7,7 @@
 
 ---
 
-> **Topic:** 01 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+> **Topic:** 01 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V3.0 (Stage 3 final, 28 November 2026)
 
 ## Learning Goals
 
@@ -46,7 +46,7 @@ After studying this topic, you should be able to:
 | 02 | [History and Development of AI](#02--history-and-development-of-ai) |
 | 03 | [Basic Concepts and Characteristics of AI](#03--basic-concepts-and-characteristics-of-ai) |
 | 04 | [AI vs. Traditional Computer Systems](#04--ai-vs-traditional-computer-systems) |
-| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
+| — | [Learner Activities](#learner-activities) · [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
@@ -92,6 +92,10 @@ Russell and Norvig (2020) describe four broad ways to think about AI. Each persp
 | Acting Rationally | Systems that choose actions to achieve goals | The system selects an action that is expected to help it reach an objective | A route-planning system |
 
 The four perspectives are related, but they are not identical. A system can produce a useful result without copying the way a human thinks. For example, a route-planning system may compare many possible routes using mathematical calculations. It does not need to think like a human driver to recommend a suitable route.
+
+![Four boxes: think humanly, act humanly, think rationally, act rationally, with a chatbot and a route planner as examples](../assets/images/topic-01/four-perspectives.png)
+
+*Figure 1.1: The four perspectives on AI described by Russell and Norvig (2020). Source: Team SLN, AI QUEST slides (slide 6); original artwork by Team SLN.*
 
 ### 1. Thinking Humanly
 
@@ -145,6 +149,10 @@ Although AI systems can be very different, many of them involve several basic el
 | Objective | The task or goal the system is designed to support | Identifying unwanted email |
 
 Not every AI application uses these elements in exactly the same way. A rule-based system may rely mainly on instructions written by a developer, while a machine-learning system can use a model that has been adjusted through training data.
+
+![A spam filter as an AI system: input new email, model trained filter, output spam, built from data and an algorithm, with the goal of blocking spam](../assets/images/topic-01/inside-an-ai-system.png)
+
+*Figure 1.2: The elements of an AI system shown with the spam-filter example. Source: Team SLN, AI QUEST slides (slide 10); original artwork by Team SLN.*
 
 ### A Simplified View of an AI System
 
@@ -291,6 +299,10 @@ ELIZA: Why are you worried about your exams?
 
 Even so, many users felt that ELIZA understood them. This reaction is still important today: **a system that sounds human is not necessarily a system that understands** (see Section 1.2 on *acting humanly*).
 
+![A short chat with ELIZA: the user says they are worried about an exam and ELIZA turns the words into a question](../assets/images/topic-01/eliza-chat.png)
+
+*Figure 1.3: ELIZA (1966) only spotted keywords such as "I am" and "mother" and filled a template. Source: Team SLN, AI QUEST slides (slide 16); original artwork by Team SLN.*
+
 Symbolic AI was useful for problems that could be described through clear rules. It supported early work in logical reasoning, planning, language processing, and game-playing programs.
 
 However, symbolic systems faced difficulties when information was incomplete, unclear, or too complicated to describe with a fixed set of rules. A system could only use the knowledge and rules that had been represented in it.
@@ -376,6 +388,10 @@ Deep learning contributed to major improvements in tasks such as image recogniti
 For example, an image recognition model can be trained using many labelled images. During training, the model adjusts its internal values to improve its ability to identify patterns related to different objects.
 
 The turning point came in 2012. A deep neural network called **AlexNet**, built by Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton, won the ImageNet image-recognition competition. Its top-5 error rate was 15.3%, compared with 26.2% for the second-best entry (Krizhevsky et al., 2012). AlexNet was trained on graphics processing units (GPUs), which showed that large neural networks had become practical. In 2016, DeepMind's **AlphaGo**, which combined deep learning with search, defeated Go champion Lee Sedol.
+
+![Bar chart: AlexNet top-5 error 15.3 percent compared with 26.2 percent for the second-best entry](../assets/images/topic-01/alexnet-imagenet-2012.png)
+
+*Figure 1.4: AlexNet almost halved the error rate of the second-best entry in ImageNet 2012. Source: Krizhevsky et al. (2012); chart made by Team SLN.*
 
 Deep learning can work well with complex data, but it also has limitations. It can require large amounts of data and computing resources. Its internal decision process can also be difficult to explain in simple terms.
 
@@ -582,6 +598,10 @@ flowchart TD
 
 *Computer vision and natural language processing are not limited to deep learning. They can also use other methods. Robotics can use AI, but robotics and AI are not the same field.*
 
+![Nested boxes: AI contains machine learning, which contains deep learning, which contains generative AI](../assets/images/topic-01/ai-ml-dl-boxes.png)
+
+*Figure 1.5: AI, machine learning, deep learning and generative AI as boxes inside boxes. Generative AI is mostly built with deep learning. Source: Team SLN, AI QUEST slides (slide 11); original artwork by Team SLN.*
+
 ## 3.4 Characteristics of AI Systems
 
 AI systems may show several characteristics depending on the task they are designed to perform.
@@ -670,6 +690,10 @@ In this model:
 - **Processing** is where the agent uses rules, models, or other methods.
 - **Action selection** is the choice made by the agent.
 - **Actuators or outputs** carry out the selected action or communicate a result.
+
+![Agent loop for a robot vacuum: sense (bump sensor), think (rule: turn 90 degrees), act (wheels turn), learn (update a room map)](../assets/images/topic-01/agent-loop-robot-vacuum.png)
+
+*Figure 1.6: The agent cycle shown with a robot vacuum: sense, think, act and, in some models, learn. Source: Team SLN, AI QUEST slides (slide 12); original artwork by Team SLN.*
 
 ### Example: A Navigation Agent
 
@@ -775,6 +799,10 @@ AI systems can be useful when a task involves complex patterns, images, language
 | Limitations | May not handle situations that were not included in its instructions | May produce incorrect predictions or unreliable outputs |
 
 These are general differences, not absolute rules. Traditional programs can process very large amounts of data. AI systems can also include traditional programming and explicit rules. Some AI systems produce the same output for the same input, while others can produce different results because of their design or settings.
+
+![Two boxes comparing a normal program that follows fixed rules with an AI system that handles patterns and uncertainty](../assets/images/topic-01/ai-vs-normal-program.png)
+
+*Figure 1.7: A normal program follows fixed rules (for example, IF temperature < 18 °C THEN heater ON); an AI system learns patterns from examples. Source: Team SLN, AI QUEST slides (slide 13); original artwork by Team SLN.*
 
 ## 4.4 How Traditional Programming Works
 
@@ -986,6 +1014,51 @@ These questions help ensure that the selected method fits the real problem.
 
 ---
 
+## Learner Activities
+
+The activities below are also used in the AI QUEST Study Guide, the slides and the videos, so the same task and answer appear in every resource.
+
+### Activity 1: Is It AI? (BYTE's Big Question)
+
+**Task.** Look at the four items in the figure below. For each item, decide whether it is AI and write one reason.
+
+![Four cards: calculator, spam filter, robot vacuum, chatbot, with the question which of these are AI](../assets/images/topic-01/is-it-ai-question.png)
+
+*Figure 1.8: BYTE's Big Question: which of these are AI? Source: Team SLN, AI QUEST slides (slide 2); original artwork by Team SLN.*
+
+**Expected outcome.**
+
+| Item | AI? | Reason |
+|---|---|---|
+| Calculator | No | It follows one fixed formula and never learns or decides (Section 4.1). |
+| Spam filter | Yes | It learns patterns from labelled examples: supervised machine learning (Topic 02, Section 2.1). |
+| Robot vacuum | It depends | A robot that only bumps and turns with fixed rules is not AI; one that senses, maps the room and plans a route uses AI (Section 3.5). |
+| Chatbot | Yes | A large language model predicts likely words; it can still hallucinate (Topic 04, Section 3). |
+
+![Answer cards: calculator not AI, spam filter AI, robot vacuum it depends, chatbot AI](../assets/images/topic-01/is-it-ai-answer.png)
+
+*Figure 1.9: Answer to BYTE's Big Question. Source: Team SLN, AI QUEST slides (slide 70); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 1.1 (p. 12) · Slides 2 and 70 · Video 01 (00:10) and Video 05 (05:02).
+
+### Activity 2: The River Puzzle (Search in Symbolic AI)
+
+**Task.** A farmer must cross a river with a wolf, a goat and a cabbage. The boat holds the farmer and one item. If the wolf is left alone with the goat, the goat is eaten; if the goat is left alone with the cabbage, the cabbage is eaten. Find a safe sequence of crossings.
+
+![The rules of the river puzzle: boat holds the farmer and one item, wolf eats goat, goat eats cabbage](../assets/images/topic-01/river-puzzle.png)
+
+*Figure 1.10: The river puzzle, a classic problem for early symbolic AI. Source: Team SLN, AI QUEST slides (slide 14); original artwork by Team SLN.*
+
+**Expected outcome.** Seven crossings: (1) take the goat across; (2) return alone; (3) take the wolf across; (4) bring the goat back; (5) take the cabbage across; (6) return alone; (7) take the goat across. Step 4 is the key move, because it looks like going backwards.
+
+A computer solves the puzzle by listing every possible arrangement (a *state*), removing the unsafe states and searching for a path from the start to the goal. This is symbolic AI as described in Section 2.3: states, rules and search. It works well when the rules are clear, but real life has too many states and unclear rules, which is one reason machine learning was needed later.
+
+![The seven crossings of the river puzzle listed step by step](../assets/images/topic-01/river-puzzle-answer.png)
+
+*Figure 1.11: Solution of the river puzzle in seven crossings. Source: Team SLN, AI QUEST slides (slide 15); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 1.4 (p. 18–19) · Slides 14–15 · Video 01 (06:56).
+
 ## Check Your Understanding
 
 1. A navigation app compares routes and recommends the fastest one. Which of the four perspectives on AI (Section 1.2) does this fit best?
@@ -1026,7 +1099,7 @@ These questions help ensure that the selected method fits the real problem.
 10. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
 11. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
 
-*AI use: the Stage 3 revision of this topic (history milestones, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Dates and figures were checked against the sources above.*
+*AI use: the Stage 3 revision of this topic (history milestones, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Dates and figures were checked against the sources above. The figures come from the team's own AI QUEST slides; the learner activities were taken from the Study Guide, slides and videos and checked against them by the team.*
 
 ---
 
