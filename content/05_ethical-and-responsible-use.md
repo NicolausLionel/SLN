@@ -7,7 +7,7 @@
 
 ---
 
-> **Topic:** 05 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+> **Topic:** 05 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V3.0 (Stage 3 final, 28 November 2026)
 
 ## Learning Goals
 
@@ -49,7 +49,7 @@ After studying this topic, you should be able to:
 | 04 | [Academic Integrity](#04--academic-integrity) |
 | 05 | [Human Judgement and Oversight](#05--human-judgement-and-oversight) |
 | 06 | [Responsible AI Use and Verification of AI-Generated Content](#06--responsible-ai-use-and-verification-of-ai-generated-content) |
-| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
+| — | [Learner Activities](#learner-activities) · [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
@@ -174,6 +174,8 @@ that may require additional support.
 
 The second prompt provides relevant information without unnecessarily exposing personal identifiers.
 
+Replacing the name with "Student A" is pseudonymisation (Section 1.2). It is acceptable here only because the prompt contains no other identifying details and the list that links "Student A" to the real student stays with the teacher.
+
 ## 1.6 Privacy Responsibilities in Different Environments
 
 Privacy responsibilities apply across education, business, healthcare, and everyday technology use.
@@ -200,6 +202,10 @@ Before entering information into an AI system, you need to ask:
 - Is there a safer way to complete the task?
 
 A responsible user does not assume that information is safe to upload simply because an AI application accepts it.
+
+![Three questions before pasting data into an AI tool: does the AI really need this data, do I have permission to share it, could it point to a real person](../assets/images/topic-05/privacy-gate.png)
+
+*Figure 5.1: Three questions to ask before pasting anything into an AI tool. Source: Team SLN, AI QUEST slides (slide 60); original artwork by Team SLN.*
 
 ---
 
@@ -432,6 +438,10 @@ Responsibility should therefore be assigned according to the roles of the people
 | End Users | Use systems responsibly and report concerns. | A student checks information before including it in an assignment. |
 
 Accountability should be clear before a system is deployed. If responsibilities are unclear, problems may remain unresolved because each party assumes that someone else is responsible.
+
+![Two boxes: transparency (say when AI is used, explain why it gave a result, keep records of tests) and accountability (developers test it, organisations supervise it, users check and report)](../assets/images/topic-05/who-is-responsible.png)
+
+*Figure 5.2: Transparency and accountability: AI cannot be blamed; people stay accountable. Source: Team SLN, AI QUEST slides (slide 65); original artwork by Team SLN.*
 
 ## 3.5 Transparency Across the AI Lifecycle
 
@@ -765,6 +775,10 @@ The level of human oversight should be proportionate to the potential impact of 
 Risk levels depend on context. The same AI function can create different levels of risk depending on how it is used.
 
 For example, a recommendation system used to suggest optional learning resources may have relatively low impact. A system used to determine access to important educational opportunities requires much stronger safeguards.
+
+![Three levels: rewording a note needs a quick review, sorting requests needs a careful review, health, jobs and money need qualified people to decide](../assets/images/topic-05/human-oversight-levels.png)
+
+*Figure 5.3: The higher the impact of a decision, the stronger the human oversight. Source: Team SLN, AI QUEST slides (slide 68); original artwork by Team SLN.*
 
 ## 5.7 Human Oversight in Different Fields
 
@@ -1153,6 +1167,74 @@ The goal is not to avoid AI entirely or to accept every AI-generated result. The
 
 ---
 
+## Learner Activities
+
+The activities below are also used in the AI QUEST Study Guide, the slides and the videos.
+
+### Activity 1: Redact the Prompt
+
+**Task.** A teacher wants to paste the following prompt into an AI tool: "Please improve this feedback for my student Li Wei (ID 20231456, email liwei@uni.edu). She failed the exam because of her anxiety." Identify everything that should be removed before sending it. (The student is fictional.)
+
+![A prompt containing a student name, student ID, email address and health information](../assets/images/topic-05/redact-the-prompt.png)
+
+*Figure 5.4: Redact the prompt. Source: Team SLN, AI QUEST slides (slide 61); original artwork by Team SLN.*
+
+**Expected outcome.** Four items: the name, the student ID, the email address and the health information. The task still works without them. This is data minimisation (Section 1.3).
+
+![The same prompt with the name, ID, email and health information blacked out](../assets/images/topic-05/redact-the-prompt-answer.png)
+
+*Figure 5.5: Answer: give the AI only what it needs. Source: Team SLN, AI QUEST slides (slide 62); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 5.1 (p. 72) · Slides 61–62 · Video 05 (01:06).
+
+### Activity 2: Audit the Hiring Bot
+
+**Task.** A hiring bot shortlisted applicants from three types of school. Each group had 60 applicants: 45 were shortlisted from Group A, 18 from Group B and 42 from Group C. Calculate the shortlist rate (shortlisted ÷ 60) for each group and decide which group is treated very differently.
+
+![Three groups with 45, 18 and 42 shortlisted out of 60](../assets/images/topic-05/hiring-audit.png)
+
+*Figure 5.6: Audit the hiring bot. Source: Team SLN, AI QUEST slides (slide 63); original artwork by Team SLN.*
+
+**Expected outcome.** Group A: 45 ÷ 60 = 75%. Group B: 18 ÷ 60 = 30%. Group C: 42 ÷ 60 = 70%. Group B is shortlisted far less often. This does not prove discrimination by itself, but it is a strong signal to investigate the data, the features (school type can act as a *proxy* for family background) and the process, and to add human review (Section 2.8).
+
+![Bar chart: Group A 75 percent, Group B 30 percent, Group C 70 percent](../assets/images/topic-05/hiring-audit-answer.png)
+
+*Figure 5.7: Answer: Group B is left out. Source: Team SLN, AI QUEST slides (slide 64); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 5.2 (p. 74) · Slides 63–64 · Video 05 (01:38) · Test Bank TF-15.
+
+### Activity 3: Allowed or Not?
+
+**Task.** An assignment says: "AI is allowed for feedback only." Classify each use as green (allowed), yellow (unclear) or red (not allowed): (A) AI checks the grammar of the student's own essay; (B) AI writes the whole essay; (C) AI makes practice questions.
+
+![Three cards: AI checks grammar in my own essay, AI writes my whole essay, AI makes practice questions](../assets/images/topic-05/allowed-or-not.png)
+
+*Figure 5.8: Allowed or not? Source: Team SLN, AI QUEST slides (slide 66); original artwork by Team SLN.*
+
+**Expected outcome.** A is green: it is feedback on the student's own work, and the use should be disclosed. B is red: it is not the student's work and breaks the rule. C is green: practice questions support learning and are not submitted (Section 4.2).
+
+![Answer: grammar check green with disclosure, whole essay red, practice questions green](../assets/images/topic-05/allowed-or-not-answer.png)
+
+*Figure 5.9: Answer: follow each assignment's rules, verify and disclose AI help. Source: Team SLN, AI QUEST slides (slide 67); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 5.4 (p. 78) · Slides 66–67 · Video 05 (03:22).
+
+### Final Challenge: Should AI Grade Our Essays?
+
+**Task.** Use all five topics to decide whether AI should grade student essays. In small groups, answer: *What and how* (which type of AI, which data?), *Limits* (what are the benefits and risks?) and *Responsibly* (what about privacy, and who decides?). Then vote: Yes, Yes with humans, or No.
+
+![Final challenge questions: what and how, limits, responsibly, and a vote](../assets/images/topic-05/final-boss.png)
+
+*Figure 5.10: The final challenge combines all five topics. Source: Team SLN, AI QUEST slides (slide 72); original artwork by Team SLN.*
+
+**Expected outcome.** There is no single right vote, but a strong answer uses evidence from every topic. A typical strong answer: the system would be narrow AI, a language model trained on past graded essays (Topics 01–02); it can hallucinate feedback and may favour some writing styles, which is bias (Topic 04); essays are personal data, teachers decide the grades and students are told that AI was used (Topic 05). The best answer is usually "Yes, with humans": AI drafts feedback, teachers decide, and the use is disclosed. A "No" vote based on privacy or bias risks is also a good answer if it is argued with evidence.
+
+![Debrief: narrow AI trained on past graded essays; can hallucinate and show bias; essays are personal data and teachers decide grades](../assets/images/topic-05/final-boss-answer.png)
+
+*Figure 5.11: A strong answer to the final challenge. Source: Team SLN, AI QUEST slides (slide 73); original artwork by Team SLN.*
+
+> **Also in:** Slides 72–73 · Video 05 (06:20) · Test Bank OE-06.
+
 ## Check Your Understanding
 
 1. Look at the unsafe prompt in Section 1.5. Name three details you should remove before sending it to an AI tool.
@@ -1185,7 +1267,7 @@ The goal is not to avoid AI entirely or to accept every AI-generated result. The
 4. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
 5. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
 
-*AI use: the Stage 3 revision of this topic (real cases, the PIPL section, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Case and law details were checked against the sources above.*
+*AI use: the Stage 3 revision of this topic (real cases, the PIPL section, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Case and law details were checked against the sources above. The figures come from the team's own AI QUEST slides; the learner activities were taken from the Study Guide, slides and videos and checked against them by the team.*
 
 ---
 
