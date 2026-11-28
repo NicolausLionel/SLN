@@ -7,7 +7,7 @@
 
 ---
 
-> **Topic:** 04 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+> **Topic:** 04 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V3.0 (Stage 3 final, 28 November 2026)
 
 ## Learning Goals
 
@@ -47,7 +47,7 @@ After studying this topic, you should be able to:
 | 04 | [Data Quality and Bias](#04--data-quality-and-bias) |
 | 05 | [Overdependence on AI](#05--overdependence-on-ai) |
 | 06 | [The Importance of Verifying AI-Generated Information](#06--the-importance-of-verifying-ai-generated-information) |
-| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
+| — | [Learner Activities](#learner-activities) · [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
@@ -58,6 +58,10 @@ Artificial intelligence provides several benefits in education, business, health
 AI is particularly useful when a task involves large amounts of data or repeated activities that would otherwise require significant time and effort. By assisting with these activities, AI can help people focus on tasks that require creativity, judgement, communication, and problem-solving.
 
 However, the benefits of AI depend on how a system is designed and used. A tool may improve efficiency in one situation but produce limited results in another. Organisations and individuals should therefore evaluate whether AI is genuinely useful for a particular purpose.
+
+![Four cards: speed, automation, productivity and access, each with an example](../assets/images/topic-04/power-ups.png)
+
+*Figure 4.1: What AI does well: speed, automation, productivity and access. The time needed for checking still counts. Source: Team SLN, AI QUEST slides (slide 49); original artwork by Team SLN.*
 
 ## 1.1 Improving Efficiency
 
@@ -272,6 +276,10 @@ The user might be asking about:
 
 Without additional context, an AI system may select the wrong interpretation.
 
+![The prompt Explain Java with three possible meanings: programming language, island in Indonesia, coffee](../assets/images/topic-04/explain-java.png)
+
+*Figure 4.2: An ambiguous prompt: "Explain Java." could mean a programming language, an island or coffee. Source: Team SLN, AI QUEST slides (slide 50); original artwork by Team SLN.*
+
 | Question | Possible Interpretations | Why Clarification Helps |
 |---|---|---|
 | "Explain Java." | Programming, geography, or another meaning | Identifies the intended subject |
@@ -303,6 +311,8 @@ A phrase that is polite in one language may sound unusual or too direct in anoth
 AI translation systems may preserve the general meaning while losing some cultural nuance.
 
 For example, greetings, humour, idioms, and informal expressions may not have direct equivalents in another language.
+
+Translating the English idiom "break a leg" word by word, for instance, makes it sound like a threat, although it means "good luck".
 
 | Language Feature | Example of Difficulty | Possible Result |
 |---|---|---|
@@ -447,6 +457,10 @@ This is particularly important when an AI system is asked to provide citations, 
 | Legal information | Giving an incorrect description of a regulation |
 
 AI hallucinations demonstrate that fluent language generation and factual accuracy are different qualities.
+
+![Definition card: AI output that sounds convincing but is false or invented, for example a book that does not exist. Fluent does not mean true](../assets/images/topic-04/hallucination.png)
+
+*Figure 4.3: A hallucination: fluent is not the same as true, and confident is not the same as correct. Source: Team SLN, AI QUEST slides (slide 51); original artwork by Team SLN.*
 
 ### Real Case: Fake Court Cases from ChatGPT (2023)
 
@@ -793,6 +807,10 @@ Nobody told the model to prefer men. It copied an unfair pattern from **historic
 
 In the *Gender Shades* study, Joy Buolamwini and Timnit Gebru (2018) tested three commercial systems that guessed a person's gender from a face photo. The results were very different for different groups:
 
+![Bar chart: highest error rate 0.8 percent for lighter-skinned men and 34.7 percent for darker-skinned women](../assets/images/topic-04/gender-shades-error-rates.png)
+
+*Figure 4.4: Results of the Gender Shades study. Source: Buolamwini and Gebru (2018); chart made by Team SLN.*
+
 | Group | Highest error rate found |
 |---|---|
 | Lighter-skinned men | 0.8% |
@@ -916,6 +934,10 @@ However, if the student submits AI-generated answers without understanding the s
 | Using AI for practice questions | Depending on generated answers instead of practising independently |
 
 The issue is not simply the frequency of AI use. It is whether the user continues to participate actively in the process.
+
+![Two columns: healthy use (ask for an explanation, get feedback on a draft, ask for a hint) and overdependence (accept without checking, submit AI text unread, copy the final answer)](../assets/images/topic-04/overdependence.png)
+
+*Figure 4.5: Healthy use of AI compared with overdependence. Source: Team SLN, AI QUEST slides (slide 56); original artwork by Team SLN.*
 
 ## 5.2 Reduced Critical Thinking
 
@@ -1288,6 +1310,10 @@ The level of verification should reflect the possible consequences of an error.
 
 The more significant the possible consequences, the more carefully the output should be evaluated.
 
+![Four levels: brainstorming needs a quick review, a general concept needs key facts checked, an assignment needs original sources, health, law and money need official sources and professionals](../assets/images/topic-04/verify-by-stakes.png)
+
+*Figure 4.6: Match the checking to the stakes: the higher the stakes, the stronger the evidence needed. Source: Team SLN, AI QUEST slides (slide 57); original artwork by Team SLN.*
+
 ## 6.9 Human Responsibility in Verification
 
 AI can assist with checking information, but it should not be treated as the only authority responsible for confirming its own accuracy.
@@ -1393,6 +1419,59 @@ Responsible use requires users to understand the limitations of AI, verify impor
 
 ---
 
+## Learner Activities
+
+The activities below are also used in the AI QUEST Study Guide, the slides and the videos.
+
+### Activity 1: Hallucination Hunt
+
+**Task.** An AI tool was asked for three facts about early AI. One claim is invented. Find it and explain how to check it.
+
+![Three AI-generated claims: Turing proposed the imitation game in 1950; the Dartmouth workshop of 1956 named the field; ELIZA was built by Google in 1995](../assets/images/topic-04/hallucination-hunt.png)
+
+*Figure 4.7: Spot the hallucination. Source: Team SLN, AI QUEST slides (slide 52); original artwork by Team SLN.*
+
+**Expected outcome.** Claim 3 is invented. ELIZA was written by Joseph Weizenbaum at MIT in 1966, long before Google existed (Topic 01, Section 2.3; Weizenbaum, 1966). Claims 1 and 2 are true. The answer sounded detailed and confident and was still wrong, so names, dates, numbers and references must be checked against a trusted source (Section 6).
+
+![Answer: claims 1 and 2 true, claim 3 false; real answer Joseph Weizenbaum, MIT, 1966](../assets/images/topic-04/hallucination-hunt-answer.png)
+
+*Figure 4.8: Answer to the hallucination hunt. Source: Team SLN, AI QUEST slides (slide 53); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 4.3 (p. 62) · Slides 52–53 · Video 04 (02:10).
+
+### Activity 2: The Fruit Sorter
+
+**Task.** A fruit sorter learned what an apple is from 40 red apples; it never saw a green apple or a tomato. It is tested on 6 red apples, 4 green apples and 2 red tomatoes. Predict its results for each group and overall.
+
+![Training data: 40 red apples, 0 green apples, 0 tomatoes; question: what will the sorter say about a green apple and a red tomato](../assets/images/topic-04/fruit-sorter.png)
+
+*Figure 4.9: The fruit-sorter demo. Source: Team SLN, AI QUEST slides (slide 54); original artwork by Team SLN.*
+
+**Expected outcome.**
+
+| Group | Correct | Accuracy |
+|---|---|---|
+| Red apples | 6 / 6 | 100% |
+| Green apples | 0 / 4 | 0% (never seen) |
+| Red tomatoes | 0 / 2 | 0% (wrongly called apples) |
+| **Overall** | **6 / 12** | **50%** |
+
+The overall figure of 50% hides a group with 0%. Unbalanced data leads to unfair results, so performance must be checked for each group. The *Gender Shades* case in Section 4.5 shows the same effect with real people.
+
+![Answer table: red apples 6 of 6, green apples 0 of 4, red tomatoes 0 of 2, overall 50 percent hides a 0 percent group](../assets/images/topic-04/fruit-sorter-answer.png)
+
+*Figure 4.10: Answer to the fruit-sorter demo. Source: Team SLN, AI QUEST slides (slide 55); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 4.4 (p. 64) · Slides 54–55 · Video 04 (03:06) · Test Bank MC-15.
+
+### Activity 3: Ambiguity Lab
+
+**Task.** Rewrite the prompt "Explain Java." so that it can only be understood in one way (Section 2.2).
+
+**Expected outcome.** For example: "Explain the Java programming language to a beginner in five bullet points." The rewrite states the subject, the audience and the format.
+
+> **Also in:** Study Guide Mission 4.2 (p. 59) · Slide 50 · Video 04 (01:08).
+
 ## Check Your Understanding
 
 1. In *Mata v. Avianca* (Section 3.2), what went wrong, and which step in Section 6.4 would have prevented it?
@@ -1423,8 +1502,9 @@ Responsible use requires users to understand the limitations of AI, verify impor
 3. Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. *Proceedings of Machine Learning Research, 81*, 77–91. https://proceedings.mlr.press/v81/buolamwini18a.html
 4. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
 5. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
+6. Weizenbaum, J. (1966). ELIZA: A computer program for the study of natural language communication between man and machine. *Communications of the ACM, 9*(1), 36–45.
 
-*AI use: the Stage 3 revision of this topic (real cases, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Case details were checked against the sources above.*
+*AI use: the Stage 3 revision of this topic (real cases, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Case details were checked against the sources above. The figures come from the team's own AI QUEST slides; the learner activities were taken from the Study Guide, slides and videos and checked against them by the team.*
 
 ---
 
