@@ -7,7 +7,39 @@
 
 ---
 
+> **Topic:** 02 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+
+## Learning Goals
+
+After studying this topic, you should be able to:
+
+1. **Distinguish** Narrow AI, AGI and ASI, and **state** which of them exists today.
+2. **Explain** supervised, unsupervised and reinforcement learning, with one example of each.
+3. **Describe** how a machine-learning model is trained, evaluated and then used on new data.
+4. **Explain** in simple terms how a large language model produces text, and why its answers can be wrong.
+5. **Explain** the roles of data, algorithms and models, and why data quality matters.
+
+## Key Terms
+
+| Term | Meaning |
+|---|---|
+| **Narrow AI (ANI)** | AI built for one task or a small set of related tasks. All AI in use today is narrow AI. |
+| **AGI / ASI** | Proposed AI that would match (AGI) or exceed (ASI) human ability across almost all tasks. Neither has been achieved. |
+| **Supervised learning** | Learning from examples that come with the correct answer (a **label**). |
+| **Unsupervised learning** | Finding groups or patterns in data that has no labels. |
+| **Reinforcement learning** | Learning which actions to take from rewards and penalties. |
+| **Neural network** | A model made of layers of simple connected units whose connection strengths (**parameters**) are learned. |
+| **Overfitting** | When a model learns its training examples too closely and performs badly on new data. |
+| **Generative AI** | AI that produces new content such as text, images or audio. |
+| **Large language model (LLM)** | A generative model trained on large amounts of text that predicts the next **token** (a word or part of a word). |
+| **Prompt** | The instruction or question a user gives to a generative AI system. |
+| **Hallucination** | A generated statement that sounds convincing but is false or unsupported. |
+
+---
+
 ## CONTENTS
+
+[Learning Goals](#learning-goals) · [Key Terms](#key-terms)
 
 | Section | Topic |
 |:---:|---|
@@ -16,18 +48,19 @@
 | 03 | [Generative AI](#03--generative-ai) |
 | 04 | [The Roles of Data and Algorithms](#04--the-roles-of-data-and-algorithms) |
 | 05 | [How AI Processes Information and Generates Outputs](#05--how-ai-processes-information-and-generates-outputs) |
+| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
-# 01 · TYPES OF AI BASED ON CAPABILITIES
+# 01 · Types of AI Based on Capabilities
 
 Artificial Intelligence can be classified in different ways. One common introductory classification groups AI according to the range of tasks and abilities a system is designed or expected to perform. This classification includes **Narrow AI**, **Artificial General Intelligence (AGI)**, and **Artificial Superintelligence (ASI)**.
 
 These categories describe the scope of a system's capabilities. They should not be confused with technical methods such as machine learning or deep learning, which describe approaches used to develop AI systems.
 
-## Three Categories of AI Based on Capabilities
+## 1.1 Three Categories of AI Based on Capabilities
 
-The capability-based classification focuses on **how broadly an AI system can perform tasks**. It is a conceptual way to discuss the scope of intelligence, not a measurement that can be determined from one impressive demonstration. A system may perform well on many tasks while still depending on learned patterns, instructions, tools, and operating conditions.
+The capability-based classification focuses on **how broadly an AI system can perform tasks**. It is a conceptual way to discuss the scope of intelligence, not a measurement that can be determined from one impressive demonstration. A system can perform well on many tasks while still depending on learned patterns, instructions, tools, and operating conditions.
 
 It is also important to separate capability from autonomy. A system that can perform a task without constant human input is not automatically AGI. Autonomy describes how independently a system can operate within a defined environment, while the ANI–AGI–ASI classification concerns the breadth and level of its capabilities.
 
@@ -39,9 +72,11 @@ It is also important to separate capability from autonomy. A system that can per
 
 ### 1. Narrow AI (ANI)
 
+**Narrow AI**, also called *Artificial Narrow Intelligence*, refers to AI systems developed for particular tasks or a limited set of tasks. A system can perform its assigned task quickly and accurately, but its capability is generally restricted to the purpose and conditions for which it was designed.
+
 Narrow AI systems are usually developed around a clearly described objective. Their performance is evaluated against that objective, such as identifying a category, ranking search results, detecting unusual activity, or transcribing speech. A narrow system can be highly capable in its domain without having general understanding across unrelated domains.
 
-For example, an image-recognition model may identify objects in photographs with high accuracy. That does not mean it can automatically explain a legal contract, plan a science experiment, or operate a vehicle. Those tasks require different capabilities, data, and system designs.
+For example, an image-recognition model can identify objects in photographs with high accuracy. That does not mean it can automatically explain a legal contract, plan a science experiment, or operate a vehicle. Those tasks require different capabilities, data, and system designs.
 
 **Typical characteristics of Narrow AI include:**
 
@@ -51,15 +86,13 @@ For example, an image-recognition model may identify objects in photographs with
 - **Measurable performance:** Developers can often evaluate it using task-specific measures, such as accuracy, error rate, or response time.
 - **Dependence on human design:** People choose the objective, prepare data, select methods, and decide how the system is deployed.
 
-A common misunderstanding is that a narrow system must be simple. This is not correct. A narrow AI system may use a very large model and sophisticated algorithms while remaining limited to a defined purpose.
-
-**Narrow AI**, also called *Artificial Narrow Intelligence*, refers to AI systems developed for particular tasks or a limited set of tasks. A system may perform its assigned task quickly and accurately, but its capability is generally restricted to the purpose and conditions for which it was designed.
+A common misunderstanding is that a narrow system must be simple. This is not correct. A narrow AI system can use a very large model and sophisticated algorithms while remaining limited to a defined purpose.
 
 Examples include:
 
 - **Recommendation systems:** Suggest videos, music, or products based on user activity and preferences.
 - **Spam detection:** Identify messages that are likely to be unwanted or suspicious.
-- **Navigation systems:** Analyze route information and recommend a suitable route.
+- **Navigation systems:** Analyse route information and recommend a suitable route.
 - **Image recognition:** Identify objects or other visual patterns in photographs.
 - **Voice assistants:** Process supported spoken requests and provide responses or perform selected actions.
 
@@ -67,38 +100,33 @@ Most AI applications commonly encountered in everyday life belong to this catego
 
 ### 2. Artificial General Intelligence (AGI)
 
-AGI is often discussed in terms of **generalization**: the ability to apply knowledge and problem-solving skills across different tasks and situations. A general system would not need a completely separate design for every new task. It would be expected to adapt to unfamiliar problems, use knowledge flexibly, and learn new tasks with less task-specific engineering.
+**Artificial General Intelligence (AGI)** describes a proposed type of AI with broad and flexible intellectual capabilities. In principle, an AGI system would be able to learn, understand, and apply knowledge across many different tasks rather than being limited to one narrow function.
 
-However, there is no single universally accepted test that settles whether a system is AGI. Researchers and commentators may use different definitions, benchmarks, and expectations. Success on a collection of tests is informative, but it does not by itself prove that a system has all the broad abilities associated with human intelligence.
+AGI is often discussed in terms of **generalisation**: the ability to apply knowledge and problem-solving skills across different tasks and situations. A general system would not need a completely separate design for every new task. It would be expected to adapt to unfamiliar problems, use knowledge flexibly, and learn new tasks with less task-specific engineering.
+
+However, there is no single universally accepted test that settles whether a system is AGI. Researchers and commentators can use different definitions, benchmarks, and expectations. Success on a collection of tests is informative, but it does not by itself prove that a system has all the broad abilities associated with human intelligence.
 
 When discussing AGI, distinguish three ideas:
 
 1. **Broad task performance:** A system can perform many kinds of tasks.
-2. **Generalization:** A system can apply what it has learned to situations that differ from its training examples.
+2. **Generalisation:** A system can apply what it has learned to situations that differ from its training examples.
 3. **Robust adaptation:** A system can respond appropriately when the task, context, or conditions change.
 
 These ideas are related, but they are not identical. A system may demonstrate broad performance while still struggling with reliability, unfamiliar situations, or independent adaptation.
-
-**Artificial General Intelligence (AGI)** describes a proposed type of AI with broad and flexible intellectual capabilities. In principle, an AGI system would be able to learn, understand, and apply knowledge across many different tasks rather than being limited to one narrow function.
-
-For example, the idea of AGI involves a system that could transfer what it has learned in one area to a different area, adapt to unfamiliar tasks, and solve a wide variety of problems.
 
 AGI is an important concept in discussions about the future of AI. However, it is necessary to distinguish the concept from existing systems. Current AI tools can perform many impressive tasks, but their performance does not by itself demonstrate that they possess general human-level intelligence.
 
 ### 3. Artificial Superintelligence (ASI)
 
+**Artificial Superintelligence (ASI)** refers to a hypothetical form of AI whose intellectual capabilities would exceed human abilities across most or all areas. The concept is usually discussed in relation to possible future developments and their wider implications.
+
 ASI is a hypothetical concept used to discuss a possible level of machine capability that would exceed human intellectual performance across a very broad range of fields. Discussions of ASI often raise questions about control, safety, social effects, and how people would govern systems with capabilities far beyond current technology.
 
 Because ASI is hypothetical, descriptions of its abilities are necessarily speculative. It is more accurate to discuss it as a future-oriented concept than to describe it as an existing product or established scientific achievement. The idea is useful for considering long-term questions, but it should not be confused with the practical capabilities of today's AI applications.
 
-**Artificial Superintelligence (ASI)** refers to a hypothetical form of AI whose intellectual capabilities would exceed human abilities across most or all areas. The concept is usually discussed in relation to possible future developments and their wider implications.
-
-ASI is not a description of an established technology currently available for ordinary use. It is a theoretical category and should be presented as such rather than as a current fact.
-
-## Comparing the Three Categories
+## 1.2 Comparing the Three Categories
 
 A useful way to compare the categories is to consider how each one would handle a task outside its original purpose. A narrow system is designed for a particular task. AGI is proposed to handle a wide variety of tasks and transfer knowledge between them. ASI is a hypothetical category that would exceed human intellectual abilities across most domains.
-
 
 | Aspect | Narrow AI | AGI | ASI |
 |---|---|---|---|
@@ -114,7 +142,7 @@ A useful way to compare the categories is to consider how each one would handle 
 
 ### Why This Classification Matters
 
-This classification helps people avoid exaggerating what an AI system can do. A chatbot may answer questions, summarize text, and draft content, but these abilities do not automatically establish that it has general intelligence. Its performance must be considered in relation to the tasks, evidence, limitations, and conditions involved.
+This classification helps people avoid exaggerating what an AI system can do. A chatbot may answer questions, summarise text, and draft content, but these abilities do not automatically establish that it has general intelligence. Its performance must be considered in relation to the tasks, evidence, limitations, and conditions involved.
 
 When evaluating a claim about an AI system, ask:
 
@@ -130,13 +158,19 @@ When evaluating a claim about an AI system, ask:
 
 ---
 
-# 02 · INTRODUCTION TO MACHINE LEARNING AND DEEP LEARNING
+# 02 · Introduction to Machine Learning and Deep Learning
 
-AI systems can be developed using different approaches. One important approach is **Machine Learning (ML)**, which allows a computer system to learn patterns from data. **Deep Learning (DL)** is a more specialized approach within machine learning that uses neural networks with multiple processing layers.
+AI systems can be developed using different approaches. One important approach is **Machine Learning (ML)**, which allows a computer system to learn patterns from data. **Deep Learning (DL)** is a more specialised approach within machine learning that uses neural networks with multiple processing layers.
 
 Understanding the relationship between AI, machine learning, and deep learning helps explain how many modern AI applications are developed. Russell and Norvig (2020) discuss machine learning and deep learning as major areas within the broader study of AI.
 
-## Machine Learning (ML)
+## 2.1 Machine Learning (ML)
+
+**Machine Learning** is a subset of Artificial Intelligence that enables computer systems to learn patterns from data and use those patterns to make predictions, classifications, or decisions.
+
+In traditional rule-based programming, developers write instructions that specify how a system should respond to particular conditions. In machine learning, developers provide data and choose a learning method so that a model can identify useful patterns from examples.
+
+This does not mean that a machine learns in exactly the same way as a human. It means that a computational model is adjusted using data so that it can perform a particular task.
 
 Machine learning is especially useful when a task involves patterns that are difficult to express completely through a fixed list of instructions. Instead of manually specifying every possible case, developers use examples and a learning procedure to adjust a model.
 
@@ -177,16 +211,7 @@ A simplified example is an agent learning to navigate a simulated environment. I
 
 ### A Simple Machine-Learning Training Cycle
 
-
-**Machine Learning** is a subset of Artificial Intelligence that enables computer systems to learn patterns from data and use those patterns to make predictions, classifications, or decisions.
-
-In traditional rule-based programming, developers write instructions that specify how a system should respond to particular conditions. In machine learning, developers provide data and choose a learning method so that a model can identify useful patterns from examples.
-
-This does not mean that a machine learns in exactly the same way as a human. It means that a computational model is adjusted using data so that it can perform a particular task.
-
-### How Machine Learning Works at a Basic Level
-
-The following diagram expands the basic training process. It separates training from later use of the trained model.
+The diagram below shows the basic training cycle. It separates training from the later use of the trained model.
 
 ```mermaid
 flowchart TD
@@ -201,11 +226,10 @@ flowchart TD
     H --> I[Monitor Results]
 ```
 
-
 A simplified machine-learning process includes:
 
 1. **Collect data:** Gather examples relevant to the task.
-2. **Prepare data:** Organize the information and address problems such as missing or inconsistent values.
+2. **Prepare data:** Organise the information and address problems such as missing or inconsistent values.
 3. **Train a model:** Use a learning algorithm to identify patterns in the training data.
 4. **Evaluate the model:** Test the model with data that was not used in training to examine how well it performs.
 5. **Use the model:** Apply the trained model to new inputs to produce predictions or classifications.
@@ -214,6 +238,21 @@ A simplified machine-learning process includes:
 The quality of the result depends on several factors, including the relevance and quality of the data, the learning method, the model, and the conditions in which it is used.
 
 ### Example: Email Spam Detection
+
+Imagine an email service that needs to identify spam messages.
+
+A machine-learning system can be trained using many examples of emails labelled as **spam** or **not spam**. During training, the model identifies patterns that are associated with each category. When a new email arrives, the model analyses its characteristics and estimates whether it is likely to be spam.
+
+Here is a tiny training set of four labelled emails:
+
+| Email subject | Label |
+|---|---|
+| "You WON a free phone! Click now" | Spam |
+| "Group meeting moved to 3 pm" | Not spam |
+| "Claim your FREE prize today" | Spam |
+| "Your library book is due on Friday" | Not spam |
+
+A new email arrives with the subject "FREE tickets: claim your prize". Words such as *free*, *claim* and *prize* appeared in the spam examples but not in the normal ones, so the model predicts **spam**. A real filter learns from millions of emails and many more features (sender, links, formatting), but the idea is the same.
 
 A more detailed example shows why machine learning requires more than simply feeding information into a computer.
 
@@ -226,11 +265,7 @@ A more detailed example shows why machine learning requires more than simply fee
 
 A model may incorrectly classify a legitimate email as spam or fail to identify a spam message. Therefore, the system should be evaluated using more than one measure. For example, **precision** asks how many messages flagged as spam really are spam, while **recall** asks how many of the actual spam messages were successfully detected. The appropriate balance depends on the consequences of each type of error.
 
-Imagine an email service that needs to identify spam messages.
-
-A machine-learning system can be trained using many examples of emails labelled as **spam** or **not spam**. During training, the model identifies patterns that are associated with each category. When a new email arrives, the model analyzes its characteristics and estimates whether it is likely to be spam.
-
-The model does not simply memorize one fixed list of suspicious words. It learns statistical patterns from the examples it receives. Its predictions can still be wrong, especially when a new message differs from the training examples.
+The model does not simply memorise one fixed list of suspicious words. It learns statistical patterns from the examples it receives. Its predictions can still be wrong, especially when a new message differs from the training examples.
 
 ### Common Uses of Machine Learning
 
@@ -244,9 +279,13 @@ The model does not simply memorize one fixed list of suspicious words. It learns
 
 These examples illustrate that machine learning is useful when a task involves patterns that may be difficult to describe completely through manually written rules.
 
-## Deep Learning (DL)
+## 2.2 Deep Learning (DL)
 
-Deep learning uses artificial neural networks composed of multiple layers of computational units. The design is loosely inspired by some ideas about biological neural systems, but artificial neural networks are mathematical and computational models; they are not literal copies of the human brain.
+**Deep Learning** is a subset of machine learning that uses artificial neural networks with multiple processing layers to learn complex patterns from data.
+
+The term *deep* refers to the use of multiple layers in the network. These layers process information and help the model learn different levels of patterns. The technical details can become complex, but the central idea is that a deep-learning model learns representations from examples through a training process.
+
+Each layer is made of many small computational units. The design is loosely inspired by some ideas about biological neural systems, but artificial neural networks are mathematical and computational models; they are not literal copies of the human brain.
 
 Each layer transforms information and passes a representation to the next layer. During training, the model's parameters are adjusted so that the network produces outputs that better fit its training objective.
 
@@ -269,9 +308,9 @@ The diagram is conceptual. Real neural networks can have many layers, connection
 
 ### Training a Neural Network
 
-During training, the model produces an output for an example. A loss function measures how far that output is from the desired target or objective. An optimization procedure then adjusts the model's parameters to reduce the loss. This process is repeated over many examples and training iterations.
+During training, the model produces an output for an example. A loss function measures how far that output is from the desired target or objective. An optimisation procedure then adjusts the model's parameters to reduce the loss. This process is repeated over many examples and training iterations.
 
-A common training concept is **backpropagation**, which calculates how changes in model parameters contribute to the error. An optimization algorithm uses this information to update the parameters. These steps are repeated so the network can learn useful patterns from the training data.
+A common training concept is **backpropagation**, which calculates how changes in model parameters contribute to the error. An optimisation algorithm uses this information to update the parameters. These steps are repeated so the network can learn useful patterns from the training data.
 
 Deep learning can automatically learn useful features from raw or lightly processed data, but this does not remove the need for data preparation, suitable objectives, evaluation, and human decisions about system design.
 
@@ -280,7 +319,7 @@ Deep learning can automatically learn useful features from raw or lightly proces
 Several developments contributed to the progress of deep learning:
 
 - **More available data:** Digital systems produce and store large collections of text, images, audio, and other information.
-- **Improved computing hardware:** More powerful processors and specialized hardware make it possible to train larger neural networks.
+- **Improved computing hardware:** More powerful processors and specialised hardware make it possible to train larger neural networks.
 - **Algorithmic improvements:** Research has produced better ways to train and structure neural networks.
 - **Larger-scale experimentation:** Researchers can test models using larger datasets and more computing resources.
 
@@ -296,18 +335,13 @@ A dataset is often divided into separate portions so that model development and 
 | Validation Set | Used during development to compare configurations and tune choices |
 | Test Set | Used for a final evaluation on examples kept separate from training and model selection |
 
-Keeping these roles separate helps provide a more realistic estimate of how a model may perform on new data. If information from the test set influences repeated development decisions, the test results may no longer provide an independent evaluation.
+Keeping these roles separate helps provide a more realistic estimate of how a model can perform on new data. If information from the test set influences repeated development decisions, the test results may no longer provide an independent evaluation.
 
-### Overfitting and Generalization
+### Overfitting and Generalisation
 
-**Overfitting** occurs when a model learns details or noise in its training data so closely that it performs poorly on new examples. A model may achieve very strong training results but fail to generalize to situations it has not seen before.
+**Overfitting** occurs when a model learns details or noise in its training data so closely that it performs poorly on new examples. A model may achieve very strong training results but fail to generalise to situations it has not seen before.
 
-**Generalization** refers to a model's ability to perform appropriately on new data from the relevant task or environment. Evaluating generalization requires testing with data that is separate from the examples used to fit the model and considering whether the test data represents likely real-world conditions.
-
-
-**Deep Learning** is a subset of machine learning that uses artificial neural networks with multiple processing layers to learn complex patterns from data.
-
-The term *deep* refers to the use of multiple layers in the network. These layers process information and help the model learn different levels of patterns. The technical details can become complex, but the central idea is that a deep-learning model learns representations from examples through a training process.
+**Generalisation** refers to a model's ability to perform appropriately on new data from the relevant task or environment. Evaluating generalisation requires testing with data that is separate from the examples used to fit the model and considering whether the test data represents likely real-world conditions.
 
 Deep learning has contributed to progress in tasks involving large amounts of data, especially images, audio, speech, and language.
 
@@ -320,10 +354,9 @@ Deep learning has contributed to progress in tasks involving large amounts of da
 
 Deep learning often requires substantial data and computing resources, although the requirements vary depending on the task and model. It is not automatically the best approach for every problem.
 
-## Relationship Between AI, Machine Learning, and Deep Learning
+## 2.3 Relationship Between AI, Machine Learning, and Deep Learning
 
 The relationship is hierarchical in the common introductory classification: deep learning is part of machine learning, and machine learning is part of the broader field of AI. However, AI also includes methods that are not machine learning, such as search, planning, and logical reasoning.
-
 
 The relationship can be represented as follows:
 
@@ -342,13 +375,13 @@ flowchart TD
     style D fill:#164e63,color:#ffffff,stroke:#22d3ee
 ```
 
-- **Artificial Intelligence** is the broad field concerned with systems that perform tasks associated with intelligent behavior.
+- **Artificial Intelligence** is the broad field concerned with systems that perform tasks associated with intelligent behaviour.
 - **Machine Learning** is one approach within AI. It uses data to help models learn patterns.
 - **Deep Learning** is one approach within machine learning. It uses neural networks with multiple layers.
 
 Machine learning is not the only way to develop AI. AI also includes approaches such as search, logical reasoning, planning, and systems based on explicitly represented rules.
 
-## Machine Learning and Deep Learning Compared
+## 2.4 Machine Learning and Deep Learning Compared
 
 | Aspect | Machine Learning | Deep Learning |
 |---|---|---|
@@ -367,13 +400,13 @@ These are general comparisons. Actual data and computing requirements depend on 
 
 ---
 
-# 03 · GENERATIVE AI
+# 03 · Generative AI
 
-**Generative AI** refers to AI systems designed to generate new content based on patterns learned from data. Depending on the system, the content may include text, images, audio, video, or computer code.
+**Generative AI** refers to AI systems designed to generate new content based on patterns learned from data. Depending on the system, the content can include text, images, audio, video, or computer code.
 
-Generative AI is different from systems that only classify information or make predictions. A classification system may identify whether an image contains a cat, while a generative system may create a new image from a written description.
+Generative AI is different from systems that only classify information or make predictions. A classification system can identify whether an image contains a cat, while a generative system can create a new image from a written description.
 
-## What Is Generative AI?
+## 3.1 What Is Generative AI?
 
 Generative AI is a category of AI focused on producing new content. The generated content is created by a model that has learned statistical or structural patterns from training data. The model uses those learned patterns and the prompt or other context to generate an output.
 
@@ -392,16 +425,13 @@ A useful distinction is between systems that primarily generate content and syst
 
 This is an introductory distinction. Some systems combine generative and discriminative components, and the exact technical boundary depends on the model design.
 
-Generative AI systems learn patterns and relationships from training data. When a user provides an input, the system uses what it has learned, together with the current input and context, to produce content.
-
-For example, a user may provide a prompt asking an AI tool to explain a scientific concept in simple language. The system processes the prompt and generates a response that follows patterns learned during training.
+For example, a user can provide a prompt asking an AI tool to explain a scientific concept in simple language. The system processes the prompt and generates a response that follows patterns learned during training.
 
 The generated response is newly produced by the system. It is not necessarily a direct copy of a particular training example, and it is not automatically guaranteed to be accurate.
 
-## Common Types of Generative AI Output
+## 3.2 Common Types of Generative AI Output
 
 Generative systems can work with one or more modalities. A **modality** is a type or form of information, such as text, image, audio, or video. A system that works with multiple modalities may be described as multimodal.
-
 
 | Output Type | Description | Example Task |
 |---|---|---|
@@ -413,7 +443,9 @@ Generative systems can work with one or more modalities. A **modality** is a typ
 
 The capabilities of each tool depend on the model and the features provided by its developers.
 
-## Prompts and Generated Outputs
+## 3.3 Prompts and Generated Outputs
+
+A **prompt** is the instruction, question, or information supplied by a user to guide an AI system's response.
 
 Prompt quality can influence the relevance and format of a response. A prompt is not a guarantee of correctness, but clear instructions can reduce ambiguity and help the system focus on the intended task.
 
@@ -421,10 +453,10 @@ Prompt quality can influence the relevance and format of a response. A prompt is
 
 | Element | Purpose | Example |
 |---|---|---|
-| Task | States what the system should do | Explain, compare, summarize, classify |
+| Task | States what the system should do | Explain, compare, summarise, classify |
 | Context | Provides relevant background | The explanation is for a beginner studying AI |
 | Constraints | Sets boundaries | Use simple language and avoid unnecessary jargon |
-| Format | Specifies how the answer should be organized | Use a table or three short paragraphs |
+| Format | Specifies how the answer should be organised | Use a table or three short paragraphs |
 | Evaluation focus | Identifies what matters in the result | Include definitions and one example |
 
 A prompt can be improved by adding missing context, specifying the audience, and stating the expected output format. If the request involves factual information, the user should also verify important claims with reliable sources.
@@ -437,23 +469,7 @@ A prompt can be improved by adding missing context, specifying the audience, and
 
 The second prompt gives the system a clearer task and audience. It does not guarantee that the response will be accurate, but it makes the expected answer easier to interpret and evaluate.
 
-A **prompt** is the instruction, question, or information supplied by a user to guide an AI system's response.
-
-A prompt may include:
-- The task the user wants the system to perform.
-- Relevant background information.
-- The desired format or level of detail.
-- Constraints that the system should follow.
-
-For example:
-
-**Prompt:** "Explain how photosynthesis works in three simple sentences for a beginner."
-
-The prompt identifies the subject, the intended audience, and the requested length. The generative AI system processes this input and produces a text response based on learned patterns and the context available to it.
-
-A more specific prompt can help clarify what the user expects. However, a detailed prompt does not guarantee that every generated statement will be correct.
-
-## A Simplified Generative AI Process
+## 3.4 A Simplified Generative AI Process
 
 ```mermaid
 flowchart TD
@@ -476,11 +492,15 @@ flowchart TD
 
 This is a simplified explanation. Different generative AI systems use different model designs and generation methods.
 
-## Generative AI and Large Language Models
+## 3.5 Generative AI and Large Language Models
+
+A **Large Language Model (LLM)** is a type of model trained to process and generate human language. LLMs are commonly used in chat-based AI tools, writing assistance, summarisation, and question answering.
+
+An LLM generates language based on patterns learned from large collections of text and the context provided in a prompt. Its ability to produce fluent sentences does not mean that it understands every topic in the same way a human expert does.
 
 Large language models process text as sequences of smaller units often called **tokens**. A token may represent a word, part of a word, punctuation, or another unit used by the model. The model uses the current context to estimate likely next tokens and generates a sequence that forms a response.
 
-Many modern language models use a neural-network architecture known as a **Transformer**. Transformer-based models use attention mechanisms to help represent relationships between tokens in a sequence. This architecture has been influential in language modeling and other AI applications.
+Many modern language models use a neural-network architecture known as a **Transformer**, introduced in 2017. Transformer-based models use attention mechanisms to help represent relationships between tokens in a sequence. This architecture has been influential in language modelling and other AI applications.
 
 A simplified text-generation process is:
 
@@ -499,30 +519,36 @@ A model can use only the information made available within its active context an
 
 ### Why a Language Model May Produce Errors
 
-A language model is trained to generate likely sequences based on patterns and context. That objective is not identical to checking every claim against a verified database. As a result, it may produce statements that sound plausible but are inaccurate, incomplete, outdated, or unsupported.
+A language model is trained to generate likely sequences based on patterns and context. That objective is not identical to checking every claim against a verified database. As a result, it can produce statements that sound plausible but are inaccurate, incomplete, outdated, or unsupported.
 
 Such errors are sometimes called **hallucinations** in discussions of generative AI. The term describes unreliable generated content; it does not mean that the system has human-like perception or experiences.
-
-A **Large Language Model (LLM)** is a type of model trained to process and generate human language. LLMs are commonly used in chat-based AI tools, writing assistance, summarization, and question answering.
-
-An LLM generates language based on patterns learned from large collections of text and the context provided in a prompt. Its ability to produce fluent sentences does not mean that it understands every topic in the same way a human expert does.
 
 Bender et al. (2021) discuss concerns about very large language models, including the risks of treating fluent language output as evidence of genuine understanding. Their paper also raises concerns about training data, environmental and financial costs, and the social impacts associated with large language models.
 
 This is an important distinction when using generative AI: an answer may sound convincing while still containing inaccurate, incomplete, or misleading information.
 
-## Generative AI: Capabilities and Careful Use
+## 3.6 Generative AI: Capabilities and Careful Use
 
-Generative AI can support learning and creative work, but it should be treated as an aid rather than an unquestionable authority. Users should consider the importance of the task, the sensitivity of the information, and the possibility of errors before relying on generated content.
+Generative AI can support learning and creative work, but it should be treated as an aid rather than an unquestionable authority. You need to consider the importance of the task, the sensitivity of the information, and the possibility of errors before relying on generated content.
+
+### What Generative AI Can Help With
+
+Generative AI can support many activities:
+
+- Producing an initial draft that a person can review and edit.
+- Explaining a topic using simpler language.
+- Suggesting ideas or possible outlines.
+- Creating visual concepts or illustrations.
+- Helping users understand examples of computer code.
 
 ### Common Limitations
 
-- **Factual errors:** A response may contain incorrect names, dates, definitions, or explanations.
+- **Factual errors:** A response can contain incorrect names, dates, definitions, or explanations.
 - **Missing context:** The model may not know the user's full situation or the latest developments.
 - **Bias:** Patterns in training data can be reflected in generated outputs.
-- **Inconsistent responses:** Similar prompts may produce different wording or details.
+- **Inconsistent responses:** Similar prompts can produce different wording or details.
 - **Attribution problems:** A generated answer may not provide reliable evidence for where a claim originated.
-- **Privacy concerns:** Users should avoid entering confidential or personal information unless the tool and its data practices are appropriate for that information.
+- **Privacy concerns:** You need to avoid entering confidential or personal information unless the tool and its data practices are appropriate for that information.
 - **Overreliance:** Accepting outputs without checking can weaken the quality of decisions and learning.
 
 ### A Practical Review Checklist
@@ -536,19 +562,7 @@ Before using generated content, consider:
 5. Is the content appropriate to share or submit?
 6. Have you followed relevant school, workplace, and tool-use rules?
 
-Bender et al. (2021) caution against interpreting fluent language output as proof of understanding and discuss wider issues associated with large language models. This supports a careful approach: evaluate the content, its sources, and its consequences rather than judging reliability by writing quality alone.
-
-Generative AI can support many activities:
-
-- Producing an initial draft that a person can review and edit.
-- Explaining a topic using simpler language.
-- Suggesting ideas or possible outlines.
-- Creating visual concepts or illustrations.
-- Helping users understand examples of computer code.
-
-However, generated content should be evaluated before it is relied upon. A system may provide incorrect facts, omit important context, reflect limitations in its training data, or produce content that is unsuitable for the intended purpose.
-
-NIST's AI Risk Management Framework emphasizes that AI risks should be considered and managed throughout the AI system life cycle. This supports the need to evaluate AI systems in context rather than assuming that an output is reliable simply because it was generated by an advanced model.
+NIST's AI Risk Management Framework emphasises that AI risks should be considered and managed throughout the AI system life cycle. This supports the need to evaluate AI systems in context rather than assuming that an output is reliable simply because it was generated by an advanced model.
 
 > **Core Insight**
 >
@@ -556,29 +570,17 @@ NIST's AI Risk Management Framework emphasizes that AI risks should be considere
 
 ---
 
-# 04 · THE ROLES OF DATA AND ALGORITHMS
+# 04 · The Roles of Data and Algorithms
 
 Data and algorithms are two important elements in the development and operation of AI systems. Data provides the information that a system processes or learns from, while algorithms provide procedures for processing information and, in machine learning, for adjusting models based on examples.
 
 The quality of an AI system depends not only on the model itself but also on the data, methods, objectives, and conditions involved in its development and use.
 
-## Data in AI Systems
+## 4.1 Data in AI Systems
+
+**Data** is information that can be collected, stored, processed, and analysed by a computer system. Depending on the task, data may take different forms.
 
 Data is central to many AI systems because it provides the examples, measurements, or context that a system processes. In machine learning, data is used to estimate patterns and adjust model parameters. In other AI approaches, data may be used as input to rules, search procedures, or reasoning processes.
-
-### Structured and Unstructured Data
-
-Data can also be described by how it is organized.
-
-| Form | Description | Example |
-|---|---|---|
-| Structured Data | Organized in a predefined format, often rows and columns | A table of dates, product IDs, and sales values |
-| Unstructured Data | Does not follow one simple tabular structure | Images, audio recordings, and free-form documents |
-| Semi-Structured Data | Contains organizational markers but does not fit a rigid table | JSON records, tagged documents, and log entries |
-
-The format affects how information is stored and prepared. A system processing photographs requires different preparation from one analyzing a spreadsheet.
-
-**Data** is information that can be collected, stored, processed, and analyzed by a computer system. Depending on the task, data may take different forms.
 
 | Data Type | Description | Example |
 |---|---|---|
@@ -589,12 +591,21 @@ The format affects how information is stored and prepared. A system processing p
 | Numerical Data | Values represented as numbers | Sales figures and temperature readings |
 | Sensor Data | Measurements collected by devices | Location or movement readings |
 
-AI systems use data in different ways. A machine-learning model may use examples during training to learn patterns. A system that is already trained may then process new input data to make a prediction, classification, recommendation, or generated response.
+AI systems use data in different ways. A machine-learning model can use examples during training to learn patterns. A system that is already trained may then process new input data to make a prediction, classification, recommendation, or generated response.
 
-## Training Data and Input Data
+### Structured and Unstructured Data
 
-In addition to training and input data, machine-learning projects may use validation and test data. Understanding these roles helps explain how developers check whether a model has learned useful patterns rather than merely memorizing examples.
+Data can also be described by how it is organised.
 
+| Form | Description | Example |
+|---|---|---|
+| Structured Data | Organised in a predefined format, often rows and columns | A table of dates, product IDs, and sales values |
+| Unstructured Data | Does not follow one simple tabular structure | Images, audio recordings, and free-form documents |
+| Semi-Structured Data | Contains organisational markers but does not fit a rigid table | JSON records, tagged documents, and log entries |
+
+The format affects how information is stored and prepared. A system processing photographs requires different preparation from one analysing a spreadsheet.
+
+## 4.2 Training Data and Input Data
 
 It is useful to distinguish between data used to develop a model and data supplied when the model is being used.
 
@@ -617,34 +628,15 @@ For example, after an image-recognition model has been trained, a user can provi
 | Main Purpose | Helps develop or train the model | Gives the system information for a current task |
 | When Used | During training or model development | During operation or use |
 | Example | Labelled images used to train an image model | A new photograph submitted for recognition |
-| Expected Role | Helps the model learn patterns | Is analyzed by the trained system |
+| Expected Role | Helps the model learn patterns | Is analysed by the trained system |
 
 The distinction is important because a model's performance on training examples does not necessarily show how well it will perform on new information.
 
-## The Importance of Data Quality
+Machine-learning projects also use **validation** and **test** data to check whether a model has learned useful patterns rather than merely memorising its examples (see *Training, Validation, and Testing* in Section 2.2).
+
+## 4.3 The Importance of Data Quality
 
 Data quality is not only about whether individual records are correct. It also concerns whether the data is suitable for the purpose, population, and environment in which the model will be used.
-
-### Data Preparation
-
-Before data can be used, it may need to be prepared. Common preparation activities include:
-
-- **Cleaning:** Correcting or removing duplicate, invalid, or inconsistent records when appropriate.
-- **Handling missing values:** Deciding whether missing information should be filled, flagged, or excluded.
-- **Standardization:** Making formats and units consistent.
-- **Labeling:** Assigning categories or target values when a supervised-learning task requires them.
-- **Transformation:** Converting information into a representation that the model can process.
-- **Splitting:** Separating data into training, validation, and test sets for appropriate development and evaluation.
-
-These steps require judgment. Removing unusual records without understanding them may remove important information, and filling missing values incorrectly can introduce misleading patterns.
-
-### Bias and Representativeness
-
-A dataset may overrepresent some situations and underrepresent others. If the model learns from such data, its performance may vary across groups or contexts. Bias can also enter through the way a task is defined, how labels are assigned, which examples are collected, and how results are evaluated.
-
-For example, if a speech-recognition system is trained on audio that does not adequately represent the accents and speaking conditions of its intended users, its accuracy may be lower for some speakers. This example illustrates why dataset coverage and evaluation conditions matter.
-
-Data quality and fairness cannot be reduced to one simple checklist. Developers need to understand the intended use, examine limitations, and evaluate performance in relevant conditions.
 
 The quality and suitability of data can influence the results of an AI system. Data that is inaccurate, incomplete, outdated, or not representative of the intended situation may lead to unreliable results.
 
@@ -659,11 +651,44 @@ Important data-quality considerations include:
 
 For example, if a recommendation system is developed using incomplete information about user preferences, its recommendations may not be suitable. If a model is trained on data that does not adequately represent the situations in which it will be used, its performance may differ across those situations.
 
-Bender et al. (2021) highlight concerns about the data used to develop large language models, including the difficulty of understanding the full contents and limitations of very large training datasets. This reinforces the importance of examining where data comes from, what it represents, and what limitations it may contain.
+### Data Preparation
 
-## Algorithms in AI Systems
+Before data can be used, it may need to be prepared. Common preparation activities include:
 
-Algorithms are not exclusive to AI. They are used throughout computing, from sorting lists to calculating routes. In AI, algorithms may support search, reasoning, planning, optimization, and learning from data.
+- **Cleaning:** Correcting or removing duplicate, invalid, or inconsistent records when appropriate.
+- **Handling missing values:** Deciding whether missing information should be filled, flagged, or excluded.
+- **Standardisation:** Making formats and units consistent.
+- **Labelling:** Assigning categories or target values when a supervised-learning task requires them.
+- **Transformation:** Converting information into a representation that the model can process.
+- **Splitting:** Separating data into training, validation, and test sets for appropriate development and evaluation.
+
+These steps require judgement. Removing unusual records without understanding them may remove important information, and filling missing values incorrectly can introduce misleading patterns.
+
+### Bias and Representativeness
+
+A dataset may overrepresent some situations and underrepresent others. If the model learns from such data, its performance may vary across groups or contexts. Bias can also enter through the way a task is defined, how labels are assigned, which examples are collected, and how results are evaluated.
+
+For example, if a speech-recognition system is trained on audio that does not adequately represent the accents and speaking conditions of its intended users, its accuracy may be lower for some speakers. This example illustrates why dataset coverage and evaluation conditions matter.
+
+Data quality and fairness cannot be reduced to one simple checklist. Developers need to understand the intended use, examine limitations, and evaluate performance in relevant conditions.
+
+Bender et al. (2021) highlight concerns about the data used to develop large language models, including the difficulty of understanding the full contents and limitations of very large training datasets. This reinforces the importance of examining where data comes from, what it represents, and what limitations it can contain.
+
+## 4.4 Algorithms in AI Systems
+
+An **algorithm** is a defined set of steps or procedures for solving a problem or completing a task. This broad idea is consistent with the problem-solving, learning, and reasoning approaches discussed by Russell and Norvig (2020).
+
+In AI, algorithms can be used to:
+- Process and organise input information.
+- Search for possible solutions.
+- Apply rules or logical procedures.
+- Learn patterns from training data.
+- Adjust a model during training.
+- Produce predictions, classifications, or other outputs.
+
+In machine learning, a learning algorithm uses training data to adjust a model so that it can perform a particular task. The model is the resulting computational system or learned representation used to process new inputs.
+
+Algorithms are not exclusive to AI. They are used throughout computing, from sorting lists to calculating routes. In AI, algorithms can support search, reasoning, planning, optimisation, and learning from data.
 
 ### Algorithm, Model, and Parameters
 
@@ -684,21 +709,7 @@ A rule-based system uses instructions explicitly written or configured by people
 
 For example, a customer-support system might use a language model to interpret a request but apply explicit rules to decide which account actions are permitted. This combination can help separate flexible language processing from clearly defined operational constraints.
 
-An **algorithm** is a defined set of steps or procedures for solving a problem or completing a task. This broad idea is consistent with the problem-solving, learning, and reasoning approaches discussed by Russell and Norvig (2020).
-
-In AI, algorithms can be used to:
-- Process and organize input information.
-- Search for possible solutions.
-- Apply rules or logical procedures.
-- Learn patterns from training data.
-- Adjust a model during training.
-- Produce predictions, classifications, or other outputs.
-
-In machine learning, a learning algorithm uses training data to adjust a model so that it can perform a particular task. The model is the resulting computational system or learned representation used to process new inputs.
-
-An algorithm and a model are related, but they are not the same thing: the algorithm describes a procedure, while the trained model contains the learned parameters or structure used when the system is applied.
-
-## How Data, Algorithms, and Models Work Together
+## 4.5 How Data, Algorithms, and Models Work Together
 
 A useful distinction is between **training** and **inference**.
 
@@ -717,6 +728,7 @@ The two stages have different purposes. Training builds or adjusts the model; in
 | Output | A trained model or updated model version | A prediction, classification, recommendation, or generated content |
 | Resource Use | Can require substantial computation, depending on the model | Varies with model size and deployment method |
 
+The table below shows how each element appears in the spam example from Section 2.1:
 
 | Element | Main Role | Simple Example |
 |---|---|---|
@@ -748,37 +760,15 @@ This diagram represents a simplified machine-learning workflow. Not every AI sys
 
 ---
 
-# 05 · HOW AI PROCESSES INFORMATION AND GENERATES OUTPUTS
+# 05 · How AI Processes Information and Generates Outputs
 
 AI systems process information through a sequence of operations. The exact process depends on the type of system and the task it is designed to perform. A machine-learning model, a rule-based system, and a generative AI tool do not all operate in exactly the same way.
 
 At a general level, an AI system receives an input, processes relevant information, applies its rules or learned model, and produces an output. The output can then be reviewed or used by a person or another system.
 
-## A General AI Processing Workflow
+## 5.1 A General AI Processing Workflow
 
-A general workflow is useful for understanding AI, but it should not be treated as a universal technical blueprint. A simple rule-based program may not have a model-training stage, while a generative AI service may use several processing components before producing a response.
-
-### Training Versus Using an AI System
-
-```mermaid
-flowchart TD
-    subgraph Development[Model Development]
-        A[Training Data] --> B[Learning Procedure]
-        B --> C[Trained Model]
-        C --> D[Evaluation]
-    end
-    subgraph Use[Model Use]
-        E[New Input] --> F[Input Processing]
-        D --> G[Approved Model]
-        G --> F
-        F --> H[Inference]
-        H --> I[Output]
-        I --> J[Review and Monitoring]
-    end
-```
-
-This diagram represents a common machine-learning workflow. In practice, deployment and monitoring involve additional technical, organizational, and governance decisions.
-
+A general workflow is useful for understanding AI, but it should not be treated as a universal technical blueprint. A simple rule-based program may not have a model-training stage, while a generative AI service can use several processing components before producing a response.
 
 ```mermaid
 flowchart TD
@@ -809,7 +799,7 @@ The input must be relevant to the task the system is designed to perform.
 
 The system prepares or converts the input into a form that its processing method can use. The exact preparation depends on the type of input and the system.
 
-For example, a language system processes text, while an image-recognition system processes visual information. Some systems may also use additional context, settings, or information from other sources.
+For example, a language system processes text, while an image-recognition system processes visual information. Some systems can also use additional context, settings, or information from other sources.
 
 ### 3. Applying Rules, Algorithms, or a Trained Model
 
@@ -822,12 +812,6 @@ The processing stage depends on the type of AI system:
 - **Hybrid system:** Combines multiple approaches, such as a learned model with explicit rules or external information retrieval.
 
 This distinction matters because not every AI system learns from data in the same way. Some systems rely heavily on explicit knowledge and search, while others rely on statistical models learned during training.
-
-The system applies the relevant procedure to the processed input.
-
-A traditional rule-based system follows instructions and conditions defined by its developers. A machine-learning system uses a trained model that has learned patterns from data. Other AI systems may combine learned models with rules, search, or reasoning procedures.
-
-The system's result depends on its design, the information available, and the task it is intended to complete.
 
 ### 4. Output Generation
 
@@ -847,28 +831,32 @@ An output is the result produced by the system. It should not automatically be t
 
 The output should be checked according to the importance and purpose of the task. A person may compare it with reliable information, examine whether it answers the original question, or decide whether it is appropriate to use.
 
-NIST's AI Risk Management Framework (AI RMF 1.0) presents AI risk management as a continuing activity across the AI system life cycle. Its functions—**Govern, Map, Measure, and Manage**—provide an organized way to consider context, identify and assess risks, and respond to them (Tabassi, 2023).
+NIST's AI Risk Management Framework (AI RMF 1.0) presents AI risk management as a continuing activity across the AI system life cycle. Its functions—**Govern, Map, Measure, and Manage**—provide an organised way to consider context, identify and assess risks, and respond to them (Tabassi, 2023).
 
-For an introductory learner, the practical lesson is that AI systems should be evaluated in the context in which they are used. Human review is particularly important when an output may affect important decisions or when accuracy is essential.
+For an introductory learner, the practical lesson is that AI systems should be evaluated in the context in which they are used. Human review is particularly important when an output can affect important decisions or when accuracy is essential.
 
-## Worked Example: A Generative AI Study Assistant
+### Training Versus Using an AI System
 
-The example can be examined more closely by identifying what happens before and after the model generates its answer.
+```mermaid
+flowchart TD
+    subgraph Development[Model Development]
+        A[Training Data] --> B[Learning Procedure]
+        B --> C[Trained Model]
+        C --> D[Evaluation]
+    end
+    subgraph Use[Model Use]
+        E[New Input] --> F[Input Processing]
+        D --> G[Approved Model]
+        G --> F
+        F --> H[Inference]
+        H --> I[Output]
+        I --> J[Review and Monitoring]
+    end
+```
 
-### Example Workflow
+This diagram represents a common machine-learning workflow. In practice, deployment and monitoring involve additional technical, organisational, and governance decisions.
 
-1. **The student defines a goal:** They want a beginner-friendly explanation of a topic.
-2. **The student writes a prompt:** The prompt identifies the topic, audience, and desired format.
-3. **The system processes the prompt:** The text is converted into a representation that the model can process.
-4. **The model generates a response:** It uses the prompt context and learned language patterns to produce text.
-5. **The student evaluates the response:** They compare important claims with course materials or reliable references.
-6. **The student revises the result:** They correct unclear wording, remove unsupported statements, and adapt the explanation to the assignment.
-
-### Example of Reviewing an Output
-
-Suppose the generated answer defines machine learning as "a computer learning exactly like a human." This wording is misleading. A more accurate beginner-level explanation is that machine learning uses algorithms and data to adjust a model so it can identify patterns and make predictions or other outputs. The correction matters because a technical learning process should not be confused with human experience or understanding.
-
-The example also shows that human review is not simply checking spelling. It includes checking meaning, evidence, context, and suitability for the intended task.
+## 5.2 Worked Example: A Generative AI Study Assistant
 
 Consider a student who asks a generative AI tool:
 
@@ -884,11 +872,41 @@ The process can be understood as follows:
 | Output Generation | The system produces a written explanation and an example. |
 | Human Review | The student checks the explanation against class notes or a reliable learning resource. |
 
-The system may produce a clear and useful explanation, but it could still leave out an important detail or include an error. The student remains responsible for checking the information before relying on it.
+The system can produce a clear and useful explanation, but it could still leave out an important detail or include an error. The student remains responsible for checking the information before relying on it.
 
-## Why AI Outputs Can Differ
+### Example Workflow
 
-Output differences are not always errors. A system may be designed to generate varied responses, or different systems may use different models and settings. However, variation can make it harder to rely on an output without checking it.
+The example can be examined more closely by identifying what happens before and after the model generates its answer.
+
+1. **The student defines a goal:** They want a beginner-friendly explanation of a topic.
+2. **The student writes a prompt:** The prompt identifies the topic, audience, and desired format.
+3. **The system processes the prompt:** The text is converted into a representation that the model can process.
+4. **The model generates a response:** It uses the prompt context and learned language patterns to produce text.
+5. **The student evaluates the response:** They compare important claims with course materials or reliable references.
+6. **The student revises the result:** They correct unclear wording, remove unsupported statements, and adapt the explanation to the assignment.
+
+### Example of Reviewing an Output
+
+Suppose the generated answer defines machine learning as "a computer learning exactly like a human." This wording is misleading. A more accurate beginner-level explanation is that machine learning uses algorithms and data to adjust a model so it can identify patterns and make predictions or other outputs. The correction matters because a technical learning process should not be confused with human experience or understanding.
+
+The example also shows that human review is not simply checking spelling. It includes checking meaning, evidence, context, and suitability for the intended task.
+
+## 5.3 Why AI Outputs Can Differ
+
+AI outputs may vary because systems can use different models, data, algorithms, settings, and input context. Even when two systems receive similar prompts, they can produce different results.
+
+Several factors can influence the output:
+
+- **Input quality:** Unclear or incomplete information can make the task harder.
+- **Data quality:** Training data can contain gaps, errors, or limitations.
+- **Model design:** Different models can identify and represent patterns differently.
+- **Algorithm and settings:** The processing method and system configuration can affect results.
+- **Context:** Additional instructions or information can change what the system produces.
+- **Evaluation conditions:** A model can perform differently when used in situations unlike those represented in its training or testing data.
+
+These factors help explain why an AI output should be evaluated rather than accepted without review.
+
+Output differences are not always errors. A system may be designed to generate varied responses, or different systems can use different models and settings. However, variation can make it harder to rely on an output without checking it.
 
 ### Feedback and Monitoring
 
@@ -910,22 +928,46 @@ The appropriate evaluation measure depends on the task.
 
 No single measure is sufficient for every AI system. A model can have high overall accuracy while performing poorly on an important subgroup or underrepresented condition. Evaluation should reflect the real purpose and consequences of the system.
 
-AI outputs may vary because systems can use different models, data, algorithms, settings, and input context. Even when two systems receive similar prompts, they may produce different results.
-
-Several factors can influence the output:
-
-- **Input quality:** Unclear or incomplete information can make the task harder.
-- **Data quality:** Training data may contain gaps, errors, or limitations.
-- **Model design:** Different models may identify and represent patterns differently.
-- **Algorithm and settings:** The processing method and system configuration can affect results.
-- **Context:** Additional instructions or information can change what the system produces.
-- **Evaluation conditions:** A model may perform differently when used in situations unlike those represented in its training or testing data.
-
-These factors help explain why an AI output should be evaluated rather than accepted without review.
-
 > **Core Insight**
 >
 > A general AI workflow involves receiving input, processing information, applying rules or a trained model, generating an output, and evaluating the result. The exact process differs between AI systems, and human review helps determine whether an output is reliable and appropriate.
+
+---
+
+## Check Your Understanding
+
+1. A chess program can beat every human player but cannot translate a sentence. Is it Narrow AI, AGI or ASI?
+2. Which type of machine learning is each example? (a) grouping customers by similar shopping habits when no groups are given; (b) learning from emails labelled spam or not spam; (c) a game agent that improves by earning points.
+3. Using the four training emails in Section 2.1, what would the model probably predict for a new email titled "FREE pizza for club volunteers"? What does this tell you about the model?
+4. A model scores 99% on its training data but only 70% on new data. What is this problem called?
+5. Why can a large language model write a confident answer that is false?
+6. Improve this prompt using the elements in Section 3.3: "Explain AI."
+7. Your phone unlocks with face recognition. Give one example of **training data** and one example of **input data** for this system.
+
+### Answers
+
+1. **Narrow AI.** It is excellent at one task but its skill does not transfer to other tasks (Section 1.1).
+2. (a) Unsupervised; (b) supervised; (c) reinforcement learning (Section 2.1).
+3. Probably **spam**, because the word *free* appeared only in the spam examples. The email is actually harmless, so this would be a false alarm. The model learns word patterns, not meaning, and four examples are far too few. This is why real filters use much more data and are checked with measures such as precision.
+4. **Overfitting** (Section 2.2).
+5. It generates the most likely next words from patterns in its training data. It does not check each statement against a reliable source, so a fluent answer can still be wrong (Section 3.5).
+6. Example: "Explain what Artificial Intelligence is to a first-year student with no computing background, in three short paragraphs. Include one everyday example and define any technical term you use."
+7. Training data: many photos of faces used by the developer to build the face-recognition model (and the photos you took when you set up face unlock). Input data: the camera image taken at the moment you try to unlock the phone (Section 4.2).
+
+## Links to Other Topics
+
+- **Topic 01** introduced the terms used here (model, algorithm, training, inference) and the history of these approaches.
+- **Topic 03** shows the methods from this topic in real applications.
+- **Topic 04** explains in more depth the problems mentioned here: hallucinations (Section 3) and biased or low-quality data (Section 4).
+
+## References
+
+1. Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
+2. Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems, 30*.
+3. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
+4. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
+
+*AI use: the Stage 3 revision of this topic (removing repeated definitions, the worked spam example, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic).*
 
 ---
 
