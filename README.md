@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<img alt="Stage" src="https://img.shields.io/badge/stage-1%20of%203-1F7A8C?style=for-the-badge">
+<img alt="Stage" src="https://img.shields.io/badge/stage-3%20of%203-1F7A8C?style=for-the-badge">
 <img alt="Module" src="https://img.shields.io/badge/module-AI%20Overview-E8A94B?style=for-the-badge">
 <img alt="Learners" src="https://img.shields.io/badge/learners-beginners-17566B?style=for-the-badge">
 <img alt="Format" src="https://img.shields.io/badge/source-Markdown-0B1F2A?style=for-the-badge">
@@ -14,7 +14,7 @@
 <a href="plan/README.md">Project plan</a> ·
 <a href="plan/master_task_list.md">Task list</a> ·
 <a href="references/sources.md">References</a> ·
-<a href="CONTRIBUTION.md">Contributiion</a>
+<a href="CONTRIBUTION.md">Contribution guide</a>
 </b></p>
 
 > **Understand AI. Evaluate its outputs. Use it responsibly.**
@@ -104,11 +104,11 @@ Status labels: ✅ checked by a reviewer · 📝 drafted · 🔲 outline only
 | Repository setup and README | ✅ Done |
 | [Project plan](plan/project_plan.md) and [task list](plan/master_task_list.md) | ✅ Done |
 | [Module outline](content/00_module_outline.md) | ✅ Done |
-| Topics 1 |✅ Done |
-| Topics 2 |✅ Done |
-| Topics 3 |✅ Done |
-| Topics 4 |✅ Done |
-| Topics 5 |✅ Done |
+| Topic 1 | ✅ Done |
+| Topic 2 | ✅ Done |
+| Topic 3 | ✅ Done |
+| Topic 4 | ✅ Done |
+| Topic 5 | ✅ Done |
 | Study Guide, Test Bank, slides, videos | ✅ Done |
 
 ## Roadmap
