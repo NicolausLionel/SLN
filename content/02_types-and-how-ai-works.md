@@ -7,7 +7,7 @@
 
 ---
 
-> **Topic:** 02 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+> **Topic:** 02 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V3.0 (Stage 3 final, 28 November 2026)
 
 ## Learning Goals
 
@@ -24,7 +24,7 @@ After studying this topic, you should be able to:
 | Term | Meaning |
 |---|---|
 | **Narrow AI (ANI)** | AI built for one task or a small set of related tasks. All AI in use today is narrow AI. |
-| **AGI / ASI** | Proposed AI that would match (AGI) or exceed (ASI) human ability across almost all tasks. Neither has been achieved. |
+| **AGI / ASI** | Proposed AI that would match (AGI, also called *general AI*) or exceed (ASI, also called *super AI*) human ability across almost all tasks. Neither has been achieved. |
 | **Supervised learning** | Learning from examples that come with the correct answer (a **label**). |
 | **Unsupervised learning** | Finding groups or patterns in data that has no labels. |
 | **Reinforcement learning** | Learning which actions to take from rewards and penalties. |
@@ -48,7 +48,7 @@ After studying this topic, you should be able to:
 | 03 | [Generative AI](#03--generative-ai) |
 | 04 | [The Roles of Data and Algorithms](#04--the-roles-of-data-and-algorithms) |
 | 05 | [How AI Processes Information and Generates Outputs](#05--how-ai-processes-information-and-generates-outputs) |
-| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
+| — | [Learner Activities](#learner-activities) · [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
@@ -69,6 +69,10 @@ It is also important to separate capability from autonomy. A system that can per
 | Narrow AI (ANI) | Designed to perform a specific task or a limited range of related tasks. | Widely used today; examples include spam filters, recommendation systems, and image-recognition tools. |
 | Artificial General Intelligence (AGI) | A proposed form of AI that could learn and perform a broad range of intellectual tasks across different domains with flexibility comparable to human intelligence. | A research concept; there is no generally accepted confirmation that current AI systems have achieved AGI. |
 | Artificial Superintelligence (ASI) | A hypothetical form of AI that would exceed human intellectual abilities across most or all areas. | A theoretical possibility, not an established category of currently available AI systems. |
+
+![Three cards: narrow AI exists today, general AI not achieved, super AI speculative](../assets/images/topic-02/three-types-by-power.png)
+
+*Figure 2.1: Narrow AI, general AI (AGI) and super AI (ASI). Only narrow AI exists today. Source: Team SLN, AI QUEST slides (slide 21); original artwork by Team SLN.*
 
 ### 1. Narrow AI (ANI)
 
@@ -176,6 +180,10 @@ Machine learning is especially useful when a task involves patterns that are dif
 
 A machine-learning model does not learn by forming human experiences or intentions. In technical terms, training changes model parameters so that the model's outputs become better according to a chosen objective and training procedure.
 
+![Normal programming: rules plus data give answers. Machine learning: data plus answers give rules, which form a model](../assets/images/topic-02/rules-vs-learning.png)
+
+*Figure 2.2: Traditional programming compared with machine learning: in machine learning, examples go in and a model comes out. Source: Team SLN, AI QUEST slides (slide 24); original artwork by Team SLN.*
+
 ### Main Types of Machine Learning
 
 Machine learning is commonly introduced through three broad learning settings: supervised learning, unsupervised learning, and reinforcement learning. These categories describe the kind of feedback or information available during learning.
@@ -185,6 +193,10 @@ Machine learning is commonly introduced through three broad learning settings: s
 | Supervised Learning | Examples paired with target labels or values | Learn to predict a known category or value | Classifying emails as spam or not spam |
 | Unsupervised Learning | Data without supplied target labels | Find structure, groups, or patterns in data | Grouping customers by similar activity |
 | Reinforcement Learning | Feedback or rewards from actions in an environment | Learn actions that improve a reward objective | Training an agent in a simulated game |
+
+![Three cards: supervised learning from labelled examples, unsupervised learning finds groups, reinforcement learning by trial, error and rewards](../assets/images/topic-02/three-ways-machines-learn.png)
+
+*Figure 2.3: The three main types of machine learning. The clue is the kind of feedback in the data: labels, no labels, or rewards. Source: Team SLN, AI QUEST slides (slide 25); original artwork by Team SLN.*
 
 #### Supervised Learning
 
@@ -306,6 +318,10 @@ flowchart LR
 
 The diagram is conceptual. Real neural networks can have many layers, connections, and design variations.
 
+![A neural network with layers labelled pixels, edges, shapes and cat](../assets/images/topic-02/deep-learning-layers.png)
+
+*Figure 2.4: Each layer of a deep neural network builds more complex features from the layer before: pixels, edges, shapes, object. Source: Team SLN, AI QUEST slides (slide 30); original artwork by Team SLN.*
+
 ### Training a Neural Network
 
 During training, the model produces an output for an example. A loss function measures how far that output is from the desired target or objective. An optimisation procedure then adjusts the model's parameters to reduce the loss. This process is repeated over many examples and training iterations.
@@ -345,6 +361,10 @@ Keeping these roles separate helps provide a more realistic estimate of how a mo
 
 Deep learning has contributed to progress in tasks involving large amounts of data, especially images, audio, speech, and language.
 
+![Two boxes: a good fit learns the general pattern and works on new data; overfitting memorises training data and fails on new data](../assets/images/topic-02/learning-vs-memorising.png)
+
+*Figure 2.5: Learning compared with memorising (overfitting). A model must work on new data, not only on its training data. Source: Team SLN, AI QUEST slides (slide 31); original artwork by Team SLN.*
+
 ### Examples of Deep Learning Applications
 
 - **Image recognition:** A model can learn visual patterns that help identify objects in photographs.
@@ -380,6 +400,8 @@ flowchart TD
 - **Deep Learning** is one approach within machine learning. It uses neural networks with multiple layers.
 
 Machine learning is not the only way to develop AI. AI also includes approaches such as search, logical reasoning, planning, and systems based on explicitly represented rules.
+
+Generative AI systems such as chatbots are mostly built with deep learning, so in the same picture they sit inside the deep-learning box (see Topic 01, Figure 1.5).
 
 ## 2.4 Machine Learning and Deep Learning Compared
 
@@ -469,6 +491,10 @@ A prompt can be improved by adding missing context, specifying the audience, and
 
 The second prompt gives the system a clearer task and audience. It does not guarantee that the response will be accurate, but it makes the expected answer easier to interpret and evaluate.
 
+![A weak prompt, Explain AI, next to a better prompt that adds audience, length, format and an example](../assets/images/topic-02/prompt-upgrade.png)
+
+*Figure 2.6: The same idea in the slides and Video 02: adding task, context, constraints, format and focus turns a weak prompt into a useful one. Source: Team SLN, AI QUEST slides (slide 34); original artwork by Team SLN.*
+
 ## 3.4 A Simplified Generative AI Process
 
 ```mermaid
@@ -512,6 +538,12 @@ A simplified text-generation process is:
 6. The generated tokens are converted back into readable text.
 
 This description is simplified and does not cover every model design. It helps explain why a language model can produce fluent text without independently verifying every statement against an external source.
+
+For example, given the words "The cat sat on the ...", a language model gives each possible next word a probability (the numbers below are illustrative). It then picks a likely word, adds it to the text and repeats.
+
+![Bar chart of next-word probabilities: mat 62 percent, floor 18 percent, sofa 11 percent, other 9 percent](../assets/images/topic-02/next-word-probabilities.png)
+
+*Figure 2.7: How a language model picks the next word. It chooses likely words, not checked facts. Source: Team SLN, AI QUEST slides (slide 33); original artwork by Team SLN.*
 
 ### Context Window and Conversation Context
 
@@ -717,6 +749,10 @@ A useful distinction is between **training** and **inference**.
 - **Inference** is the stage in which the trained model processes new input and produces an output.
 
 The two stages have different purposes. Training builds or adjusts the model; inference applies the model. Some systems may be updated or retrained over time, but not every model learns continuously from every user interaction.
+
+![Three steps: training adjusts parameters, inference handles a new input, evaluation scores the model on a separate test set](../assets/images/topic-02/train-use-check.png)
+
+*Figure 2.8: Train, use, check: the algorithm learns, the model is what it produces, and evaluation uses a separate test set. Source: Team SLN, AI QUEST slides (slide 35); original artwork by Team SLN.*
 
 ### Training and Inference Compared
 
@@ -934,6 +970,34 @@ No single measure is sufficient for every AI system. A model can have high overa
 
 ---
 
+## Learner Activities
+
+The activities below are also used in the AI QUEST Study Guide, the slides and the videos.
+
+### Activity 1: Train a Tiny Classifier
+
+**Task.** A classifier is trained on four labelled sentences: "Thank you, great job!" (KIND), "You are so helpful" (KIND), "That was terrible" (MEAN) and "Bad idea, nobody cares" (MEAN). Predict the label it gives to the new sentence "That presentation was not bad at all."
+
+![Four labelled training sentences and the new sentence That presentation was not bad at all](../assets/images/topic-02/classifier-demo.png)
+
+*Figure 2.9: Training examples and the test sentence for the classifier demo. Source: Team SLN, AI QUEST slides (slide 28); original artwork by Team SLN.*
+
+**Expected outcome.** The model says **MEAN**, although a human hears a compliment. The word "bad" appeared only in MEAN examples, and the model never saw a negation such as "not bad", so it could not learn it. A model only knows the patterns in its training data (Section 2.1). The fix is to add examples with negation (for example "not bad", "not terrible") labelled KIND, retrain the model and test it again on new sentences.
+
+![Answer: the model says MEAN because it saw the word bad; the fix is to add not bad examples labelled KIND and retrain](../assets/images/topic-02/classifier-answer.png)
+
+*Figure 2.10: Why the classifier fails and how to fix it. Source: Team SLN, AI QUEST slides (slide 29); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 2.2 (p. 31–32) · Slides 28–29 · Video 02 (03:24).
+
+### Activity 2: Prompt Upgrade
+
+**Task.** Improve the prompt "Summarise this article." by using the elements of a clear prompt in Section 3.3.
+
+**Expected outcome.** A strong answer adds an audience, a length, a format and a focus, for example: "Summarise this article for first-year students in five bullet points. Keep the main argument and one example, and mark any claim that needs to be checked." The improved prompt does not guarantee a correct summary, so the summary must still be compared with the article (Topic 04, Section 6.7).
+
+> **Also in:** Study Guide Mission 2.5 (p. 39) · Slide 34 · Video 02 (06:26).
+
 ## Check Your Understanding
 
 1. A chess program can beat every human player but cannot translate a sentence. Is it Narrow AI, AGI or ASI?
@@ -967,7 +1031,7 @@ No single measure is sufficient for every AI system. A model can have high overa
 3. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
 4. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
 
-*AI use: the Stage 3 revision of this topic (removing repeated definitions, the worked spam example, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic).*
+*AI use: the Stage 3 revision of this topic (removing repeated definitions, the worked spam example, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). The figures come from the team's own AI QUEST slides; the learner activities were taken from the Study Guide, slides and videos and checked against them by the team.*
 
 ---
 
