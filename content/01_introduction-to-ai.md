@@ -372,6 +372,10 @@ This shift did not mean that rules disappeared. Many systems continued to combin
 
 The best-known AI event of the 1990s actually used a different approach. In 1997, IBM's **Deep Blue** defeated world chess champion Garry Kasparov. Deep Blue mainly used fast search and an evaluation function tuned by people, not machine learning. This is a good reminder that different AI approaches existed side by side.
 
+![IBM Deep Blue chess computer cabinet next to a monitor and a chessboard](../assets/images/topic-01/photo-deep-blue.png)
+
+*Photo 1.1: IBM's Deep Blue, which defeated Garry Kasparov in 1997 mainly by fast search rather than machine learning. Source: Wikimedia Commons.*
+
 ### 7. Deep Learning — 2010s
 
 **Deep learning** became especially important during the 2010s. It uses artificial neural networks with multiple layers to learn patterns from data.
@@ -694,6 +698,10 @@ In this model:
 ![Agent loop for a robot vacuum: sense (bump sensor), think (rule: turn 90 degrees), act (wheels turn), learn (update a room map)](../assets/images/topic-01/agent-loop-robot-vacuum.png)
 
 *Figure 1.6: The agent cycle shown with a robot vacuum: sense, think, act and, in some models, learn. Source: Team SLN, AI QUEST slides (slide 12); original artwork by Team SLN.*
+
+![A robot vacuum cleaning a wooden floor](../assets/images/topic-01/photo-robot-vacuum.png)
+
+*Photo 1.2: A robot vacuum that senses obstacles and plans its cleaning path. Source: Xiaomi product image; used with permission.*
 
 ### Example: A Navigation Agent
 
