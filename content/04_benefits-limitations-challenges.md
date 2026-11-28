@@ -314,6 +314,10 @@ For example, greetings, humour, idioms, and informal expressions may not have di
 
 Translating the English idiom "break a leg" word by word, for instance, makes it sound like a threat, although it means "good luck".
 
+![A phone with a translation app held over a Japanese menu](../assets/images/topic-04/photo-translation-app.png)
+
+*Photo 4.1: A translation app used on a menu. Food words, local dishes and idioms are where translations most often go wrong. Source: online image; used with permission.*
+
 | Language Feature | Example of Difficulty | Possible Result |
 |---|---|---|
 | Idioms | Expressions with non-literal meanings | Incorrect direct translation |
@@ -810,6 +814,10 @@ In the *Gender Shades* study, Joy Buolamwini and Timnit Gebru (2018) tested thre
 ![Bar chart: highest error rate 0.8 percent for lighter-skinned men and 34.7 percent for darker-skinned women](../assets/images/topic-04/gender-shades-error-rates.png)
 
 *Figure 4.4: Results of the Gender Shades study. Source: Buolamwini and Gebru (2018); chart made by Team SLN.*
+
+![Two face-recognition terminals showing a face on screen](../assets/images/topic-04/photo-face-recognition-terminal.png)
+
+*Photo 4.2: Face-recognition terminals. Studies such as Gender Shades show that such systems can work less well for some groups of people. Source: product image; used with permission.*
 
 | Group | Highest error rate found |
 |---|---|
