@@ -1,4 +1,3 @@
-
 # TOPIC 05 — ETHICAL AND RESPONSIBLE USE OF AI
 
 <p align="center">
@@ -8,7 +7,39 @@
 
 ---
 
+> **Topic:** 05 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+
+## Learning Goals
+
+After studying this topic, you should be able to:
+
+1. **Identify** personal and sensitive information and **write** prompts that protect it.
+2. **Explain** fairness and bias in AI and **suggest** ways to reduce bias.
+3. **Explain** transparency and accountability, and **decide** who is responsible when an AI system makes a mistake.
+4. **Use** AI in coursework while keeping academic integrity, including disclosing AI assistance.
+5. **Explain** why human oversight is needed and **apply** a verification workflow to AI-generated text, images and video.
+
+## Key Terms
+
+| Term | Meaning |
+|---|---|
+| **Personal information** | Any information that identifies a person or can be linked to them, such as a name, student ID or address. |
+| **Sensitive personal information** | Personal information that could cause serious harm if misused, such as health, financial or biometric data. |
+| **Consent** | A person's informed permission for their information to be collected or used. |
+| **Data minimisation** | Collecting and sharing only the information that a task really needs. |
+| **Anonymisation** | Removing details that identify a person. |
+| **Fairness** | Treating people and groups without unjustified differences in outcomes. |
+| **Transparency** | Being open about when and how AI is used. |
+| **Accountability** | Clear responsibility for an AI system's results and for fixing its mistakes. |
+| **Academic integrity** | Honest learning and assessment: your submitted work shows your own understanding, and you acknowledge help. |
+| **Human oversight** | People monitoring, checking and able to override AI decisions. |
+| **Automation bias** | The habit of trusting an automated system too much, even when it is wrong. |
+
+---
+
 ## CONTENTS
+
+[Learning Goals](#learning-goals) · [Key Terms](#key-terms)
 
 | No. | Section |
 |---:|---|
@@ -16,8 +47,9 @@
 | 02 | [Fairness and Bias](#02--fairness-and-bias) |
 | 03 | [Transparency and Accountability](#03--transparency-and-accountability) |
 | 04 | [Academic Integrity](#04--academic-integrity) |
-| 05 | [Human Judgment and Oversight](#05--human-judgment-and-oversight) |
+| 05 | [Human Judgement and Oversight](#05--human-judgement-and-oversight) |
 | 06 | [Responsible AI Use and Verification of AI-Generated Content](#06--responsible-ai-use-and-verification-of-ai-generated-content) |
+| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
@@ -25,11 +57,11 @@
 
 ## 1.1 Understanding Privacy in Artificial Intelligence
 
-Privacy is one of the most important ethical considerations when using Artificial Intelligence (AI). AI systems frequently process information to generate responses, recognise patterns, make predictions, and perform automated tasks. Some of this information may contain personal, sensitive, or confidential data.
+Privacy is one of the most important ethical considerations when using Artificial Intelligence (AI). AI systems frequently process information to generate responses, recognise patterns, make predictions, and perform automated tasks. Some of this information can contain personal, sensitive, or confidential data.
 
 Privacy refers to an individual's right to control how information about them is collected, accessed, used, stored, and shared. Data protection refers to the practices, policies, and technical measures used to safeguard information against unauthorised access, misuse, loss, or disclosure.
 
-AI applications may process information such as names, email addresses, locations, photographs, educational records, financial details, health information, and communication histories. If this information is handled improperly, it may create privacy risks for individuals and organisations.
+AI applications can process information such as names, email addresses, locations, photographs, educational records, financial details, health information, and communication histories. If this information is handled improperly, it can create privacy risks for individuals and organisations.
 
 For example, a student who uploads an assignment containing personal details to an AI platform should understand how the platform processes submitted information. Similarly, an employee should not automatically upload confidential company documents into an external AI tool without checking organisational policies.
 
@@ -62,15 +94,21 @@ Responsible data collection should follow several principles:
 
 1. **Purpose limitation:** Information should be collected for a clear and legitimate purpose.
 2. **Data minimisation:** Only the information necessary for the intended task should be collected.
-3. **Consent and authorisation:** Users should understand when their information is being collected or shared and provide permission where required.
+3. **Consent and authorisation:** Users need to understand when their information is being collected or shared and provide permission where required.
 4. **Accuracy:** Information should be maintained accurately and corrected when necessary.
 5. **Storage limitation:** Information should not be retained longer than necessary.
 6. **Security:** Appropriate safeguards should protect information against unauthorised access.
-7. **Transparency:** People should receive understandable information about how their data is handled.
+7. **Transparency:** People need to receive understandable information about how their data is handled.
 
-Consent should be meaningful rather than assumed. A person should not be expected to understand every technical detail, but they should be given clear information about important data practices.
+Consent should be meaningful rather than assumed. A person should not be expected to understand every technical detail, but they need to be given clear information about important data practices.
 
 For example, an educational platform should explain what student information is collected, why it is needed, and whether it is shared with external service providers.
+
+### These Principles Are Also Law
+
+Many of these principles are written into law. In China, the **Personal Information Protection Law (PIPL)** was adopted on 20 August 2021 and took effect on 1 November 2021. Under the PIPL, consent is the usual basis for handling personal information, and **sensitive personal information**, such as health or financial data, needs the person's *separate* consent. Organisations must also limit the information they collect to what is necessary. In the European Union, the **General Data Protection Regulation (GDPR)** has protected personal data since 2018.
+
+This module does not give legal advice, but you should know that careless handling of other people's data in an AI tool can break these rules as well as ethical ones.
 
 ## 1.4 Privacy Risks When Using AI Tools
 
@@ -88,7 +126,7 @@ Privacy risks can arise from ordinary AI interactions, especially when users sub
 
 An important concern is that users may not know exactly how an AI service handles submitted information. Data practices vary between providers, products, account types, and settings.
 
-Users should therefore check applicable privacy notices, data controls, retention policies, and organisational requirements before submitting sensitive information.
+You therefore need to check applicable privacy notices, data controls, retention policies, and organisational requirements before submitting sensitive information.
 
 ## 1.5 Practical Methods for Protecting Data
 
@@ -151,7 +189,7 @@ Privacy responsibilities apply across education, business, healthcare, and every
 
 ## 1.7 Privacy Protection Checklist
 
-Before entering information into an AI system, users should ask:
+Before entering information into an AI system, you need to ask:
 
 - Is this information necessary for the task?
 - Does it contain personal or confidential details?
@@ -173,9 +211,9 @@ Fairness in AI means designing, developing, and using systems in ways that avoid
 
 AI systems learn patterns from data. If the training data contains historical inequalities, incomplete representation, or inaccurate labels, an AI model may reproduce those problems in its predictions.
 
-For example, an AI recruitment system trained using historical hiring records may learn patterns that favour applicants resembling previously selected employees. If historical recruitment decisions were biased, the system may repeat those patterns.
+For example, an AI recruitment system trained using historical hiring records can learn patterns that favour applicants resembling previously selected employees. If historical recruitment decisions were biased, the system may repeat those patterns.
 
-Fairness does not necessarily mean that every person receives exactly the same outcome. Different situations may require different forms of support. The important objective is to prevent unfair treatment based on irrelevant or unjustified characteristics.
+Fairness does not necessarily mean that every person receives exactly the same outcome. Different situations can require different forms of support. The important objective is to prevent unfair treatment based on irrelevant or unjustified characteristics.
 
 > **Core Insight:** AI systems can reproduce existing inequalities when the information used to train or operate them is incomplete, unrepresentative, or biased.
 
@@ -190,7 +228,7 @@ Bias may occur during data collection, model development, evaluation, deployment
 | Historical Bias | Existing inequalities are reflected in historical data. | A recruitment model learns patterns from an unequal hiring history. |
 | Sampling Bias | Some groups are underrepresented in the dataset. | A speech recognition system is trained mainly on one accent. |
 | Measurement Bias | Data is collected using unsuitable or inconsistent measurements. | A system uses an unreliable indicator to evaluate performance. |
-| Labelling Bias | Human-generated labels contain subjective or incorrect judgments. | Training examples contain inconsistent classifications. |
+| Labelling Bias | Human-generated labels contain subjective or incorrect judgements. | Training examples contain inconsistent classifications. |
 | Algorithmic Bias | Model design or optimisation choices produce unequal outcomes. | A model performs poorly for a particular group. |
 | Deployment Bias | A system is used in circumstances different from those for which it was designed. | A model developed for one population is applied to another without testing. |
 | Feedback Loop Bias | System outputs influence future data and reinforce earlier patterns. | A recommendation system repeatedly promotes similar content. |
@@ -237,7 +275,7 @@ Fairness can be evaluated from several perspectives. Different dimensions may be
 
 Fairness dimensions may conflict. For example, improving one statistical fairness measure does not automatically guarantee that every other fairness measure will improve.
 
-Therefore, organisations should identify which fairness concerns are most relevant to the decision and assess the consequences of different design choices.
+Therefore, organisations need to identify which fairness concerns are most relevant to the decision and assess the consequences of different design choices.
 
 ## 2.5 Examples of Bias in Different Applications
 
@@ -249,6 +287,8 @@ Therefore, organisations should identify which fairness concerns are most releva
 | Education | Learning data reflects unequal access to technology. | Student performance may be assessed unfairly. | Consider context and avoid relying on one automated score. |
 | Credit Assessment | Historical financial data contains unequal patterns. | Applicants may receive inconsistent assessments. | Review variables, outcomes, and applicable regulations. |
 | Translation | Language data underrepresents certain dialects. | Some communities receive less accurate translations. | Test across languages and dialects. |
+
+Two real cases behind the first two rows, Amazon's experimental hiring tool and the *Gender Shades* face-analysis study, are described in Topic 04, Section 4.5.
 
 ## 2.6 Measuring and Evaluating Fairness
 
@@ -319,7 +359,7 @@ This example demonstrates that AI should support recruitment decisions rather th
 
 Fairness must be maintained throughout the AI lifecycle.
 
-Organisations should periodically review training data, evaluation methods, model performance, and user feedback. They should also document important limitations and establish procedures for responding to unfair outcomes.
+Organisations need to periodically review training data, evaluation methods, model performance, and user feedback. They also need to document important limitations and establish procedures for responding to unfair outcomes.
 
 > **Core Insight:** Fairness is not achieved simply by removing sensitive variables from a dataset. Other variables may still indirectly represent characteristics that create unequal outcomes.
 
@@ -331,7 +371,7 @@ Organisations should periodically review training data, evaluation methods, mode
 
 Transparency means providing understandable information about an AI system, including its purpose, capabilities, limitations, and role in a decision-making process.
 
-Users should know when they are interacting with AI, when AI-generated information is being used, and when automated recommendations influence important decisions.
+Users need to know when they are interacting with AI, when AI-generated information is being used, and when automated recommendations influence important decisions.
 
 Transparency is important because AI systems can affect education, employment, financial services, healthcare, and access to information.
 
@@ -415,7 +455,7 @@ flowchart TD
     G -.-> H
 ```
 
-At each stage, organisations should maintain suitable records.
+At each stage, organisations need to maintain suitable records.
 
 | Lifecycle Stage | Information to Document |
 |---|---|
@@ -431,11 +471,11 @@ At each stage, organisations should maintain suitable records.
 
 Explanations should be appropriate to the audience and the importance of the decision.
 
-A technical explanation for an AI developer may include model architecture and evaluation statistics. A general user may need a simpler explanation of what information influenced a recommendation.
+A technical explanation for an AI developer can include model architecture and evaluation statistics. A general user may need a simpler explanation of what information influenced a recommendation.
 
 For example, an educational platform may explain that a learning recommendation is based on recent quiz performance, completed exercises, and areas where the student requested additional practice.
 
-However, the platform should not suggest that its recommendation represents a complete judgment of the student's ability.
+However, the platform should not suggest that its recommendation represents a complete judgement of the student's ability.
 
 Useful explanations should communicate:
 
@@ -450,7 +490,7 @@ Useful explanations should communicate:
 
 AI systems can produce inaccurate, incomplete, or inappropriate outputs. Responsible organisations need procedures for identifying and correcting these problems.
 
-An incident management process may include:
+An incident management process can include:
 
 1. Identify the inaccurate output or harmful result.
 2. Record the relevant information about the incident.
@@ -476,6 +516,14 @@ A responsible response should include:
 
 The company should not avoid responsibility by claiming that the incorrect answer was generated by AI.
 
+### Real Case: Air Canada Had to Pay for Its Chatbot's Mistake (2024)
+
+In November 2022, after his grandmother died, Jake Moffatt asked the chatbot on Air Canada's website about reduced "bereavement" fares. The chatbot told him he could buy a normal ticket and apply for the discount within 90 days after travelling. This was wrong: Air Canada's own policy page, which the chatbot linked to, said the discount could not be claimed after the trip. When Air Canada refused the refund, Mr Moffatt took the airline to the British Columbia Civil Resolution Tribunal.
+
+On 14 February 2024, the tribunal decided that Air Canada had not taken reasonable care to make sure its chatbot was accurate. The airline was ordered to pay a partial refund plus interest and fees (*Moffatt v. Air Canada*, 2024 BCCRT 149).
+
+The lesson matches the checklist below: **the organisation that puts a chatbot on its website is responsible for what the chatbot says.**
+
 ## 3.8 Transparency and Accountability Checklist
 
 | Question | Why It Matters |
@@ -500,7 +548,7 @@ Students are expected to complete academic work honestly, acknowledge the contri
 
 AI tools can support learning by explaining concepts, providing feedback, generating practice questions, and helping students organise ideas. However, AI can also create academic integrity problems when students use generated content in ways that misrepresent their knowledge or violate institutional rules.
 
-For example, using an AI tool to explain a difficult mathematical concept may support learning. Submitting an AI-generated assignment as entirely independent work when such assistance is prohibited may violate academic expectations.
+For example, using an AI tool to explain a difficult mathematical concept can support learning. Submitting an AI-generated assignment as entirely independent work when such assistance is prohibited may violate academic expectations.
 
 > **Core Insight:** AI should support the learning process, not replace the student's responsibility to understand, evaluate, and produce their own academic work.
 
@@ -518,7 +566,7 @@ The acceptability of AI assistance depends on the task, the educational institut
 | Practice | Generating sample questions and explanations. | Using AI to obtain unauthorised answers during a restricted assessment. |
 | Writing | Receiving feedback on organisation and clarity. | Submitting generated work as independent work when this is not permitted. |
 
-Students should check assignment instructions rather than assuming that all forms of AI assistance are allowed.
+You need to check assignment instructions rather than assuming that all forms of AI assistance are allowed.
 
 ## 4.3 Maintaining Originality and Personal Understanding
 
@@ -526,7 +574,7 @@ Original academic work demonstrates a student's own understanding, reasoning, an
 
 AI-generated text may sound convincing, but fluent writing does not necessarily demonstrate accurate understanding.
 
-Students should use AI as a learning assistant by:
+You need to use AI as a learning assistant by:
 
 - Asking for explanations of unfamiliar concepts.
 - Comparing different explanations.
@@ -551,26 +599,17 @@ For example:
 
 This statement should only be used if it accurately reflects what happened.
 
-Different institutions may require specific formats, levels of detail, or citation methods. Students should follow the relevant academic policy.
+Different institutions can require specific formats, levels of detail, or citation methods. You need to follow the relevant academic policy.
 
 ## 4.5 AI-Generated References and Academic Sources
 
 One important academic risk is the generation of inaccurate or fabricated references.
 
-An AI tool may produce a citation that appears academically credible but contains an incorrect title, author, publication date, journal, or DOI.
+An AI tool can produce a citation that appears academically credible but contains an incorrect title, author, publication date, journal, or DOI.
 
-Students should never assume that a reference is genuine simply because it is presented in a formal citation format.
+You should never assume that a reference is genuine simply because it is presented in a formal citation format.
 
-| Reference Element | What to Verify |
-|---|---|
-| Author | Confirm the author's identity and spelling. |
-| Publication Title | Check that the title matches the actual source. |
-| Publication Year | Verify the publication date. |
-| Journal or Publisher | Confirm that the publication exists. |
-| DOI | Check whether the DOI leads to the intended work. |
-| URL | Confirm that the link opens the correct source. |
-| Quoted Content | Compare the quotation with the original publication. |
-| Page Number | Confirm the location of the quoted material. |
+Topic 04, Section 6.4, lists each element of a reference that must be checked (author, title, year, journal or publisher, DOI or URL, and whether the source actually supports the claim).
 
 A reliable academic workflow uses original sources rather than relying only on AI-generated summaries.
 
@@ -617,7 +656,7 @@ This approach uses AI to support the learning process while preserving the stude
 
 ## 4.8 Academic Integrity Checklist
 
-Before submitting an assignment, students should consider:
+Before submitting an assignment, you need to consider:
 
 - Did I follow the assignment instructions?
 - Is AI assistance permitted for this task?
@@ -632,21 +671,21 @@ Academic integrity is not only about avoiding misconduct. It is also about devel
 
 ---
 
-# 05 · Human Judgment and Oversight
+# 05 · Human Judgement and Oversight
 
-## 5.1 Why Human Judgment Remains Important
+## 5.1 Why Human Judgement Remains Important
 
-AI systems can analyse large datasets, identify patterns, generate predictions, and automate repetitive tasks. However, these capabilities do not mean that AI can replace all human judgment.
+AI systems can analyse large datasets, identify patterns, generate predictions, and automate repetitive tasks. However, these capabilities do not mean that AI can replace all human judgement.
 
-Human judgment involves understanding context, considering values, recognising uncertainty, interpreting complex situations, and taking responsibility for decisions.
+Human judgement involves understanding context, considering values, recognising uncertainty, interpreting complex situations, and taking responsibility for decisions.
 
-AI systems may produce recommendations based on patterns in available data, but they may not fully understand personal circumstances, social consequences, professional duties, or ethical considerations.
+AI systems can produce recommendations based on patterns in available data, but they may not fully understand personal circumstances, social consequences, professional duties, or ethical considerations.
 
-For example, an AI learning platform may identify that a student performs poorly on several tests. However, it may not know whether the student has experienced technical difficulties, personal challenges, language barriers, or other circumstances that affect performance.
+For example, an AI learning platform can identify that a student performs poorly on several tests. However, it may not know whether the student has experienced technical difficulties, personal challenges, language barriers, or other circumstances that affect performance.
 
 A teacher can consider these factors before making an educational decision.
 
-> **Core Insight:** AI can provide information and recommendations, but meaningful human oversight is necessary when decisions require professional judgment, ethical reasoning, or consideration of individual circumstances.
+> **Core Insight:** AI can provide information and recommendations, but meaningful human oversight is necessary when decisions require professional judgement, ethical reasoning, or consideration of individual circumstances.
 
 ## 5.2 Understanding Human Oversight
 
@@ -678,7 +717,7 @@ There are different ways to organise human involvement in AI-assisted processes.
 
 These approaches are not interchangeable in every situation. The appropriate model depends on the risks, application, and degree of automation.
 
-## 5.4 Human Judgment Compared with AI Capabilities
+## 5.4 Human Judgement Compared with AI Capabilities
 
 AI and human decision-making have different strengths and limitations.
 
@@ -711,7 +750,7 @@ Automation bias can lead to:
 - Excessive dependence on automated scores.
 - Difficulty recognising when a system is operating outside its intended purpose.
 
-To reduce automation bias, organisations should train users to question AI outputs, compare them with reliable evidence, and document important decisions.
+To reduce automation bias, organisations need to train users to question AI outputs, compare them with reliable evidence, and document important decisions.
 
 ## 5.6 Risk-Based Human Oversight
 
@@ -723,7 +762,7 @@ The level of human oversight should be proportionate to the potential impact of 
 | Medium Risk | Errors may cause inconvenience, financial loss, or operational problems. | More careful review and established correction procedures. | AI helps categorise customer service requests. |
 | High Risk | Errors may significantly affect health, safety, rights, finances, or important opportunities. | Qualified human decision-makers, strong validation, documentation, and appeal procedures. | AI supports medical or employment decisions. |
 
-Risk levels depend on context. The same AI function may create different levels of risk depending on how it is used.
+Risk levels depend on context. The same AI function can create different levels of risk depending on how it is used.
 
 For example, a recommendation system used to suggest optional learning resources may have relatively low impact. A system used to determine access to important educational opportunities requires much stronger safeguards.
 
@@ -795,7 +834,7 @@ Human oversight should be designed into the AI process rather than added only af
 
 Responsible AI use means applying AI systems carefully, ethically, and appropriately while considering their effects on individuals, organisations, and society.
 
-Responsible use requires more than knowing how to operate an AI application. Users should understand its purpose, limitations, possible errors, and potential consequences.
+Responsible use requires more than knowing how to operate an AI application. Users need to understand its purpose, limitations, possible errors, and potential consequences.
 
 AI-generated content can include:
 
@@ -810,7 +849,7 @@ AI-generated content can include:
 
 Although these outputs can be useful, they are not automatically accurate, original, unbiased, or suitable for every purpose.
 
-A responsible user should evaluate AI-generated information before relying on it or sharing it with others.
+You need to evaluate AI-generated information before relying on it or sharing it with others.
 
 > **Core Insight:** AI-generated content should be treated as material that requires evaluation, not as automatically verified information.
 
@@ -831,32 +870,9 @@ These principles help users evaluate not only the output of AI systems but also 
 
 ## 6.3 Understanding AI Hallucinations and Inaccurate Content
 
-An AI hallucination occurs when an AI system generates information that appears plausible but is inaccurate, unsupported, or fabricated.
+An AI hallucination occurs when an AI system generates information that appears plausible but is inaccurate, unsupported, or fabricated, such as a fictional academic reference, an incorrect date, or a misrepresented regulation. AI systems can generate confident-sounding statements even when the underlying information is unreliable, so fluent language must be distinguished from factual accuracy.
 
-Examples include:
-
-- Inventing a historical event.
-- Producing a fictional academic reference.
-- Providing an incorrect mathematical explanation.
-- Misrepresenting a law or regulation.
-- Attributing a statement to the wrong person.
-- Creating a nonexistent website or publication.
-- Presenting outdated information as current.
-
-AI systems may generate confident-sounding statements even when the underlying information is unreliable.
-
-Users should therefore distinguish between fluent language and factual accuracy.
-
-| Type of Error | Description | Example |
-|---|---|---|
-| Factual Error | A statement contradicts reliable evidence. | An incorrect historical date. |
-| Fabricated Reference | A citation or publication does not exist. | A fictional academic journal article. |
-| Outdated Information | Previously correct information is no longer current. | An old policy presented as the current policy. |
-| Incorrect Calculation | A mathematical or numerical result is wrong. | An inaccurate percentage calculation. |
-| Misleading Summary | Important details are omitted or distorted. | A report summary that changes the original conclusion. |
-| Unsupported Claim | A statement is presented without sufficient evidence. | A prediction described as a confirmed fact. |
-
-The possibility of hallucination means that users should verify important claims before using them in academic, professional, or public contexts.
+Topic 04, Section 3, explains the types of inaccurate output, *why* hallucinations happen, and a real case in which lawyers were fined for submitting court cases invented by ChatGPT. This section focuses on what you need to do about it: important claims must be verified before they are used in academic, professional, or public contexts.
 
 ## 6.4 A Practical Method for Verifying AI-Generated Information
 
@@ -909,7 +925,7 @@ The reliability of a source depends on the claim being evaluated. A government w
 
 Not all online information has the same level of reliability.
 
-Users should consider the following factors:
+You need to consider the following factors:
 
 | Evaluation Factor | Important Question |
 |---|---|
@@ -938,7 +954,7 @@ Examples include:
 - Fabricated images used as evidence.
 - Misleading content shared without context.
 
-Users should evaluate the origin, context, and authenticity of media before relying on it.
+You need to evaluate the origin, context, and authenticity of media before relying on it.
 
 | Media Type | Potential Risk | Responsible Practice |
 |---|---|---|
@@ -967,9 +983,9 @@ No single visual clue or detection tool can guarantee that media is authentic. V
 
 Copyright protects certain forms of original creative expression, subject to applicable laws and exceptions.
 
-AI systems may generate content based on patterns learned from large datasets. The legal and ethical implications of training data, generated outputs, and the use of existing creative works can vary by jurisdiction and circumstances.
+AI systems can generate content based on patterns learned from large datasets. The legal and ethical implications of training data, generated outputs, and the use of existing creative works can vary by jurisdiction and circumstances.
 
-Responsible AI users should consider the rights of creators when using text, images, music, videos, and other materials.
+Responsible AI users need to consider the rights of creators when using text, images, music, videos, and other materials.
 
 Important considerations include:
 
@@ -996,7 +1012,7 @@ Responsible AI use includes respecting creators rather than assuming that all ma
 
 The quality of AI-generated content depends partly on how users communicate their requests.
 
-A clear prompt should provide sufficient context, explain the intended task, and identify relevant constraints. However, users should not include unnecessary personal or confidential information.
+A clear prompt should provide sufficient context, explain the intended task, and identify relevant constraints. However, you should not include unnecessary personal or confidential information.
 
 A useful prompt can specify:
 
@@ -1134,6 +1150,42 @@ Responsible AI use requires continuous attention. Ethical principles should guid
 AI can provide valuable support, but users and organisations must remain aware of its limitations and potential consequences.
 
 The goal is not to avoid AI entirely or to accept every AI-generated result. The goal is to use AI in ways that are useful, fair, secure, transparent, and consistent with human values and responsibilities.
+
+---
+
+## Check Your Understanding
+
+1. Look at the unsafe prompt in Section 1.5. Name three details you should remove before sending it to an AI tool.
+2. In the Air Canada case (Section 3.7), who was held responsible for the chatbot's wrong answer, and why?
+3. Under China's PIPL (Section 1.3), what extra step is needed before handling sensitive personal information?
+4. You ask an AI tool to write your essay, change a few words, and submit it as your own work. Is this acceptable? What should you do instead?
+5. What is automation bias? Give one example.
+6. An AI tool creates a realistic picture of a flood in your city. What should you do before sharing it?
+
+### Answers
+
+1. Any three of: the student's name, home address, student ID, medical history, full academic records. Use an anonymised label such as "Student A" and only the marks needed (Section 1.5).
+2. **Air Canada**, the company that put the chatbot on its website. The tribunal found the airline had not taken reasonable care to make sure the chatbot was accurate. A company cannot avoid responsibility by blaming its AI.
+3. The person's **separate consent**, in addition to having a specific purpose and a real need for the information.
+4. **No.** The work does not show your own understanding and is presented dishonestly. Write it yourself, use AI only in ways your teacher allows (for example, feedback on your draft), and disclose that use (Sections 4.2 and 4.4).
+5. Trusting an automated system too much. Example: a driver follows a navigation app into a closed road even though the warning signs are clear; or a reviewer approves every AI decision without checking (Section 5.5).
+6. Make clear that it is AI-generated, do not present it as a real event, and check the purpose of sharing it. If you see such an image, check the original source before believing or forwarding it (Section 6.7).
+
+## Links to Other Topics
+
+- **Topic 02** explains how data is collected and used to train models, which is where many privacy and bias problems begin.
+- **Topic 04** gives real cases of hallucination (Section 3.2) and bias (Section 4.5) that this topic responds to.
+- **Topic 03** shows the application areas where these rules matter most, such as healthcare and finance.
+
+## References
+
+1. *Moffatt v. Air Canada*, 2024 BCCRT 149 (British Columbia Civil Resolution Tribunal, 14 February 2024).
+2. Personal Information Protection Law of the People's Republic of China (2021). Adopted 20 August 2021; in force 1 November 2021.
+3. Regulation (EU) 2016/679 (General Data Protection Regulation). https://eur-lex.europa.eu/eli/reg/2016/679/oj
+4. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
+5. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
+
+*AI use: the Stage 3 revision of this topic (real cases, the PIPL section, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Case and law details were checked against the sources above.*
 
 ---
 
