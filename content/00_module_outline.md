@@ -1,6 +1,6 @@
 # Module outline: AI Overview
 
-> **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+> **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V3.0 (Stage 3 final, 28 November 2026)
 
 **Learners:** university students and beginners with little or no AI background. **Prerequisites:** none beyond basic digital literacy.
 **Status key:** ✅ checked by a reviewer · 📝 drafted · 🔲 outline only
@@ -32,10 +32,28 @@ By the end of the module, a learner should be able to:
 Every topic file follows the same pattern, so learners always know where to look:
 
 1. **Learning goals** and **key terms** at the top
-2. Numbered sections (for example, *2.3 Major Stages of Development*), each with explanations, tables, diagrams and worked examples
+2. Numbered sections (for example, *2.3 Major Stages of Development*), each with explanations, tables, worked examples, Mermaid diagrams and numbered figures
 3. **Core Insight** boxes that sum up each section
 4. **Real cases** where they help (for example, *Mata v. Avianca* in Topic 04 and *Moffatt v. Air Canada* in Topic 05)
-5. **Check your understanding** questions with answers, **links to other topics**, and **references** at the end
+5. **Learner activities** with expected outcomes; the same activities appear in the Study Guide, the slides and the videos
+6. **Check your understanding** questions with answers, **links to other topics**, and **references** at the end
+
+**Recommended reading order:** this outline, then Topics 01 → 05 in order. Each topic builds on the previous one; Topic 05 ends with a final challenge that uses all five topics.
+
+## How the Markdown is used in the learning resources
+
+This Markdown is the shared source for the AI QUEST learning resources. Each topic is one "world" in every resource.
+
+| Markdown topic | Study Guide (AI QUEST) | Test Bank | PPT slides | Video tutorial |
+|---|---|---|---|---|
+| 01 Introduction to AI | World 1, p. 9–25 | TF-01–04, MC-01–04, OE-01 | Slides 4–19 | Video 01 · Introduction to AI (9:47) |
+| 02 Types of AI and how AI works | World 2, p. 26–42 | TF-05–08, MC-05–08, OE-02 | Slides 20–36 | Video 02 · Types of AI & How AI Works (8:43) |
+| 03 Applications of AI | World 3, p. 43–54 | TF-09–12, MC-09–12, OE-03 | Slides 37–47 | Video 03 · Applications of AI (6:04) |
+| 04 Benefits, limitations and challenges | World 4, p. 55–68 | TF-13–16, MC-13–16, OE-04 | Slides 48–58 | Video 04 · Benefits, Limits & Challenges (5:50) |
+| 05 Ethical and responsible use | World 5, p. 69–82 | TF-17–20, MC-17–20, OE-05, OE-06 | Slides 59–69 | Video 05 · Ethics & Final Challenge (8:23) |
+| Opening question and final challenge | Final Boss, p. 88 (answer key p. 98) | All 46 questions | Slides 1–3 and 70–77 | Video 01 (start) and Video 05 (end) |
+
+The figures in the topic files are taken from the AI QUEST slides, which were drawn by Team SLN, so the Markdown, slides, Study Guide and videos use the same pictures and examples.
 
 ## Scope
 
