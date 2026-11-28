@@ -63,6 +63,10 @@ Privacy refers to an individual's right to control how information about them is
 
 AI applications can process information such as names, email addresses, locations, photographs, educational records, financial details, health information, and communication histories. If this information is handled improperly, it can create privacy risks for individuals and organisations.
 
+![Three surveillance cameras mounted on the corner of a building](../assets/images/topic-05/photo-cctv.png)
+
+*Photo 5.1: Surveillance cameras record images of people who may not know they are being recorded. Combined with face recognition, such images become sensitive personal data. Source: Wikimedia Commons.*
+
 For example, a student who uploads an assignment containing personal details to an AI platform should understand how the platform processes submitted information. Similarly, an employee should not automatically upload confidential company documents into an external AI tool without checking organisational policies.
 
 > **Core Insight:** Using AI responsibly means considering not only what information an AI system needs, but also whether the user has permission to share that information.
