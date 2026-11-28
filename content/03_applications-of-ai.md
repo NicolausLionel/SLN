@@ -7,7 +7,7 @@
 
 ---
 
-> **Topic:** 03 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+> **Topic:** 03 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V3.0 (Stage 3 final, 28 November 2026)
 
 ## Learning Goals
 
@@ -46,13 +46,19 @@ After studying this topic, you should be able to:
 | 04 | [AI in Transportation](#04--ai-in-transportation) |
 | 05 | [AI in Communication and Entertainment](#05--ai-in-communication-and-entertainment) |
 | 06 | [Examples of Commonly Used AI Tools](#06--examples-of-commonly-used-ai-tools) |
-| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
+| — | [Learner Activities](#learner-activities) · [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
 # 01 · AI in Education
 
 Artificial intelligence is becoming an important part of education. It can support students, teachers, and schools by helping people access information, practise skills, organise learning activities, and make some educational services more accessible. AI is not a replacement for teachers, classmates, or a student's own effort. Its strongest role is to support learning while people remain responsible for understanding, judgement, and decisions.
+
+Every application in this topic can be examined with the same two questions: what does the AI do, and what must people still do?
+
+![Two boxes: what the AI does (sorts, predicts, flags, recommends) and what humans must do (check the output, handle unusual or high-stakes cases)](../assets/images/topic-03/one-lens-two-questions.png)
+
+*Figure 3.1: One lens for every application: two questions to ask about any AI system. Source: Team SLN, AI QUEST slides (slide 39); original artwork by Team SLN.*
 
 ## 1.1 Understanding the Role of AI in Education
 
@@ -61,6 +67,10 @@ Education involves more than receiving information. Students need to ask questio
 An AI learning tool may respond to a student's question, suggest a different explanation, or generate practice questions. A teacher can use an AI-supported platform to review learning progress or prepare classroom resources. A school can use automated systems to help organise schedules or respond to common administrative questions. These uses are different, but they share one purpose: reducing certain routine difficulties so that students and educators can focus on meaningful learning.
 
 AI tools do not all work in the same way. Some systems follow rules written by developers. Others use machine learning to identify patterns in data. Generative AI systems can produce new text, images, audio, or other content in response to prompts. Understanding the type of tool helps users understand what it can and cannot do.
+
+![Education: AI gives practice, tutoring and captions while the student still does the learning. Business: AI runs chatbots, forecasts and fraud flags while a human investigates alerts](../assets/images/topic-03/ai-at-school-and-work.png)
+
+*Figure 3.2: AI at school and at work: AI supports, people stay responsible. Source: Team SLN, AI QUEST slides (slide 40); original artwork by Team SLN.*
 
 ## 1.2 Personalised Learning
 
@@ -251,6 +261,10 @@ When an AI-supported process changes, staff need to be informed and trained. Org
 # 03 · AI in Healthcare
 
 Healthcare is an important area for AI because medical services involve complex information, time-sensitive tasks, research, and decisions that can affect people's wellbeing. AI can support healthcare professionals by helping organise information, identify patterns, and assist with certain technical tasks. It must not be treated as a replacement for qualified medical professionals.
+
+![Healthcare: AI highlights scans and sorts records, the doctor makes the diagnosis. Transport: AI plans routes and brakes in emergencies, the driver stays responsible](../assets/images/topic-03/ai-in-health-and-transport.png)
+
+*Figure 3.3: AI in healthcare and transport: a highlight on a scan is not a diagnosis, and the driver stays responsible. Source: Team SLN, AI QUEST slides (slide 41); original artwork by Team SLN.*
 
 ## 3.1 Medical Image Analysis
 
@@ -586,6 +600,10 @@ Before using a tool, consider:
 - **Cost and conditions:** Are there usage limits, account requirements, or terms that matter?
 - **Responsibility:** Who will review the result before it is used?
 
+![Three questions for choosing a tool: chat, translate, write or search; what data am I sharing; how will I verify the output](../assets/images/topic-03/pick-the-right-tool.png)
+
+*Figure 3.4: Three questions for choosing an AI tool: task, privacy and checking. Source: Team SLN, AI QUEST slides (slide 46); original artwork by Team SLN.*
+
 ## 6.10 A Practical Workflow
 
 ```mermaid
@@ -622,6 +640,54 @@ A good user does not simply ask which tool is the most powerful. A good user ask
 
 ---
 
+## Learner Activities
+
+The activities below are also used in the AI QUEST Study Guide, the slides and the videos.
+
+### Activity 1: AI Spotter
+
+**Task.** Think back from waking up until now. List every app or device used, then mark the ones that learn or predict.
+
+![Instructions for counting the AI used in the morning](../assets/images/topic-03/ai-spotter.png)
+
+*Figure 3.5: AI Spotter: count the AI in your morning. Source: Team SLN, AI QUEST slides (slide 38); original artwork by Team SLN.*
+
+**Expected outcome.** Typical answers include phone face unlock, keyboard suggestions, maps, music or video recommendations, translation, the email spam filter and voice assistants. Most learners find more than five. An alarm clock or a calculator follows fixed rules and is not AI (Topic 01, Section 4.12).
+
+> **Also in:** Study Guide Mission 3.6 AI Spotter Log (p. 53) · Slide 38 · Video 03 (00:28).
+
+### Activity 2: Predict the Recommender
+
+**Task.** BYTE watched three videos: "Cat jumps fail", "Funny cat song" and "Cat vs cucumber" (tags: *cats*, *funny*). The recommender scores each new video by how many tags it shares with this history. Which video will it recommend: A "Funny cat compilation" (*cats, funny*), B "Dog training tips" (*dogs, how-to*) or C "Calculus lecture" (*maths, study*)?
+
+![Watch history with three cat videos and three candidate videos A, B and C with their tags](../assets/images/topic-03/recommender-demo.png)
+
+*Figure 3.6: The recommender demo. Source: Team SLN, AI QUEST slides (slide 42); original artwork by Team SLN.*
+
+**Expected outcome.** **A**, because it shares two tags; B and C share none. If BYTE only ever clicks recommendations, the feed shows more and more cat videos. This is a filter bubble (Section 5.11).
+
+![Answer: Funny cat compilation matches 2 tags, the others match 0; clicking only recommendations creates a filter bubble](../assets/images/topic-03/recommender-answer.png)
+
+*Figure 3.7: Answer to the recommender demo. Source: Team SLN, AI QUEST slides (slide 43); original artwork by Team SLN.*
+
+> **Also in:** Study Guide Mission 3.5 (p. 51) · Slides 42–43 · Video 03 (02:56).
+
+### Activity 3: Who Needs the Most Checking?
+
+**Task.** Rank these four uses of AI from lowest to highest risk: a movie suggestion, a menu translation, freezing a bank account, reading a medical scan.
+
+![Four cards: movie suggestion, menu translation, freeze a bank account, read a medical scan](../assets/images/topic-03/who-needs-checking.png)
+
+*Figure 3.8: Which use needs the most human oversight? Source: Team SLN, AI QUEST slides (slide 44); original artwork by Team SLN.*
+
+**Expected outcome.** A wrong movie suggestion is low risk (skip it). A menu translation is low to medium risk (check allergy words). Freezing a bank account and reading a medical scan are high risk, because they affect money, rights and health, so a qualified person must check and decide (Sections 2.6 and 3.1). The same kind of technology can carry very different stakes.
+
+![Answer: movie low risk, menu low to medium, bank and scan high risk](../assets/images/topic-03/who-needs-checking-answer.png)
+
+*Figure 3.9: Match the checking to the stakes. Source: Team SLN, AI QUEST slides (slide 45); original artwork by Team SLN.*
+
+> **Also in:** Slides 44–45 · Video 03 (03:54).
+
 ## Check Your Understanding
 
 1. Your bank's AI flags a card payment you made abroad as unusual. Does this prove fraud? What should happen next?
@@ -651,7 +717,7 @@ A good user does not simply ask which tool is the most powerful. A good user ask
 1. Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
 2. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
 
-*AI use: the Stage 3 revision of this topic (reordering sections, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic).*
+*AI use: the Stage 3 revision of this topic (reordering sections, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). The figures come from the team's own AI QUEST slides; the learner activities were taken from the Study Guide, slides and videos and checked against them by the team.*
 
 ---
 
