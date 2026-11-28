@@ -7,7 +7,37 @@
 
 ---
 
+> **Topic:** 04 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+
+## Learning Goals
+
+After studying this topic, you should be able to:
+
+1. **Explain** the main benefits of AI: efficiency, automation, productivity, decision support and access to information.
+2. **Explain** why AI can misunderstand context, and how clearer instructions help.
+3. **Define** an AI hallucination, **explain** why it happens and **recognise** one, using a real case.
+4. **Explain** how data quality and bias affect AI output, using real examples.
+5. **Recognise** signs of overdependence and **verify** AI-generated information step by step.
+
+## Key Terms
+
+| Term | Meaning |
+|---|---|
+| **Efficiency** | Doing a task with less time or effort while keeping the quality needed. |
+| **Automation** | Using technology to perform a task with little manual work. |
+| **Context** | The background, purpose and situation that give a request its meaning. |
+| **Hallucination** | AI output that sounds convincing but is false or not supported by evidence. |
+| **Data quality** | How accurate, complete, consistent, relevant, representative and up to date data is. |
+| **Historical bias** | Unfair patterns from the past that are copied from training data. |
+| **Representation bias** | When some groups are rare in the data, so the model works worse for them. |
+| **Overdependence** | Relying on AI so much that your own thinking, learning or checking weakens. |
+| **Verification** | Checking AI output against reliable, original sources before using it. |
+
+---
+
 ## CONTENTS
+
+[Learning Goals](#learning-goals) · [Key Terms](#key-terms)
 
 | No. | Section |
 |---:|---|
@@ -17,6 +47,7 @@
 | 04 | [Data Quality and Bias](#04--data-quality-and-bias) |
 | 05 | [Overdependence on AI](#05--overdependence-on-ai) |
 | 06 | [The Importance of Verifying AI-Generated Information](#06--the-importance-of-verifying-ai-generated-information) |
+| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
@@ -34,9 +65,9 @@ Efficiency refers to completing a task with less unnecessary time, effort, or re
 
 AI can improve efficiency by automating selected activities, organising information, and providing faster access to relevant results.
 
-For example, an organisation may use AI to classify thousands of documents. Instead of manually opening and sorting every document, employees can review categories prepared by the system and focus on unusual cases.
+For example, an organisation can use AI to classify thousands of documents. Instead of manually opening and sorting every document, employees can review categories prepared by the system and focus on unusual cases.
 
-In education, AI may help teachers prepare draft questions or organise learning materials. In customer service, chatbots can answer common questions without requiring an employee to respond individually to every routine enquiry.
+In education, AI can help teachers prepare draft questions or organise learning materials. In customer service, chatbots can answer common questions without requiring an employee to respond individually to every routine enquiry.
 
 | Area | Traditional Approach | AI-Supported Approach | Possible Efficiency Benefit |
 |---|---|---|---|
@@ -49,7 +80,7 @@ In education, AI may help teachers prepare draft questions or organise learning 
 
 Efficiency does not always mean that a task should be completed as quickly as possible. The result must still be accurate, suitable, and useful.
 
-A system that produces incorrect information quickly may create additional work because people must identify and correct its mistakes.
+A system that produces incorrect information quickly can create additional work because people must identify and correct its mistakes.
 
 ## 1.2 Supporting Automation
 
@@ -57,7 +88,7 @@ Automation refers to using technology to perform tasks with limited manual invol
 
 AI can support automation when a system can analyse information, recognise patterns, or select an appropriate response based on its design.
 
-Traditional automation often follows predefined instructions. AI-supported automation may use machine learning to respond to patterns in data or interpret certain forms of input.
+Traditional automation often follows predefined instructions. AI-supported automation can use machine learning to respond to patterns in data or interpret certain forms of input.
 
 Examples include:
 
@@ -87,9 +118,9 @@ Productivity describes how effectively resources such as time, effort, knowledge
 
 AI can support productivity by helping people complete certain tasks more efficiently.
 
-For example, a student may use an AI assistant to generate practice questions after studying a topic. The student can then spend more time solving problems and reviewing difficult concepts.
+For example, a student can use an AI assistant to generate practice questions after studying a topic. The student can then spend more time solving problems and reviewing difficult concepts.
 
-An employee may use AI to prepare a first draft of a routine report and then spend time checking the information and improving the final document.
+An employee can use AI to prepare a first draft of a routine report and then spend time checking the information and improving the final document.
 
 | Productivity Area | AI Contribution | Human Contribution |
 |---|---|---|
@@ -106,9 +137,9 @@ The quality of the result, the amount of correction required, and the effect on 
 
 ## 1.4 Supporting Decision-Making
 
-AI can analyse information and identify patterns that may help people make decisions.
+AI can analyse information and identify patterns that can help people make decisions.
 
-For example, a business may use AI to examine historical sales information and estimate future demand. A transport organisation may analyse traffic patterns to identify areas where congestion frequently occurs.
+For example, a business can use AI to examine historical sales information and estimate future demand. A transport organisation may analyse traffic patterns to identify areas where congestion frequently occurs.
 
 In both cases, AI provides information that supports a decision rather than guaranteeing that a particular decision is correct.
 
@@ -130,7 +161,7 @@ AI can make information easier to access by allowing users to interact with digi
 
 For example, conversational AI can explain a difficult concept using simpler language. Text-to-speech applications can read written material aloud, while speech-to-text systems can convert spoken words into text.
 
-These features may support people who have different language backgrounds or accessibility needs.
+These features can support people who have different language backgrounds or accessibility needs.
 
 | AI Feature | Accessibility Benefit | Possible Limitation |
 |---|---|---|
@@ -148,13 +179,13 @@ AI can support creative work by helping people explore ideas, produce drafts, an
 
 Generative AI systems can create text, images, audio, and other content based on prompts.
 
-For example, a designer may use an AI tool to explore possible visual concepts before producing a final design. A student may request different ways to organise a presentation and then choose the approach that best communicates the topic.
+For example, a designer can use an AI tool to explore possible visual concepts before producing a final design. A student may request different ways to organise a presentation and then choose the approach that best communicates the topic.
 
 AI can therefore act as a supporting tool during the creative process.
 
 However, creativity still involves personal ideas, cultural understanding, experience, and decisions about meaning.
 
-Users should review generated content and respect the rights of original creators.
+You need to review generated content and respect the rights of original creators.
 
 ## 1.7 Reducing Repetitive Work
 
@@ -174,7 +205,7 @@ Examples include:
 
 Reducing repetitive work may allow people to focus on activities that require more attention.
 
-However, employees should still understand the automated process and know how to identify errors.
+However, employees still need to understand the automated process and know how to identify errors.
 
 ## 1.8 Overall Benefits of AI
 
@@ -197,7 +228,7 @@ However, employees should still understand the automated process and know how to
 
 One important limitation of AI is that it may not understand the full context of a question or situation.
 
-AI systems process information according to their design, training, available data, and instructions. Although some systems can produce responses that appear natural and meaningful, they may misunderstand the intention behind a message.
+AI systems process information according to their design, training, available data, and instructions. Although some systems can produce responses that appear natural and meaningful, they can misunderstand the intention behind a message.
 
 Human communication often depends on background knowledge, emotions, culture, personal experiences, and circumstances that are not fully expressed in words.
 
@@ -255,11 +286,11 @@ A useful response should ask for clarification when the missing information sign
 
 AI can only use information available through its input, connected sources, and system capabilities.
 
-If a user asks for advice without providing important details, the system may produce a general answer that does not fit the actual situation.
+If a user asks for advice without providing important details, the system can produce a general answer that does not fit the actual situation.
 
 For example, a student may ask for a study schedule without explaining the subjects, deadlines, or available study time.
 
-The system may produce a reasonable-looking schedule, but it may not be suitable for the student's real circumstances.
+The system can produce a reasonable-looking schedule, but it may not be suitable for the student's real circumstances.
 
 This limitation demonstrates why relevant background information matters.
 
@@ -282,13 +313,13 @@ For example, greetings, humour, idioms, and informal expressions may not have di
 | Local expressions | Regional vocabulary | Confusing translation |
 | Cultural references | Depends on shared background knowledge | Missing meaning |
 
-Users should review AI-generated communication when tone, cultural meaning, or professional language is important.
+You need to review AI-generated communication when tone, cultural meaning, or professional language is important.
 
 ## 2.5 Emotional and Social Understanding
 
 AI may recognise certain words associated with emotions, but this does not mean it experiences emotions in the same way as a human.
 
-A system may identify language that appears frustrated or uncertain and produce a supportive response.
+A system can identify language that appears frustrated or uncertain and produce a supportive response.
 
 However, it may not fully understand the person's circumstances or the social meaning of the situation.
 
@@ -310,13 +341,13 @@ Examples include:
 - Public announcements.
 - Regulations and institutional procedures.
 
-An AI system may produce an answer based on older information if it does not have access to current sources.
+An AI system can produce an answer based on older information if it does not have access to current sources.
 
-Users should check the date and origin of information when current accuracy matters.
+You need to check the date and origin of information when current accuracy matters.
 
 ## 2.7 Ways to Reduce Context-Related Errors
 
-Users can improve the quality of AI responses by providing clear and relevant information.
+You can improve the quality of AI responses by providing clear and relevant information.
 
 Useful practices include:
 
@@ -328,7 +359,7 @@ Useful practices include:
 6. Provide examples when necessary.
 7. Ask the system to clarify uncertain details.
 
-```mermaid id="context01"
+```mermaid
 flowchart TD
     A[User provides a request] --> B[AI interprets the available information]
     B --> C{Is the context sufficiently clear?}
@@ -337,22 +368,13 @@ flowchart TD
     E --> F[User provides clarification]
     F --> B
     D --> G[User reviews the response]
-
-```markdown
-   A[User provides a request] --> B[AI interprets the available information]
-   B --> C{Is the context sufficiently clear?}
-   C -->|Yes| D[AI produces a response]
-   C -->|No| E[AI may misunderstand the request]
-   E --> F[User provides clarification]
-   F --> B
-   D --> G[User reviews the response]
 ```
 
 Providing additional context can reduce misunderstandings, but it does not guarantee that every response will be correct. AI systems may still interpret information incorrectly or produce incomplete answers.
 
-Users should also avoid sharing unnecessary personal or confidential information when providing context. Only relevant information should be included.
+You also need to avoid sharing unnecessary personal or confidential information when providing context. Only relevant information should be included.
 
-> **Core Insight:** AI may produce responses that appear relevant without fully understanding the circumstances behind a request. Clear instructions, sufficient context, and human review can reduce misunderstandings, but they cannot eliminate every limitation.
+> **Core Insight:** AI can produce responses that appear relevant without fully understanding the circumstances behind a request. Clear instructions, sufficient context, and human review can reduce misunderstandings, but they cannot eliminate every limitation.
 
 ---
 
@@ -364,7 +386,7 @@ This is an important limitation because AI-generated responses may appear convin
 
 In particular, generative AI systems can produce statements that sound natural and confident but are not supported by factual information. This behaviour is commonly described as an **AI hallucination**.
 
-Understanding inaccurate outputs is important because people may use AI-generated information for learning, research, communication, professional activities, and decision-making.
+Understanding inaccurate outputs is important because people can use AI-generated information for learning, research, communication, professional activities, and decision-making.
 
 ## 3.1 Understanding Inaccurate AI Outputs
 
@@ -395,7 +417,7 @@ Not all inaccurate outputs are hallucinations. Some errors occur because the inp
 | Unsupported conclusion | Makes a conclusion without sufficient evidence | Claiming a trend exists based on limited data |
 | Incorrect translation | Changes the intended meaning | Translating an idiom literally |
 
-An inaccurate response may contain both correct and incorrect information. Therefore, users should not assume that an entire answer is reliable simply because some parts are correct.
+An inaccurate response can contain both correct and incorrect information. Therefore, you should not assume that an entire answer is reliable simply because some parts are correct.
 
 ## 3.2 Understanding AI Hallucinations
 
@@ -403,7 +425,7 @@ An AI hallucination occurs when an AI system generates information that appears 
 
 The term is commonly used when discussing generative AI, especially language models.
 
-For example, a language model may produce:
+For example, a language model can produce:
 
 - A research title that does not exist.
 - An incorrect quotation attributed to a real author.
@@ -425,6 +447,12 @@ This is particularly important when an AI system is asked to provide citations, 
 | Legal information | Giving an incorrect description of a regulation |
 
 AI hallucinations demonstrate that fluent language generation and factual accuracy are different qualities.
+
+### Real Case: Fake Court Cases from ChatGPT (2023)
+
+In 2023, in the US court case *Mata v. Avianca*, two lawyers in New York used ChatGPT to find earlier court decisions that supported their client. ChatGPT produced several cases that looked real, with names, dates and quotations, but did not exist. The lawyers put them in a court filing without checking them, and kept standing by them after the other side said it could not find them. On 22 June 2023, the judge fined the two lawyers and their law firm $5,000.
+
+The lesson for you: a reference produced by AI is not evidence until you have found the original source yourself (see Section 6.4).
 
 ## 3.3 Why AI Hallucinations Occur
 
@@ -448,7 +476,7 @@ Training data may not contain sufficient information about a particular subject,
 
 **4. Outdated information**
 
-A system without access to current information may provide details that were previously correct but have since changed.
+A system without access to current information can provide details that were previously correct but have since changed.
 
 **5. Statistical language generation**
 
@@ -484,7 +512,7 @@ A response may have:
 
 However, these characteristics do not independently prove that the response is correct.
 
-For example, an AI-generated explanation may contain a convincing description of a scientific concept while including an incorrect measurement.
+For example, an AI-generated explanation can contain a convincing description of a scientific concept while including an incorrect measurement.
 
 A user who focuses only on the writing quality may overlook the factual error.
 
@@ -497,15 +525,15 @@ A user who focuses only on the writing quality may overlook the factual error.
 | Technical vocabulary | Specialised terms are used | Correct technical interpretation |
 | Citations | Sources are presented | That the sources exist or support the claims |
 
-Users should evaluate the content of an answer rather than judging its reliability based only on its presentation.
+You need to evaluate the content of an answer rather than judging its reliability based only on its presentation.
 
 ## 3.5 The Difference Between Hallucinations and Other AI Errors
 
-Although hallucinations are an important form of inaccurate output, they should be distinguished from other types of system errors.
+Although hallucinations are an important form of inaccurate output, they need to be distinguished from other types of system errors.
 
-For example, a system may misunderstand a request because the user did not provide enough context. This is a problem of interpretation rather than necessarily a hallucination.
+For example, a system can misunderstand a request because the user did not provide enough context. This is a problem of interpretation rather than necessarily a hallucination.
 
-Similarly, a system may provide an outdated answer because it does not have access to current information.
+Similarly, a system can provide an outdated answer because it does not have access to current information.
 
 | Issue | Main Problem | Example |
 |---|---|---|
@@ -528,7 +556,7 @@ The possible consequences depend on the subject, the importance of the decision,
 
 **Education and academic work**
 
-Students may learn incorrect concepts, include inaccurate information in assignments, or cite sources that do not exist.
+Students can learn incorrect concepts, include inaccurate information in assignments, or cite sources that do not exist.
 
 **Business and finance**
 
@@ -536,7 +564,7 @@ Organisations may make poor decisions if they rely on incorrect predictions, sum
 
 **Healthcare**
 
-Incorrect health-related information may create confusion or lead people to misunderstand important medical information. Professional guidance remains essential.
+Incorrect health-related information can create confusion or lead people to misunderstand important medical information. Professional guidance remains essential.
 
 **Communication**
 
@@ -544,7 +572,7 @@ Incorrect translations or summaries may change the intended meaning of a message
 
 **Programming and technology**
 
-Incorrect code suggestions may create technical problems, unexpected results, or security weaknesses.
+Incorrect code suggestions can create technical problems, unexpected results, or security weaknesses.
 
 | Area | Possible Consequence | Appropriate Response |
 |---|---|---|
@@ -559,7 +587,7 @@ The potential impact of an inaccurate response should determine how carefully it
 
 ## 3.7 How to Reduce the Risk of Hallucinations
 
-Users can reduce the risk of relying on inaccurate AI-generated information through careful prompting and verification.
+You can reduce the risk of relying on inaccurate AI-generated information through careful prompting and verification.
 
 Useful practices include:
 
@@ -596,7 +624,7 @@ flowchart TD
     E --> H[Decide whether the answer is suitable for use]
 ```
 
-The verification process should consider more than whether a source exists. Users should also check whether the source is relevant, trustworthy, current, and accurately represented.
+The verification process should consider more than whether a source exists. Users also need to check whether the source is relevant, trustworthy, current, and accurately represented.
 
 For example, an academic article may exist but may not support the specific statement attributed to it.
 
@@ -626,11 +654,11 @@ The appropriate level of review should depend on the potential impact of the tas
 
 AI systems depend on data to learn patterns, identify relationships, and generate outputs. The quality and characteristics of that data can strongly influence how well a system performs.
 
-If the data used to develop or operate an AI system is incomplete, inaccurate, outdated, or unrepresentative, the system may produce unreliable results.
+If the data used to develop or operate an AI system is incomplete, inaccurate, outdated, or unrepresentative, the system can produce unreliable results.
 
 Another important challenge is bias. AI bias can occur when data, system design, or decision-making processes produce systematically unfair or unbalanced outcomes.
 
-These issues are important because an AI system may process information consistently while still producing results that reflect problems in the data or its design.
+These issues are important because an AI system can process information consistently while still producing results that reflect problems in the data or its design.
 
 ## 4.1 Understanding Data Quality
 
@@ -640,7 +668,7 @@ High-quality data should contain information that is sufficiently accurate, rele
 
 For example, an AI system developed to classify customer enquiries requires examples that correctly represent the types of enquiries it is expected to process.
 
-If the training data contains many incorrect labels, the system may learn misleading patterns.
+If the training data contains many incorrect labels, the system can learn misleading patterns.
 
 Several dimensions are commonly used to evaluate data quality.
 
@@ -662,11 +690,11 @@ Machine learning systems identify patterns from examples. The information contai
 
 When the training data is reliable and relevant, the system has a stronger foundation for learning useful patterns.
 
-When the data is poor, the system may learn relationships that do not accurately represent the real situation.
+When the data is poor, the system can learn relationships that do not accurately represent the real situation.
 
 For example, imagine a system designed to classify messages into different categories.
 
-If a large proportion of the training examples are labelled incorrectly, the model may learn the wrong associations.
+If a large proportion of the training examples are labelled incorrectly, the model can learn the wrong associations.
 
 The result may be inaccurate classifications even when the system follows its learned patterns consistently.
 
@@ -690,7 +718,7 @@ In AI, bias may occur when a dataset, model, or decision-making process consiste
 
 Bias is not always caused by a single technical error. It can develop from historical inequalities, limited data representation, unsuitable assumptions, or decisions made during system development.
 
-For example, a system trained using data that represents only a limited group of users may perform less reliably for people whose characteristics are not sufficiently represented.
+For example, a system trained using data that represents only a limited group of users can perform less reliably for people whose characteristics are not sufficiently represented.
 
 An AI system may therefore appear effective for one group while producing less suitable results for another.
 
@@ -747,13 +775,30 @@ For example:
 
 - A recommendation system may repeatedly promote content associated with a narrow set of preferences.
 - A language model may reflect stereotypes found in parts of its training data.
-- An automated screening system may produce unequal results if its training data contains historical imbalances.
-- A classification system may perform less accurately for groups that are not adequately represented.
-- An information system may provide less useful results for languages with limited representation.
+- An automated screening system can produce unequal results if its training data contains historical imbalances.
+- A classification system can perform less accurately for groups that are not adequately represented.
+- An information system can provide less useful results for languages with limited representation.
 
 These examples demonstrate that technical performance and fairness are related but different considerations.
 
 A system can achieve a high overall accuracy score while still performing poorly for a particular group.
+
+### Real Case 1: A Hiring Tool That Learned to Prefer Men
+
+In 2018, Reuters reported that Amazon had stopped work on an experimental AI tool for rating job applicants. The tool was trained on about ten years of résumés sent to the company, and most of those résumés came from men. The model learned this pattern: it gave lower scores to résumés containing the word "women's" (as in "women's chess club captain") and to graduates of two all-women's colleges. Amazon said the tool was never used by its recruiters to evaluate candidates (Dastin, 2018).
+
+Nobody told the model to prefer men. It copied an unfair pattern from **historical data** (see *Historical bias* in Section 4.4).
+
+### Real Case 2: Face Analysis That Worked Worse for Darker-Skinned Women
+
+In the *Gender Shades* study, Joy Buolamwini and Timnit Gebru (2018) tested three commercial systems that guessed a person's gender from a face photo. The results were very different for different groups:
+
+| Group | Highest error rate found |
+|---|---|
+| Lighter-skinned men | 0.8% |
+| Darker-skinned women | 34.7% |
+
+The researchers also found that two popular face datasets were made up mostly of lighter-skinned people (79.6% and 86.2%). This is **representation bias**: a group that is rare in the data is often served worse by the model. It also shows why one overall accuracy number is not enough. Results should be checked for each group.
 
 ## 4.6 The Difference Between Data Quality Problems and Bias
 
@@ -761,9 +806,9 @@ Data quality problems and bias can overlap, but they are not identical.
 
 Data quality focuses on whether information is suitable and reliable for a task.
 
-Bias focuses on systematic patterns that may produce unbalanced or unfair results.
+Bias focuses on systematic patterns that can produce unbalanced or unfair results.
 
-For example, missing values in a dataset represent a data quality problem. If those missing values occur more frequently for a particular group, they may also contribute to unfair outcomes.
+For example, missing values in a dataset represent a data quality problem. If those missing values occur more frequently for a particular group, they can also contribute to unfair outcomes.
 
 | Aspect | Data Quality | AI Bias |
 |---|---|---|
@@ -827,11 +872,11 @@ Fairness in AI is not determined only by technical accuracy.
 
 It also involves deciding which outcomes are appropriate, which groups may be affected, and what consequences should be considered.
 
-Different situations may require different definitions of fairness. A method that is suitable for one application may not be appropriate for another.
+Different situations can require different definitions of fairness. A method that is suitable for one application may not be appropriate for another.
 
 For example, a recommendation system and a system used to support important institutional decisions do not necessarily require the same evaluation criteria.
 
-Organisations should therefore consider the purpose of the system, the people affected, and the possible consequences of its outputs.
+Organisations therefore need to consider the purpose of the system, the people affected, and the possible consequences of its outputs.
 
 Technical tools can help identify problems, but human judgement and accountability remain necessary.
 
@@ -857,7 +902,7 @@ Using AI frequently does not automatically mean that someone is overdependent on
 
 The important distinction is whether the user can still evaluate the output, understand the task, and take responsibility for the final result.
 
-For example, a student may use AI to obtain additional explanations of a difficult concept. This can support learning.
+For example, a student can use AI to obtain additional explanations of a difficult concept. This can support learning.
 
 However, if the student submits AI-generated answers without understanding the subject, the tool may interfere with the development of independent knowledge.
 
@@ -900,7 +945,7 @@ AI should encourage active learning rather than remove the need for intellectual
 
 Independent learning involves developing knowledge and skills through personal effort, practice, reflection, and evaluation.
 
-AI can provide useful learning support, but excessive reliance may reduce opportunities to develop these abilities.
+AI can provide useful learning support, but excessive reliance can reduce opportunities to develop these abilities.
 
 For example, a student learning a programming language needs to understand how code works, identify errors, and practise solving problems.
 
@@ -921,7 +966,7 @@ The purpose of educational AI should be to strengthen learning, not simply to pr
 
 ## 5.4 Automation and the Loss of Human Involvement
 
-Automation can reduce repetitive work, but excessive automation may create situations in which people become less involved in important processes.
+Automation can reduce repetitive work, but excessive automation can create situations in which people become less involved in important processes.
 
 If an organisation relies entirely on automated recommendations, employees may become less familiar with how decisions are made.
 
@@ -949,7 +994,7 @@ They may assume that the system:
 
 These assumptions are not justified.
 
-AI systems have technical, contextual, and data-related limitations. Users should understand those limitations before relying on their outputs.
+AI systems have technical, contextual, and data-related limitations. You need to understand those limitations before relying on its outputs.
 
 | Incorrect Assumption | More Accurate Understanding |
 |---|---|
@@ -972,7 +1017,7 @@ However, students are expected to develop their own knowledge and demonstrate th
 
 If AI completes every stage of an assignment, the student may lose opportunities to practise research, writing, analysis, and problem-solving.
 
-Teachers may also find it more difficult to evaluate a student's actual understanding when submitted work does not reflect the student's own learning.
+Teachers can also find it more difficult to evaluate a student's actual understanding when submitted work does not reflect the student's own learning.
 
 Responsible educational use should focus on supporting the learning process.
 
@@ -1014,7 +1059,7 @@ AI adoption should improve work without removing appropriate human responsibilit
 
 A balanced approach means using AI where it provides meaningful assistance while retaining the ability to perform important tasks independently.
 
-Users should understand when AI is useful, when it requires verification, and when a task needs human expertise.
+You need to understand when AI is useful, when it requires verification, and when a task needs human expertise.
 
 Useful practices include:
 
@@ -1054,7 +1099,7 @@ Verification is an essential part of responsible AI use.
 
 AI-generated information may be useful, but it should not automatically be treated as accurate or reliable. Users need to examine the information, check supporting evidence, and consider whether the output is appropriate for its intended purpose.
 
-Verification is especially important when AI is used for academic work, research, professional communication, and decisions that may affect other people.
+Verification is especially important when AI is used for academic work, research, professional communication, and decisions that can affect other people.
 
 ## 6.1 Understanding Verification
 
@@ -1062,9 +1107,9 @@ Verification is the process of checking information to determine whether it is a
 
 When using AI, verification involves examining both the generated response and the information on which it is based.
 
-For example, if an AI system provides a historical explanation, users should check important dates, events, and claims against reliable historical sources.
+For example, if an AI system provides a historical explanation, you need to check important dates, events, and claims against reliable historical sources.
 
-If the system produces a research summary, users should compare it with the original publication to ensure that the main findings have been represented correctly.
+If the system produces a research summary, you need to compare it with the original publication to ensure that the main findings have been represented correctly.
 
 | Verification Aspect | Main Question | Example |
 |---|---|---|
@@ -1081,19 +1126,19 @@ Verification helps users distinguish useful information from unsupported or misl
 
 AI systems can produce inaccurate information for several reasons.
 
-They may misunderstand a request, rely on incomplete information, generate unsupported claims, or provide details that are no longer current.
+They can misunderstand a request, rely on incomplete information, generate unsupported claims, or provide details that are no longer current.
 
-Because these problems are not always obvious, users should not rely only on how convincing a response appears.
+Because these problems are not always obvious, you should not rely only on how convincing a response appears.
 
 Verification is important because:
 
-- AI may produce factual errors.
-- Generated references may contain incorrect details.
+- AI can produce factual errors.
+- Generated references can contain incorrect details.
 - Statistics may be presented without adequate context.
 - Summaries may omit important qualifications.
 - Information may be outdated.
 - Recommendations may not fit the user's circumstances.
-- Generated content may contain bias or unsupported assumptions.
+- Generated content can contain bias or unsupported assumptions.
 
 Checking the output helps prevent errors from being repeated in assignments, reports, presentations, and other forms of communication.
 
@@ -1103,11 +1148,11 @@ A reliable source provides information that can be evaluated and supported by ap
 
 The suitability of a source depends on the subject and the purpose of the task.
 
-For academic research, appropriate sources may include peer-reviewed journal articles, academic books, official institutional publications, and recognised research organisations.
+For academic research, appropriate sources can include peer-reviewed journal articles, academic books, official institutional publications, and recognised research organisations.
 
 For current information, official announcements and updated institutional websites may be more suitable than older publications.
 
-Users should consider several factors when evaluating a source.
+You need to consider several factors when evaluating a source.
 
 | Evaluation Factor | Explanation | Question to Ask |
 |---|---|---|
@@ -1122,9 +1167,9 @@ A source should not be considered reliable simply because it appears in a profes
 
 ## 6.4 Checking AI-Generated References and Citations
 
-References require particular attention because generative AI systems may produce publication details that look realistic but are inaccurate or do not exist.
+References require particular attention because generative AI systems can produce publication details that look realistic but are inaccurate or do not exist.
 
-When AI provides a reference, users should check:
+When AI provides a reference, you need to check:
 
 - Whether the publication actually exists.
 - Whether the author's name is correct.
@@ -1134,7 +1179,7 @@ When AI provides a reference, users should check:
 - Whether the cited source supports the statement.
 - Whether page numbers or other publication details are accurate.
 
-For academic work, users should locate the original publication whenever possible rather than relying only on an AI-generated reference list.
+For academic work, you need to locate the original publication whenever possible rather than relying only on an AI-generated reference list.
 
 | Reference Element | What Should Be Checked |
 |---|---|
@@ -1159,7 +1204,7 @@ For example, if an AI system provides a statistic about education, users can com
 
 However, using several websites does not automatically guarantee accuracy. Multiple websites may repeat information from the same original source.
 
-Users should consider the independence and quality of the sources being compared.
+You need to consider the independence and quality of the sources being compared.
 
 | Cross-Checking Method | Purpose |
 |---|---|
@@ -1176,9 +1221,9 @@ The goal is not simply to find several sources that repeat the same statement. I
 
 Numerical information requires careful verification because incorrect calculations or missing context can change the meaning of a result.
 
-AI systems may generate incorrect percentages, totals, averages, or statistical interpretations.
+AI systems can generate incorrect percentages, totals, averages, or statistical interpretations.
 
-Users should check:
+You need to check:
 
 - The original dataset.
 - The calculation method.
@@ -1210,9 +1255,9 @@ AI systems can summarise long documents and rewrite information using different 
 
 These functions can save time, but summaries may omit important qualifications or change the emphasis of the original material.
 
-A paraphrased statement may also become inaccurate if the original meaning is not preserved.
+A paraphrased statement can also become inaccurate if the original meaning is not preserved.
 
-When checking an AI-generated summary, users should:
+When checking an AI-generated summary, you need to:
 
 1. Compare the summary with the original document.
 2. Check whether the main arguments are represented correctly.
@@ -1221,13 +1266,13 @@ When checking an AI-generated summary, users should:
 5. Check whether the summary introduces claims not found in the source.
 6. Ensure that paraphrased statements preserve the original meaning.
 
-For academic work, users should also follow the relevant citation and acknowledgement requirements.
+For academic work, you also need to follow the relevant citation and acknowledgement requirements.
 
 ## 6.8 Matching Verification with the Importance of the Task
 
 Not every AI-generated response requires the same level of verification.
 
-A simple brainstorming suggestion may require less formal checking than a factual statement used in a research paper or an important professional decision.
+A simple brainstorming suggestion can require less formal checking than a factual statement used in a research paper or an important professional decision.
 
 The level of verification should reflect the possible consequences of an error.
 
@@ -1247,9 +1292,9 @@ The more significant the possible consequences, the more carefully the output sh
 
 AI can assist with checking information, but it should not be treated as the only authority responsible for confirming its own accuracy.
 
-For example, asking one AI system whether another AI-generated statement is correct may provide additional feedback, but it does not independently establish that the statement is true.
+For example, asking one AI system whether another AI-generated statement is correct can provide additional feedback, but it does not independently establish that the statement is true.
 
-Users should consult appropriate evidence and apply their own judgement.
+You need to consult appropriate evidence and apply your own judgement.
 
 Human responsibility includes:
 
@@ -1260,7 +1305,7 @@ Human responsibility includes:
 - Avoiding the distribution of unverified information.
 - Taking responsibility for the final work or decision.
 
-In professional and high-impact situations, appropriate expertise and established review procedures may also be necessary.
+In professional and high-impact situations, appropriate expertise and established review procedures can also be necessary.
 
 ## 6.10 A Practical Verification Checklist
 
@@ -1279,7 +1324,7 @@ The following checklist can be used before relying on or sharing AI-generated in
 - [ ] Have relevant privacy and academic integrity requirements been considered?
 - [ ] Has a human reviewed the final content?
 
-Not every item applies to every task. Users should select the checks that are relevant to the type of information and its intended use.
+Not every item applies to every task. You need to select the checks that are relevant to the type of information and its intended use.
 
 ## 6.11 The Relationship Between Verification and Responsible AI Use
 
@@ -1323,9 +1368,9 @@ Artificial intelligence offers important benefits, including improved efficiency
 
 However, AI also has limitations and challenges that users need to understand.
 
-Its ability to process information does not mean that it fully understands every context, intention, or human circumstance. Generative AI may also produce inaccurate outputs and hallucinations that appear convincing but are not supported by reliable evidence.
+Its ability to process information does not mean that it fully understands every context, intention, or human circumstance. Generative AI can also produce inaccurate outputs and hallucinations that appear convincing but are not supported by reliable evidence.
 
-The quality of AI outputs is influenced by the data used to develop and operate the system. Incomplete, inaccurate, or unrepresentative data may reduce reliability and contribute to biased outcomes.
+The quality of AI outputs is influenced by the data used to develop and operate the system. Incomplete, inaccurate, or unrepresentative data can reduce reliability and contribute to biased outcomes.
 
 Another important challenge is overdependence. Excessive reliance on AI may weaken independent learning, critical thinking, and human involvement when users accept generated outputs without evaluation.
 
@@ -1348,8 +1393,42 @@ Responsible use requires users to understand the limitations of AI, verify impor
 
 ---
 
+## Check Your Understanding
+
+1. In *Mata v. Avianca* (Section 3.2), what went wrong, and which step in Section 6.4 would have prevented it?
+2. Amazon's hiring tool (Section 4.5) was never told to prefer men. How did it learn to?
+3. Why is one overall accuracy number not enough to judge a face-analysis system? Use the *Gender Shades* results.
+4. An AI tool tells you: "The Dartmouth Workshop that founded AI was held in 1965." Is this correct? How would you check?
+5. Give two signs that a student is becoming overdependent on AI.
+6. An AI summary says a study "proved" that a method works. The original study says the results "suggest" it may work. Which check in Section 6 catches this, and why does the difference matter?
+
+### Answers
+
+1. The lawyers submitted court cases invented by ChatGPT without checking them. Looking up each case in an official legal database, that is, confirming that the source exists and says what is claimed (Section 6.4), would have shown that the cases did not exist.
+2. It was trained on ten years of résumés that came mostly from men, so it learned that pattern as if it were a sign of a good candidate. This is **historical bias** (Section 4.4).
+3. A system can look accurate overall while failing one group. The error rate was at most 0.8% for lighter-skinned men but up to 34.7% for darker-skinned women. Results must be checked **for each group**.
+4. **No.** It was held in **1956** (Topic 01, Section 2.3). Check a reliable source such as a textbook or the original workshop proposal instead of trusting the AI's answer.
+5. Any two of: accepting AI answers without checking; being unable to explain work they submitted; using AI before trying a problem themselves; no longer reading original sources (Sections 5.2 to 5.6).
+6. **Verifying summaries** (Section 6.7). "Proved" is much stronger than "suggest". The summary changes the meaning, and anyone who relies on it could make a wrong decision.
+
+## Links to Other Topics
+
+- **Topic 02** explains the technical reasons behind hallucinations (Section 3.5) and the role of data quality (Section 4.3).
+- **Topic 05** turns these limitations into rules for responsible use: privacy, fairness, accountability and academic integrity.
+
+## References
+
+1. *Mata v. Avianca, Inc.*, 678 F. Supp. 3d 443 (S.D.N.Y. 2023), opinion and order on sanctions, 22 June 2023.
+2. Dastin, J. (2018, October 10). Amazon scraps secret AI recruiting tool that showed bias against women. *Reuters*.
+3. Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. *Proceedings of Machine Learning Research, 81*, 77–91. https://proceedings.mlr.press/v81/buolamwini18a.html
+4. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
+5. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
+
+*AI use: the Stage 3 revision of this topic (real cases, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Case details were checked against the sources above.*
+
+---
+
 <p align="center">
   <strong>SLN · AI OVERVIEW</strong><br>
   <em>End of Topic 04 — Benefits, Limitations, and Challenges of AI</em>
 </p>
-```
