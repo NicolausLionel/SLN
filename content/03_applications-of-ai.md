@@ -187,6 +187,10 @@ Personalisation can make a service more relevant, but it also raises questions a
 
 Inventory management involves keeping enough products available without storing excessive quantities. AI systems can examine historical sales, seasonal patterns, promotions, and other information to estimate future demand. These estimates can help businesses decide when to reorder products or adjust stock levels.
 
+![Robots moving boxes between shelves in a warehouse](../assets/images/topic-03/photo-warehouse-robots.png)
+
+*Photo 3.1: Robots move goods in a warehouse while AI forecasts what needs to be stocked. Source: online image; used with permission.*
+
 A forecast is not a guarantee. A sudden event, supply disruption, change in customer preferences, or inaccurate data can make a prediction unreliable. Employees need to consider the model's estimate alongside current information and practical knowledge of the business.
 
 ## 2.5 Document Processing and Workflow Automation
@@ -269,6 +273,10 @@ Healthcare is an important area for AI because medical services involve complex 
 ## 3.1 Medical Image Analysis
 
 Medical imaging includes X-rays, CT scans, MRI scans, and other images used by healthcare professionals. AI systems can be trained to recognise patterns in images and may highlight areas that deserve closer attention. This can support a professional's review, especially when large numbers of images need to be examined.
+
+![A chest X-ray image](../assets/images/topic-03/photo-chest-xray.png)
+
+*Photo 3.2: A chest X-ray. An AI system can highlight areas for review, but the diagnosis remains the doctor's decision. Source: Wikimedia Commons.*
 
 An AI result is not a complete diagnosis. The professional must consider the image quality, the patient's history, symptoms, other test results, and the limits of the system. A highlighted area may not represent a serious condition, and a system may fail to highlight something important.
 
@@ -367,6 +375,10 @@ A route recommendation is an estimate, not a guarantee. Road closures, severe we
 
 Some vehicles use AI-supported features to help drivers notice certain conditions. Depending on the vehicle, these can include lane warnings, alerts about nearby objects, or assistance with maintaining a selected speed or distance.
 
+![A row of self-driving cars with roof-mounted sensors on a city street](../assets/images/topic-03/photo-self-driving-cars.png)
+
+*Photo 3.3: Self-driving taxis with roof-mounted sensors. Source: online news image; used with permission.*
+
 The capabilities and limits vary between systems. A driver-assistance feature does not mean that the vehicle can handle every situation. Drivers must understand the vehicle's instructions, remain attentive, and be ready to take control when required. Marketing terms should not be interpreted as proof that a vehicle can operate safely without human supervision.
 
 ## 4.4 Public Transportation
@@ -456,6 +468,10 @@ These tools can save time, but you need to review every important message before
 ## 5.4 Virtual Assistants
 
 Virtual assistants respond to spoken or written requests and can perform supported tasks such as setting reminders, searching for information, or controlling compatible devices. They combine speech recognition, language processing, and other software functions.
+
+![A smart speaker with a blue light ring](../assets/images/topic-03/photo-smart-speaker.png)
+
+*Photo 3.4: A smart speaker with a voice assistant. Source: Amazon product image; used with permission.*
 
 A virtual assistant can misunderstand a command or provide an outdated answer. You need to check the result before relying on it, especially when a request involves an important appointment, payment, or personal information.
 
