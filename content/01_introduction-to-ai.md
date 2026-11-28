@@ -7,7 +7,38 @@
 
 ---
 
+> **Topic:** 01 of 05 · **Author:** 墨仁 · **Reviewer:** 姚光耀 · **Version:** V2.1 (Stage 3, November 2026)
+
+## Learning Goals
+
+After studying this topic, you should be able to:
+
+1. **Define** Artificial Intelligence and **explain** the four perspectives on AI (thinking or acting, humanly or rationally).
+2. **Name** the main elements of an AI system: input, data, algorithm, model, output and objective.
+3. **Describe** the main stages of AI history and give one real example system for each stage.
+4. **Explain** how machine learning, deep learning, NLP, computer vision, robotics, expert systems and intelligent agents are related.
+5. **Compare** traditional programming with AI-based systems and **choose** a suitable approach for a simple task.
+
+## Key Terms
+
+| Term | Meaning |
+|---|---|
+| **Artificial Intelligence (AI)** | The field of computer science that builds systems to perform tasks linked with intelligent behaviour, such as learning, reasoning and perception. |
+| **Algorithm** | A precise list of steps for solving a problem or completing a task. |
+| **Model** | The part of an AI system that turns an input into an output, often learned from data. |
+| **Machine Learning (ML)** | A part of AI in which a model learns patterns from examples instead of following only hand-written rules. |
+| **Deep Learning (DL)** | A part of machine learning that uses neural networks with many layers. |
+| **Expert system** | A program that uses rules written with human experts to give advice in one narrow area. |
+| **Intelligent agent** | A system that senses its environment and chooses actions to reach a goal. |
+| **Training** | The stage in which a model is adjusted using example data. |
+| **Inference** | The stage in which a trained model is used on new input. |
+| **AI winter** | A period when interest and funding for AI research fell sharply. |
+
+---
+
 ## CONTENTS
+
+[Learning Goals](#learning-goals) · [Key Terms](#key-terms)
 
 | Section | Topic |
 |:---:|---|
@@ -15,14 +46,15 @@
 | 02 | [History and Development of AI](#02--history-and-development-of-ai) |
 | 03 | [Basic Concepts and Characteristics of AI](#03--basic-concepts-and-characteristics-of-ai) |
 | 04 | [AI vs. Traditional Computer Systems](#04--ai-vs-traditional-computer-systems) |
+| — | [Check Your Understanding](#check-your-understanding) · [Links to Other Topics](#links-to-other-topics) · [References](#references) |
 
 ---
 
-# 01 · DEFINITION AND MEANING OF AI
+# 01 · Definition and Meaning of AI
 
-## What Is Artificial Intelligence?
+## 1.1 What Is Artificial Intelligence?
 
-**Artificial Intelligence (AI)** is a field of computer science concerned with developing computer systems that can perform tasks commonly connected with intelligent behavior. These tasks may include learning, reasoning, problem-solving, recognizing information, understanding language, making predictions, and choosing actions.
+**Artificial Intelligence (AI)** is a field of computer science concerned with developing computer systems that can perform tasks commonly connected with intelligent behaviour. These tasks can include learning, reasoning, problem-solving, recognising information, understanding language, making predictions, and choosing actions.
 
 In everyday language, intelligence is often connected with the ability to understand a situation, use information, learn from experience, and respond in a useful way. AI research explores how some of these abilities can be represented and carried out by computer systems.
 
@@ -30,9 +62,9 @@ According to Russell and Norvig (2020), AI can be understood through different p
 
 AI is not one single machine, program, or application. It is a broad field that includes different methods. Some AI systems use carefully written rules. Others learn patterns from examples. Some systems work with images, sound, or language, while others help plan actions or make predictions.
 
-For example, an email service may use AI to identify unwanted messages. A navigation application may estimate traffic and recommend a route. A translation tool may process a sentence and produce it in another language. These applications have different purposes, but they all use computational methods to perform tasks that can require some form of intelligent information processing.
+For example, an email service can use AI to identify unwanted messages. A navigation application may estimate traffic and recommend a route. A translation tool can process a sentence and produce it in another language. These applications have different purposes, but they all use computational methods to perform tasks that can require some form of intelligent information processing.
 
-## Understanding the Meaning of Intelligence in AI
+## 1.2 Understanding the Meaning of Intelligence in AI
 
 When people describe a system as intelligent, they do not always mean that it thinks or understands in the same way as a human. In AI, the word *intelligence* is often connected with the system's ability to achieve a task by using information, rules, learned patterns, or reasoning methods.
 
@@ -40,17 +72,17 @@ A system may be considered useful for an intelligent task when it can do one or 
 
 - Receive information from its environment or from a user.
 - Identify important details in the information.
-- Recognize patterns or relationships.
+- Recognise patterns or relationships.
 - Use rules or previous learning to process a problem.
 - Estimate possible results.
 - Select an answer or action based on a goal.
 - Improve its performance when its design allows learning or updating.
 
-These abilities do not mean that every AI system can do everything on the list. A program designed to recognize faces, for example, does not automatically know how to translate a paragraph or plan a delivery route. AI systems are usually developed for particular tasks and have limits based on their design and information.
+These abilities do not mean that every AI system can do everything on the list. A program designed to recognise faces, for example, does not automatically know how to translate a paragraph or plan a delivery route. AI systems are usually developed for particular tasks and have limits based on their design and information.
 
 ### Four Perspectives on Artificial Intelligence
 
-Russell and Norvig (2020) describe four broad ways to think about AI. Each perspective highlights a different meaning of intelligent behavior.
+Russell and Norvig (2020) describe four broad ways to think about AI. Each perspective highlights a different meaning of intelligent behaviour.
 
 | Perspective | Main Idea | Simple Explanation | Example |
 |---|---|---|---|
@@ -67,21 +99,21 @@ Thinking humanly focuses on how people think and how some of those processes may
 
 This perspective is connected with cognitive science, psychology, and computer science. A computer model may be designed to represent a limited part of human thinking, such as how a person solves a puzzle or remembers information.
 
-However, modeling human thought is difficult. Human thinking can be influenced by experience, emotions, attention, culture, and many other factors. A computer model may represent only a small part of this complexity.
+However, modelling human thought is difficult. Human thinking can be influenced by experience, emotions, attention, culture, and many other factors. A computer model may represent only a small part of this complexity.
 
 ### 2. Acting Humanly
 
-Acting humanly focuses on the behavior of a system. The main question is whether a computer can respond or behave in a way that resembles human behavior in a particular situation.
+Acting humanly focuses on the behaviour of a system. The main question is whether a computer can respond or behave in a way that resembles human behaviour in a particular situation.
 
 A conversational assistant is a familiar example. It receives a written question and produces a response in natural language. A user may interact with it through a conversation, even though the system processes information using computational methods rather than human experience.
 
-Human-like behavior does not automatically prove that a system has human understanding. A system may produce fluent language while still making mistakes, missing context, or giving an answer that sounds convincing but is incorrect.
+Human-like behaviour does not automatically prove that a system has human understanding. A system can produce fluent language while still making mistakes, missing context, or giving an answer that sounds convincing but is incorrect.
 
 ### 3. Thinking Rationally
 
 Thinking rationally focuses on the use of logic to reach conclusions. A system receives information, applies logical relationships or rules, and produces a conclusion.
 
-For example, a simple system may use these statements:
+For example, a simple system can use these statements:
 
 - All registered students can access the student portal.
 - Maya is a registered student.
@@ -99,7 +131,7 @@ A navigation system is a simple example. It receives a destination and informati
 
 The best action depends on the goal and the information available. A route that is shortest in distance may not be the fastest route if traffic is heavy. A rational choice therefore depends on what the system is trying to achieve.
 
-## Main Elements of an AI System
+## 1.3 Main Elements of an AI System
 
 Although AI systems can be very different, many of them involve several basic elements. Understanding these elements helps explain what an AI system does and why its results may vary.
 
@@ -112,7 +144,7 @@ Although AI systems can be very different, many of them involve several basic el
 | Output | The result produced by the system | A prediction, recommendation, label, or generated paragraph |
 | Objective | The task or goal the system is designed to support | Identifying unwanted email |
 
-Not every AI application uses these elements in exactly the same way. A rule-based system may rely mainly on instructions written by a developer, while a machine-learning system may use a model that has been adjusted through training data.
+Not every AI application uses these elements in exactly the same way. A rule-based system may rely mainly on instructions written by a developer, while a machine-learning system can use a model that has been adjusted through training data.
 
 ### A Simplified View of an AI System
 
@@ -130,7 +162,7 @@ flowchart LR
 
 This diagram shows a general idea, not a fixed technical design. Some systems do not learn from feedback while they are being used. In other systems, feedback may be collected and used later to improve a model or update its rules.
 
-## AI in Everyday Life
+## 1.4 AI in Everyday Life
 
 AI is used in many services and devices that people may already know. Some applications work in the background, so users may not always notice that AI is involved.
 
@@ -148,7 +180,7 @@ These examples show that AI is not limited to robots or advanced machines. It ca
 
 ### Example: A Recommendation System
 
-Imagine that a person often watches science videos on a video platform. The platform may use information about viewing activity to identify patterns in the person's interests. It can then recommend other videos that may be relevant.
+Imagine that a person often watches science videos on a video platform. The platform can use information about viewing activity to identify patterns in the person's interests. It can then recommend other videos that may be relevant.
 
 A simplified process is:
 
@@ -160,7 +192,7 @@ A simplified process is:
 
 The recommendations are predictions, not guarantees. The system may suggest something that the user does not like because its estimate is not always correct.
 
-## What AI Can and Cannot Do
+## 1.5 What AI Can and Cannot Do
 
 AI can support many tasks, but its abilities depend on the system. It is important to understand both its useful functions and its limitations.
 
@@ -173,7 +205,7 @@ AI can support many tasks, but its abilities depend on the system. It is importa
 | Recommending possible actions | The recommendation may not fit every person's needs |
 | Automating repeated tasks | The system still needs suitable design, testing, and monitoring |
 
-AI systems depend on the information and methods used to develop them. If important information is missing or inaccurate, the system may produce an unreliable result.
+AI systems depend on the information and methods used to develop them. If important information is missing or inaccurate, the system can produce an unreliable result.
 
 Bender et al. (2021) discuss important limits of large language models, including the risk of treating fluent language as proof of understanding. This is a useful reminder that an answer can sound natural without being fully accurate or well-grounded.
 
@@ -185,9 +217,9 @@ The NIST AI Risk Management Framework (AI RMF 1.0) also highlights the importanc
 
 ---
 
-# 02 · HISTORY AND DEVELOPMENT OF AI
+# 02 · History and Development of AI
 
-## An Overview of AI History
+## 2.1 An Overview of AI History
 
 Artificial Intelligence did not appear suddenly. It developed through many years of research in mathematics, logic, computing, statistics, engineering, and the study of human thinking.
 
@@ -195,34 +227,27 @@ Researchers have long asked whether machines could perform tasks that normally r
 
 The history of AI includes periods of progress as well as periods when expectations were higher than the technology could support. These changes were influenced by computing power, available data, research methods, funding, and the difficulty of real-world problems.
 
-## A Timeline of AI Evolution
+## 2.2 A Timeline of AI Evolution
 
 ```mermaid
 timeline
     title Evolution of Artificial Intelligence
-    1940s–1950s : Foundations of Computing
-                : Early research on machine intelligence
-    1950 : Alan Turing's paper
-         : Questions about machine intelligence
-    1956 : Dartmouth Workshop
-         : AI established as a research field
-    1960s–1970s : Symbolic AI
-                : Logic, search, and problem-solving
-    1980s : Expert Systems
-          : Rule-based specialized applications
-    Late 1980s–1990s : AI Winters and Research Changes
-                    : Reduced expectations and renewed methods
-    1990s–2000s : Statistical Machine Learning
-                : Learning patterns from data
-    2010s : Deep Learning
-          : Advances in vision and speech recognition
-    2020s : Generative AI
-          : Large language models and content generation
+    1950 : Alan Turing asks "Can machines think?"
+    1956 : Dartmouth Workshop names the field
+    1966 : ELIZA, an early chatbot, by Joseph Weizenbaum at MIT
+    1970s : Expert systems such as MYCIN
+          : First AI winter, about 1974–1980
+    1987–1993 : Second AI winter
+    1997 : IBM Deep Blue defeats chess champion Garry Kasparov
+    2012 : AlexNet wins ImageNet and starts the deep-learning boom
+    2016 : AlphaGo defeats Go champion Lee Sedol
+    2017 : The Transformer architecture is published
+    2022 : ChatGPT brings large language models to the public
 ```
 
-*This timeline presents selected milestones. AI research developed across many countries and institutions, and not every important development is shown here.*
+*This timeline presents selected milestones. AI research developed across many countries and institutions, and not every important development is shown here. Each milestone is explained in Section 2.3.*
 
-## Major Stages of Development
+## 2.3 Major Stages of Development
 
 ### 1. Early Foundations — 1940s–1950s
 
@@ -232,13 +257,13 @@ The development of electronic computers showed that machines could perform calcu
 
 These ideas encouraged researchers to ask whether computers could do more than calculate numbers. Could a machine solve a puzzle, use rules to reach a conclusion, or perform a task that appeared to require intelligence?
 
-In 1950, Alan Turing published *Computing Machinery and Intelligence*. The paper discussed questions about machine intelligence and introduced what became known as the Turing Test as a way to consider whether a machine's conversational behavior could be difficult to distinguish from a human's.
+In 1950, Alan Turing published *Computing Machinery and Intelligence*. The paper discussed questions about machine intelligence and introduced what became known as the Turing Test as a way to consider whether a machine's conversational behaviour could be difficult to distinguish from a human's.
 
-The paper did not create modern AI by itself, but it became an important part of the discussion about whether machines could demonstrate intelligent behavior.
+The paper did not create modern AI by itself, but it became an important part of the discussion about whether machines could demonstrate intelligent behaviour.
 
 ### 2. The Birth of AI as a Research Field — 1956
 
-The Dartmouth Summer Research Project on Artificial Intelligence, held in 1956, is widely recognized as a foundational event in the establishment of AI as a research field.
+The Dartmouth Summer Research Project on Artificial Intelligence, held in 1956, is widely recognised as a foundational event in the establishment of AI as a research field.
 
 Researchers involved in the project explored whether aspects of learning, reasoning, and problem-solving could be described clearly enough for a machine to perform them.
 
@@ -257,6 +282,15 @@ For example, a simple rule-based program might contain these rules:
 
 The program checks the available information and follows the relevant rule.
 
+**A famous early example: ELIZA (1966).** Joseph Weizenbaum at MIT wrote ELIZA, one of the first chatbots. ELIZA did not understand language. It looked for keywords in what the user typed and turned the user's own words into a question, for example:
+
+```text
+User:  I am worried about my exams.
+ELIZA: Why are you worried about your exams?
+```
+
+Even so, many users felt that ELIZA understood them. This reaction is still important today: **a system that sounds human is not necessarily a system that understands** (see Section 1.2 on *acting humanly*).
+
 Symbolic AI was useful for problems that could be described through clear rules. It supported early work in logical reasoning, planning, language processing, and game-playing programs.
 
 However, symbolic systems faced difficulties when information was incomplete, unclear, or too complicated to describe with a fixed set of rules. A system could only use the knowledge and rules that had been represented in it.
@@ -268,6 +302,8 @@ An **expert system** is an AI approach designed to use stored knowledge and rule
 The system usually contains a knowledge base and an inference mechanism. The knowledge base stores facts and rules, while the inference mechanism applies those rules to the information provided.
 
 For example, a technical support expert system might ask a user about a computer problem. It could then apply stored rules to suggest possible causes or troubleshooting steps.
+
+A well-known example is **MYCIN**, developed at Stanford University in the 1970s. It asked a doctor questions about a patient with a blood infection and used hundreds of IF–THEN rules written with medical experts to suggest likely bacteria and antibiotics. MYCIN was a research system and was not used for routine patient care, but it showed how expert knowledge could be written as rules.
 
 A simplified expert system may work like this:
 
@@ -282,15 +318,22 @@ flowchart TD
     style C fill:#164e63,color:#ffffff,stroke:#22d3ee
 ```
 
-Expert systems showed that computers could support specialized decision-making when knowledge could be represented clearly.
+Expert systems showed that computers could support specialised decision-making when knowledge could be represented clearly.
 
 However, they also had limitations. Experts had to provide and update the rules. Large rule collections could become difficult to maintain. The system might also fail when it received information that did not match the situations covered by its rules.
 
-### 5. AI Winters and Changes in Research — Late 1980s–1990s
+### 5. AI Winters — 1970s and Late 1980s
 
 AI research experienced periods when progress and practical results did not meet the expectations of researchers, funders, or the public. These periods are often called **AI winters**.
 
 Some early projects promised more than the available computers and methods could deliver. Systems that worked in small demonstrations sometimes struggled when used in larger or less controlled situations.
+
+There were two main AI winters:
+
+| Period | What happened |
+|---|---|
+| About 1974–1980 | In 1973 the Lighthill Report to the British government criticised AI research for not delivering on its promises. Funding was cut in the UK and the US. |
+| About 1987–1993 | Expert systems turned out to be expensive to build and maintain, and the market for specialised AI computers collapsed. |
 
 As a result, interest and financial support decreased in some areas of AI research. Researchers continued working, but the field had to reconsider its methods and expectations.
 
@@ -302,7 +345,7 @@ Over time, researchers increasingly used statistical methods that allowed comput
 
 Instead of writing every rule manually, developers could provide examples and use algorithms to build a model. The model could then make predictions or classifications for new information.
 
-For example, a spam filter could be trained using emails that had already been labeled as spam or legitimate. By studying patterns in those examples, the model could estimate the category of a new email.
+For example, a spam filter could be trained using emails that had already been labelled as spam or legitimate. By studying patterns in those examples, the model could estimate the category of a new email.
 
 Statistical machine learning supported applications such as:
 
@@ -315,6 +358,8 @@ Statistical machine learning supported applications such as:
 
 This shift did not mean that rules disappeared. Many systems continued to combine rules and learned patterns. The important change was that learning from data became a major approach in AI.
 
+The best-known AI event of the 1990s actually used a different approach. In 1997, IBM's **Deep Blue** defeated world chess champion Garry Kasparov. Deep Blue mainly used fast search and an evaluation function tuned by people, not machine learning. This is a good reminder that different AI approaches existed side by side.
+
 ### 7. Deep Learning — 2010s
 
 **Deep learning** became especially important during the 2010s. It uses artificial neural networks with multiple layers to learn patterns from data.
@@ -322,15 +367,17 @@ This shift did not mean that rules disappeared. Many systems continued to combin
 Several developments helped deep learning become more successful:
 
 - More digital data became available.
-- Computers and specialized processors became more powerful.
+- Computers and specialised processors became more powerful.
 - Researchers improved neural network methods.
 - Better tools made it easier to train and test models.
 
 Deep learning contributed to major improvements in tasks such as image recognition, speech recognition, and language processing.
 
-For example, an image recognition model can be trained using many labeled images. During training, the model adjusts its internal values to improve its ability to identify patterns related to different objects.
+For example, an image recognition model can be trained using many labelled images. During training, the model adjusts its internal values to improve its ability to identify patterns related to different objects.
 
-Deep learning can work well with complex data, but it also has limitations. It may require large amounts of data and computing resources. Its internal decision process can also be difficult to explain in simple terms.
+The turning point came in 2012. A deep neural network called **AlexNet**, built by Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton, won the ImageNet image-recognition competition. Its top-5 error rate was 15.3%, compared with 26.2% for the second-best entry (Krizhevsky et al., 2012). AlexNet was trained on graphics processing units (GPUs), which showed that large neural networks had become practical. In 2016, DeepMind's **AlphaGo**, which combined deep learning with search, defeated Go champion Lee Sedol.
+
+Deep learning can work well with complex data, but it also has limitations. It can require large amounts of data and computing resources. Its internal decision process can also be difficult to explain in simple terms.
 
 ### 8. Generative AI and Large Language Models — 2020s
 
@@ -338,10 +385,12 @@ Generative AI became widely known through tools that can produce text, images, a
 
 Large language models are one important type of generative AI. They are trained on large collections of text and learn statistical patterns in language. When given a prompt, they generate a response based on the input and patterns learned during training.
 
+Most of these models are based on the **Transformer** architecture, published by researchers at Google in 2017. Generative AI reached the general public in November 2022, when OpenAI released **ChatGPT**. Many similar assistants followed, including Google Gemini and, in China, DeepSeek, Doubao (ByteDance), Kimi (Moonshot AI) and Baidu's ERNIE models. Topic 02, Section 3, explains how these systems work.
+
 Generative AI can support activities such as:
 
 - Drafting and revising written content.
-- Summarizing information.
+- Summarising information.
 - Explaining concepts.
 - Generating ideas.
 - Supporting some coding tasks.
@@ -349,7 +398,7 @@ Generative AI can support activities such as:
 
 These systems can make interaction with computers easier because people can use ordinary language to describe what they need.
 
-However, generated content is not automatically correct. A model may produce inaccurate statements, leave out important context, or present an uncertain answer confidently. Bender et al. (2021) discuss why fluent language output should not be treated as proof of human-like understanding.
+However, generated content is not automatically correct. A model can produce inaccurate statements, leave out important context, or present an uncertain answer confidently. Bender et al. (2021) discuss why fluent language output should not be treated as proof of human-like understanding.
 
 ### How the Stages Are Connected
 
@@ -357,13 +406,13 @@ The history of AI is not a story in which every new method completely replaces t
 
 | Period or Approach | Main Method | Example of Use | Important Limitation |
 |---|---|---|---|
-| Early symbolic AI | Symbols, logic, and written rules | Solving formal puzzles | Difficult to cover every real-world situation |
-| Expert systems | Stored specialist knowledge and rules | Supporting technical decisions | Rules require maintenance |
-| Statistical machine learning | Learning patterns from data | Spam detection | Depends on data quality |
-| Deep learning | Multi-layer neural networks | Image and speech recognition | Can require significant data and computing resources |
-| Generative AI | Models that generate new content | Text and image generation | Output may be inaccurate or misleading |
+| Early symbolic AI | Symbols, logic, and written rules | ELIZA (1966), puzzle solvers | Difficult to cover every real-world situation |
+| Expert systems | Stored specialist knowledge and rules | MYCIN (1970s) | Rules require maintenance |
+| Statistical machine learning | Learning patterns from data | Spam filters | Depends on data quality |
+| Deep learning | Multi-layer neural networks | AlexNet (2012), AlphaGo (2016) | Can require significant data and computing resources |
+| Generative AI | Models that generate new content | ChatGPT (2022), DeepSeek, Doubao | Output may be inaccurate or misleading |
 
-## Why AI Development Accelerated
+## 2.4 Why AI Development Accelerated
 
 AI progress has been influenced by several factors. No single invention explains the growth of the field.
 
@@ -371,7 +420,7 @@ AI progress has been influenced by several factors. No single invention explains
 
 AI methods can require many calculations. More powerful computers allow researchers to train larger models, process more information, and test more complex methods.
 
-Specialized hardware has also helped speed up some AI calculations.
+Specialised hardware has also helped speed up some AI calculations.
 
 ### 2. Greater Availability of Data
 
@@ -385,9 +434,9 @@ Researchers have improved the methods used to train models, represent informatio
 
 ### 4. Wider Access to AI Tools
 
-Software libraries, cloud computing, and online services have made AI tools easier for organizations and developers to use. AI is no longer limited to a small number of research laboratories.
+Software libraries, cloud computing, and online services have made AI tools easier for organisations and developers to use. AI is no longer limited to a small number of research laboratories.
 
-## Important Lessons from AI History
+## 2.5 Important Lessons from AI History
 
 The development of AI offers several lessons:
 
@@ -405,19 +454,19 @@ The NIST AI Risk Management Framework (AI RMF 1.0) supports the idea that AI ris
 
 ---
 
-# 03 · BASIC CONCEPTS AND CHARACTERISTICS OF AI
+# 03 · Basic Concepts and Characteristics of AI
 
-## Understanding the Main Concepts of AI
+## 3.1 Understanding the Main Concepts of AI
 
 AI includes many areas of research and technology. Some areas focus on learning from data, while others focus on reasoning, language, images, planning, or physical machines.
 
 Knowing the basic concepts helps learners understand how different AI applications are related. It also prevents common misunderstandings, such as thinking that all AI systems use machine learning or that every AI system can learn while it is being used.
 
-## Fundamental Concepts
+## 3.2 Fundamental Concepts
 
 ### 1. Artificial Intelligence
 
-**Artificial Intelligence** is the broad field of developing computer systems that perform tasks associated with intelligent behavior.
+**Artificial Intelligence** is the broad field of developing computer systems that perform tasks associated with intelligent behaviour.
 
 AI can include systems that use:
 
@@ -445,7 +494,7 @@ Machine learning is useful when patterns are difficult to describe with a short 
 
 **Deep Learning (DL)** is a subset of machine learning that uses artificial neural networks with multiple layers.
 
-The layers process information and learn different patterns. In an image task, early layers may respond to simple visual features, while later layers may combine those features to recognize more complex shapes or objects.
+The layers process information and learn different patterns. In an image task, early layers may respond to simple visual features, while later layers can combine those features to recognise more complex shapes or objects.
 
 Deep learning is used in areas such as:
 
@@ -455,7 +504,7 @@ Deep learning is used in areas such as:
 - Some recommendation systems.
 - Generative AI.
 
-Deep learning can identify complex patterns, but it may require large datasets, powerful computing resources, and careful evaluation.
+Deep learning can identify complex patterns, but it can require large datasets, powerful computing resources, and careful evaluation.
 
 ### 4. Natural Language Processing
 
@@ -471,7 +520,7 @@ NLP applications include:
 - Search systems.
 - Speech-to-text tools.
 - Question-answering systems.
-- Text summarization.
+- Text summarisation.
 
 For example, a translation tool receives a sentence in one language and produces a sentence in another language. The quality of the result depends on how well the system handles vocabulary, grammar, context, and meaning.
 
@@ -487,45 +536,25 @@ A computer vision system may be designed to:
 - Read printed or handwritten text.
 - Find visual differences between images.
 
-For example, a system may analyze a photograph and identify that it contains a bicycle, a road, and a person. This does not mean the system sees the world in exactly the same way as a human. It processes visual information using computational methods.
+For example, a system may analyse a photograph and identify that it contains a bicycle, a road, and a person. This does not mean the system sees the world in exactly the same way as a human. It processes visual information using computational methods.
 
 ### 6. Robotics
 
 **Robotics** combines mechanical engineering, electronics, sensors, control systems, and software to create machines that can perform physical tasks.
 
-AI may be included in a robot to help it recognize objects, plan movement, or respond to changes in its environment. However, not every robot uses AI. Some robots follow fixed instructions and repeat the same movement.
+AI may be included in a robot to help it recognise objects, plan movement, or respond to changes in its environment. However, not every robot uses AI. Some robots follow fixed instructions and repeat the same movement.
 
-A robot used in a warehouse, for example, may use sensors to detect its surroundings and software to move items between locations. If it uses AI, the AI component may help with tasks such as object recognition or route planning.
+A robot used in a warehouse, for example, can use sensors to detect its surroundings and software to move items between locations. If it uses AI, the AI component can help with tasks such as object recognition or route planning.
 
 ### 7. Expert Systems
 
-An **Expert System** is a computer system that uses stored knowledge and rules to support decisions in a specific area.
-
-It may contain:
-
-- A knowledge base that stores facts and rules.
-- An inference mechanism that applies the rules.
-- A user interface for receiving information and presenting results.
-
-Expert systems are useful when knowledge can be represented clearly. They are different from many machine-learning systems because their knowledge is usually entered as rules rather than learned automatically from examples.
+An **Expert System** is a computer system that uses stored knowledge and rules to support decisions in a specific area, such as MYCIN in medicine. Its knowledge is usually entered as rules rather than learned automatically from examples. Section 2.3 explains how expert systems work.
 
 ### 8. Intelligent Agents
 
-An **Intelligent Agent** is a system that receives information from an environment and selects actions based on that information and its objectives.
+An **Intelligent Agent** is a system that receives information from an environment and selects actions based on that information and its objectives. An agent does not have to be a physical robot: a navigation app is also an agent. Section 3.5 explains the agent cycle.
 
-The environment may be physical, such as a road for a navigation system, or digital, such as a website for a software agent.
-
-A simple agent may follow this cycle:
-
-1. Receive information from the environment.
-2. Process the information.
-3. Consider its goal and possible actions.
-4. Select an action.
-5. Observe the result and continue.
-
-An agent does not have to be a physical robot. A software system that recommends a route or manages a digital task can also be described as an agent.
-
-## Relationship Between AI Concepts
+## 3.3 Relationship Between AI Concepts
 
 The following diagram shows a simplified relationship between several important areas. It is not a complete map of AI, because many fields overlap and can use different methods.
 
@@ -553,7 +582,7 @@ flowchart TD
 
 *Computer vision and natural language processing are not limited to deep learning. They can also use other methods. Robotics can use AI, but robotics and AI are not the same field.*
 
-## Characteristics of AI Systems
+## 3.4 Characteristics of AI Systems
 
 AI systems may show several characteristics depending on the task they are designed to perform.
 
@@ -563,35 +592,35 @@ AI systems may show several characteristics depending on the task they are desig
 | Reasoning | Using information and relationships to reach a conclusion | Applying logical rules |
 | Perception | Processing information from images, sound, or sensors | Detecting an object in a photograph |
 | Prediction | Estimating what may happen or what category is likely | Predicting product demand |
-| Adaptation | Changing a model or behavior when it is updated with new information | Retraining a model with newer examples |
+| Adaptation | Changing a model or behaviour when it is updated with new information | Retraining a model with newer examples |
 | Decision-Making | Selecting an action or result based on an objective | Recommending a route |
 | Language Processing | Working with written or spoken language | Translating a sentence |
 | Problem-Solving | Exploring possible ways to reach a goal | Finding a solution to a puzzle |
 | Automation | Performing a task with limited repeated human input | Sorting incoming messages |
 
-Not every AI system has all these characteristics. A translation system may focus on language processing, while a vision system may focus on identifying objects. A rule-based system may perform reasoning without learning from new data.
+Not every AI system has all these characteristics. A translation system may focus on language processing, while a vision system may focus on identifying objects. A rule-based system can perform reasoning without learning from new data.
 
 ### Learning
 
 Learning is the ability to identify patterns from examples or experience. In machine learning, a model is adjusted during training so that it can perform a task on new data.
 
-For example, a model can learn from labeled photographs of cats and dogs. It may then use the learned patterns to classify a new photograph.
+For example, a model can learn from labelled photographs of cats and dogs. It may then use the learned patterns to classify a new photograph.
 
-Learning does not always happen continuously. Many AI models are trained first and then used later. Updating them may require a separate training process.
+Learning does not always happen continuously. Many AI models are trained first and then used later. Updating them can require a separate training process.
 
 ### Reasoning
 
 Reasoning involves using available information to reach a conclusion or decide what to do.
 
-A system may use logical rules, search methods, or other procedures. For example, a rule-based program can check whether a user meets a set of requirements before allowing access to a service.
+A system can use logical rules, search methods, or other procedures. For example, a rule-based program can check whether a user meets a set of requirements before allowing access to a service.
 
-Reasoning systems depend on the information and rules available to them. If the information is incorrect or incomplete, the conclusion may also be incorrect.
+Reasoning systems depend on the information and rules available to them. If the information is incorrect or incomplete, the conclusion can also be incorrect.
 
 ### Perception
 
-Perception in AI means processing information from the environment. This may include images, audio, video, or sensor readings.
+Perception in AI means processing information from the environment. This can include images, audio, video, or sensor readings.
 
-A camera-based system may detect objects in an image. A speech recognition system may process audio and convert spoken words into text.
+A camera-based system may detect objects in an image. A speech recognition system can process audio and convert spoken words into text.
 
 Perception is challenging because real-world information can be unclear. Lighting, background noise, unusual angles, or missing information can affect the result.
 
@@ -599,15 +628,15 @@ Perception is challenging because real-world information can be unclear. Lightin
 
 Prediction means estimating a likely result based on available information.
 
-For example, a system may use previous sales information to estimate future demand. The prediction is an estimate based on patterns, not a promise that the predicted event will happen.
+For example, a system can use previous sales information to estimate future demand. The prediction is an estimate based on patterns, not a promise that the predicted event will happen.
 
 A prediction can become less reliable when conditions change or when the new situation is very different from the data used to develop the model.
 
 ### Adaptation
 
-Adaptation refers to a system changing its model or behavior when it is updated with new information or settings.
+Adaptation refers to a system changing its model or behaviour when it is updated with new information or settings.
 
-For example, a recommendation system may be updated to reflect newer user activity. However, not all systems automatically change their behavior after every interaction. Some systems require developers to collect new data, retrain a model, test it, and then release an updated version.
+For example, a recommendation system may be updated to reflect newer user activity. However, not all systems automatically change their behaviour after every interaction. Some systems require developers to collect new data, retrain a model, test it, and then release an updated version.
 
 ### Decision-Making
 
@@ -615,9 +644,9 @@ Decision-making involves selecting an action or output according to a goal, avai
 
 A navigation system may compare routes and recommend one based on estimated travel time. The recommendation depends on the objective and the quality of traffic information.
 
-A decision made by an AI system should be evaluated carefully when it may affect people or important outcomes.
+A decision made by an AI system should be evaluated carefully when it can affect people or important outcomes.
 
-## The Intelligent Agent
+## 3.5 The Intelligent Agent
 
 Russell and Norvig (2020) explain AI through the idea of intelligent agents. An agent receives information from its environment and selects actions based on what it perceives and what it is trying to achieve.
 
@@ -657,13 +686,13 @@ A navigation application can be understood as a simple software agent.
 
 The system's performance depends on the accuracy of its map information, the availability of traffic data, and the method used to compare routes.
 
-## AI Models, Training, and Inference
+## 3.6 AI Models, Training, and Inference
 
 Several terms are commonly used when explaining machine-learning systems.
 
 | Term | Meaning | Simple Example |
 |---|---|---|
-| Data | Information used by a system | A collection of labeled photographs |
+| Data | Information used by a system | A collection of labelled photographs |
 | Algorithm | A method or set of steps for processing information | A learning procedure |
 | Model | A trained system that uses learned patterns | A model that classifies images |
 | Training | The process of adjusting a model using data | Teaching a model with example images |
@@ -676,7 +705,7 @@ Training and inference are two different stages.
 
 **Training** is the process in which a learning algorithm uses examples to adjust a model. During training, the system attempts to improve its performance on a chosen task.
 
-**Inference** happens when the trained model receives new input and produces a result. For example, after a model has been trained to recognize cats and dogs, inference occurs when it receives a new photograph and predicts which category is more likely.
+**Inference** happens when the trained model receives new input and produces a result. For example, after a model has been trained to recognise cats and dogs, inference occurs when it receives a new photograph and predicts which category is more likely.
 
 ```mermaid
 flowchart TD
@@ -693,17 +722,17 @@ flowchart TD
 
 A model does not automatically become correct just because it has completed training. It must be tested with suitable data and checked for errors.
 
-## Why These Concepts Matter
+## 3.7 Why These Concepts Matter
 
 Understanding the relationship between AI concepts helps people choose the right explanation for a system.
 
 For example:
 
-- A chatbot may use natural language processing and a machine-learning model.
-- An image classifier may use computer vision and deep learning.
+- A chatbot can use natural language processing and a machine-learning model.
+- An image classifier can use computer vision and deep learning.
 - A rule-based decision program may be AI without using machine learning.
-- A robot may combine sensors, control systems, and AI methods.
-- A recommendation system may use machine learning to estimate user preferences.
+- A robot can combine sensors, control systems, and AI methods.
+- A recommendation system can use machine learning to estimate user preferences.
 
 These examples show that AI is a collection of connected fields and methods rather than one single technology.
 
@@ -713,9 +742,9 @@ These examples show that AI is a collection of connected fields and methods rath
 
 ---
 
-# 04 · AI VS. TRADITIONAL COMPUTER SYSTEMS
+# 04 · AI vs. Traditional Computer Systems
 
-## Understanding Traditional Computer Systems
+## 4.1 Understanding Traditional Computer Systems
 
 Traditional computer systems usually follow instructions written by programmers. The developer defines the steps, conditions, and calculations that the program should perform.
 
@@ -723,31 +752,31 @@ For example, a calculator follows mathematical instructions. When a user enters 
 
 Traditional programs are very useful when a task has clear rules and the required steps can be described directly.
 
-## Understanding AI-Based Systems
+## 4.2 Understanding AI-Based Systems
 
-AI-based systems may use rules, search methods, learned models, or reasoning processes to perform tasks. Some systems use data to learn patterns instead of relying only on instructions written for every possible situation.
+AI-based systems can use rules, search methods, learned models, or reasoning processes to perform tasks. Some systems use data to learn patterns instead of relying only on instructions written for every possible situation.
 
 For example, a machine-learning spam filter can study examples of unwanted and legitimate emails. It learns patterns from those examples and uses the trained model to estimate whether a new email is spam.
 
-AI systems can be useful when a task involves complex patterns, images, language, or uncertainty. However, they can also make mistakes and may require careful testing and monitoring.
+AI systems can be useful when a task involves complex patterns, images, language, or uncertainty. However, they can also make mistakes and can require careful testing and monitoring.
 
-## Comparative Overview
+## 4.3 Comparative Overview
 
 | Aspect | Traditional Computer Systems | AI-Based Systems |
 |---|---|---|
 | Main Approach | Often follow instructions written by programmers | May use rules, search, reasoning, or learned models |
-| How Behavior Is Defined | Mainly through program logic and conditions | Through program logic, model design, learned parameters, or a combination |
+| How Behaviour Is Defined | Mainly through program logic and conditions | Through program logic, model design, learned parameters, or a combination |
 | Use of Data | Processes data according to written instructions | May use data for training, prediction, classification, or decision support |
 | Learning | Does not normally learn patterns unless a learning method is added | Some systems learn patterns from data during training |
 | Adaptability | Changes often require code or configuration updates | Some systems can be retrained or updated using new data |
 | Output | Often predictable for the same input and system state | May involve estimates or uncertainty, depending on the system |
 | Suitable Tasks | Clear procedures, calculations, and fixed rules | Tasks involving complex patterns, perception, language, or uncertainty |
-| Evaluation | Checked against expected results and program requirements | Checked using accuracy, reliability, generalization, and task-specific measures |
+| Evaluation | Checked against expected results and program requirements | Checked using accuracy, reliability, generalisation, and task-specific measures |
 | Limitations | May not handle situations that were not included in its instructions | May produce incorrect predictions or unreliable outputs |
 
-These are general differences, not absolute rules. Traditional programs can process very large amounts of data. AI systems can also include traditional programming and explicit rules. Some AI systems produce the same output for the same input, while others may produce different results because of their design or settings.
+These are general differences, not absolute rules. Traditional programs can process very large amounts of data. AI systems can also include traditional programming and explicit rules. Some AI systems produce the same output for the same input, while others can produce different results because of their design or settings.
 
-## How Traditional Programming Works
+## 4.4 How Traditional Programming Works
 
 In traditional programming, a developer writes instructions that tell the computer what to do.
 
@@ -761,9 +790,9 @@ A simplified process is:
 
 For example, a program that calculates the average of three scores can use a fixed formula:
 
-\[
-\text{Average} = \frac{\text{Score 1}+\text{Score 2}+\text{Score 3}}{3}
-\]
+```text
+Average = (Score 1 + Score 2 + Score 3) ÷ 3
+```
 
 The program does not need to learn what an average means. It follows the formula written by the developer.
 
@@ -773,13 +802,13 @@ Suppose a student receives scores of 80, 85, and 90.
 
 The program adds the scores and divides the total by three:
 
-\[
-\text{Average} = \frac{80+85+90}{3} = 85
-\]
+```text
+Average = (80 + 85 + 90) ÷ 3 = 255 ÷ 3 = 85
+```
 
 The calculation is based on a clear mathematical rule. Traditional programming is suitable because the required steps are known and do not need to be learned from examples.
 
-## How a Machine-Learning System Works
+## 4.5 How a Machine-Learning System Works
 
 A machine-learning system uses data to learn patterns that can help it perform a task.
 
@@ -793,11 +822,11 @@ A simplified process is:
 6. Evaluate the model.
 7. Use the trained model with new input.
 
-For example, a spam filter may be trained using many emails that have already been labeled as spam or legitimate. The model learns patterns associated with each category. When a new email arrives, the model estimates which category is more likely.
+For example, a spam filter may be trained using many emails that have already been labelled as spam or legitimate. The model learns patterns associated with each category. When a new email arrives, the model estimates which category is more likely.
 
-The model does not simply memorize a single rule such as "every email containing a certain word is spam." It may use several patterns together. However, its prediction can still be wrong.
+The model does not simply memorise a single rule such as "every email containing a certain word is spam." It can use several patterns together. However, its prediction can still be wrong.
 
-## Practical Example: Email Spam Detection
+## 4.6 Practical Example: Email Spam Detection
 
 Consider a system designed to identify unwanted emails. Both traditional programming and machine learning can be used for this task, but they work in different ways.
 
@@ -812,11 +841,11 @@ A programmer creates rules such as:
 
 The system follows the rules written by the developer.
 
-This approach can be useful when the rules are clear and the conditions do not change often. However, unwanted emails may use new phrases or patterns that are not included in the rules.
+This approach can be useful when the rules are clear and the conditions do not change often. However, unwanted emails can use new phrases or patterns that are not included in the rules.
 
 ### Approach B — Machine Learning
 
-A developer prepares examples of spam and legitimate emails. The examples are used to train a model to recognize patterns.
+A developer prepares examples of spam and legitimate emails. The examples are used to train a model to recognise patterns.
 
 When a new email arrives, the model processes its information and estimates whether it is spam.
 
@@ -836,7 +865,7 @@ The model may consider several features, such as the message content, sender inf
 
 Neither approach is always better. A rule-based system may be suitable when the conditions are simple and stable. Machine learning may be useful when patterns are complex and difficult to write as fixed rules.
 
-## Another Example: Recognizing Objects in Photographs
+## 4.7 Another Example: Recognising Objects in Photographs
 
 Consider a system that needs to identify whether a photograph contains a cat or a dog.
 
@@ -846,11 +875,11 @@ A developer could try to write rules based on visible features, such as shape, s
 
 ### AI-Based Vision Approach
 
-A computer vision model can be trained using many labeled photographs. During training, it learns patterns that are useful for distinguishing categories. When it receives a new photograph, it predicts whether the image is more likely to contain a cat or a dog.
+A computer vision model can be trained using many labelled photographs. During training, it learns patterns that are useful for distinguishing categories. When it receives a new photograph, it predicts whether the image is more likely to contain a cat or a dog.
 
 The model may still make mistakes if the image is blurry, unusual, or very different from the training examples.
 
-## When Should Each Approach Be Used?
+## 4.8 When Should Each Approach Be Used?
 
 The best approach depends on the problem. AI should not be used simply because it is a newer technology.
 
@@ -859,38 +888,38 @@ The best approach depends on the problem. AI should not be used simply because i
 | Calculating an average score | Traditional programming | Uses a clear mathematical formula |
 | Sorting names alphabetically | Traditional programming | Follows a fixed set of steps |
 | Checking whether a form field is empty | Traditional programming | Uses a simple condition |
-| Recognizing objects in photographs | AI-based vision model | Requires identifying complex visual patterns |
+| Recognising objects in photographs | AI-based vision model | Requires identifying complex visual patterns |
 | Translating a sentence | AI-based language system | Needs language processing and context handling |
 | Recommending study resources | AI-based or rule-based system | Can use preferences or predefined criteria |
 | Detecting unusual transaction patterns | AI-based or combined system | May benefit from learning patterns in data |
 
-A combined approach is also common. A system may use AI to recognize a pattern and traditional programming to apply fixed rules after the recognition step.
+A combined approach is also common. A system can use AI to recognise a pattern and traditional programming to apply fixed rules after the recognition step.
 
-## Advantages of Traditional Computer Systems
+## 4.9 Advantages of Traditional Computer Systems
 
 Traditional computer systems have several strengths:
 
 - **Clear instructions:** The program follows steps written by the developer.
-- **Predictable behavior:** The same input and system state often produce the same result.
+- **Predictable behaviour:** The same input and system state often produce the same result.
 - **Easy testing for fixed tasks:** Expected results can be checked against known answers.
 - **Good for exact calculations:** Mathematical operations and fixed procedures can be handled directly.
 - **Direct control:** Developers can inspect and change the rules or instructions.
 
-However, traditional systems may require many manually written rules when a task contains numerous possible situations.
+However, traditional systems can require many manually written rules when a task contains numerous possible situations.
 
-## Advantages of AI-Based Systems
+## 4.10 Advantages of AI-Based Systems
 
 AI-based systems can offer different strengths:
 
 - **Pattern recognition:** They can identify patterns in large or complex datasets.
 - **Support for perception tasks:** They can process images, audio, and other information.
 - **Prediction:** They can estimate likely outcomes based on available examples.
-- **Language processing:** They can analyze or generate human language.
+- **Language processing:** They can analyse or generate human language.
 - **Flexible learning methods:** Some models can be retrained when new data becomes available.
 
 These strengths do not mean AI is always more accurate or more suitable. An AI system can perform poorly if it is trained with unsuitable data or used in a situation that differs from its intended purpose.
 
-## Limitations and Challenges of Both Approaches
+## 4.11 Limitations and Challenges of Both Approaches
 
 Both traditional programming and AI have limitations.
 
@@ -903,29 +932,29 @@ Both traditional programming and AI have limitations.
 | Testing | Requires checking program logic and expected results | Requires testing accuracy, reliability, and performance in different conditions |
 | Human Oversight | Needed when the program affects important tasks | Important when predictions or generated outputs may affect people |
 
-AI risk is not only a technical issue. The purpose of the system, the people affected by it, and the way its results are used also matter. The NIST AI Risk Management Framework (AI RMF 1.0) emphasizes considering the context and possible risks of AI systems throughout their life cycle.
+AI risk is not only a technical issue. The purpose of the system, the people affected by it, and the way its results are used also matter. The NIST AI Risk Management Framework (AI RMF 1.0) emphasises considering the context and possible risks of AI systems throughout their life cycle.
 
-## Common Misunderstandings About AI and Traditional Systems
+## 4.12 Common Misunderstandings About AI and Traditional Systems
 
 ### Misunderstanding 1: All Computer Programs Are AI
 
-This is not correct. A program that follows a fixed formula or sorts a list does not automatically use AI. AI refers to systems designed to perform tasks associated with intelligent behavior through methods such as learning, reasoning, search, or perception.
+This is not correct. A program that follows a fixed formula or sorts a list does not automatically use AI. AI refers to systems designed to perform tasks associated with intelligent behaviour through methods such as learning, reasoning, search, or perception.
 
 ### Misunderstanding 2: AI Always Learns by Itself
 
-Not every AI system learns continuously. Many machine-learning models are trained before they are used. They may require a separate process to collect new data, retrain the model, test it, and release an update.
+Not every AI system learns continuously. Many machine-learning models are trained before they are used. They can require a separate process to collect new data, retrain the model, test it, and release an update.
 
 ### Misunderstanding 3: AI Is Always More Accurate Than Traditional Programming
 
-AI performance depends on the task, data, model, and operating conditions. A simple formula is usually more suitable than machine learning for a basic arithmetic calculation. A vision model may be more suitable for recognizing objects in photographs.
+AI performance depends on the task, data, model, and operating conditions. A simple formula is usually more suitable than machine learning for a basic arithmetic calculation. A vision model may be more suitable for recognising objects in photographs.
 
 ### Misunderstanding 4: Traditional Programming and AI Cannot Be Used Together
 
-They can be combined. A software application may use traditional code to manage its interface and data while using an AI model for recommendations or image recognition.
+They can be combined. A software application can use traditional code to manage its interface and data while using an AI model for recommendations or image recognition.
 
-## Choosing the Appropriate Approach
+## 4.13 Choosing the Appropriate Approach
 
-A developer or organization should consider several questions before choosing a method:
+A developer or organisation should consider several questions before choosing a method:
 
 1. Is the task clearly defined?
 2. Can the required steps be written as fixed rules?
@@ -942,7 +971,7 @@ These questions help ensure that the selected method fits the real problem.
 
 | Main Idea | Explanation |
 |---|---|
-| Meaning of AI | AI is a field of computer science that develops systems for tasks involving intelligent behavior |
+| Meaning of AI | AI is a field of computer science that develops systems for tasks involving intelligent behaviour |
 | AI Perspectives | AI can be studied through systems that think or act like humans and systems that think or act rationally |
 | AI History | AI developed through symbolic methods, expert systems, machine learning, deep learning, and generative AI |
 | AI Concepts | Important areas include machine learning, deep learning, NLP, computer vision, robotics, and intelligent agents |
@@ -954,6 +983,50 @@ These questions help ensure that the selected method fits the real problem.
 > **Core Insight**
 >
 > Traditional programming and AI are complementary approaches. Traditional programming is effective for clear rules and exact procedures, while AI can help with tasks involving complex patterns, perception, language, and uncertainty. The right choice depends on the problem, and important results should be tested and reviewed.
+
+---
+
+## Check Your Understanding
+
+1. A navigation app compares routes and recommends the fastest one. Which of the four perspectives on AI (Section 1.2) does this fit best?
+2. True or false: every computer program is AI. Give one example to support your answer.
+3. Many users felt that ELIZA (1966) understood them. What did ELIZA actually do, and what lesson does this teach about modern chatbots?
+4. Put these in order from oldest to newest: AlexNet, the Dartmouth Workshop, ChatGPT, MYCIN.
+5. A trained model receives a new photo and labels it "cat". Is this training or inference?
+6. For each task, choose **traditional programming** or **AI**: (a) calculating the average of three test scores; (b) deciding whether a photo shows a cat or a dog; (c) checking whether a form field is empty.
+7. Give one reason why the AI winters happened.
+
+### Answers
+
+1. **Acting rationally.** The app chooses an action (a route) that best reaches a goal (arriving quickly). It does not need to think like a human driver.
+2. **False.** A calculator or a sorting program follows fixed instructions and does not use AI methods such as learning, reasoning or perception (Section 4.12).
+3. ELIZA only **matched keywords** and turned the user's words into questions. It understood nothing. The lesson: a system that *sounds* human does not necessarily *understand*, so fluent chatbot answers still need checking.
+4. Dartmouth Workshop (1956) → MYCIN (1970s) → AlexNet (2012) → ChatGPT (2022).
+5. **Inference.** Training happened earlier; now the trained model is applied to a new input (Section 3.6).
+6. (a) Traditional programming: there is an exact formula. (b) AI: the visual patterns are too varied to write as rules. (c) Traditional programming: a simple condition is enough (Section 4.8).
+7. Any one of: early projects promised more than the computers and methods of the time could deliver; the 1973 Lighthill Report led to funding cuts; expert systems were expensive to build and maintain (Section 2.3).
+
+## Links to Other Topics
+
+- **Topic 02** explains *how* machine learning, deep learning and generative AI work, building on the concepts in Section 3.
+- **Topic 03** shows the AI systems from this topic at work in education, business, healthcare, transport and entertainment.
+- **Topic 04** looks closely at the limitation introduced here with ELIZA: fluent output is not the same as understanding.
+
+## References
+
+1. Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
+2. Turing, A. M. (1950). Computing machinery and intelligence. *Mind, 59*(236), 433–460.
+3. Weizenbaum, J. (1966). ELIZA: A computer program for the study of natural language communication between man and machine. *Communications of the ACM, 9*(1), 36–45.
+4. Shortliffe, E. H. (1976). *Computer-Based Medical Consultations: MYCIN*. Elsevier.
+5. Lighthill, J. (1973). Artificial intelligence: A general survey. In *Artificial Intelligence: A Paper Symposium*. Science Research Council.
+6. Campbell, M., Hoane, A. J., & Hsu, F. (2002). Deep Blue. *Artificial Intelligence, 134*(1–2), 57–83.
+7. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. *Advances in Neural Information Processing Systems, 25*.
+8. Silver, D., et al. (2016). Mastering the game of Go with deep neural networks and tree search. *Nature, 529*, 484–489.
+9. Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems, 30*.
+10. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of ACM FAccT 2021*, 610–623.
+11. Tabassi, E. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
+
+*AI use: the Stage 3 revision of this topic (history milestones, learning goals, key terms, check questions and light wording edits) was drafted with Claude (Anthropic). Dates and figures were checked against the sources above.*
 
 ---
 
